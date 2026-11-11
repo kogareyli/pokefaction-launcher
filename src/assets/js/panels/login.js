@@ -6,6 +6,7 @@ const { AZauth, Mojang } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
 
 import { popup, database, changePanel, accountSelect, addAccount, config, setStatus } from '../utils.js';
+import { PokeFactionAPI } from '../utils/pokefaction-api.js';
 
 class Login {
     static id = "login";
@@ -13,7 +14,9 @@ class Login {
         this.config = config;
         this.db = new database();
 
-        if (typeof this.config.online == 'boolean') {
+        if (this.config.auth === 'pokefaction') {
+            this.getPokeFaction();
+        } else if (typeof this.config.online == 'boolean') {
             this.config.online ? this.getMicrosoft() : this.getCrack()
         } else if (typeof this.config.online == 'string') {
             if (this.config.online.match(/^(http|https):\/\/[^ "]+$/)) {
@@ -58,6 +61,92 @@ class Login {
                 });
             });
         })
+    }
+
+    /**
+     * Comptes PokéFaction : connexion Microsoft (compte créé tout seul) ou pseudo + mot de passe.
+     * La session PokéFaction est rangée dans account.pokefaction ; home.js s'en sert pour le ticket de jeu.
+     */
+    getPokeFaction() {
+        const panneau = document.querySelector('.login-pokefaction');
+        const formulaire = panneau.querySelector('.pf-formulaire');
+        const pseudo = panneau.querySelector('.pf-pseudo');
+        const mdp = panneau.querySelector('.pf-mdp');
+        const mdp2 = panneau.querySelector('.pf-mdp2');
+        const erreur = panneau.querySelector('.pf-erreur');
+        const valider = panneau.querySelector('.pf-valider');
+        const boutonMicrosoft = panneau.querySelector('.pf-microsoft');
+        const ongletConnexion = panneau.querySelector('.pf-onglet-connexion');
+        const ongletInscription = panneau.querySelector('.pf-onglet-inscription');
+        let inscription = false;
+
+        panneau.style.display = 'block';
+
+        const api = () => new PokeFactionAPI(this.config.pokefaction_api);
+        const occupe = (oui) => {
+            valider.disabled = oui;
+            boutonMicrosoft.disabled = oui;
+        };
+        const afficherErreur = (texte) => { erreur.textContent = texte || ''; };
+        const changerMode = (versInscription) => {
+            inscription = versInscription;
+            panneau.classList.toggle('pf-mode-inscription', inscription);
+            ongletConnexion.classList.toggle('pf-onglet-actif', !inscription);
+            ongletInscription.classList.toggle('pf-onglet-actif', inscription);
+            valider.textContent = inscription ? 'Créer mon compte' : 'Se connecter';
+            mdp.autocomplete = inscription ? 'new-password' : 'current-password';
+            afficherErreur('');
+        };
+
+        ongletConnexion.addEventListener('click', () => changerMode(false));
+        ongletInscription.addEventListener('click', () => changerMode(true));
+        panneau.querySelector('.cancel-pokefaction').addEventListener('click', () => {
+            panneau.querySelector('.cancel-pokefaction').style.display = 'none';
+            changePanel('settings');
+        });
+
+        formulaire.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            afficherErreur('');
+            const p = pseudo.value.trim();
+            if (!/^[A-Za-z0-9_]{3,16}$/.test(p)) {
+                return afficherErreur('Pseudo invalide : 3 à 16 caractères, lettres, chiffres et _ seulement.');
+            }
+            if (mdp.value.length < 6) return afficherErreur('Mot de passe trop court : 6 caractères minimum.');
+            if (inscription && mdp.value !== mdp2.value) return afficherErreur('Les deux mots de passe ne sont pas pareils.');
+
+            occupe(true);
+            try {
+                const reponse = inscription ? await api().inscription(p, mdp.value) : await api().connexion(p, mdp.value);
+                const compte = await Mojang.login(reponse.pseudo);
+                if (compte.error) throw new Error(compte.message || 'Création du profil impossible.');
+                compte.pokefaction = { session: reponse.session, pseudo: reponse.pseudo, type: reponse.type };
+                mdp.value = '';
+                mdp2.value = '';
+                await this.saveData(compte);
+            } catch (err) {
+                afficherErreur(err.message);
+            } finally {
+                occupe(false);
+            }
+        });
+
+        boutonMicrosoft.addEventListener('click', async () => {
+            afficherErreur('');
+            occupe(true);
+            try {
+                const compte = await ipcRenderer.invoke('Microsoft-window', this.config.client_id);
+                if (!compte || compte == 'cancel') return;
+                if (compte.error) throw new Error(compte.errorMessage || 'Connexion Microsoft impossible.');
+                const reponse = await api().microsoft(compte);
+                compte.pokefaction = { session: reponse.session, pseudo: reponse.pseudo, type: reponse.type };
+                await this.saveData(compte);
+            } catch (err) {
+                afficherErreur(err.message || String(err));
+            } finally {
+                occupe(false);
+            }
+        });
     }
 
     async getCrack() {

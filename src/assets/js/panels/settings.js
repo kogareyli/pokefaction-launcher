@@ -4,6 +4,7 @@
  */
 
 import { changePanel, accountSelect, database, Slider, config, setStatus, popup, appdata, setBackground } from '../utils.js'
+import { PokeFactionAPI } from '../utils/pokefaction-api.js';
 const { ipcRenderer } = require('electron');
 const os = require('os');
 
@@ -50,7 +51,8 @@ class Settings {
         document.querySelector('.accounts-list').addEventListener('click', async e => {
             let popupAccount = new popup()
             try {
-                let id = e.target.id
+                // Les ID des comptes sont des nombres dans la base, mais du texte dans la page
+                let id = /^\d+$/.test(e.target.id) ? Number(e.target.id) : e.target.id
                 if (e.target.classList.contains('account')) {
                     popupAccount.openPopup({
                         title: 'Connexion',
@@ -60,6 +62,7 @@ class Settings {
 
                     if (id == 'add') {
                         document.querySelector('.cancel-home').style.display = 'inline'
+                        document.querySelector('.cancel-pokefaction').style.display = 'inline'
                         return changePanel('login')
                     }
 
@@ -76,6 +79,11 @@ class Settings {
                         content: 'Veuillez patienter...',
                         color: 'var(--color)'
                     })
+                    // Compte PokéFaction : on ferme aussi la session côté serveur des comptes
+                    let compteSupprime = await this.db.readData('accounts', id);
+                    if (compteSupprime?.pokefaction?.session && this.config?.pokefaction_api) {
+                        new PokeFactionAPI(this.config.pokefaction_api).deconnexion(compteSupprime.pokefaction.session);
+                    }
                     await this.db.deleteData('accounts', id);
                     let deleteProfile = document.getElementById(`${id}`);
                     let accountListElement = document.querySelector('.accounts-list');

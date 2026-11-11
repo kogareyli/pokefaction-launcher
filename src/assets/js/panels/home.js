@@ -5,6 +5,7 @@
 import { config, database, logger, changePanel, appdata, setStatus, pkg, popup } from '../utils.js'
 
 const { Launch } = require('minecraft-java-core')
+import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
 const { shell, ipcRenderer } = require('electron')
 
 class Home {
@@ -211,11 +212,46 @@ class Home {
         let infoStarting = document.querySelector(".info-starting-game-text")
         let progressBar = document.querySelector('.progress-bar')
 
+        let chemin = `${await appdata()}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`
+
+        // Comptes PokéFaction : ticket de jeu (12 h) que le serveur vérifie quand on se connecte
+        if (this.config.auth === 'pokefaction') {
+            playInstanceBTN.style.display = "none"
+            infoStartingBOX.style.display = "block"
+            infoStarting.innerHTML = `Connexion au compte PokéFaction...`
+            try {
+                if (!authenticator?.pokefaction?.session) throw new Error('Session expirée : reconnecte-toi.')
+                let api = new PokeFactionAPI(this.config.pokefaction_api)
+                if (authenticator.meta?.type === 'Xbox') {
+                    // Compte Microsoft : on revérifie auprès de Mojang (suit aussi un changement de pseudo)
+                    let reponse = await api.microsoft(authenticator)
+                    authenticator.pokefaction = { session: reponse.session, pseudo: reponse.pseudo, type: reponse.type }
+                    await this.db.updateData('accounts', authenticator, authenticator.ID)
+                }
+                let ticket = await api.ticket(authenticator.pokefaction.session)
+                let serveurs = [options.status?.ip, ...(options.serveurs_pokefaction || [])].filter(Boolean)
+                ecrireTicket(`${chemin}/instances/${options.name}`, ticket, serveurs)
+            } catch (err) {
+                playInstanceBTN.style.display = "flex"
+                infoStartingBOX.style.display = "none"
+                infoStarting.innerHTML = `Vérification`
+                if (/^Session expirée/.test(err.message)) {
+                    await this.db.deleteData('accounts', authenticator?.ID)
+                    configClient.account_selected = null
+                    await this.db.updateData('configClient', configClient)
+                    document.getElementById(`${authenticator?.ID}`)?.remove()
+                    changePanel('login')
+                }
+                new popup().openPopup({ title: 'Compte PokéFaction', content: err.message, color: 'red', options: true })
+                return
+            }
+        }
+
         let opt = {
             url: options.url,
             authenticator: authenticator,
             timeout: 10000,
-            path: `${await appdata()}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`,
+            path: chemin,
             instance: options.name,
             version: options.loader.minecraft_version,
             detached: configClient.launcher_config.closeLauncher == "close-all" ? false : true,

@@ -1,4 +1,33 @@
 <div class="container">
+    <div class="login-pokefaction login-tabs">
+        <img class="pf-logo" src="assets/images/icon/icon.png" alt="" />
+        <div class="login-text pf-titre">Bienvenue sur PokéFaction</div>
+
+        <button class="pf-microsoft">
+            <span class="pf-ms-logo"><i></i><i></i><i></i><i></i></span>
+            Se connecter avec Microsoft
+        </button>
+
+        <div class="pf-separateur"><span>ou avec un compte PokéFaction</span></div>
+
+        <div class="pf-onglets">
+            <button class="pf-onglet pf-onglet-connexion pf-onglet-actif">J'ai un compte</button>
+            <button class="pf-onglet pf-onglet-inscription">Créer un compte</button>
+        </div>
+
+        <form class="pf-formulaire" autocomplete="off">
+            <input type="text" class="pf-champ pf-pseudo" placeholder="Pseudo" maxlength="16" spellcheck="false" />
+            <input type="password" class="pf-champ pf-mdp" placeholder="Mot de passe" />
+            <input type="password" class="pf-champ pf-mdp2" placeholder="Confirme le mot de passe" />
+            <div class="pf-aide">3 à 16 caractères : lettres, chiffres et _ . Ton pseudo en jeu sera celui-ci.</div>
+            <div class="pf-erreur"></div>
+            <div class="login-options">
+                <button type="submit" class="connect pf-valider">Se connecter</button>
+                <button type="button" class="cancel cancel-pokefaction" style="display: none;">annuler</button>
+            </div>
+        </form>
+    </div>
+
     <div class="login-home login-tabs">
         <div class="login-text">Veuillez vous identifier afin de jouer.</div>
 

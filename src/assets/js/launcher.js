@@ -141,6 +141,17 @@ class Launcher {
                     await this.db.deleteData('accounts', account_ID)
                     continue
                 }
+                // Comptes PokéFaction : un compte sans session PokéFaction (ex. ancien compte « pseudo seul »)
+                // n'est plus accepté par le serveur → on le retire, le joueur se reconnecte.
+                if (this.config.auth === 'pokefaction' && !account.pokefaction?.session) {
+                    console.log(`[Account] ${account.name}: pas de compte PokéFaction, retiré`);
+                    await this.db.deleteData('accounts', account_ID)
+                    if (account_ID == account_selected) {
+                        configClient.account_selected = null
+                        await this.db.updateData('configClient', configClient)
+                    }
+                    continue
+                }
                 if (account.meta.type === 'Xbox') {
                     console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
                     popupRefresh.openPopup({
@@ -163,6 +174,7 @@ class Launcher {
                     }
 
                     refresh_accounts.ID = account_ID
+                    refresh_accounts.pokefaction = account.pokefaction
                     await this.db.updateData('accounts', refresh_accounts, account_ID)
                     await addAccount(refresh_accounts)
                     if (account_ID == account_selected) accountSelect(refresh_accounts)
@@ -202,8 +214,9 @@ class Launcher {
                         let refresh_accounts = await Mojang.login(account.name);
 
                         refresh_accounts.ID = account_ID
+                        refresh_accounts.pokefaction = account.pokefaction
                         await addAccount(refresh_accounts)
-                        this.db.updateData('accounts', refresh_accounts, account_ID)
+                        await this.db.updateData('accounts', refresh_accounts, account_ID)
                         if (account_ID == account_selected) accountSelect(refresh_accounts)
                         continue;
                     }
@@ -238,20 +251,18 @@ class Launcher {
             configClient = await this.db.readData('configClient')
             account_selected = configClient ? configClient.account_selected : null
 
-            if (!account_selected) {
-                let uuid = accounts[0].ID
-                if (uuid) {
-                    configClient.account_selected = uuid
-                    await this.db.updateData('configClient', configClient)
-                    accountSelect(uuid)
-                }
-            }
-
+            // (corrigé : on vérifie d'abord qu'il reste un compte, sinon accounts[0] plantait)
             if (!accounts.length) {
-                config.account_selected = null
-                await this.db.updateData('configClient', config);
+                configClient.account_selected = null
+                await this.db.updateData('configClient', configClient);
                 popupRefresh.closePopup()
                 return changePanel("login");
+            }
+
+            if (!account_selected || !accounts.find(a => a.ID == account_selected)) {
+                configClient.account_selected = accounts[0].ID
+                await this.db.updateData('configClient', configClient)
+                accountSelect(accounts[0])
             }
 
             popupRefresh.closePopup()
