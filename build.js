@@ -94,7 +94,9 @@ class Index {
                     oneClick: true,
                     allowToChangeInstallationDirectory: false,
                     createDesktopShortcut: true,
-                    runAfterFinish: true
+                    runAfterFinish: true,
+                    // Désinstaller supprime aussi le jeu et les comptes (sauf pendant une mise à jour)
+                    include: "build/desinstallation.nsh"
                 },
                 mac: {
                     icon: "./app/assets/images/icon/icon.icns",
