@@ -1,0 +1,9 @@
+{
+    "_explication": "Fichiers de l'instance CurseForge que « Envoyer mes modifs » n'envoie jamais (et ne retire jamais du launcher). Un chemin qui finit par / = tout le dossier.",
+    "chemins": [
+        "resourcepacks/COBBLEVERSE Soundtrack.zip",
+        "shaderpacks/COBBLEVERSE - Shaders/",
+        "shaderpacks/COBBLEVERSE - Shaders (High Quality)/",
+        "config/defaultoptions/"
+    ]
+}

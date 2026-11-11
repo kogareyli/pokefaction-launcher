@@ -8,3 +8,5 @@ data
 .DS_Store
 # Notes privées (pseudos des ops, chemins du PC) : gardées hors du dépôt public
 CLAUDE.md
+# État local de l outil « Envoyer mes modifs » (réglages au dernier envoi)
+tools/.etat-reglages.json
