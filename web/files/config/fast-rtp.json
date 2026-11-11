@@ -1,0 +1,34 @@
+{
+  "requirePermission": false,
+  "useCurrentWorld": false,
+  "useStrictTeleportCheck": false,
+  "defaultDimension": "minecraft:overworld",
+  "radius": -1,
+  "minRadius": 0,
+  "safetyCheckRadius": 1,
+  "cooldown": 30,
+  "blackListedBiomes": [
+    "minecraft:the_end",
+    "minecraft:small_end_islands",
+    "minecraft:the_void"
+  ],
+  "blackListedBiomeTags": [
+    "minecraft:is_beach",
+    "minecraft:is_ocean",
+    "minecraft:is_deep_ocean",
+    "minecraft:is_river"
+  ],
+  "messages": {
+    "rtpStartSearch": "<yellow>Searching for a safe location...",
+    "rtpLocFound": "<yellow>Found a safe location in ${seconds} seconds",
+    "rtpTeleportPlayer": "<dark_aqua>Teleported to <green>${x} ${y} ${z} <dark_aqua>in <green>${world}",
+    "rtpLocNotFound": "<red>[✖] Could not find a safe location!",
+    "rtpOnCooldown": "<red>[✖] <gold>Please wait <yellow>${seconds} <gold>seconds before using the RTP again!",
+    "preventedRtp": "<red>[✖] Could not start random teleport.\nReason: ${reason}",
+    "rtpBackSuccess": "<dark_aqua>Teleported back to your last random teleport!",
+    "rtpBackLocNotFound": "<red>[✖] You don't have any recent random teleports.",
+    "preventedRtpBack": "<red>[✖] Unable to teleport back to your last RTP location.\nReason: ${reason}",
+    "tpSecondsLeft": "<yellow>Teleporting in ${seconds} seconds...",
+    "tpCancelled": "<red>[✖] Teleportation was cancelled."
+  }
+}

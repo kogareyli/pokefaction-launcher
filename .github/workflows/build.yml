@@ -1,0 +1,32 @@
+# Construit le launcher Windows (.exe) et le publie dans "Releases".
+# Se lance tout seul quand le code du launcher change (pas quand tu modifies seulement web/).
+# Pour une nouvelle version : augmente "version" dans package.json (ex. 1.0.1) puis pousse.
+name: Construire le launcher
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'build.js'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+        shell: bash
+      - name: Build + publication
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run build
+        shell: bash

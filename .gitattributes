@@ -1,0 +1,3 @@
+# Aucune conversion de fin de ligne : les fichiers de web/files doivent rester identiques
+# octet pour octet (le launcher vérifie leur empreinte SHA-1).
+* -text

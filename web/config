@@ -1,0 +1,8 @@
+{
+    "maintenance": false,
+    "maintenance_message": "Le serveur est en maintenance, reviens un peu plus tard !",
+    "online": false,
+    "client_id": "",
+    "dataDirectory": "PokeFaction",
+    "rss": null
+}

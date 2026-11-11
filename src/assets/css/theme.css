@@ -1,0 +1,24 @@
+.global {
+    --element-color: #ff3fbf;
+    --transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
+    --dark-color: #140b30;
+    --light-color: rgb(245, 240, 255);
+}
+
+.dark {
+    --color: #F5F0FF;
+    --background: #140b30;
+    --background-element: #2a1a5e;
+    --background-transparent: #140b30cc;
+    --shadow: rgba(10, 4, 30, 0.7);
+    --svg-color: brightness(0) saturate(100%) invert(100%) sepia(55%) saturate(23%) hue-rotate(236deg) brightness(108%) contrast(92%);
+}
+
+.light {
+    --color: #1a0f3a;
+    --background: rgb(245, 240, 255);
+    --background-element: #d9ccf5;
+    --background-transparent: rgba(235, 225, 255, 0.85);
+    --shadow: rgba(160, 130, 220, 0.5);
+    --svg-color: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(1719%) hue-rotate(357deg) brightness(94%) contrast(84%);
+}

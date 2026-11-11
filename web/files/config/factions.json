@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "gui": true,
+  "power": {
+    "base": 20,
+    "member": 20,
+    "claimWeight": 5,
+    "deathPenalty": 10,
+    "powerPerAlly": 0,
+    "powerTicks": {
+      "ticks": 12000,
+      "reward": 1
+    }
+  },
+  "safe": {
+    "enderChest": true,
+    "double": true
+  },
+  "home": {
+    "claimOnly": true,
+    "damageTickCooldown": 300,
+    "homeWarpCooldownSecond": 120
+  },
+  "display": {
+    "factionNameMaxLength": -1,
+    "changeChat": true,
+    "tabMenu": true,
+    "nameBlackList": [
+      "wilderness",
+      "factionless",
+      "без фракции"
+    ],
+    "powerMessage": true
+  },
+  "relationships": {
+    "allyOverridesPermissions": true,
+    "defaultGuestPermissions": [
+      "USE_BLOCKS",
+      "USE_ENTITIES"
+    ]
+  },
+  "maxFactionSize": -1,
+  "friendlyFire": false,
+  "requiredBypassLevel": 2,
+  "claimProtections": true
+}

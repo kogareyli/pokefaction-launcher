@@ -1,0 +1,968 @@
+[
+ {
+  "path": "shaderpacks/ComplementaryUnbound_r5.8.1.zip",
+  "size": 546928,
+  "hash": "af656a33be2cbd217ea08986ad2cdd76f6bbfe1c",
+  "url": "https://edge.forgecdn.net/files/8123/288/ComplementaryUnbound_r5.8.1.zip"
+ },
+ {
+  "path": "mods/ferritecore-7.0.3-fabric.jar",
+  "size": 123450,
+  "hash": "a8a6a34fcda177da2828cedef44e0e538cf78aad",
+  "url": "https://edge.forgecdn.net/files/7524/152/ferritecore-7.0.3-fabric.jar"
+ },
+ {
+  "path": "mods/LumyREI-1.1.3.jar",
+  "size": 66283,
+  "hash": "072739522438162a2d30f120a0415b5def96cd4b",
+  "url": "https://edge.forgecdn.net/files/7864/606/LumyREI-1.1.3.jar"
+ },
+ {
+  "path": "mods/trinkets-3.10.0.jar",
+  "size": 272944,
+  "hash": "f54756f938c7c273713b9f97d4a987eec551e892",
+  "url": "https://edge.forgecdn.net/files/5534/317/trinkets-3.10.0.jar"
+ },
+ {
+  "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
+  "size": 234250,
+  "hash": "a75bb662e507c3932304d80ed514ec57e5dbf69b",
+  "url": "https://edge.forgecdn.net/files/7952/421/rctapi-fabric-1.21.1-0.15.2-beta.jar"
+ },
+ {
+  "path": "mods/notenoughanimations-fabric-1.12.4-mc1.21.1.jar",
+  "size": 1948132,
+  "hash": "96c0939713956165b31bb65d8416770a21ea52ef",
+  "url": "https://edge.forgecdn.net/files/8274/906/notenoughanimations-fabric-1.12.4-mc1.21.1.jar"
+ },
+ {
+  "path": "mods/configurable-3.5.2+1.21.1-fabric.jar",
+  "size": 545247,
+  "hash": "2c7302944b3dbdb7a20ebdba8425ccae52f7f46a",
+  "url": "https://edge.forgecdn.net/files/8438/543/configurable-3.5.2%2B1.21.1-fabric.jar"
+ },
+ {
+  "path": "mods/modernfix-fabric-5.25.1+mc1.21.1.jar",
+  "size": 471258,
+  "hash": "4ab39e9c736e7204146792c545ec5b29fc0a3872",
+  "url": "https://edge.forgecdn.net/files/7200/210/modernfix-fabric-5.25.1%2Bmc1.21.1.jar"
+ },
+ {
+  "path": "mods/darkspawn-fabric-1.21-1.1.5.jar",
+  "size": 9948,
+  "hash": "163ca522f070002ce5d02ac8339541b0c5bf4b34",
+  "url": "https://edge.forgecdn.net/files/5426/106/darkspawn-fabric-1.21-1.1.5.jar"
+ },
+ {
+  "path": "mods/comforts-fabric-9.0.5+1.21.1.jar",
+  "size": 914494,
+  "hash": "e47d6c2f0213abed8865dfa51ee05dea86c1baa9",
+  "url": "https://edge.forgecdn.net/files/7515/856/comforts-fabric-9.0.5%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/catchindicator-fabric-1.7.0.jar",
+  "size": 318477,
+  "hash": "afe92fe750372efe83d9d85480f0e98401fdef1b",
+  "url": "https://edge.forgecdn.net/files/8236/117/catchindicator-fabric-1.7.0.jar"
+ },
+ {
+  "path": "mods/LegendaryMonuments-Cobbleverse.jar",
+  "size": 5736792,
+  "hash": "9c86e9dfda8be63bbc01ab03160c8bf5ae8185ac",
+  "url": "https://edge.forgecdn.net/files/7564/151/LegendaryMonuments-Cobbleverse.jar"
+ },
+ {
+  "path": "mods/pokeblocks-1.4.0-1.21.1.jar",
+  "size": 1606467,
+  "hash": "74a6bb7102596b326d07f64281ee80aca0eedaa6",
+  "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
+ },
+ {
+  "path": "mods/placeholder-api-2.4.2+1.21.jar",
+  "size": 232325,
+  "hash": "aa1b9a49f9f190dfe4825c502b150817dd2998c3",
+  "url": "https://edge.forgecdn.net/files/6131/327/placeholder-api-2.4.2%2B1.21.jar"
+ },
+ {
+  "path": "mods/tooltipfix-1.1.1-1.20.jar",
+  "size": 12432,
+  "hash": "de704792c691e3d19316c87c21c9ad2bee6c66c3",
+  "url": "https://edge.forgecdn.net/files/4577/194/tooltipfix-1.1.1-1.20.jar"
+ },
+ {
+  "path": "mods/owo-lib-0.12.15.4+1.21.jar",
+  "size": 1183559,
+  "hash": "45725e6d33b624e565a7a6e5d3627af40814288d",
+  "url": "https://edge.forgecdn.net/files/6446/6/owo-lib-0.12.15.4%2B1.21.jar"
+ },
+ {
+  "path": "resourcepacks/Fully Hisuian Starters 1.1.1.zip",
+  "size": 202557,
+  "hash": "aec849f89f5351c30ef31da5d91691aebfaac590",
+  "url": "https://edge.forgecdn.net/files/7550/982/Fully%20Hisuian%20Starters%201.1.1.zip"
+ },
+ {
+  "path": "mods/moreculling-fabric-1.21.1-1.0.8.jar",
+  "size": 332100,
+  "hash": "fcacddf1cecc0fdc9ba937197c74402fd436e9c7",
+  "url": "https://edge.forgecdn.net/files/8087/868/moreculling-fabric-1.21.1-1.0.8.jar"
+ },
+ {
+  "path": "mods/MoreCobblemonTweaks-fabric-1.3.3.jar",
+  "size": 137626,
+  "hash": "1c1ce65f40b9409c209608680060866c2aaa1eb9",
+  "url": "https://edge.forgecdn.net/files/7593/364/MoreCobblemonTweaks-fabric-1.3.3.jar"
+ },
+ {
+  "path": "mods/ScalableLux-0.1.0.1+fabric.d0d58ab-all.jar",
+  "size": 177266,
+  "hash": "2ce889d9b1b210eef005ea03c3bbb39289c26e3f",
+  "url": "https://edge.forgecdn.net/files/6952/368/ScalableLux-0.1.0.1%2Bfabric.d0d58ab-all.jar"
+ },
+ {
+  "path": "mods/yet_another_config_lib_v3-3.8.2+1.21.1-fabric.jar",
+  "size": 1131265,
+  "hash": "e075503382f70715ab9fc6f66d603397a86eb3e0",
+  "url": "https://edge.forgecdn.net/files/7437/855/yet_another_config_lib_v3-3.8.2%2B1.21.1-fabric.jar"
+ },
+ {
+  "path": "mods/supermartijn642corelib-1.1.21-fabric-mc1.21.jar",
+  "size": 616830,
+  "hash": "0091085edb9435f6eefc2ff562fcc8cffbc05981",
+  "url": "https://edge.forgecdn.net/files/7783/365/supermartijn642corelib-1.1.21-fabric-mc1.21.jar"
+ },
+ {
+  "path": "mods/libjf-3.17.3.jar",
+  "size": 1283376,
+  "hash": "2a08178e0ce192f209f1f230e7ff211157563734",
+  "url": "https://edge.forgecdn.net/files/5794/349/libjf-3.17.3.jar"
+ },
+ {
+  "path": "mods/BetterF3-11.0.3-Fabric-1.21.1.jar",
+  "size": 1810710,
+  "hash": "22442f5594bd537ab603cb36fba70363ebb7992a",
+  "url": "https://edge.forgecdn.net/files/5873/256/BetterF3-11.0.3-Fabric-1.21.1.jar"
+ },
+ {
+  "path": "mods/huge-structure-blocks-fabric-1.1.6.jar",
+  "size": 100230,
+  "hash": "e47182aa7c96a04e79eab7db8851f4d7615d3f40",
+  "url": "https://edge.forgecdn.net/files/7065/479/huge-structure-blocks-fabric-1.1.6.jar"
+ },
+ {
+  "path": "mods/ImmediatelyFast-Fabric-1.6.11+1.21.1.jar",
+  "size": 336763,
+  "hash": "e4e125088d8654f91562e78a00bdec22f74bc07f",
+  "url": "https://edge.forgecdn.net/files/8348/516/ImmediatelyFast-Fabric-1.6.11%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/simplehomes-fabric-1.21.1-1.0.0.jar",
+  "size": 12300,
+  "hash": "962872c32ef75a21e5dae3adb93e211f79a53ad4",
+  "url": "https://edge.forgecdn.net/files/8360/693/simplehomes-fabric-1.21.1-1.0.0.jar"
+ },
+ {
+  "path": "resourcepacks/FreshAnimations_v1.10.4.zip",
+  "size": 850941,
+  "hash": "73db740a6868e043c5e615c036fca2c912615b6e",
+  "url": "https://edge.forgecdn.net/files/7670/377/FreshAnimations_v1.10.4.zip"
+ },
+ {
+  "path": "mods/Searchables-fabric-1.21.1-1.0.2.jar",
+  "size": 79531,
+  "hash": "2777db0b967e80e0659053154f32f14a0e99a7a7",
+  "url": "https://edge.forgecdn.net/files/5831/690/Searchables-fabric-1.21.1-1.0.2.jar"
+ },
+ {
+  "path": "mods/reeses-sodium-options-fabric-2.2.3+mc1.21.1.jar",
+  "size": 259211,
+  "hash": "aca62b29c1b2a9ec73f321aceeeceaeaaec53744",
+  "url": "https://edge.forgecdn.net/files/8410/879/reeses-sodium-options-fabric-2.2.3%2Bmc1.21.1.jar"
+ },
+ {
+  "path": "mods/MobsBeGone-0.0.7.jar",
+  "size": 9837,
+  "hash": "6335518bd5ebce9734669f5ed5fb0df3e7ceabb4",
+  "url": "https://edge.forgecdn.net/files/6742/844/MobsBeGone-0.0.7.jar"
+ },
+ {
+  "path": "resourcepacks/Comforts Modernized - V1.1.zip",
+  "size": 72956,
+  "hash": "34cc0542c57aedc727ea5d3cf8947a14904caa3c",
+  "url": "https://edge.forgecdn.net/files/5876/60/Comforts%20Modernized%20-%20V1.1.zip"
+ },
+ {
+  "path": "mods/timcore-fabric-1.7.3-1.32.0.jar",
+  "size": 304444,
+  "hash": "3a791c747a4beb4debf691c168f6e6b84efacd15",
+  "url": "https://edge.forgecdn.net/files/7938/282/timcore-fabric-1.7.3-1.32.0.jar"
+ },
+ {
+  "path": "mods/villagerconfig-fabric-4.5.4+1.21.1.jar",
+  "size": 355303,
+  "hash": "0b9c27925a041b3dee88bd10aa5e06ef7ee4f08d",
+  "url": "https://edge.forgecdn.net/files/8252/200/villagerconfig-fabric-4.5.4%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/rechiseled-1.2.4-fabric-mc1.21.jar",
+  "size": 11913849,
+  "hash": "52df3c871d9634cef497575ed214ed35a960bbfe",
+  "url": "https://edge.forgecdn.net/files/7687/483/rechiseled-1.2.4-fabric-mc1.21.jar"
+ },
+ {
+  "path": "mods/handcrafted-fabric-1.21.1-4.0.3.jar",
+  "size": 7127377,
+  "hash": "a9579fecd7ed429c282be21d5c921d220197acc6",
+  "url": "https://edge.forgecdn.net/files/6330/32/handcrafted-fabric-1.21.1-4.0.3.jar"
+ },
+ {
+  "path": "mods/StackDeobfuscatorFabric-1.4.3+08e71cc.jar",
+  "size": 321213,
+  "hash": "c36982af69e6d9d9dbac52e4d6c43e8a64fc6163",
+  "url": "https://edge.forgecdn.net/files/5511/110/StackDeobfuscatorFabric-1.4.3%2B08e71cc.jar"
+ },
+ {
+  "path": "resourcepacks/Cobblemon Classic Grass Pack v1.0 MC1.21.1.zip",
+  "size": 7538,
+  "hash": "c0943d03bd4a23439a10a478f1a00ae3a390bfad",
+  "url": "https://edge.forgecdn.net/files/5971/658/Cobblemon%20Classic%20Grass%20Pack%20v1.0%20MC1.21.1.zip"
+ },
+ {
+  "path": "resourcepacks/Cobblemon Interface Modded v1.9.4.zip",
+  "size": 1053517,
+  "hash": "0599cd556bafd67537690ebe037bc7e4a88c2542",
+  "url": "https://edge.forgecdn.net/files/7057/797/Cobblemon%20Interface%20Modded%20v1.9.4.zip"
+ },
+ {
+  "path": "mods/packetfixer-3.3.1-1.20.5-1.21.X-merged.jar",
+  "size": 46623,
+  "hash": "a8bb6e25807682e72c23bf4065f3cd5f6373ece3",
+  "url": "https://edge.forgecdn.net/files/7221/528/packetfixer-3.3.1-1.20.5-1.21.X-merged.jar"
+ },
+ {
+  "path": "mods/modmenu-11.0.4.jar",
+  "size": 973059,
+  "hash": "8af1b0b9ee18eab5cd5e5c97c497f0e473c49e9a",
+  "url": "https://edge.forgecdn.net/files/7808/443/modmenu-11.0.4.jar"
+ },
+ {
+  "path": "mods/konkrete_fabric_1.9.9_MC_1.21.jar",
+  "size": 786695,
+  "hash": "c521e23a8be17a941f4f95a76feba9df5e3de5d0",
+  "url": "https://edge.forgecdn.net/files/5430/434/konkrete_fabric_1.9.9_MC_1.21.jar"
+ },
+ {
+  "path": "mods/repurposed_structures-7.5.21+1.21.1-fabric.jar",
+  "size": 8202318,
+  "hash": "edbe14eb66baf532a59b5c0095cbec2ce2c8b950",
+  "url": "https://edge.forgecdn.net/files/8237/898/repurposed_structures-7.5.21%2B1.21.1-fabric.jar"
+ },
+ {
+  "path": "mods/Carved Wood-fabric-1.21.1-1.9.7-B.jar",
+  "size": 2891665,
+  "hash": "af0a1cf8ad03421cb3e5522db432b5c224317309",
+  "url": "https://edge.forgecdn.net/files/8444/854/Carved%20Wood-fabric-1.21.1-1.9.7-B.jar"
+ },
+ {
+  "path": "mods/cobblemon-battle-extras-fabric-1.13.45.jar",
+  "size": 1515972,
+  "hash": "8d56d3e943d20f9d22be32e9a9dee5851eb7f654",
+  "url": "https://edge.forgecdn.net/files/7968/868/cobblemon-battle-extras-fabric-1.13.45.jar"
+ },
+ {
+  "path": "mods/worldedit-mod-7.3.8.jar",
+  "size": 6222854,
+  "hash": "924fe181a29bd66be6783f6d589968ab0ee02250",
+  "url": "https://edge.forgecdn.net/files/5830/452/worldedit-mod-7.3.8.jar"
+ },
+ {
+  "path": "mods/capturexp-fabric-1.7.3-1.3.0.jar",
+  "size": 22848,
+  "hash": "fe935920b30c7cce657c2fa5e4dd27f36ea640cf",
+  "url": "https://edge.forgecdn.net/files/7568/498/capturexp-fabric-1.7.3-1.3.0.jar"
+ },
+ {
+  "path": "mods/Platform-fabric-1.21.1-1.3.3.jar",
+  "size": 735744,
+  "hash": "b3302ad9158171874d01e863d69c8bf4db8faef9",
+  "url": "https://edge.forgecdn.net/files/8075/944/Platform-fabric-1.21.1-1.3.3.jar"
+ },
+ {
+  "path": "mods/lenientdeath-1.2.5+1.21.1.jar",
+  "size": 920915,
+  "hash": "cca7eb614db1053e9b8f8f413bc7bc82edcd472a",
+  "url": "https://edge.forgecdn.net/files/5619/920/lenientdeath-1.2.5%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/advancementdisable-fabric-1.0.1+1.21.jar",
+  "size": 430412,
+  "hash": "8bff07c3254e04ed4926051684f3af92151c650f",
+  "url": "https://edge.forgecdn.net/files/5510/149/advancementdisable-fabric-1.0.1%2B1.21.jar"
+ },
+ {
+  "path": "mods/mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar",
+  "size": 17213370,
+  "hash": "948795e4c112b0719859f0f44bb2e5cdf67d1859",
+  "url": "https://edge.forgecdn.net/files/8102/864/mega_showdown-fabric-1.8.4%2B1.7.3%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/geckolib-fabric-1.21.1-4.9.2.jar",
+  "size": 660416,
+  "hash": "b95b1d631baeada54c6773ca8f6ede40d57fea46",
+  "url": "https://edge.forgecdn.net/files/8350/58/geckolib-fabric-1.21.1-4.9.2.jar"
+ },
+ {
+  "path": "mods/Ping-Wheel-1.12.2-fabric-1.21.1.jar",
+  "size": 152703,
+  "hash": "647c326ed26a8d085e75b04d3fbc9846cf974799",
+  "url": "https://edge.forgecdn.net/files/7996/933/Ping-Wheel-1.12.2-fabric-1.21.1.jar"
+ },
+ {
+  "path": "mods/Terralith_1.21.x_v2.5.8.jar",
+  "size": 3115385,
+  "hash": "bee0cfb1a8cd4bf3d96bccea224fb45d74de9085",
+  "url": "https://edge.forgecdn.net/files/6090/387/Terralith_1.21.x_v2.5.8.jar"
+ },
+ {
+  "path": "mods/better-pokedex-scanner-1.0.0.jar",
+  "size": 350293,
+  "hash": "cfb76dc69acbe4ec18a7f59b0911c7399afd671e",
+  "url": "https://edge.forgecdn.net/files/7931/23/better-pokedex-scanner-1.0.0.jar"
+ },
+ {
+  "path": "mods/sodium-fabric-0.8.12+mc1.21.1.jar",
+  "size": 1573180,
+  "hash": "70381d969eb63c0aa09dc581ef4b9a79782c0123",
+  "url": "https://edge.forgecdn.net/files/8382/327/sodium-fabric-0.8.12%2Bmc1.21.1.jar"
+ },
+ {
+  "path": "resourcepacks/Icon Fresh 0.4.zip",
+  "size": 852471,
+  "hash": "b9ddfb4614220612c7492666db730393954435b8",
+  "url": "https://edge.forgecdn.net/files/7402/610/Icon%20Fresh%200.4.zip"
+ },
+ {
+  "path": "resourcepacks/Cobblemon Interface v1.6.0.zip",
+  "size": 14108266,
+  "hash": "f91aa128e036b579fc687e55f9b9a240e3fbf65a",
+  "url": "https://edge.forgecdn.net/files/7220/886/Cobblemon%20Interface%20v1.6.0.zip"
+ },
+ {
+  "path": "mods/flan-1.21.1-1.12.8-fabric.jar",
+  "size": 946658,
+  "hash": "debe440eeb5440765115b1d50269df9014ba12ea",
+  "url": "https://edge.forgecdn.net/files/8699/253/flan-1.21.1-1.12.8-fabric.jar"
+ },
+ {
+  "path": "mods/sophisticatedstorage-1.21.1-1.3.7.9.139.jar",
+  "size": 1670672,
+  "hash": "bfdf71e189715206733692d7c1f60af589e79d23",
+  "url": "https://edge.forgecdn.net/files/7344/673/sophisticatedstorage-1.21.1-1.3.7.9.139.jar"
+ },
+ {
+  "path": "resourcepacks/-1.21.2 Fresh Moves v3.1 (With Animated Eyes).zip",
+  "size": 321871,
+  "hash": "7049cc12935ff4be20173c908ad946f530861a4c",
+  "url": "https://edge.forgecdn.net/files/6105/672/-1.21.2%20Fresh%20Moves%20v3.1%20%28With%20Animated%20Eyes%29.zip"
+ },
+ {
+  "path": "mods/BadOptimizations-2.4.1-1.21.1.jar",
+  "size": 283566,
+  "hash": "1461d8e46391efd32a3085150e86094c9f6f5c9d",
+  "url": "https://edge.forgecdn.net/files/7338/300/BadOptimizations-2.4.1-1.21.1.jar"
+ },
+ {
+  "path": "mods/architectury-13.0.8-fabric.jar",
+  "size": 600915,
+  "hash": "e71346a43c563e5784580dd096338acfb45f49d4",
+  "url": "https://edge.forgecdn.net/files/5786/326/architectury-13.0.8-fabric.jar"
+ },
+ {
+  "path": "mods/neruina-3.3.3+1.21.1-fabric.jar",
+  "size": 860092,
+  "hash": "33cfda42d642db4854c3617b75f511669ff43d6b",
+  "url": "https://edge.forgecdn.net/files/8451/82/neruina-3.3.3%2B1.21.1-fabric.jar"
+ },
+ {
+  "path": "mods/CobbleDollars-fabric-2.0.0+Beta-5.1+1.21.1.jar",
+  "size": 369528,
+  "hash": "48a2a30fb22e088ca9357fc95bdb4247ddc80b17",
+  "url": "https://edge.forgecdn.net/files/6604/561/CobbleDollars-fabric-2.0.0%2BBeta-5.1%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/Controlling-fabric-1.21.1-19.0.5.jar",
+  "size": 83679,
+  "hash": "22d2407311298d0185b606aa1dd03ae33b98dff3",
+  "url": "https://edge.forgecdn.net/files/6368/974/Controlling-fabric-1.21.1-19.0.5.jar"
+ },
+ {
+  "path": "mods/zfastnoise-1.0.13+1.21.jar",
+  "size": 38857,
+  "hash": "9cd00c39b86e81e9ed11ce8148739bc3889c7c60",
+  "url": "https://edge.forgecdn.net/files/8393/128/zfastnoise-1.0.13%2B1.21.jar"
+ },
+ {
+  "path": "mods/iCommon-Fabric-bundle.jar",
+  "size": 898253,
+  "hash": "abc0f4080d54dcb0ebcded197b096089afa29f19",
+  "url": "https://edge.forgecdn.net/files/8304/588/iCommon-Fabric-bundle.jar"
+ },
+ {
+  "path": "mods/interactic-0.2.3+1.21.jar",
+  "size": 118011,
+  "hash": "1bb259b6b82f75f9f7302b2f08efafc146ae576e",
+  "url": "https://edge.forgecdn.net/files/5592/999/interactic-0.2.3%2B1.21.jar"
+ },
+ {
+  "path": "mods/EuphoriaPatcher-1.9.3-r5.8.1-fabric.jar",
+  "size": 4296552,
+  "hash": "2a596436fca404cf497c1e9228d6cd9748d1fbf2",
+  "url": "https://edge.forgecdn.net/files/8177/593/EuphoriaPatcher-1.9.3-r5.8.1-fabric.jar"
+ },
+ {
+  "path": "mods/iris-fabric-1.8.14-beta.1+mc1.21.1.jar",
+  "size": 2791343,
+  "hash": "6776c0340845887477bfa463acc736ce7fcb6de5",
+  "url": "https://edge.forgecdn.net/files/8242/801/iris-fabric-1.8.14-beta.1%2Bmc1.21.1.jar"
+ },
+ {
+  "path": "mods/sophisticatedcore-1.21.1-1.2.9.21.168.jar",
+  "size": 2996065,
+  "hash": "857b3862af8a55b635c2f3b03ad92b2e3f3dfdeb",
+  "url": "https://edge.forgecdn.net/files/7344/653/sophisticatedcore-1.21.1-1.2.9.21.168.jar"
+ },
+ {
+  "path": "mods/zoomify-2.15.2+1.21.1.jar",
+  "size": 872937,
+  "hash": "9ec9c47e1d3465ea0cbd595b6d9d12227239c9a6",
+  "url": "https://edge.forgecdn.net/files/7591/960/zoomify-2.15.2%2B1.21.1.jar"
+ },
+ {
+  "path": "resourcepacks/E19 Cobblemon Minimap Icons.zip",
+  "size": 19398814,
+  "hash": "1aefc7a313b3c6f719d2fa53916afff18cd0792f",
+  "url": "https://edge.forgecdn.net/files/7585/194/E19%20Cobblemon%20Minimap%20Icons.zip"
+ },
+ {
+  "path": "mods/paginatedadvancements-2.5.1.jar",
+  "size": 71859,
+  "hash": "23a4570fb52d62135d705156079e52ddfe980b94",
+  "url": "https://edge.forgecdn.net/files/5679/657/paginatedadvancements-2.5.1.jar"
+ },
+ {
+  "path": "mods/MouseTweaks-fabric-mc1.21-2.26.jar",
+  "size": 75984,
+  "hash": "ee81af33a5606ef2cd057e075833d7c69836c210",
+  "url": "https://edge.forgecdn.net/files/5437/294/MouseTweaks-fabric-mc1.21-2.26.jar"
+ },
+ {
+  "path": "mods/globalpacks-fabric-1.21.1-21.0.6.jar",
+  "size": 394707,
+  "hash": "6a0c4ccf2a8bc916173defc3c49c8e95285e66b9",
+  "url": "https://edge.forgecdn.net/files/6634/587/globalpacks-fabric-1.21.1-21.0.6.jar"
+ },
+ {
+  "path": "mods/SafePastures-1.1.1+1.21.1.jar",
+  "size": 16518,
+  "hash": "da4ca736f1390553380dd1f8b596f17d35fafded",
+  "url": "https://edge.forgecdn.net/files/7248/17/SafePastures-1.1.1%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/cobblemonminigames-fabric-4.2.1+cobblemon1.7.3.jar",
+  "size": 7944142,
+  "hash": "6e1fa6188239adb31e0b54264a65aec14942084d",
+  "url": "https://edge.forgecdn.net/files/9303/201/cobblemonminigames-fabric-4.2.1%2Bcobblemon1.7.3.jar"
+ },
+ {
+  "path": "mods/netherportalfix-fabric-1.21.1-21.1.3.jar",
+  "size": 213294,
+  "hash": "970677295778926b09c3539b38e884854bc4d3c7",
+  "url": "https://edge.forgecdn.net/files/6204/47/netherportalfix-fabric-1.21.1-21.1.3.jar"
+ },
+ {
+  "path": "mods/melody_fabric_1.0.10_MC_1.21.jar",
+  "size": 188035,
+  "hash": "5624eea73f251c70a9489192d326f9b4aab3b13c",
+  "url": "https://edge.forgecdn.net/files/5430/438/melody_fabric_1.0.10_MC_1.21.jar"
+ },
+ {
+  "path": "mods/particle_core-0.3.3+1.21.jar",
+  "size": 147812,
+  "hash": "21134697c26b73cde41d1575c725ab30736d6b17",
+  "url": "https://edge.forgecdn.net/files/7581/173/particle_core-0.3.3%2B1.21.jar"
+ },
+ {
+  "path": "mods/defaultoptions-fabric-1.21.1-21.1.7.jar",
+  "size": 105044,
+  "hash": "1eed10a37b1f4a45f51e76044beb44e23b6bd678",
+  "url": "https://edge.forgecdn.net/files/8286/308/defaultoptions-fabric-1.21.1-21.1.7.jar"
+ },
+ {
+  "path": "mods/biomereplacer-2.1-hippo-fabric.jar",
+  "size": 138694,
+  "hash": "8e3573f3384e7031afa663d7fe3dbbd0011bae9c",
+  "url": "https://edge.forgecdn.net/files/6807/126/biomereplacer-2.1-hippo-fabric.jar"
+ },
+ {
+  "path": "mods/spawnconditions-fabric-1.3-1.21.1.jar",
+  "size": 91018,
+  "hash": "b426f0774f259e2e40dae3fefb2e8c6edf6d253f",
+  "url": "https://edge.forgecdn.net/files/9083/445/spawnconditions-fabric-1.3-1.21.1.jar"
+ },
+ {
+  "path": "mods/Iceberg-1.21.1-fabric-1.3.2.jar",
+  "size": 413302,
+  "hash": "170e30bf93ccba6d80dd481eedddae16cb549d29",
+  "url": "https://edge.forgecdn.net/files/6423/860/Iceberg-1.21.1-fabric-1.3.2.jar"
+ },
+ {
+  "path": "mods/fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
+  "size": 8076363,
+  "hash": "620cb137a9dc69ce86f3114f19d9eedab16366f5",
+  "url": "https://edge.forgecdn.net/files/8439/967/fabric-language-kotlin-1.13.13%2Bkotlin.2.4.10.jar"
+ },
+ {
+  "path": "mods/beautify-2.0.0+1.21.1.jar",
+  "size": 837607,
+  "hash": "7b22fbf4997200c8f210a016f7af36309f52a1e1",
+  "url": "https://edge.forgecdn.net/files/7553/989/beautify-2.0.0%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/entityculling-fabric-1.10.5-mc1.21.1.jar",
+  "size": 1595131,
+  "hash": "7e8c9c44049e6575e75d1fe38d6006306b8d5623",
+  "url": "https://edge.forgecdn.net/files/8287/94/entityculling-fabric-1.10.5-mc1.21.1.jar"
+ },
+ {
+  "path": "mods/playerxp-fabric-1.0.9+1.21.1.jar",
+  "size": 10818,
+  "hash": "34804e9a9d39dc741dbf4952ddab0223e92820cd",
+  "url": "https://edge.forgecdn.net/files/7886/106/playerxp-fabric-1.0.9%2B1.21.1.jar"
+ },
+ {
+  "path": "resourcepacks/COBBLEVERSE-CCC.zip",
+  "size": 8536643,
+  "hash": "30db98755a6a0ca565ec8ccd13503c180f6a40b9",
+  "url": "https://edge.forgecdn.net/files/7812/941/COBBLEVERSE-CCC.zip"
+ },
+ {
+  "path": "mods/CobbleverseBadges-1.3.jar",
+  "size": 137015,
+  "hash": "8e213de6013b6a58485ba8ddfcff5c91b3beb41d",
+  "url": "https://edge.forgecdn.net/files/7251/451/CobbleverseBadges-1.3.jar"
+ },
+ {
+  "path": "mods/ResourcePackOverrides-v21.1.0-1.21.1-Fabric.jar",
+  "size": 80827,
+  "hash": "ea53b83821e3a584159d0bca490e2460e27c616d",
+  "url": "https://edge.forgecdn.net/files/5733/967/ResourcePackOverrides-v21.1.0-1.21.1-Fabric.jar"
+ },
+ {
+  "path": "mods/Cobblemon-fabric-1.7.3+1.21.1.jar",
+  "size": 135801550,
+  "hash": "f192cda3fdfec0f20d1dee1887ec1b9e77b1618c",
+  "url": "https://edge.forgecdn.net/files/7553/235/Cobblemon-fabric-1.7.3%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/betterspawn-1.0.9-1.21.1.jar",
+  "size": 14005,
+  "hash": "19e6ddadc8e673ea590d56d38f693245bd814b5e",
+  "url": "https://edge.forgecdn.net/files/9413/80/betterspawn-1.0.9-1.21.1.jar"
+ },
+ {
+  "path": "mods/holodisplays-0.5.4-1.21-1.21.1.jar",
+  "size": 641182,
+  "hash": "8f04b2d36ec0a08dfa6d9848d85143fb6d7cc023",
+  "url": "https://edge.forgecdn.net/files/9399/675/holodisplays-0.5.4-1.21-1.21.1.jar"
+ },
+ {
+  "path": "mods/entity_model_features-3.2.4-1.21-fabric.jar",
+  "size": 565280,
+  "hash": "4538d0eec804c3a8f8c3a6809f687e362df588cf",
+  "url": "https://edge.forgecdn.net/files/8063/557/entity_model_features-3.2.4-1.21-fabric.jar"
+ },
+ {
+  "path": "mods/c2me-fabric-mc1.21.1-0.4.0-alpha.0.23.jar",
+  "size": 3757044,
+  "hash": "3a0a64877ba57d1f1198c7c6805719581859337d",
+  "url": "https://edge.forgecdn.net/files/8480/674/c2me-fabric-mc1.21.1-0.4.0-alpha.0.23.jar"
+ },
+ {
+  "path": "mods/sound-physics-remastered-fabric-1.21.1-1.5.1.jar",
+  "size": 205671,
+  "hash": "07d9f758338ad5be38b7fa1eb32c71a7c4840ea0",
+  "url": "https://edge.forgecdn.net/files/7032/249/sound-physics-remastered-fabric-1.21.1-1.5.1.jar"
+ },
+ {
+  "path": "mods/cobblenav-fabric-2.3.3.jar",
+  "size": 1090821,
+  "hash": "63681a16bc562089329533686fcc60e7bb7cd63d",
+  "url": "https://edge.forgecdn.net/files/7940/648/cobblenav-fabric-2.3.3.jar"
+ },
+ {
+  "path": "mods/cobblecuisine-2.0.1-1.7-rc1.jar",
+  "size": 683115,
+  "hash": "31cf544fe61bb9c21fa8dafe5c03a428049a0f37",
+  "url": "https://edge.forgecdn.net/files/7265/785/cobblecuisine-2.0.1-1.7-rc1.jar"
+ },
+ {
+  "path": "mods/catchrate-display-fabric-2.8.22.jar",
+  "size": 260470,
+  "hash": "ad63e64fa2121c4a19f3ac72a9cd84313ac8390c",
+  "url": "https://edge.forgecdn.net/files/8050/484/catchrate-display-fabric-2.8.22.jar"
+ },
+ {
+  "path": "mods/ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
+  "size": 633065,
+  "hash": "18bf1f21cd2db6dcd4e42db85eae54e2a49a48ee",
+  "url": "https://edge.forgecdn.net/files/7213/608/ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar"
+ },
+ {
+  "path": "mods/factions-mc1.21-2.8.0.jar",
+  "size": 407156,
+  "hash": "8de1af6c2ad2c3892b57f7899ea73e218b460aa7",
+  "url": "https://edge.forgecdn.net/files/6467/637/factions-mc1.21-2.8.0.jar"
+ },
+ {
+  "path": "mods/FastRTP-1.5.1-1.21.jar",
+  "size": 253253,
+  "hash": "4bee3c8397196a7226ee930de2d5b361e59ae2af",
+  "url": "https://edge.forgecdn.net/files/5432/833/FastRTP-1.5.1-1.21.jar"
+ },
+ {
+  "path": "mods/rctmod-fabric-1.21.1-0.18.1-beta.jar",
+  "size": 6757956,
+  "hash": "00bf82e254bddb804529222567e5719310524085",
+  "url": "https://edge.forgecdn.net/files/7913/182/rctmod-fabric-1.21.1-0.18.1-beta.jar"
+ },
+ {
+  "path": "mods/cloth-config-15.0.140-fabric.jar",
+  "size": 1157166,
+  "hash": "5d82342a2df53fd6df712bfdd583a811572918a4",
+  "url": "https://edge.forgecdn.net/files/5729/125/cloth-config-15.0.140-fabric.jar"
+ },
+ {
+  "path": "mods/entity_texture_features_1.21-fabric-7.1.jar",
+  "size": 745421,
+  "hash": "2020e3884ada68d7aba1d54f182d32d511c40e5f",
+  "url": "https://edge.forgecdn.net/files/7930/621/entity_texture_features_1.21-fabric-7.1.jar"
+ },
+ {
+  "path": "mods/waystones-fabric-1.21.1-21.1.37.jar",
+  "size": 1226801,
+  "hash": "df61027d645c737d80f62eda56ae24c4b8e2b707",
+  "url": "https://edge.forgecdn.net/files/8450/86/waystones-fabric-1.21.1-21.1.37.jar"
+ },
+ {
+  "path": "mods/NoChatRestrictions-Fabric-MC1.21.11-v1.0.0.jar",
+  "size": 9907,
+  "hash": "853d8af1282c0dac0a9814e336c9ebfe2776ca25",
+  "url": "https://edge.forgecdn.net/files/7544/192/NoChatRestrictions-Fabric-MC1.21.11-v1.0.0.jar"
+ },
+ {
+  "path": "mods/athena-fabric-1.21.1-4.0.6.jar",
+  "size": 88425,
+  "hash": "92534d85cad33ab1fee598068443c685f4bb06e0",
+  "url": "https://edge.forgecdn.net/files/8061/949/athena-fabric-1.21.1-4.0.6.jar"
+ },
+ {
+  "path": "mods/forgivingvoid-fabric-1.21.1-21.1.7.jar",
+  "size": 78531,
+  "hash": "be9be65f0b23bc751f0768af9c921a1483a06aa9",
+  "url": "https://edge.forgecdn.net/files/7966/155/forgivingvoid-fabric-1.21.1-21.1.7.jar"
+ },
+ {
+  "path": "mods/brb-1.10.0-rc5+1.21.jar",
+  "size": 1213168,
+  "hash": "5831fc725b9834cef7b445913a701310536b17ab",
+  "url": "https://edge.forgecdn.net/files/5512/414/brb-1.10.0-rc5%2B1.21.jar"
+ },
+ {
+  "path": "resourcepacks/Cobblemon 3D Poké Rods 1.0.zip",
+  "size": 167546,
+  "hash": "c5a92bf0d82abba72eb3a93f6e8bd40560d1c247",
+  "url": "https://edge.forgecdn.net/files/6060/565/Cobblemon%203D%20Pok%C3%A9%20Rods%201.0.zip"
+ },
+ {
+  "path": "mods/soundsbegone-fabric-1.5.2+mc1.21.jar",
+  "size": 6151935,
+  "hash": "3ef45517426b434a2ef6092559c494a67ee1aff9",
+  "url": "https://edge.forgecdn.net/files/8312/695/soundsbegone-fabric-1.5.2%2Bmc1.21.jar"
+ },
+ {
+  "path": "mods/BetterThirdPerson-Fabric-1.21-1.9.0.jar",
+  "size": 52188,
+  "hash": "ea0dd2747e5d52d1b64dd29498e59602e79d9b69",
+  "url": "https://edge.forgecdn.net/files/5439/141/BetterThirdPerson-Fabric-1.21-1.9.0.jar"
+ },
+ {
+  "path": "mods/zamega-fabric-1.7.3.jar",
+  "size": 2387420,
+  "hash": "cefe9c25fc69f5c5da95a89225f7740377b3e58c",
+  "url": "https://edge.forgecdn.net/files/7961/235/zamega-fabric-1.7.3.jar"
+ },
+ {
+  "path": "mods/VanillaBackport-fabric-1.21.1-1.1.7.10.jar",
+  "size": 54994072,
+  "hash": "be520356ef53352b2d3e6ec84ca3abb7ca62f041",
+  "url": "https://edge.forgecdn.net/files/8229/731/VanillaBackport-fabric-1.21.1-1.1.7.10.jar"
+ },
+ {
+  "path": "mods/lithium-fabric-0.15.4+mc1.21.1.jar",
+  "size": 797454,
+  "hash": "7d82a004403b7780d4443d8e40361a55cfd0ae63",
+  "url": "https://edge.forgecdn.net/files/8330/364/lithium-fabric-0.15.4%2Bmc1.21.1.jar"
+ },
+ {
+  "path": "mods/notenoughcrashes-fabric-4.4.9+1.21.1.jar",
+  "size": 601087,
+  "hash": "0de122f1e94b85308bcecb0ebc40ac48c13367a9",
+  "url": "https://edge.forgecdn.net/files/6598/102/notenoughcrashes-fabric-4.4.9%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/CobbleFurnies-fabric-1.2.jar",
+  "size": 2337235,
+  "hash": "a71f20907c3350680a11054584cf96963f5875e5",
+  "url": "https://edge.forgecdn.net/files/8340/198/CobbleFurnies-fabric-1.2.jar"
+ },
+ {
+  "path": "mods/Multiworld-Fabric-bundle.jar",
+  "size": 733917,
+  "hash": "58d3bec9b9f94c191ced6d6a3c66ad70d6651259",
+  "url": "https://edge.forgecdn.net/files/7064/310/Multiworld-Fabric-bundle.jar"
+ },
+ {
+  "path": "mods/LumyMon-0.6.6.jar",
+  "size": 2331858,
+  "hash": "983104ced5cadd78d75a3c512bd68d486e59f82f",
+  "url": "https://edge.forgecdn.net/files/8411/677/LumyMon-0.6.6.jar"
+ },
+ {
+  "path": "mods/accessories-fabric-1.1.0-beta.53+1.21.1.jar",
+  "size": 1095802,
+  "hash": "fa0b11de088893bb14aff945d0e8efdee165457b",
+  "url": "https://edge.forgecdn.net/files/7583/323/accessories-fabric-1.1.0-beta.53%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/AdvancementPlaques-1.21.1-fabric-1.6.8.jar",
+  "size": 195505,
+  "hash": "e3a5a514bbcc18e2c4e3bc251eb9f48e64217405",
+  "url": "https://edge.forgecdn.net/files/5905/997/AdvancementPlaques-1.21.1-fabric-1.6.8.jar"
+ },
+ {
+  "path": "mods/particlerain-4.0.0-beta.10+1.21.1-fabric.jar",
+  "size": 608651,
+  "hash": "348a457458609372069b4101a6c88a12b55211a7",
+  "url": "https://edge.forgecdn.net/files/8055/418/particlerain-4.0.0-beta.10%2B1.21.1-fabric.jar"
+ },
+ {
+  "path": "mods/Debugify-1.21.1+1.0.jar",
+  "size": 292202,
+  "hash": "6fb7d4ec9c2d2dc5b58577324b47671d3e28d7a4",
+  "url": "https://edge.forgecdn.net/files/5691/544/Debugify-1.21.1%2B1.0.jar"
+ },
+ {
+  "path": "mods/toms_storage_fabric-1.21-2.3.0.jar",
+  "size": 1962781,
+  "hash": "3f851ab4ba33b0efca0a03f3aa92a266415f5a87",
+  "url": "https://edge.forgecdn.net/files/7659/873/toms_storage_fabric-1.21-2.3.0.jar"
+ },
+ {
+  "path": "mods/respackopts-4.11.3.jar",
+  "size": 530926,
+  "hash": "a83c7cd89fc2ac4326c45a2570cfbf8c40f4efa7",
+  "url": "https://edge.forgecdn.net/files/5799/816/respackopts-4.11.3.jar"
+ },
+ {
+  "path": "mods/accessories_compat_layer-fabric-0.1.12+1.21.1.jar",
+  "size": 398321,
+  "hash": "44acb001881c063aa15fe66a26de5fae88e6564f",
+  "url": "https://edge.forgecdn.net/files/7585/679/accessories_compat_layer-fabric-0.1.12%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/krypton-0.2.8.jar",
+  "size": 161045,
+  "hash": "73e792eb5f120787becda4b87b6ff18b26caea50",
+  "url": "https://edge.forgecdn.net/files/5460/550/krypton-0.2.8.jar"
+ },
+ {
+  "path": "mods/Luckys-Cozyhome-Refurnished-1.1.20.jar",
+  "size": 3121070,
+  "hash": "e65e20f982be0be2bf5e94101f560049b0463ab3",
+  "url": "https://edge.forgecdn.net/files/7273/189/Luckys-Cozyhome-Refurnished-1.1.20.jar"
+ },
+ {
+  "path": "mods/fightorflight-fabric-0.10.9.jar",
+  "size": 1424525,
+  "hash": "9928e06e1ebe166980480b073cea542eed753d73",
+  "url": "https://edge.forgecdn.net/files/8404/742/fightorflight-fabric-0.10.9.jar"
+ },
+ {
+  "path": "mods/RoughlyEnoughItems-16.0.799-fabric.jar",
+  "size": 2451799,
+  "hash": "ea0efe8b13a52e9d8d5a18d062810117a7efec0f",
+  "url": "https://edge.forgecdn.net/files/6199/139/RoughlyEnoughItems-16.0.799-fabric.jar"
+ },
+ {
+  "path": "mods/fusion-1.2.12-fabric-mc1.21.jar",
+  "size": 515411,
+  "hash": "6c5ef883ab46b3e6ab5f53b7c1b0b369162f9110",
+  "url": "https://edge.forgecdn.net/files/7471/453/fusion-1.2.12-fabric-mc1.21.jar"
+ },
+ {
+  "path": "mods/continuity-3.0.0+1.21.jar",
+  "size": 1014044,
+  "hash": "c7f09b53512604c2ba6803b1247bc70e4d0f8f8c",
+  "url": "https://edge.forgecdn.net/files/5962/881/continuity-3.0.0%2B1.21.jar"
+ },
+ {
+  "path": "mods/betterbeds-fabric-1.4.0.jar",
+  "size": 39918,
+  "hash": "18bc5c4f40ff6e47d65526a59244c9ea57b83e3f",
+  "url": "https://edge.forgecdn.net/files/5437/848/betterbeds-fabric-1.4.0.jar"
+ },
+ {
+  "path": "mods/Only Bottle Caps-1.3.0.jar",
+  "size": 250451,
+  "hash": "23ef87de0db4ec6914b67ad96d72c204874dc613",
+  "url": "https://edge.forgecdn.net/files/7253/785/Only%20Bottle%20Caps-1.3.0.jar"
+ },
+ {
+  "path": "mods/fabric-api-0.116.14+1.21.1.jar",
+  "size": 2451978,
+  "hash": "1bc9caf399a9eadddaec3215e31594ca40fc9485",
+  "url": "https://edge.forgecdn.net/files/8443/376/fabric-api-0.116.14%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/fzzy_config-0.7.6+1.21.jar",
+  "size": 2365335,
+  "hash": "cff21f254e911a323fe49015d12e548d3e3b8d7c",
+  "url": "https://edge.forgecdn.net/files/7568/948/fzzy_config-0.7.6%2B1.21.jar"
+ },
+ {
+  "path": "mods/particular-1.21.1-Fabric-1.5.5.jar",
+  "size": 285813,
+  "hash": "de3740c49c41a32c6034d2cdc817f3aea96b4bb1",
+  "url": "https://edge.forgecdn.net/files/8275/90/particular-1.21.1-Fabric-1.5.5.jar"
+ },
+ {
+  "path": "mods/pastureLoot-1.0.5+1.21.1.jar",
+  "size": 45871,
+  "hash": "cc6bbf60b6a08d5b4f5c6416aa0279d92f761c73",
+  "url": "https://edge.forgecdn.net/files/7893/511/pastureLoot-1.0.5%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/midnightlib-1.7.5-fabric+1.21.1.jar",
+  "size": 62853,
+  "hash": "c32c79bd001e400ec7ebaccfffaed465daf42835",
+  "url": "https://edge.forgecdn.net/files/6772/64/midnightlib-1.7.5-fabric%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/highlight-fabric-1.21-3.0.0.jar",
+  "size": 457352,
+  "hash": "68c9d99f271cd8ef8421358369d2d663dd7074fe",
+  "url": "https://edge.forgecdn.net/files/5447/147/highlight-fabric-1.21-3.0.0.jar"
+ },
+ {
+  "path": "mods/BetterF1-Fabric-1.1+1.21.7.jar",
+  "size": 22834,
+  "hash": "218c3aa2ae3356309997deae0861133e9f861581",
+  "url": "https://edge.forgecdn.net/files/6707/91/BetterF1-Fabric-1.1%2B1.21.7.jar"
+ },
+ {
+  "path": "mods/simpletpa-fabric-1.21.1-1.1.0.jar",
+  "size": 30864,
+  "hash": "29e38954300c8d37c99964d34a1963537358c8dc",
+  "url": "https://edge.forgecdn.net/files/7948/874/simpletpa-fabric-1.21.1-1.1.0.jar"
+ },
+ {
+  "path": "mods/sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar",
+  "size": 988478,
+  "hash": "fc6d87d9b902225790bdfbc45ba412e8572e593f",
+  "url": "https://edge.forgecdn.net/files/6844/426/sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar"
+ },
+ {
+  "path": "mods/cobblemonraiddens-fabric-0.11.3+1.21.1.jar",
+  "size": 2690197,
+  "hash": "d3a3c5634ae9821259be71dfccfd2b40d8df5410",
+  "url": "https://edge.forgecdn.net/files/8358/837/cobblemonraiddens-fabric-0.11.3%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/supermartijn642configlib-1.1.8-fabric-mc1.21.jar",
+  "size": 206993,
+  "hash": "8427e42f1db8ea7b4b6c21cc94bfcfa398f0ff63",
+  "url": "https://edge.forgecdn.net/files/5546/988/supermartijn642configlib-1.1.8-fabric-mc1.21.jar"
+ },
+ {
+  "path": "mods/resourcefullib-fabric-1.21-3.0.12.jar",
+  "size": 485586,
+  "hash": "cb67e1302b5116953f45556cc61dbcf40d986ecd",
+  "url": "https://edge.forgecdn.net/files/5973/189/resourcefullib-fabric-1.21-3.0.12.jar"
+ },
+ {
+  "path": "mods/musicnotification-fabric-3.0.0+mc1.21.1.jar",
+  "size": 139713,
+  "hash": "c27e43fec57825e2ac45d39a9366150b45d409ec",
+  "url": "https://edge.forgecdn.net/files/7918/233/musicnotification-fabric-3.0.0%2Bmc1.21.1.jar"
+ },
+ {
+  "path": "mods/customsplashscreen-2.2.0.jar",
+  "size": 660554,
+  "hash": "bb79f8974e619e077d60a6bdffe389913b84defd",
+  "url": "https://edge.forgecdn.net/files/5437/540/customsplashscreen-2.2.0.jar"
+ },
+ {
+  "path": "mods/balm-fabric-1.21.1-21.0.63.jar",
+  "size": 809717,
+  "hash": "e6a6596688e23ca00e69249c26e316541a086ca2",
+  "url": "https://edge.forgecdn.net/files/8424/819/balm-fabric-1.21.1-21.0.63.jar"
+ },
+ {
+  "path": "mods/infinite-music-0.4.6.jar",
+  "size": 45913,
+  "hash": "72ac27231cd80aab7ea509da6694c3696dc4c96a",
+  "url": "https://cdn.modrinth.com/data/OJLdOa8k/versions/cIfcDLaq/infinite-music-0.4.6.jar"
+ },
+ {
+  "path": "mods/moar-concrete-1.3.1.jar",
+  "size": 777538,
+  "hash": "541410660ff1198e24b99e007267a7ec256498e2",
+  "url": "https://cdn.modrinth.com/data/lXDzrLAm/versions/hG50ZysI/moar-concrete-1.3.1.jar"
+ },
+ {
+  "path": "mods/nethermap-4.0.0-1.21.1.jar",
+  "size": 21464,
+  "hash": "4a4849b36757a268253a3a87b4a02b60f59816a6",
+  "url": "https://cdn.modrinth.com/data/fdtm99de/versions/BEfm3cNd/nethermap-4.0.0-1.21.1.jar"
+ },
+ {
+  "path": "mods/tmcraft-1.4.18+1.7.3.jar",
+  "size": 3360417,
+  "hash": "f423155efb2a99370fe838a6603c5f33c947946e",
+  "url": "https://cdn.modrinth.com/data/HU6mkUZs/versions/RYBI5bnM/tmcraft-1.4.18%2B1.7.3.jar"
+ },
+ {
+  "path": "mods/cobblemon-additions-4.1.6.jar",
+  "size": 1961229,
+  "hash": "293c0fd6354114cd45d2dd8e4e771d48b1d89200",
+  "url": "https://cdn.modrinth.com/data/W2pr9jyL/versions/degN5DK4/cobblemon-additions-4.1.6.jar"
+ },
+ {
+  "path": "mods/Cobbreeding-fabric-2.2.2.jar",
+  "size": 475560,
+  "hash": "0bd4a004af1de1d0929dfd295db044c365351153",
+  "url": "https://cdn.modrinth.com/data/ItmVb4zY/versions/RNbPHodv/Cobbreeding-fabric-2.2.2.jar"
+ },
+ {
+  "path": "mods/logprot-fabric-1.21-3.5.jar",
+  "size": 14813,
+  "hash": "f21ba69783586fe70f7ce036c06160591687a999",
+  "url": "https://edge.forgecdn.net/files/6293/746/logprot-fabric-1.21-3.5.jar"
+ },
+ {
+  "path": "mods/cupboard-fabric-1.21.1-4.2.jar",
+  "size": 27680,
+  "hash": "c790bd1c15a216f0291a99ac1e4dc1f4829270fc",
+  "url": "https://edge.forgecdn.net/files/8888/955/cupboard-fabric-1.21.1-4.2.jar"
+ }
+]
