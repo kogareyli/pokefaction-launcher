@@ -9,7 +9,7 @@ const base = () => ({
         { path: 'mods/a.jar', hash: 'A' }, { path: 'mods/b.jar', hash: 'B' },
         { path: 'resourcepacks/p.zip', hash: 'P' }, { path: 'config/x.json', hash: 'X' },
     ],
-    serveurMods: new Map([['a.jar', 'A'], ['b.jar', 'B']]),
+    serveurFichiers: new Map([['mods/a.jar', 'A'], ['mods/b.jar', 'B']]),
     reglages: new Map([['config/x.json', 'X']]),
     reglagesAvant: new Map([['config/x.json', 'X']]),
     reglagesServeur: new Set(['config/x.json']),
@@ -25,7 +25,7 @@ test('mod ajouté dans CurseForge → ajouté au launcher et au serveur', () => 
     o.instance.set('mods/c.jar', f('C'));
     const p = planifier(o);
     assert.deepStrictEqual(p.launcher.ajouter, ['mods/c.jar']);
-    assert.deepStrictEqual(p.serveur.ajouter, ['c.jar']);
+    assert.deepStrictEqual(p.serveur.ajouter, ['mods/c.jar']);
 });
 
 test('mod retiré de CurseForge → retiré du launcher et du serveur', () => {
@@ -33,7 +33,7 @@ test('mod retiré de CurseForge → retiré du launcher et du serveur', () => {
     o.instance.delete('mods/b.jar');
     const p = planifier(o);
     assert.deepStrictEqual(p.launcher.retirer, ['mods/b.jar']);
-    assert.deepStrictEqual(p.serveur.retirer, ['b.jar']);
+    assert.deepStrictEqual(p.serveur.retirer, ['mods/b.jar']);
 });
 
 test('mod mis à jour (même nom, contenu différent) → modifié partout', () => {
@@ -41,7 +41,7 @@ test('mod mis à jour (même nom, contenu différent) → modifié partout', () 
     o.instance.set('mods/a.jar', f('A2'));
     const p = planifier(o);
     assert.deepStrictEqual(p.launcher.modifier, ['mods/a.jar']);
-    assert.deepStrictEqual(p.serveur.modifier, ['a.jar']);
+    assert.deepStrictEqual(p.serveur.modifier, ['mods/a.jar']);
 });
 
 test('pack de textures ajouté → launcher seulement', () => {
@@ -85,4 +85,21 @@ test('réglage différent du serveur mais pas touché depuis le dernier envoi �
     o.reglagesAvant = new Map([['config/x.json', 'X']]);
     const p = planifier(o);
     assert.deepStrictEqual(p.reglages.serveur, []);
+});
+
+test('datapack retiré de CurseForge (ex. No Hunger) → retiré du serveur et du launcher', () => {
+    const o = base();
+    o.manifest.push({ path: 'datapacks/No Hunger.zip', hash: 'N' });
+    o.serveurFichiers.set('datapacks/No Hunger.zip', 'N');
+    const p = planifier(o);
+    assert.deepStrictEqual(p.launcher.retirer, ['datapacks/No Hunger.zip']);
+    assert.deepStrictEqual(p.serveur.retirer, ['datapacks/No Hunger.zip']);
+});
+
+test('datapack dans un sous-dossier (extra/) ajouté → serveur et launcher', () => {
+    const o = base();
+    o.instance.set('datapacks/extra/Terralith.zip', f('T'));
+    const p = planifier(o);
+    assert.deepStrictEqual(p.launcher.ajouter, ['datapacks/extra/Terralith.zip']);
+    assert.deepStrictEqual(p.serveur.ajouter, ['datapacks/extra/Terralith.zip']);
 });

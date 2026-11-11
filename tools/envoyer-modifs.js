@@ -82,12 +82,24 @@ function inventaireInstance() {
     for (const nom of fs.readdirSync(path.join(INSTANCE, 'mods'))) {
         if (nom.endsWith('.jar')) fichiers.set(`mods/${nom}`, null);
     }
-    for (const dossier of ['resourcepacks', 'shaderpacks']) {
+    for (const dossier of ['resourcepacks', 'shaderpacks', 'datapacks']) {
         for (const rel of lister(path.join(INSTANCE, dossier))) fichiers.set(`${dossier}/${rel}`, null);
     }
     for (const chemin of fichiers.keys()) {
         if (estExclu(chemin, EXCLUSIONS)) fichiers.delete(chemin);
         else fichiers.set(chemin, empreinte(path.join(INSTANCE, chemin)));
+    }
+    return fichiers;
+}
+
+/** mods/*.jar et datapacks/** du serveur : Map chemin → sha1 */
+function inventaireServeur() {
+    const fichiers = new Map();
+    for (const nom of fs.readdirSync(path.join(SERVEUR, 'mods'))) {
+        if (nom.endsWith('.jar')) fichiers.set(`mods/${nom}`, empreinte(path.join(SERVEUR, 'mods', nom)).sha1);
+    }
+    for (const rel of lister(path.join(SERVEUR, 'datapacks'))) {
+        fichiers.set(`datapacks/${rel}`, empreinte(path.join(SERVEUR, 'datapacks', rel)).sha1);
     }
     return fichiers;
 }
@@ -158,15 +170,17 @@ function appliquerServeur(plan) {
     const s = plan.serveur, r = plan.reglages;
     if (!(s.ajouter.length + s.modifier.length + s.retirer.length + r.serveur.length)) return null;
     const sauvegarde = path.join(SERVEUR, 'sauvegardes-maj', `${horodatage()}-envoi`);
-    for (const nom of s.retirer) {
-        fs.mkdirSync(path.join(sauvegarde, 'mods-retires'), { recursive: true });
-        fs.renameSync(path.join(SERVEUR, 'mods', nom), path.join(sauvegarde, 'mods-retires', nom));
+    // chemins du type « mods/x.jar » ou « datapacks/extra/y.zip »
+    for (const chemin of s.retirer) {
+        const cible = path.join(sauvegarde, 'retires', chemin);
+        fs.mkdirSync(path.dirname(cible), { recursive: true });
+        fs.renameSync(path.join(SERVEUR, chemin), cible);
     }
-    for (const nom of s.modifier) {
-        copier(path.join(SERVEUR, 'mods', nom), path.join(sauvegarde, 'mods-remplaces', nom));
-        copier(path.join(INSTANCE, 'mods', nom), path.join(SERVEUR, 'mods', nom));
+    for (const chemin of s.modifier) {
+        copier(path.join(SERVEUR, chemin), path.join(sauvegarde, 'remplaces', chemin));
+        copier(path.join(INSTANCE, chemin), path.join(SERVEUR, chemin));
     }
-    for (const nom of s.ajouter) copier(path.join(INSTANCE, 'mods', nom), path.join(SERVEUR, 'mods', nom));
+    for (const chemin of s.ajouter) copier(path.join(INSTANCE, chemin), path.join(SERVEUR, chemin));
     for (const chemin of r.serveur) {
         copier(path.join(SERVEUR, chemin), path.join(sauvegarde, chemin));
         copier(path.join(INSTANCE, chemin), path.join(SERVEUR, chemin));
@@ -258,8 +272,7 @@ async function main() {
     const instance = inventaireInstance();
     const reglages = inventaireReglages();
     const reglagesAvant = lireEtat();
-    const serveurMods = new Map(fs.readdirSync(path.join(SERVEUR, 'mods')).filter(n => n.endsWith('.jar'))
-        .map(n => [n, empreinte(path.join(SERVEUR, 'mods', n)).sha1]));
+    const serveurFichiers = inventaireServeur();
     const reglagesServeur = new Set([...reglages.keys()].filter(p => fs.existsSync(path.join(SERVEUR, p))));
     const manifestActuel = JSON.parse(fs.readFileSync(path.join(RACINE, 'web', 'files', 'manifest.json'), 'utf8'));
 
@@ -275,7 +288,7 @@ async function main() {
     }
 
     const plan = planifier({
-        instance, manifest: manifestActuel, serveurMods, reglages, reglagesAvant, reglagesServeur, exclusions: EXCLUSIONS,
+        instance, manifest: manifestActuel, serveurFichiers, reglages, reglagesAvant, reglagesServeur, exclusions: EXCLUSIONS,
     });
     const version = nouvelleVersionLauncher();
 

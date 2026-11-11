@@ -3,16 +3,19 @@
  * Fonction pure : elle ne touche à aucun fichier, elle renvoie juste le plan.
  */
 
-const DOSSIERS_SYNCHRO = ['mods/', 'resourcepacks/', 'shaderpacks/'];
+// Envoyés au launcher (les joueurs)
+const DOSSIERS_SYNCHRO = ['mods/', 'resourcepacks/', 'shaderpacks/', 'datapacks/'];
+// Envoyés au serveur (les packs de textures et shaders ne lui servent à rien)
+const DOSSIERS_SERVEUR = ['mods/', 'datapacks/'];
 
 function estExclu(chemin, exclusions) {
     return exclusions.some(x => (x.endsWith('/') ? chemin.startsWith(x) : chemin === x));
 }
 
 /**
- * @param o.instance        Map chemin → { sha1, size }  (mods/, resourcepacks/, shaderpacks/ de l'instance)
+ * @param o.instance        Map chemin → { sha1, size }  (mods/, resourcepacks/, shaderpacks/, datapacks/ de l'instance)
  * @param o.manifest        entrées actuelles du manifest du launcher [{ path, hash, size, url }]
- * @param o.serveurMods     Map nomDuJar → sha1  (dossier mods du serveur)
+ * @param o.serveurFichiers Map chemin → sha1  (mods/ et datapacks/ du serveur)
  * @param o.reglages        Map 'config/…' → sha1  (réglages actuels de l'instance)
  * @param o.reglagesAvant   Map 'config/…' → sha1, ou null au tout premier lancement
  * @param o.reglagesServeur Set des 'config/…' qui existent sur le serveur
@@ -42,17 +45,18 @@ function planifier(o) {
         if (!o.instance.has(chemin)) plan.launcher.retirer.push(chemin);
     }
 
-    // 2) Mods : instance ↔ serveur
-    const modsInstance = new Map();
+    // 2) Mods + datapacks : instance ↔ serveur
+    const pourServeur = c => DOSSIERS_SERVEUR.some(d => c.startsWith(d)) && !estExclu(c, exclusions);
+    const instanceServeur = new Map();
     for (const [chemin, f] of o.instance) {
-        if (chemin.startsWith('mods/') && !estExclu(chemin, exclusions)) modsInstance.set(chemin.slice(5), f.sha1);
+        if (pourServeur(chemin)) instanceServeur.set(chemin, f.sha1);
     }
-    for (const [nom, sha1] of modsInstance) {
-        if (!o.serveurMods.has(nom)) plan.serveur.ajouter.push(nom);
-        else if (o.serveurMods.get(nom) !== sha1) plan.serveur.modifier.push(nom);
+    for (const [chemin, sha1] of instanceServeur) {
+        if (!o.serveurFichiers.has(chemin)) plan.serveur.ajouter.push(chemin);
+        else if (o.serveurFichiers.get(chemin) !== sha1) plan.serveur.modifier.push(chemin);
     }
-    for (const nom of o.serveurMods.keys()) {
-        if (!modsInstance.has(nom)) plan.serveur.retirer.push(nom);
+    for (const chemin of o.serveurFichiers.keys()) {
+        if (pourServeur(chemin) && !instanceServeur.has(chemin)) plan.serveur.retirer.push(chemin);
     }
 
     // 3) Réglages : seulement ceux modifiés depuis le dernier envoi
@@ -77,4 +81,4 @@ function planVide(plan) {
     return [plan.launcher, plan.serveur, plan.reglages].every(g => Object.values(g).every(l => l.length === 0));
 }
 
-module.exports = { planifier, planVide, estExclu, DOSSIERS_SYNCHRO };
+module.exports = { planifier, planVide, estExclu, DOSSIERS_SYNCHRO, DOSSIERS_SERVEUR };
