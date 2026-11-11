@@ -4,5 +4,10 @@
     "online": false,
     "client_id": "",
     "dataDirectory": "PokeFaction",
-    "rss": null
+    "rss": null,
+    "auth": "pokefaction",
+    "pokefaction_api": {
+        "url": "https://fsqmzwsjuzryjdxfamlg.supabase.co",
+        "cle": "sb_publishable_KPeiANMak9RBxAVts2Gt_A_S7paP9wU"
+    }
 }

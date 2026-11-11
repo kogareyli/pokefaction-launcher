@@ -4,6 +4,7 @@
         "resourcepacks/COBBLEVERSE Soundtrack.zip",
         "shaderpacks/COBBLEVERSE - Shaders/",
         "shaderpacks/COBBLEVERSE - Shaders (High Quality)/",
-        "config/defaultoptions/"
+        "config/defaultoptions/",
+        "config/pokefaction/"
     ]
 }

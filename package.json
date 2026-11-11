@@ -1,7 +1,7 @@
 {
     "name": "pokefaction-launcher",
     "preductname": "PokeFaction",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Launcher du serveur Minecraft PokéFaction (basé sur Selvania Launcher de Luuxis)",
     "main": "src/app.js",
     "author": {

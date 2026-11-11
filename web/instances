@@ -39,6 +39,7 @@
             "usercache.json",
             "command_history.txt",
             "local",
+            "pokefaction",
             "patchouli_books",
             "config/accessories_compat.json5",
             "config/accessories.json5",

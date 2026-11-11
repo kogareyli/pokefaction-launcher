@@ -27,11 +27,13 @@ class PokeFactionAPI {
     async appel(url, corps) {
         let r;
         try {
-            r = await nodeFetch(url, { method: 'POST', headers: this.entetes(), body: JSON.stringify(corps) });
+            // compress:false : node-fetch 2 coupe parfois les réponses gzip de Supabase (« Premature close »)
+            r = await nodeFetch(url, { method: 'POST', headers: this.entetes(), body: JSON.stringify(corps), compress: false });
         } catch {
             throw new Error(ERREUR_RESEAU);
         }
-        const texte = await r.text();
+        let texte;
+        try { texte = await r.text(); } catch { throw new Error(ERREUR_RESEAU); }
         let json = null;
         try { json = texte ? JSON.parse(texte) : null; } catch { /* réponse non JSON */ }
         if (!r.ok) throw new Error(json?.erreur || json?.message || `Erreur du serveur des comptes (${r.status}).`);
@@ -74,6 +76,7 @@ class PokeFactionAPI {
         try {
             r = await nodeFetch('https://sessionserver.mojang.com/session/minecraft/join', {
                 method: 'POST',
+                compress: false,
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ accessToken: compte.access_token, selectedProfile: compte.uuid.replace(/-/g, ''), serverId: defi }),
             });
