@@ -9,7 +9,8 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
-const ERREUR_RESEAU = 'Impossible de joindre le serveur des comptes PokéFaction. Vérifie ta connexion internet.';
+const ERREUR_RESEAU = 'Impossible de joindre le serveur des comptes PokéFaction. Vérifie ta connexion internet (ou ton antivirus / pare-feu).';
+const DELAI_MAX = 20000; // au-delà, on affiche une erreur au lieu de rester bloqué sur « Connexion… »
 
 class PokeFactionAPI {
     constructor(conf) {
@@ -28,7 +29,7 @@ class PokeFactionAPI {
         let r;
         try {
             // compress:false : node-fetch 2 coupe parfois les réponses gzip de Supabase (« Premature close »)
-            r = await nodeFetch(url, { method: 'POST', headers: this.entetes(), body: JSON.stringify(corps), compress: false });
+            r = await nodeFetch(url, { method: 'POST', headers: this.entetes(), body: JSON.stringify(corps), compress: false, timeout: DELAI_MAX });
         } catch {
             throw new Error(ERREUR_RESEAU);
         }
@@ -77,6 +78,7 @@ class PokeFactionAPI {
             r = await nodeFetch('https://sessionserver.mojang.com/session/minecraft/join', {
                 method: 'POST',
                 compress: false,
+                timeout: DELAI_MAX,
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ accessToken: compte.access_token, selectedProfile: compte.uuid.replace(/-/g, ''), serverId: defi }),
             });
