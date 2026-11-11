@@ -7,6 +7,46 @@ import { config, database, logger, changePanel, appdata, setStatus, pkg, popup }
 const { Launch } = require('minecraft-java-core')
 import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
 const { shell, ipcRenderer } = require('electron')
+const fs = require('fs')
+
+// Texte lisible pour n'importe quelle erreur renvoyée pendant l'installation ou le lancement du jeu
+function messageErreur(err) {
+    if (!err) return 'Erreur inconnue.'
+    if (typeof err === 'string') return err
+    if (typeof err.error === 'string') return err.error
+    if (err.error?.message) return err.error.message
+    if (err.message) return err.message
+    try { return JSON.stringify(err) } catch { return String(err) }
+}
+
+function echapper(texte) {
+    return String(texte).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+}
+
+// Ce que le joueur peut faire, selon le type d'erreur
+function conseilErreur(message) {
+    if (/EPERM|EACCES|EBUSY|ENOENT|operation not permitted|permission denied|resource busy/i.test(message)) {
+        return 'Ton antivirus (Norton, Avast…) bloque ou supprime des fichiers du jeu. Ajoute le dossier ' +
+            '<b>%APPDATA%\\.PokeFaction</b> aux exclusions de ton antivirus, puis relance Jouer.'
+    }
+    if (/ETIMEDOUT|ECONNRESET|ECONNREFUSED|ENOTFOUND|EAI_AGAIN|socket|network|fetch failed|timeout|aborted/i.test(message)) {
+        return 'Le téléchargement a été coupé. Vérifie ta connexion internet et relance Jouer : ' +
+            'le launcher reprend là où il s\'était arrêté.'
+    }
+    if (/java/i.test(message)) {
+        return 'Java ne s\'est pas installé correctement. Ton antivirus l\'a peut-être supprimé : ajoute ' +
+            '<b>%APPDATA%\\.PokeFaction</b> à ses exclusions, puis relance Jouer.'
+    }
+    return 'Relance Jouer. Si l\'erreur revient, envoie le fichier <b>%APPDATA%\\.PokeFaction\\erreurs-launcher.txt</b> à un admin.'
+}
+
+// Garde une trace des erreurs pour pouvoir les envoyer à un admin
+function journaliserErreur(dossier, message) {
+    try {
+        fs.mkdirSync(dossier, { recursive: true })
+        fs.appendFileSync(`${dossier}/erreurs-launcher.txt`, `[${new Date().toLocaleString('fr-FR')}] ${message}\n`)
+    } catch { /* pas grave */ }
+}
 
 class Home {
     static id = "home";
@@ -354,10 +394,14 @@ class Home {
 
         launch.on('error', err => {
             let popupError = new popup()
+            // minecraft-java-core renvoie soit { error: '…' }, soit une vraie erreur Windows (err.message) :
+            // avant, seul err.error était affiché, d'où le message « undefined ».
+            let message = messageErreur(err)
+            journaliserErreur(chemin, message)
 
             popupError.openPopup({
                 title: 'Erreur',
-                content: err.error,
+                content: `${echapper(message)}<br><br>${conseilErreur(message)}`,
                 color: 'red',
                 options: true
             })
