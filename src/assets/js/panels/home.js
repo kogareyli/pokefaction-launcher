@@ -40,6 +40,52 @@ function conseilErreur(message) {
     return 'Relance Jouer. Si l\'erreur revient, envoie le fichier <b>%APPDATA%\\.PokeFaction\\erreurs-launcher.txt</b> à un admin.'
 }
 
+// Le journal ne doit jamais contenir le jeton Microsoft (il permettrait d'utiliser le compte du joueur)
+function masquerSecrets(texte) {
+    return texte
+        .replace(/(--accessToken[\s,"']+)[^\s,"']+/gi, '$1[caché]')
+        .replace(/(--clientId[\s,"']+)[^\s,"']+/gi, '$1[caché]')
+        .replace(/(--xuid[\s,"']+)[^\s,"']+/gi, '$1[caché]')
+}
+
+function ecrireJournalJeu(dossier, texte) {
+    try {
+        fs.mkdirSync(dossier, { recursive: true })
+        fs.writeFileSync(`${dossier}/dernier-lancement.txt`, texte)
+    } catch { /* pas grave */ }
+}
+
+// Le jeu s'est-il fermé tout seul ? Si oui, explication simple. Sinon (le joueur a quitté) : null.
+function diagnosticPlantage(sortie) {
+    if (/Could not reserve enough space|Error occurred during initialization of VM|Invalid maximum heap size/i.test(sortie)) {
+        return 'Ton PC n\'a pas assez de mémoire libre pour la RAM choisie. Ouvre les paramètres du launcher ' +
+            '(roue en bas à droite), puis Java, et baisse la RAM maximum (essaie 4 Go). Ferme aussi les autres programmes.'
+    }
+    if (/OutOfMemoryError|GC overhead limit/i.test(sortie)) {
+        return 'Le jeu a manqué de mémoire. Ouvre les paramètres du launcher (roue en bas à droite), puis Java, ' +
+            'et monte la RAM maximum à 6 Go si ton PC a 12 Go ou plus.'
+    }
+    if (/EPERM|EACCES|AccessDenied|Access is denied|Accès refusé|ClassNotFoundException|NoClassDefFoundError|ZipException|zip END header|invalid LOC header/i.test(sortie)) {
+        return 'Des fichiers du jeu sont abîmés ou bloqués, souvent par un antivirus (Norton, Avast…). Ajoute ' +
+            '<b>%APPDATA%\\.PokeFaction</b> aux exclusions de ton antivirus, puis relance Jouer : ' +
+            'le launcher retélécharge ce qui manque.'
+    }
+    if (/Incompatible mods? found|requires .* which is missing|Mod resolution failed/i.test(sortie)) {
+        return 'Un mod refuse de se lancer (mods incompatibles). Préviens un admin et envoie-lui le fichier ci-dessous.'
+    }
+    let rapport = sortie.match(/Crash report saved to:?[\s#@!]*(\S+\.txt)/i)
+    if (rapport) {
+        return 'Minecraft a planté. Envoie à un admin le fichier ci-dessous et le rapport de plantage : ' +
+            `<b>${echapper(rapport[1])}</b>`
+    }
+    // Pas de « Stopping! » : Minecraft ne s'est pas arrêté normalement
+    if (!/Stopping!/.test(sortie)) {
+        return 'Minecraft s\'est fermé sans prévenir. Si tu ne l\'as pas fermé toi-même : baisse la RAM dans les ' +
+            'paramètres du launcher (roue en bas à droite, Java), vérifie ton antivirus, puis relance Jouer.'
+    }
+    return null
+}
+
 // Garde une trace des erreurs pour pouvoir les envoyer à un admin
 function journaliserErreur(dossier, message) {
     try {
@@ -369,6 +415,10 @@ class Home {
             infoStarting.innerHTML = `Patch en cours...`
         });
 
+        // Journal du jeu : gardé pour expliquer un plantage et pour l'envoyer à un admin
+        let journalJeu = []
+        let tailleJournal = 0
+
         launch.on('data', (e) => {
             progressBar.style.display = "none"
             if (configClient.launcher_config.closeLauncher == 'close-launcher') {
@@ -378,6 +428,10 @@ class Home {
             ipcRenderer.send('main-window-progress-load')
             infoStarting.innerHTML = `Demarrage en cours...`
             console.log(e);
+            let ligne = String(e)
+            journalJeu.push(ligne)
+            tailleJournal += ligne.length
+            while (tailleJournal > 3_000_000 && journalJeu.length > 1) tailleJournal -= journalJeu.shift().length
         })
 
         launch.on('close', code => {
@@ -390,6 +444,19 @@ class Home {
             infoStarting.innerHTML = `Vérification`
             new logger(pkg.name, '#7289da');
             console.log('Close');
+
+            let sortie = masquerSecrets(journalJeu.join(''))
+            ecrireJournalJeu(chemin, sortie)
+            let plantage = diagnosticPlantage(sortie)
+            if (plantage) {
+                new popup().openPopup({
+                    title: 'Le jeu s\'est fermé',
+                    content: `${plantage}<br><br><span style="opacity:.8">Détails pour un admin : ` +
+                        `<b>%APPDATA%\\.PokeFaction\\dernier-lancement.txt</b></span>`,
+                    color: 'red',
+                    options: true
+                })
+            }
         });
 
         launch.on('error', err => {
