@@ -8,5 +8,8 @@
     RMDir /r "$APPDATA\.PokeFaction"
     RMDir /r "$APPDATA\pokefaction-launcher"
     RMDir /r "$LOCALAPPDATA\pokefaction-launcher-updater"
+    ; Joueurs dont le nom Windows contient ! # ou % : le jeu est dans ProgramData
+    ExpandEnvStrings $0 "%PROGRAMDATA%"
+    RMDir /r "$0\.PokeFaction"
   ${endIf}
 !macroend

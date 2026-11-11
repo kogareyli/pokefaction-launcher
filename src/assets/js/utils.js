@@ -49,6 +49,21 @@ async function appdata() {
     return await ipcRenderer.invoke('appData').then(path => path)
 }
 
+/**
+ * Dossier où le jeu est installé.
+ * Java ne sait pas ouvrir un .jar dont le chemin contient « ! » (séparateur des URL jar:), ni bien gérer
+ * « # » ou « % » : avec un nom d'utilisateur Windows comme « Cys! », Minecraft plantait au démarrage
+ * (« Error reading mappings »). Dans ce cas, le jeu va dans C:\ProgramData à la place.
+ */
+async function dossierJeu(dataDirectory) {
+    const base = await appdata()
+    const nom = process.platform == 'darwin' ? dataDirectory : `.${dataDirectory}`
+    if (process.platform == 'win32' && /[!#%]/.test(base)) {
+        return `${process.env.ProgramData || 'C:\\ProgramData'}/${nom}`
+    }
+    return `${base}/${nom}`
+}
+
 async function addAccount(data) {
     let skin = false
     if (data?.profile?.skins[0]?.base64) skin = await new skin2D().creatHeadTexture(data.profile.skins[0].base64);
@@ -116,6 +131,7 @@ async function setStatus(opt) {
 
 export {
     appdata as appdata,
+    dossierJeu as dossierJeu,
     changePanel as changePanel,
     config as config,
     database as database,

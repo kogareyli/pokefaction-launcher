@@ -2,7 +2,7 @@
  * @author Luuxis
  * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
-import { config, database, logger, changePanel, appdata, setStatus, pkg, popup } from '../utils.js'
+import { config, database, logger, changePanel, appdata, dossierJeu, setStatus, pkg, popup } from '../utils.js'
 
 const { Launch } = require('minecraft-java-core')
 import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
@@ -19,25 +19,30 @@ function messageErreur(err) {
     try { return JSON.stringify(err) } catch { return String(err) }
 }
 
+// Chemin affiché au joueur avec des \ comme dans l'explorateur Windows
+function cheminWindows(chemin) {
+    return String(chemin).split('/').join('\\')
+}
+
 function echapper(texte) {
     return String(texte).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 }
 
 // Ce que le joueur peut faire, selon le type d'erreur
-function conseilErreur(message) {
+function conseilErreur(message, dossier) {
     if (/EPERM|EACCES|EBUSY|ENOENT|operation not permitted|permission denied|resource busy/i.test(message)) {
         return 'Ton antivirus (Norton, Avast…) bloque ou supprime des fichiers du jeu. Ajoute le dossier ' +
-            '<b>%APPDATA%\\.PokeFaction</b> aux exclusions de ton antivirus, puis relance Jouer.'
+            `<b>${dossier}</b> aux exclusions de ton antivirus, puis relance Jouer.`
     }
     if (/ETIMEDOUT|ECONNRESET|ECONNREFUSED|ENOTFOUND|EAI_AGAIN|socket|network|fetch failed|timeout|aborted/i.test(message)) {
-        return 'Le téléchargement a été coupé. Vérifie ta connexion internet et relance Jouer : ' +
-            'le launcher reprend là où il s\'était arrêté.'
+        return 'Le téléchargement a été coupé. Vérifie ta connexion internet (un antivirus peut aussi la ralentir) ' +
+            'et relance Jouer : le launcher reprend là où il s\'était arrêté.'
     }
     if (/java/i.test(message)) {
         return 'Java ne s\'est pas installé correctement. Ton antivirus l\'a peut-être supprimé : ajoute ' +
-            '<b>%APPDATA%\\.PokeFaction</b> à ses exclusions, puis relance Jouer.'
+            `<b>${dossier}</b> à ses exclusions, puis relance Jouer.`
     }
-    return 'Relance Jouer. Si l\'erreur revient, envoie le fichier <b>%APPDATA%\\.PokeFaction\\erreurs-launcher.txt</b> à un admin.'
+    return `Relance Jouer. Si l'erreur revient, envoie le fichier <b>${dossier}\\erreurs-launcher.txt</b> à un admin.`
 }
 
 // Le journal ne doit jamais contenir le jeton Microsoft (il permettrait d'utiliser le compte du joueur)
@@ -56,7 +61,7 @@ function ecrireJournalJeu(dossier, texte) {
 }
 
 // Le jeu s'est-il fermé tout seul ? Si oui, explication simple. Sinon (le joueur a quitté) : null.
-function diagnosticPlantage(sortie) {
+function diagnosticPlantage(sortie, dossier) {
     if (/Could not reserve enough space|Error occurred during initialization of VM|Invalid maximum heap size/i.test(sortie)) {
         return 'Ton PC n\'a pas assez de mémoire libre pour la RAM choisie. Ouvre les paramètres du launcher ' +
             '(roue en bas à droite), puis Java, et baisse la RAM maximum (essaie 4 Go). Ferme aussi les autres programmes.'
@@ -67,7 +72,7 @@ function diagnosticPlantage(sortie) {
     }
     if (/EPERM|EACCES|AccessDenied|Access is denied|Accès refusé|ClassNotFoundException|NoClassDefFoundError|ZipException|zip END header|invalid LOC header/i.test(sortie)) {
         return 'Des fichiers du jeu sont abîmés ou bloqués, souvent par un antivirus (Norton, Avast…). Ajoute ' +
-            '<b>%APPDATA%\\.PokeFaction</b> aux exclusions de ton antivirus, puis relance Jouer : ' +
+            `<b>${dossier}</b> aux exclusions de ton antivirus, puis relance Jouer : ` +
             'le launcher retélécharge ce qui manque.'
     }
     if (/Incompatible mods? found|requires .* which is missing|Mod resolution failed/i.test(sortie)) {
@@ -298,7 +303,7 @@ class Home {
         let infoStarting = document.querySelector(".info-starting-game-text")
         let progressBar = document.querySelector('.progress-bar')
 
-        let chemin = `${await appdata()}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`
+        let chemin = await dossierJeu(this.config.dataDirectory)
 
         // Comptes PokéFaction : ticket de jeu (12 h) que le serveur vérifie quand on se connecte
         if (this.config.auth === 'pokefaction') {
@@ -336,7 +341,7 @@ class Home {
         let opt = {
             url: options.url,
             authenticator: authenticator,
-            timeout: 10000,
+            timeout: 30000, // Norton & co ralentissent chaque connexion : 10 s ne suffisaient pas
             path: chemin,
             instance: options.name,
             version: options.loader.minecraft_version,
@@ -447,12 +452,13 @@ class Home {
 
             let sortie = masquerSecrets(journalJeu.join(''))
             ecrireJournalJeu(chemin, sortie)
-            let plantage = diagnosticPlantage(sortie)
+            let dossierWindows = echapper(cheminWindows(chemin))
+            let plantage = diagnosticPlantage(sortie, dossierWindows)
             if (plantage) {
                 new popup().openPopup({
                     title: 'Le jeu s\'est fermé',
                     content: `${plantage}<br><br><span style="opacity:.8">Détails pour un admin : ` +
-                        `<b>%APPDATA%\\.PokeFaction\\dernier-lancement.txt</b></span>`,
+                        `<b>${dossierWindows}\\dernier-lancement.txt</b></span>`,
                     color: 'red',
                     options: true
                 })
@@ -468,7 +474,7 @@ class Home {
 
             popupError.openPopup({
                 title: 'Erreur',
-                content: `${echapper(message)}<br><br>${conseilErreur(message)}`,
+                content: `${echapper(message)}<br><br>${conseilErreur(message, echapper(cheminWindows(chemin)))}`,
                 color: 'red',
                 options: true
             })
