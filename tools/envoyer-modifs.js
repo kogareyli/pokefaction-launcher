@@ -328,17 +328,22 @@ async function main() {
     const { nombre, mo } = appliquerLauncher(plan, sourcesTrouvees, instance, version);
     console.log(vert(` ✔ Launcher préparé`) + gris(`  (${nombre} fichiers, ${mo} Mo)`));
 
-    console.log(gris(' Envoi sur GitHub…'));
-    try {
-        git(['add', '-A']);
-        git(['commit', '-q', '-F', '-'], { input: messageCommit(plan, version), stdio: ['pipe', 'pipe', 'pipe'] });
-        git(['push', '--quiet']);
-    } catch (e) {
-        stop(`L'envoi sur GitHub a échoué. Le serveur est déjà à jour ; relance l'outil pour réessayer l'envoi.\n${e.stderr || e.message}`);
+    git(['add', '-A']);
+    const aEnvoyer = git(['status', '--porcelain']) !== '';
+    if (aEnvoyer) {
+        console.log(gris(' Envoi sur GitHub…'));
+        try {
+            git(['commit', '-q', '-F', '-'], { input: messageCommit(plan, version), stdio: ['pipe', 'pipe', 'pipe'] });
+            git(['push', '--quiet']);
+        } catch (e) {
+            stop(`L'envoi sur GitHub a échoué. Le serveur est déjà à jour ; relance l'outil pour réessayer l'envoi.\n${e.stderr || e.message}`);
+        }
     }
     ecrireEtat(reglages);
 
-    console.log(vert(gras('\n ✔ C\'est envoyé ! ')) + 'Tes potes auront les changements au prochain lancement du launcher.');
+    console.log(vert(gras('\n ✔ C\'est fait ! ')) + (aEnvoyer
+        ? 'Tes potes auront les changements au prochain lancement du launcher.'
+        : 'Le launcher était déjà à jour, seul le serveur a changé.'));
     if (version) console.log(cyan(` La version ${version} du launcher sera prête dans 5 à 10 minutes (GitHub la fabrique), puis elle s'installera toute seule.`));
     if (sauvegarde) console.log(cyan(' Relance le serveur pour qu\'il prenne les changements.'));
     console.log('');
