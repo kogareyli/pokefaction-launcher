@@ -8,7 +8,7 @@ const { Status } = require('minecraft-java-core')
 const fs = require('fs');
 const pkg = require('../package.json');
 
-import config from './utils/config.js';
+import config, { enMaintenance, texteMaintenance } from './utils/config.js';
 import database from './utils/database.js';
 import logger from './utils/logger.js';
 import popup from './utils/popup.js';
@@ -134,6 +134,8 @@ export {
     dossierJeu as dossierJeu,
     changePanel as changePanel,
     config as config,
+    enMaintenance as enMaintenance,
+    texteMaintenance as texteMaintenance,
     database as database,
     logger as logger,
     popup as popup,

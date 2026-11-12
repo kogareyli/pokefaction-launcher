@@ -6,7 +6,7 @@
 const { ipcRenderer, shell } = require('electron');
 const pkg = require('../package.json');
 const os = require('os');
-import { config, database } from './utils.js';
+import { config, database, enMaintenance, texteMaintenance } from './utils.js';
 const nodeFetch = require("node-fetch");
 
 
@@ -165,7 +165,12 @@ class Splash {
 
     async maintenanceCheck() {
         config.GetConfig().then(res => {
-            if (res.maintenance) return this.shutdown(res.maintenance_message);
+            if (enMaintenance(res)) {
+                this.setStatus(`${texteMaintenance(res)}<br><span class="detail">Le launcher s'ouvrira tout seul dès que c'est fini.</span>`);
+                clearTimeout(this.attenteMaintenance);
+                this.attenteMaintenance = setTimeout(() => this.maintenanceCheck(), 20000);
+                return;
+            }
             this.startLauncher();
         }).catch(e => {
             console.error(e);

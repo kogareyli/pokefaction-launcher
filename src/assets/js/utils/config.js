@@ -14,7 +14,7 @@ let articles = `${url}/articles`;
 class Config {
     GetConfig() {
         return new Promise((resolve, reject) => {
-            nodeFetch(config).then(async config => {
+            nodeFetch(`${config}?t=${Date.now()}`, { headers: { 'Cache-Control': 'no-cache' } }).then(async config => {
                 if (config.status === 200) return resolve(config.json());
                 else return reject({ error: { code: config.statusText, message: 'server not accessible' } });
             }).catch(error => {
@@ -70,6 +70,23 @@ class Config {
             })
         }
     }
+}
+
+/**
+ * Maintenance en cours ? (le PokéFaction Panel met maintenance = true pendant ses mises à jour).
+ * Sécurité : si l'heure de fin prévue est dépassée de plus de 20 minutes, on ne bloque plus.
+ */
+export function enMaintenance(conf) {
+    if (!conf || !conf.maintenance) return false;
+    const fin = Date.parse(conf.maintenance_fin || '');
+    if (!isNaN(fin) && Date.now() > fin + 20 * 60000) return false;
+    return true;
+}
+
+export function texteMaintenance(conf) {
+    const fin = Date.parse(conf?.maintenance_fin || '');
+    const heure = isNaN(fin) ? '' : new Date(fin).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    return (conf?.maintenance_message || 'Le serveur est en maintenance.') + (heure ? ` Fin prévue vers ${heure}.` : '');
 }
 
 export default new Config;

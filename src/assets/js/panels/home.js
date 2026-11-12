@@ -2,7 +2,7 @@
  * @author Luuxis
  * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
-import { config, database, logger, changePanel, appdata, dossierJeu, setStatus, pkg, popup } from '../utils.js'
+import { config, database, logger, changePanel, appdata, dossierJeu, setStatus, pkg, popup, enMaintenance, texteMaintenance } from '../utils.js'
 
 const { Launch } = require('minecraft-java-core')
 import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
@@ -330,6 +330,14 @@ class Home {
     }
 
     async startGame(sansMaj = false) {
+        // Maintenance en cours ? (activée par le PokéFaction Panel pendant les mises à jour du serveur)
+        try {
+            let conf = await config.GetConfig()
+            if (enMaintenance(conf)) {
+                new popup().openPopup({ title: 'Maintenance en cours', content: texteMaintenance(conf) + '<br>Réessaie dans quelques minutes.', color: 'red', options: true })
+                return
+            }
+        } catch (e) { }
         // Nouvelle version du launcher ? Installée avant de jouer (le launcher redémarre tout seul).
         // Les mods, eux, sont vérifiés à chaque lancement (liste relue en ligne juste en dessous).
         if (!sansMaj) {
