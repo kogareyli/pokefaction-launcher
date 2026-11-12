@@ -865,8 +865,8 @@
  },
  {
   "path": "config/xaerohud.txt",
-  "size": 122,
-  "hash": "f193ee0cf3bcf92a0105a0e9d6bf2bc810511b20",
+  "size": 121,
+  "hash": "517916c1f2e0a8b75735859edb7d692bba2c079e",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/xaerohud.txt"
  },
  {
@@ -1614,10 +1614,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-1.6.0.jar",
-  "size": 173542,
-  "hash": "af73d9077f8c04c3c388395163889c7d400bd114",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-1.6.0.jar"
+  "path": "mods/pokefaction-core-1.7.1.jar",
+  "size": 213371,
+  "hash": "5f0c657b127f313bed0d7c7f92ec8d0f3c813f5a",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-1.7.1.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
