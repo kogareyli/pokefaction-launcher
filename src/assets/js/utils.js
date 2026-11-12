@@ -109,6 +109,11 @@ async function setStatus(opt) {
 
     let { ip, port, nameServer } = opt
     if (nameServer) document.querySelector('.server-status-name').textContent = nameServer
+    // Comme Minecraft : si l'adresse a un enregistrement SRV (_minecraft._tcp), on suit sa cible et son port
+    try {
+        const srv = await require('dns').promises.resolveSrv(`_minecraft._tcp.${ip}`)
+        if (srv && srv.length) { ip = srv[0].name; port = srv[0].port }
+    } catch { /* pas de SRV : adresse et port tels quels */ }
     if (statut.dataset.etat !== 'en-ligne') {
         statut.dataset.etat = 'chargement'
         texte.textContent = 'Connexion au serveur…'

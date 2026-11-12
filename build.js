@@ -93,7 +93,8 @@ class Index {
                 nsis: {
                     oneClick: true,
                     allowToChangeInstallationDirectory: false,
-                    createDesktopShortcut: true,
+                    createDesktopShortcut: "always",
+                    shortcutName: "PokeFaction",
                     runAfterFinish: true,
                     // Désinstaller supprime aussi le jeu et les comptes (sauf pendant une mise à jour)
                     include: "build/desinstallation.nsh"

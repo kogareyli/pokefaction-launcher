@@ -107,6 +107,19 @@ function majBloquee(version) {
     return !!t && t.version === version && t.essais >= 2;
 }
 app.whenReady().then(() => {
+    // Raccourci sur le bureau : l'installeur le crée, mais certains PC (bureau OneDrive…) n'en ont pas
+    if (process.platform === 'win32' && app.isPackaged) {
+        try {
+            const raccourci = path.join(app.getPath('desktop'), 'PokeFaction.lnk');
+            if (!fs.existsSync(raccourci)) {
+                const ok = shell.writeShortcutLink(raccourci, 'create', {
+                    target: process.execPath, cwd: path.dirname(process.execPath),
+                    icon: process.execPath, iconIndex: 0, description: 'Launcher PokéFaction'
+                });
+                journalMaj('info', ok ? 'raccourci créé sur le bureau' : 'raccourci du bureau impossible à créer');
+            }
+        } catch (err) { journalMaj('erreur', 'raccourci du bureau', err); }
+    }
     const t = lireTentative();
     // Mise à jour réussie (ou plus ancienne que la version installée) : on oublie la tentative
     if (t && t.version === app.getVersion()) {
