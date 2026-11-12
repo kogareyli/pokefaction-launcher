@@ -1,5 +1,5 @@
 {
-    "maintenance": true,
+    "maintenance": false,
     "maintenance_message": "Le serveur est en maintenance (mise à jour), il revient très vite !",
     "online": false,
     "client_id": "",
@@ -10,5 +10,5 @@
         "url": "https://fsqmzwsjuzryjdxfamlg.supabase.co",
         "cle": "sb_publishable_KPeiANMak9RBxAVts2Gt_A_S7paP9wU"
     },
-    "maintenance_fin": "2026-11-12T18:51:12.129Z"
+    "maintenance_fin": ""
 }
