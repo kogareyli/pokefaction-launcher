@@ -186,7 +186,9 @@
             "config/defaultoptions/keybindings.txt",
             "config/defaultoptions/servers.dat",
             "config/cobblemon/spawning/best-spawner-config.json",
-            "config/xaero/minimap/server_profiles/cobbleverse.cfg"
+            "config/xaero/minimap/server_profiles/cobbleverse.cfg",
+            "config/skinrestorer/config.json",
+            "config/xaerohud.txt"
         ],
         "whitelistActive": false,
         "whitelist": [],

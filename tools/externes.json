@@ -976,5 +976,11 @@
   "size": 2234556,
   "hash": "5fbb03dd3f22c0c3d5466d1366222d7d277a8df3",
   "url": "https://edge.forgecdn.net/files/9067/178/xaerominimap-fabric-1.21.1-26.6.0.jar"
+ },
+ {
+  "path": "mods/skinrestorer-2.11.1+1.21-fabric.jar",
+  "size": 291538,
+  "hash": "36ca853bf92b71f6ba950af1749a2944711b9e72",
+  "url": "https://cdn.modrinth.com/data/ghrZDhGW/versions/lvRKajvV/skinrestorer-2.11.1%2B1.21-fabric.jar"
  }
 ]

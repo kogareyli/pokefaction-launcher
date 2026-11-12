@@ -110,7 +110,7 @@
  {
   "path": "config/cobblemon/main.json",
   "size": 3405,
-  "hash": "e02d3069f87149986a380272a44ec9a974d3ed5b",
+  "hash": "703aa11f6299e32cf2776aac6f448f514eae3433",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemon/main.json"
  },
  {
@@ -583,8 +583,8 @@
  },
  {
   "path": "config/musicnotification.json",
-  "size": 605,
-  "hash": "51d47b5867df431624da9842230d6617c72df5ec",
+  "size": 603,
+  "hash": "7c79b462abc77b3c8d38c498b75d1cefe1d75a8b",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/musicnotification.json"
  },
  {
@@ -726,6 +726,12 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/simpletpa.json"
  },
  {
+  "path": "config/skinrestorer/config.json",
+  "size": 1241,
+  "hash": "44e9ff4b7a678e1965b4f6e5a6dbabbffcbe9606",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/skinrestorer/config.json"
+ },
+ {
   "path": "config/sodium-mixins.properties",
   "size": 258,
   "hash": "5455463ee999b945c1cff8ae90f2b705e19fb86c",
@@ -853,9 +859,15 @@
  },
  {
   "path": "config/xaero/minimap/server_profiles/cobbleverse.cfg",
-  "size": 207,
-  "hash": "e7db2bf5b0c7e3a082c4c7cc73a467c758eaa15b",
+  "size": 298,
+  "hash": "584ef0401a0851eb4022a0a4e46bc158b38e6de8",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/xaero/minimap/server_profiles/cobbleverse.cfg"
+ },
+ {
+  "path": "config/xaerohud.txt",
+  "size": 122,
+  "hash": "f193ee0cf3bcf92a0105a0e9d6bf2bc810511b20",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/xaerohud.txt"
  },
  {
   "path": "config/yacl.json5",
@@ -888,6 +900,12 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/datapacks/COBBLEVERSE-DP-v21-CF.zip"
  },
  {
+  "path": "datapacks/COBBLEVERSE-Johto-DP.zip",
+  "size": 746704,
+  "hash": "76d9665ef8adeb9b91abdd9e6957d9410a12ecfb",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/datapacks/COBBLEVERSE-Johto-DP.zip"
+ },
+ {
   "path": "datapacks/COBBLEVERSE-Loot-DP-v11.zip",
   "size": 147472,
   "hash": "bd9fc07140300680750d0fd20fa84039e0a687a4",
@@ -904,12 +922,6 @@
   "size": 1338585,
   "hash": "b7bcf9d78c9c4dd877e27cca95f23b4ee2fe4417",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/datapacks/extra/COBBLEVERSE-Hoenn-DP.zip"
- },
- {
-  "path": "datapacks/extra/COBBLEVERSE-Johto-DP.zip",
-  "size": 746704,
-  "hash": "76d9665ef8adeb9b91abdd9e6957d9410a12ecfb",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/datapacks/extra/COBBLEVERSE-Johto-DP.zip"
  },
  {
   "path": "datapacks/extra/COBBLEVERSE-Sinnoh-DP.zip",
@@ -1602,10 +1614,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-1.4.0.jar",
-  "size": 139158,
-  "hash": "06dc95ebed22ea9423f7ccd30de531b9420f495f",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-1.4.0.jar"
+  "path": "mods/pokefaction-core-1.6.0.jar",
+  "size": 173542,
+  "hash": "af73d9077f8c04c3c388395163889c7d400bd114",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-1.6.0.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
@@ -1690,6 +1702,12 @@
   "size": 30864,
   "hash": "29e38954300c8d37c99964d34a1963537358c8dc",
   "url": "https://edge.forgecdn.net/files/7948/874/simpletpa-fabric-1.21.1-1.1.0.jar"
+ },
+ {
+  "path": "mods/skinrestorer-2.11.1+1.21-fabric.jar",
+  "size": 291538,
+  "hash": "36ca853bf92b71f6ba950af1749a2944711b9e72",
+  "url": "https://cdn.modrinth.com/data/ghrZDhGW/versions/lvRKajvV/skinrestorer-2.11.1%2B1.21-fabric.jar"
  },
  {
   "path": "mods/sodium-fabric-0.8.12+mc1.21.1.jar",
@@ -1939,8 +1957,8 @@
  },
  {
   "path": "resourcepacks/PokeFaction Musique.zip",
-  "size": 39029645,
-  "hash": "9e684ffc4298bdd2ca1b156bc69e91c675f86868",
+  "size": 38961123,
+  "hash": "f8a81a97bb65acb18fa93115ea982a4f0189a721",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/resourcepacks/PokeFaction%20Musique.zip"
  },
  {
