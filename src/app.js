@@ -226,11 +226,44 @@ autoUpdater.on('update-downloaded', (info) => {
     try { fs.writeFileSync(fichierTentative(), JSON.stringify({ version: info.version, essais })); } catch { }
     journalMaj('info', `installation de ${info.version} (essai ${essais})`);
     versFenetreMaj('update-downloaded', info.version);
+    versLauncher('maj-installation', info.version);
     // Petit délai pour que le joueur voie « Installation… », puis l'installeur remplace le launcher et le relance
     setTimeout(() => autoUpdater.quitAndInstall(false, true), 900);
 });
 
-autoUpdater.on('download-progress', (progress) => versFenetreMaj('download-progress', progress))
+// Vers la fenêtre principale (mise à jour lancée depuis le bouton JOUER)
+const versLauncher = (canal, ...args) => { const w = MainWindow.getWindow(); if (w && !w.isDestroyed()) w.webContents.send(canal, ...args); };
+
+function plusRecente(a, b) {
+    const pa = String(a).split('.').map(Number), pb = String(b).split('.').map(Number);
+    for (let i = 0; i < 3; i++) if ((pa[i] || 0) !== (pb[i] || 0)) return (pa[i] || 0) > (pb[i] || 0);
+    return false;
+}
+
+// Au clic sur JOUER (et quand le jeu se ferme) : y a-t-il une nouvelle version du launcher ?
+ipcMain.handle('maj-avant-jeu', async () => {
+    if (!app.isPackaged) return null;
+    try {
+        const res = await Promise.race([autoUpdater.checkForUpdates(), new Promise(r => setTimeout(() => r(null), 8000))]);
+        const v = res?.updateInfo?.version;
+        if (!v || !plusRecente(v, app.getVersion()) || majBloquee(v)) return null;
+        journalMaj('info', `nouvelle version ${v} trouvée au lancement du jeu`);
+        return { version: v };
+    } catch (err) {
+        journalMaj('erreur', 'vérification avant le jeu', err);
+        return null;
+    }
+});
+
+ipcMain.on('maj-installer', () => {
+    majAbandonnee = false;
+    autoUpdater.downloadUpdate().catch(err => {
+        journalMaj('erreur', 'téléchargement (bouton JOUER)', err);
+        versLauncher('maj-erreur', String(err?.message || err));
+    });
+});
+
+autoUpdater.on('download-progress', (progress) => { versFenetreMaj('download-progress', progress); versLauncher('maj-progression', progress); })
 
 autoUpdater.on('error', (err) => {
     journalMaj('erreur', err);

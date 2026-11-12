@@ -295,6 +295,24 @@ class Home {
         if (version && instance?.loader) version.textContent = `${instance.loader.minecraft_version} · Cobbleverse`
     }
 
+    // Mise à jour du launcher lancée depuis JOUER : progression dans la barre, puis redémarrage automatique
+    mettreAJourLauncher(version) {
+        document.querySelector('.play-instance').style.display = 'none'
+        document.querySelector('.info-starting-game').style.display = 'block'
+        this.progression(`Mise à jour du launcher ${version}…`)
+        ipcRenderer.removeAllListeners('maj-progression')
+        ipcRenderer.removeAllListeners('maj-installation')
+        ipcRenderer.removeAllListeners('maj-erreur')
+        ipcRenderer.on('maj-progression', (_, p) => this.progression(`Mise à jour du launcher ${version}`, Math.round(p.percent || 0), 100))
+        ipcRenderer.on('maj-installation', () => this.progression('Installation… le launcher va redémarrer'))
+        ipcRenderer.on('maj-erreur', () => {
+            // Impossible de mettre à jour maintenant : on joue quand même avec la version actuelle
+            this.progression('Mise à jour impossible pour le moment, lancement du jeu…')
+            setTimeout(() => this.startGame(true), 1500)
+        })
+        ipcRenderer.send('maj-installer')
+    }
+
     // Barre de progression : texte, pourcentage, remplissage (ou animation d'attente si max = 0)
     progression(texte, valeur = 0, max = 0) {
         document.querySelector('.info-starting-game-text').textContent = texte
@@ -311,7 +329,13 @@ class Home {
         }
     }
 
-    async startGame() {
+    async startGame(sansMaj = false) {
+        // Nouvelle version du launcher ? Installée avant de jouer (le launcher redémarre tout seul).
+        // Les mods, eux, sont vérifiés à chaque lancement (liste relue en ligne juste en dessous).
+        if (!sansMaj) {
+            let maj = await ipcRenderer.invoke('maj-avant-jeu').catch(() => null)
+            if (maj?.version) return this.mettreAJourLauncher(maj.version)
+        }
         let launch = new Launch()
         let configClient = await this.db.readData('configClient')
         let instance = await config.getInstanceList()
@@ -470,6 +494,16 @@ class Home {
         })
 
         launch.on('close', code => {
+            // Le jeu est fermé : une mise à jour du launcher est-elle sortie pendant la partie ?
+            ipcRenderer.invoke('maj-avant-jeu').then(maj => {
+                if (!maj?.version) return
+                new popup().openPopup({
+                    title: 'Mise à jour disponible',
+                    content: `La version <b>${maj.version}</b> du launcher est sortie. Elle s'installera automatiquement quand tu cliqueras sur JOUER.`,
+                    color: 'var(--color)',
+                    options: true
+                })
+            }).catch(() => {})
             if (configClient.launcher_config.closeLauncher == 'close-launcher') {
                 ipcRenderer.send("main-window-show")
             };
