@@ -83,8 +83,8 @@ function diagnosticPlantage(sortie, dossier) {
         return 'Minecraft a planté. Envoie à un admin le fichier ci-dessous et le rapport de plantage : ' +
             `<b>${echapper(rapport[1])}</b>`
     }
-    // Pas de « Stopping! » : Minecraft ne s'est pas arrêté normalement
-    if (!/Stopping!/.test(sortie)) {
+    // (Plus de message quand le jeu se ferme sans trace d'erreur : c'est le joueur qui l'a fermé.)
+    if (false) {
         return 'Minecraft s\'est fermé sans prévenir. Si tu ne l\'as pas fermé toi-même : baisse la RAM dans les ' +
             'paramètres du launcher (roue en bas à droite, Java), vérifie ton antivirus, puis relance Jouer.'
     }
@@ -494,16 +494,14 @@ class Home {
         })
 
         launch.on('close', code => {
-            // Le jeu est fermé : une mise à jour du launcher est-elle sortie pendant la partie ?
-            ipcRenderer.invoke('maj-avant-jeu').then(maj => {
-                if (!maj?.version) return
-                new popup().openPopup({
-                    title: 'Mise à jour disponible',
-                    content: `La version <b>${maj.version}</b> du launcher est sortie. Elle s'installera automatiquement quand tu cliqueras sur JOUER.`,
-                    color: 'var(--color)',
-                    options: true
-                })
-            }).catch(() => {})
+            // Le jeu est fermé : on enregistre le journal, et s'il n'y a pas eu de vrai plantage, tout se ferme
+            // (le launcher cherchera les mises à jour à sa prochaine ouverture).
+            let sortieJeu = masquerSecrets(journalJeu.join(''))
+            ecrireJournalJeu(chemin, sortieJeu)
+            if (!diagnosticPlantage(sortieJeu, echapper(cheminWindows(chemin))) && configClient.launcher_config.closeLauncher != 'close-none') {
+                ipcRenderer.send('main-window-close')
+                return
+            }
             if (configClient.launcher_config.closeLauncher == 'close-launcher') {
                 ipcRenderer.send("main-window-show")
             };
@@ -515,8 +513,7 @@ class Home {
             new logger(pkg.name, '#7289da');
             console.log('Close');
 
-            let sortie = masquerSecrets(journalJeu.join(''))
-            ecrireJournalJeu(chemin, sortie)
+            let sortie = sortieJeu
             let dossierWindows = echapper(cheminWindows(chemin))
             let plantage = diagnosticPlantage(sortie, dossierWindows)
             if (plantage) {

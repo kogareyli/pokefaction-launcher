@@ -103,7 +103,7 @@ async function setStatus(opt) {
         statut.dataset.etat = 'hors-ligne'
         texte.textContent = 'Serveur fermé'
         joueurs.textContent = '0'
-        ping.textContent = '– ms'
+        if (ping) ping.textContent = ''
     }
     if (!opt) return fermer()
 
@@ -125,7 +125,7 @@ async function setStatus(opt) {
         statut.dataset.etat = 'en-ligne'
         texte.textContent = 'En ligne'
         joueurs.textContent = statusServer.playersConnect ? statusServer.playersConnect : '0'
-        ping.textContent = `${statusServer.ms ? statusServer.ms : 0} ms`
+        if (ping) ping.textContent = ''
     } else fermer()
 }
 
