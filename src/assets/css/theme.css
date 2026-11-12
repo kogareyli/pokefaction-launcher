@@ -1,24 +1,60 @@
+/* Couleurs et réglages communs du launcher PokéFaction */
 .global {
-    --element-color: #ff3fbf;
-    --transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
-    --dark-color: #140b30;
-    --light-color: rgb(245, 240, 255);
+    --rose: #ff2f86;
+    --magenta: #d43cff;
+    --violet: #8a5cff;
+    --bleu: #4f7cff;
+    --vert: #3ddc84;
+    --rouge: #ff4d6d;
+    --degrade: linear-gradient(120deg, #ff2f86 0%, #d43cff 48%, #6a5cff 100%);
+    --degrade-doux: linear-gradient(120deg, rgba(255, 47, 134, .18), rgba(106, 92, 255, .18));
+    --element-color: #ff2f86;
+    --police: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', 'Cascadia Mono', Consolas, monospace;
+    --rayon: 16px;
+    --ressort: cubic-bezier(.2, .9, .25, 1.25);
+    --doux: cubic-bezier(.22, 1, .36, 1);
+    --transition: all .45s var(--doux);
+    --dark-color: #0b0618;
+    --light-color: #f6f2ff;
 }
 
 .dark {
-    --color: #F5F0FF;
-    --background: #140b30;
-    --background-element: #2a1a5e;
-    --background-transparent: #140b30cc;
-    --shadow: rgba(10, 4, 30, 0.7);
+    --color: #f4efff;
+    --texte-2: rgba(244, 239, 255, .66);
+    --texte-3: rgba(244, 239, 255, .42);
+    --fond-0: #07040f;
+    --fond-1: #0e0821;
+    --fond-2: #170d33;
+    --surface: rgba(255, 255, 255, .045);
+    --surface-2: rgba(255, 255, 255, .08);
+    --surface-forte: rgba(18, 10, 40, .78);
+    --bord: rgba(255, 255, 255, .09);
+    --bord-fort: rgba(255, 255, 255, .16);
+    --background: #0e0821;
+    --background-element: rgba(255, 255, 255, .07);
+    --background-transparent: rgba(14, 8, 33, .72);
+    --shadow: rgba(4, 2, 12, .6);
+    --particules: 1;
     --svg-color: brightness(0) saturate(100%) invert(100%) sepia(55%) saturate(23%) hue-rotate(236deg) brightness(108%) contrast(92%);
 }
 
 .light {
-    --color: #1a0f3a;
-    --background: rgb(245, 240, 255);
-    --background-element: #d9ccf5;
-    --background-transparent: rgba(235, 225, 255, 0.85);
-    --shadow: rgba(160, 130, 220, 0.5);
+    --color: #1b1036;
+    --texte-2: rgba(27, 16, 54, .68);
+    --texte-3: rgba(27, 16, 54, .45);
+    --fond-0: #efe9ff;
+    --fond-1: #f6f2ff;
+    --fond-2: #e6dcff;
+    --surface: rgba(255, 255, 255, .55);
+    --surface-2: rgba(255, 255, 255, .8);
+    --surface-forte: rgba(255, 255, 255, .86);
+    --bord: rgba(60, 30, 120, .12);
+    --bord-fort: rgba(60, 30, 120, .22);
+    --background: #f6f2ff;
+    --background-element: rgba(60, 30, 120, .07);
+    --background-transparent: rgba(246, 242, 255, .82);
+    --shadow: rgba(80, 50, 160, .22);
+    --particules: .55;
     --svg-color: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(1719%) hue-rotate(357deg) brightness(94%) contrast(84%);
 }

@@ -4,22 +4,36 @@
 @import 'panels/home.css';
 @import 'panels/settings.css';
 
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
     user-select: none;
     color: var(--color);
-    font-family: 'Poppins';
-    font-weight: bolder;
+    background: var(--fond-0);
+    font-family: var(--police);
+    font-weight: 450;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    font-family: inherit;
 }
 
 img {
     -webkit-user-drag: none;
     user-select: none;
-}
-
-* {
-    outline: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -33,15 +47,151 @@ input::-webkit-inner-spin-button {
 }
 
 .content-scroll::-webkit-scrollbar {
-    width: 0;
+    width: 6px;
 }
+
+.content-scroll::-webkit-scrollbar-thumb {
+    background: var(--bord-fort);
+    border-radius: 6px;
+}
+
+.content-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Petite étiquette en police mono, façon « 01 · TOUS LES SYSTÈMES » */
+.etiquette {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--texte-3);
+}
+
+/*******************************************************************************
+ * Fond animé                                                                  *
+ ******************************************************************************/
+
+.fond {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(1100px 620px at 72% -12%, rgba(138, 92, 255, .22), transparent 62%),
+        radial-gradient(900px 560px at -8% 108%, rgba(255, 47, 134, .16), transparent 60%),
+        linear-gradient(180deg, var(--fond-1), var(--fond-0));
+}
+
+.fond-lueur {
+    position: absolute;
+    width: 46vw;
+    height: 46vw;
+    max-width: 640px;
+    max-height: 640px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .5;
+    will-change: transform;
+}
+
+.fond-lueur-1 {
+    left: -8%;
+    top: 4%;
+    background: radial-gradient(circle, #ff2f86 0%, transparent 70%);
+    animation: derive-1 26s ease-in-out infinite alternate;
+}
+
+.fond-lueur-2 {
+    right: -10%;
+    top: -14%;
+    background: radial-gradient(circle, #7a4dff 0%, transparent 70%);
+    animation: derive-2 32s ease-in-out infinite alternate;
+}
+
+.fond-lueur-3 {
+    left: 34%;
+    bottom: -32%;
+    background: radial-gradient(circle, #3d5bff 0%, transparent 70%);
+    opacity: .35;
+    animation: derive-3 38s ease-in-out infinite alternate;
+}
+
+.light .fond-lueur {
+    opacity: .22;
+}
+
+@keyframes derive-1 {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(14vw, 10vh) scale(1.15); }
+}
+
+@keyframes derive-2 {
+    from { transform: translate(0, 0) scale(1.1); }
+    to { transform: translate(-12vw, 14vh) scale(.9); }
+}
+
+@keyframes derive-3 {
+    from { transform: translate(0, 0) scale(.9); }
+    to { transform: translate(-10vw, -8vh) scale(1.2); }
+}
+
+/* Sol quadrillé qui défile vers nous, très discret */
+.fond-grille {
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    bottom: -2%;
+    height: 46%;
+    background-image:
+        linear-gradient(rgba(212, 60, 255, .22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 60, 255, .22) 1px, transparent 1px);
+    background-size: 56px 56px;
+    transform: perspective(420px) rotateX(64deg);
+    transform-origin: 50% 100%;
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, .9), transparent 78%);
+    opacity: .38;
+    animation: grille 4s linear infinite;
+}
+
+.light .fond-grille {
+    opacity: .2;
+}
+
+@keyframes grille {
+    from { background-position: 0 0; }
+    to { background-position: 0 56px; }
+}
+
+.fond-particules {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fond-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(3, 1, 10, .6) 100%);
+}
+
+.light .fond-vignette {
+    background: radial-gradient(ellipse at 50% 45%, transparent 60%, rgba(120, 90, 200, .12) 100%);
+}
+
+/*******************************************************************************
+ * Barre de titre                                                              *
+ ******************************************************************************/
 
 .dragbar {
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 26px;
+    height: 32px;
     -webkit-app-region: drag;
     z-index: 11;
 }
@@ -49,8 +199,9 @@ input::-webkit-inner-spin-button {
 .darwin .frame {
     background: transparent;
     position: fixed;
-    top: 0px;
-    z-index: 11;
+    top: 8px;
+    left: 8px;
+    z-index: 20;
     -webkit-app-region: no-drag;
     display: none;
 }
@@ -60,41 +211,40 @@ input::-webkit-inner-spin-button {
     position: fixed;
     top: 0px;
     right: 0px;
-    z-index: 11;
+    z-index: 20;
     -webkit-app-region: no-drag;
     display: none;
 }
 
 .frame.hide {
-    display: block;
+    display: flex;
 }
 
 .darwin .button-frame {
     position: relative;
-    display: table-cell;
     width: 20px;
-    height: 26px;
-    transition: color .2s, background-color .2s;
+    height: 20px;
 }
 
 .other .button-frame {
     position: relative;
-    display: table-cell;
-    width: 30px;
-    height: 26px;
-    transition: color .2s, background-color .2s;
-    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 32px;
+    color: var(--texte-2);
     cursor: pointer;
+    transition: color .2s, background-color .2s;
 }
 
-.button-frame:before {
-    position: absolute;
-    top: 6px;
-    left: 8px;
-    width: 14px;
-    height: 14px;
-    font-size: 14px;
-    color: #f8f9f9;
+.other .button-frame:before {
+    font-size: 12px;
+    color: inherit;
+}
+
+.other .button-frame:hover {
+    color: var(--color);
 }
 
 .darwin-icon-minimize,
@@ -114,69 +264,322 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.darwin-icon-maximize:before {
-    background: #07d014;
+.darwin-icon-maximize:before { background: #07d014; }
+.darwin-icon-minimize:before { background: #ffbd2e; }
+.darwin-icon-close:before { background: #ff6047; }
+
+.other .icon-close:hover {
+    background: #e81123;
+    color: #fff;
 }
 
-.darwin-icon-minimize:before {
-    background: #ffbd2e;
+.other .icon-minimize:hover,
+.other .icon-restore-down:hover,
+.other .icon-maximize:hover {
+    background-color: var(--surface-2);
 }
 
-.darwin-icon-close:before {
-    background: #ff6047;
+/*******************************************************************************
+ * Barre latérale                                                              *
+ ******************************************************************************/
+
+.rail {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 76px;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 0 18px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .015));
+    border-right: 1px solid var(--bord);
+    backdrop-filter: blur(18px);
+    transition: transform .6s var(--doux), opacity .4s;
 }
 
-.icon-close:hover {
-    background: #e21212;
+.light .rail {
+    background: rgba(255, 255, 255, .5);
 }
 
-.icon-minimize:hover,
-.icon-restore-down:hover,
-.icon-maximize:hover {
-    background-color: #0000009d;
+body[data-panel="login"] .rail {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
 }
+
+.rail-logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px rgba(255, 47, 134, .45));
+    animation: flotte 5s ease-in-out infinite;
+    -webkit-app-region: drag;
+}
+
+.rail-groupe {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rail-trait {
+    width: 28px;
+    height: 1px;
+    margin: 6px 0;
+    background: var(--bord-fort);
+}
+
+.rail-espace {
+    flex: 1;
+}
+
+.rail-btn,
+.rail-joueur {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: none;
+    border-radius: 14px;
+    background: transparent;
+    color: var(--texte-2);
+    cursor: pointer;
+    transition: background-color .25s, color .25s, transform .35s var(--ressort);
+}
+
+.rail-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    pointer-events: none;
+}
+
+.rail-btn:hover {
+    background: var(--surface-2);
+    color: var(--color);
+    transform: translateY(-1px) scale(1.06);
+}
+
+.rail-btn:active {
+    transform: scale(.94);
+}
+
+.rail-actif,
+.rail-actif:hover {
+    color: #fff;
+    background: var(--degrade-doux);
+    box-shadow: inset 0 0 0 1px rgba(255, 47, 134, .35), 0 6px 20px rgba(255, 47, 134, .18);
+}
+
+.light .rail-actif,
+.light .rail-actif:hover {
+    color: var(--rose);
+}
+
+.rail-actif::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    width: 4px;
+    height: 22px;
+    border-radius: 0 4px 4px 0;
+    background: var(--degrade);
+    box-shadow: 0 0 12px var(--rose);
+    transform: translateY(-50%);
+    animation: apparait-barre .4s var(--ressort);
+}
+
+@keyframes apparait-barre {
+    from { height: 0; opacity: 0; }
+}
+
+/* Bulles d'aide au survol */
+.rail-btn::after,
+.rail-joueur::after {
+    content: attr(data-bulle);
+    position: absolute;
+    left: 58px;
+    top: 50%;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: var(--surface-forte);
+    border: 1px solid var(--bord);
+    color: var(--color);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-6px, -50%);
+    transition: opacity .2s, transform .25s var(--doux);
+    backdrop-filter: blur(10px);
+}
+
+.rail-btn:hover::after,
+.rail-joueur:hover::after {
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+
+.rail-joueur {
+    width: 48px;
+    height: 48px;
+}
+
+.rail-joueur .player-head {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: url('../images/default/setve.png') center / cover no-repeat;
+    image-rendering: pixelated;
+    box-shadow: 0 0 0 2px var(--fond-1), 0 0 0 4px rgba(255, 47, 134, .55);
+    pointer-events: none;
+    transition: box-shadow .3s;
+}
+
+.rail-joueur:hover .player-head {
+    box-shadow: 0 0 0 2px var(--fond-1), 0 0 0 4px var(--rose), 0 0 18px rgba(255, 47, 134, .6);
+}
+
+.rail-joueur-point {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--vert);
+    border: 3px solid var(--fond-1);
+    pointer-events: none;
+}
+
+@keyframes flotte {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/*******************************************************************************
+ * Fenêtre « popup »                                                           *
+ ******************************************************************************/
 
 .popup {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.popup.popup-voile {
+    background: rgba(4, 2, 12, .55);
+    backdrop-filter: blur(6px);
+    animation: fondu .3s ease;
+}
+
 .popup-tab {
-    width: 40%;
-    padding: 15px;
-    background: var(--background);
-    border-radius: 15px;
-    z-index: 10;
+    width: min(460px, 86vw);
+    padding: 26px 28px 20px;
+    background: var(--surface-forte);
+    border: 1px solid var(--bord-fort);
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 47, 134, .08), 0 0 60px rgba(255, 47, 134, .12);
+    backdrop-filter: blur(20px);
+    animation: surgit .45s var(--ressort);
 }
 
 .popup-title {
-    text-align: center;
-    font-size: 2rem;
-    border-bottom: solid 4px var(--color);
-    margin-bottom: 1rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    margin-bottom: .8rem;
+    padding-bottom: .8rem;
+    border-bottom: 1px solid var(--bord);
+}
+
+.popup-erreur .popup-tab {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 77, 109, .25), 0 0 60px rgba(255, 77, 109, .16);
+}
+
+.popup-erreur .popup-title::before {
+    content: '!';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    border-radius: 8px;
+    background: rgba(255, 77, 109, .16);
+    color: var(--rouge);
+    font-size: 16px;
+    font-weight: 900;
+    vertical-align: 2px;
+}
+
+.popup-content {
+    font-size: .92rem;
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+.popup-content b {
+    font-weight: 700;
+    color: var(--color);
 }
 
 .popup-options {
     display: none;
-    align-items: end;
-    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 18px;
 }
 
 .popup-button {
-    background: none;
-    color: var(--color);
-    border: solid 4px var(--element-color);
-    border-radius: 10px;
-    padding: 0.3rem 4rem;
-    font-size: inherit;
-    font-weight: bold;
-    margin: 15px 10px;
+    min-width: 110px;
+    padding: .65rem 1.4rem;
+    border: none;
+    border-radius: 12px;
+    background: var(--degrade);
+    background-size: 160% 100%;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(255, 47, 134, .3);
+    transition: transform .25s var(--ressort), box-shadow .25s, background-position .4s;
+}
+
+.popup-button:hover {
+    transform: translateY(-2px);
+    background-position: 100% 0;
+    box-shadow: 0 12px 28px rgba(255, 47, 134, .42);
+}
+
+@keyframes fondu {
+    from { opacity: 0; }
+}
+
+@keyframes surgit {
+    from { opacity: 0; transform: translateY(14px) scale(.94); }
+}
+
+/*******************************************************************************
+ * Panneaux                                                                    *
+ ******************************************************************************/
+
+.panels {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
 }
 
 .panel {
@@ -186,10 +589,29 @@ input::-webkit-inner-spin-button {
     opacity: 0;
     z-index: 0;
     pointer-events: none;
+    visibility: hidden;
+    transform: translateY(10px) scale(.99);
+    transition: opacity .45s var(--doux), transform .6s var(--doux), visibility 0s linear .45s;
 }
 
 .active {
     opacity: 1;
     z-index: 1;
     pointer-events: all;
+    visibility: visible;
+    transform: none;
+    transition: opacity .45s var(--doux), transform .6s var(--doux), visibility 0s;
+}
+
+/* Pendant une partie, le launcher ne consomme plus rien en animations */
+body.en-jeu *,
+body.en-jeu *::before,
+body.en-jeu *::after {
+    animation-play-state: paused !important;
+}
+
+/* …sauf la barre d'attente « Lancement de Minecraft… » */
+body.en-jeu .barre-remplie,
+body.en-jeu .barre-remplie::after {
+    animation-play-state: running !important;
 }

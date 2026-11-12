@@ -7,11 +7,18 @@
 
 .login-tabs {
     position: absolute;
-    padding: 15px;
-    background: var(--background);
-    border-radius: 15px;
+    padding: 26px 30px;
+    border-radius: 24px;
+    background: var(--surface-forte);
+    border: 1px solid var(--bord-fort);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, .45), 0 0 80px rgba(255, 47, 134, .1);
+    backdrop-filter: blur(22px);
     text-align: center;
     min-width: 40%;
+}
+
+.login.active .login-tabs {
+    animation: surgit .7s .1s var(--ressort) both;
 }
 
 .login-pokefaction,
@@ -23,52 +30,108 @@
 }
 
 .login-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .connect,
 .cancel {
-    background: none;
+    padding: .75rem 2.2rem;
+    margin: 15px 8px 4px;
+    border-radius: 12px;
+    font-size: .95rem;
+    font-weight: 750;
+    cursor: pointer;
+    transition: transform .3s var(--ressort), box-shadow .3s, background-position .5s, border-color .2s;
+}
+
+.connect {
+    border: none;
+    color: #fff;
+    background: var(--degrade);
+    background-size: 200% 100%;
+    box-shadow: 0 10px 26px rgba(255, 47, 134, .3), inset 0 1px 0 rgba(255, 255, 255, .3);
+}
+
+.connect:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background-position: 100% 0;
+    box-shadow: 0 14px 32px rgba(255, 47, 134, .42), inset 0 1px 0 rgba(255, 255, 255, .3);
+}
+
+.cancel {
+    border: 1px solid var(--bord-fort);
+    background: var(--surface);
     color: var(--color);
-    border: solid 4px var(--element-color);
-    border-radius: 10px;
-    padding: 0.3rem 4rem;
-    font-size: inherit;
-    font-weight: bold;
-    margin: 15px 10px;
+}
+
+.cancel:hover {
+    border-color: var(--rose);
 }
 
 .input-login .email,
 .input-login .password,
 .A2F {
-    color: var(--color);
-    background: none;
-    border: solid 2px var(--element-color);
-    border-radius: 30px;
-    width: 50%;
-    padding: 0.4rem 1rem;
+    width: 70%;
     margin-top: 10px;
+    padding: .7rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--bord-fort);
+    background: var(--surface);
+    color: var(--color);
+    font: inherit;
 }
-/* ---------------------------------------------------------------- comptes PokéFaction */
+
+/* ------------------------------------------------------------------ comptes PokéFaction */
+
 .login-pokefaction {
-    width: 420px;
+    width: 430px;
     min-width: 0;
-    padding: 26px 32px 18px;
-    background: var(--background-transparent);
-    border: 2px solid color-mix(in srgb, var(--element-color) 45%, transparent);
-    box-shadow: 0 0 40px color-mix(in srgb, var(--element-color) 25%, transparent);
-    backdrop-filter: blur(8px);
+    padding: 26px 34px 22px;
+}
+
+.pf-logo-zone {
+    position: relative;
+    width: 128px;
+    margin: -6px auto 4px;
+}
+
+.pf-logo-halo {
+    position: absolute;
+    inset: -30%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 47, 134, .5), rgba(138, 92, 255, .22) 42%, transparent 70%);
+    filter: blur(18px);
 }
 
 .pf-logo {
-    width: 84px;
-    height: 84px;
-    border-radius: 18px;
-    filter: drop-shadow(0 0 14px color-mix(in srgb, var(--element-color) 60%, transparent));
+    position: relative;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, .45)) drop-shadow(0 0 16px rgba(255, 47, 134, .35));
 }
 
+.login.active .pf-logo { animation: entree-logo .9s .2s var(--ressort) both, flotte-logo 6s 1.2s ease-in-out infinite; }
+.login.active .pf-logo-halo { animation: respire 4.5s ease-in-out infinite; }
+
 .pf-titre {
-    margin: 8px 0 16px;
+    margin: 8px 0 4px;
+    font-size: 1.55rem;
+    font-weight: 850;
+    letter-spacing: -.03em;
+}
+
+.pf-titre span {
+    background: var(--degrade);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.pf-sous-titre {
+    margin-bottom: 20px;
+    font-size: .88rem;
+    color: var(--texte-2);
 }
 
 .pf-microsoft {
@@ -77,20 +140,21 @@
     justify-content: center;
     gap: 12px;
     width: 100%;
-    padding: 0.7rem 1rem;
+    padding: .8rem 1rem;
     border: none;
     border-radius: 12px;
-    background: var(--light-color);
+    background: #fff;
     color: #1a0f3a;
     font: inherit;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .25);
+    transition: transform .3s var(--ressort), box-shadow .3s;
 }
 
-.pf-microsoft:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px var(--shadow);
+.pf-microsoft:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .32), 0 0 0 3px rgba(255, 255, 255, .15);
 }
 
 .pf-ms-logo {
@@ -108,10 +172,13 @@
 .pf-separateur {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin: 18px 0 12px;
-    font-size: 0.8rem;
-    opacity: 0.7;
+    gap: 12px;
+    margin: 20px 0 14px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--texte-3);
 }
 
 .pf-separateur::before,
@@ -119,35 +186,41 @@
     content: "";
     flex: 1;
     height: 1px;
-    background: var(--color);
-    opacity: 0.35;
+    background: var(--bord-fort);
 }
 
 .pf-onglets {
+    position: relative;
     display: flex;
-    gap: 6px;
+    gap: 4px;
     padding: 4px;
     border-radius: 12px;
-    background: var(--background-element);
+    background: var(--surface);
+    border: 1px solid var(--bord);
 }
 
 .pf-onglet {
     flex: 1;
-    padding: 0.45rem;
+    padding: .55rem;
     border: none;
     border-radius: 9px;
     background: none;
-    color: var(--color);
+    color: var(--texte-2);
     font: inherit;
-    font-size: 0.9rem;
-    opacity: 0.7;
+    font-size: .88rem;
+    font-weight: 650;
     cursor: pointer;
+    transition: background-color .3s, color .3s, box-shadow .3s;
+}
+
+.pf-onglet:hover {
+    color: var(--color);
 }
 
 .pf-onglet-actif {
-    background: var(--element-color);
+    background: var(--degrade);
     color: #fff;
-    opacity: 1;
+    box-shadow: 0 6px 16px rgba(255, 47, 134, .3);
 }
 
 .pf-formulaire {
@@ -158,20 +231,25 @@
 
 .pf-champ {
     width: 100%;
-    box-sizing: border-box;
     margin-top: 10px;
-    padding: 0.6rem 1rem;
-    border: solid 2px var(--background-element);
+    padding: .75rem 1rem;
+    border: 1px solid var(--bord-fort);
     border-radius: 12px;
-    background: var(--background);
+    background: var(--surface);
     color: var(--color);
     font: inherit;
-    font-weight: normal;
-    transition: border-color 0.15s;
+    font-weight: 500;
+    transition: border-color .2s, box-shadow .25s, background-color .2s;
+}
+
+.pf-champ::placeholder {
+    color: var(--texte-3);
 }
 
 .pf-champ:focus {
-    border-color: var(--element-color);
+    border-color: var(--rose);
+    background: var(--surface-2);
+    box-shadow: 0 0 0 4px rgba(255, 47, 134, .15);
 }
 
 .pf-mdp2,
@@ -182,34 +260,49 @@
 .login-pokefaction.pf-mode-inscription .pf-mdp2,
 .login-pokefaction.pf-mode-inscription .pf-aide {
     display: block;
+    animation: entree .4s var(--doux) both;
 }
 
 .pf-aide {
     margin-top: 8px;
-    font-size: 0.75rem;
-    font-weight: normal;
-    opacity: 0.7;
+    font-size: .76rem;
+    color: var(--texte-3);
 }
 
 .pf-erreur {
     min-height: 1.2em;
-    margin-top: 8px;
-    color: #ff6b8b;
-    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #ff7a93;
+    font-size: .84rem;
+    font-weight: 600;
+}
+
+.pf-erreur:not(:empty) {
+    animation: secoue .4s;
+}
+
+.login-pokefaction .login-options {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .login-pokefaction .connect {
-    margin: 10px 6px 4px;
-    cursor: pointer;
+    flex: 1;
+    margin: 10px 0 2px;
+}
+
+.login-pokefaction .cancel {
+    margin: 10px 0 2px 8px;
 }
 
 .login-pokefaction .connect:disabled,
 .pf-microsoft:disabled {
-    opacity: 0.5;
+    opacity: .55;
     cursor: wait;
 }
 
-.login-pokefaction .cancel {
-    margin: 10px 6px 4px;
-    cursor: pointer;
+@keyframes secoue {
+    20%, 60% { translate: -5px 0; }
+    40%, 80% { translate: 5px 0; }
 }

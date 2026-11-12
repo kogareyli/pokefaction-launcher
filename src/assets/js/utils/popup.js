@@ -16,10 +16,12 @@ export default class popup {
 
     openPopup(info) {
         this.popup.style.display = 'flex';
-        if (info.background == false) this.popup.style.background = 'none';
-        else this.popup.style.background = '#000000b3'
+        this.popup.classList.toggle('popup-voile', info.background != false);
         this.popupTitle.innerHTML = info.title;
-        this.popupContent.style.color = info.color ? info.color : '#e21212';
+        // Erreur : texte lisible, l'alerte est portée par le titre et le cadre (classe popup-erreur)
+        const erreur = !info.color || info.color == 'red';
+        this.popup.classList.toggle('popup-erreur', erreur);
+        this.popupContent.style.color = erreur ? 'var(--texte-2)' : info.color;
         this.popupContent.innerHTML = info.content;
 
         if (info.options) this.popupOptions.style.display = 'flex';

@@ -1,10 +1,23 @@
 @import "font.css";
 @import 'theme.css';
 
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
-    background-color: var(--background);
-    font-family: "Poppins";
-    letter-spacing: 0px;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    background: var(--fond-0);
+    color: var(--color);
+    font-family: var(--police);
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -12,118 +25,284 @@ img {
     user-select: none;
 }
 
-.splash {
+.dragbar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 40px;
+    -webkit-app-region: drag;
+    z-index: 5;
+}
+
+.etiquette {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--texte-3);
+}
+
+/* ------------------------------------------------------------------ fond */
+
+.fond {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(420px 320px at 50% 30%, rgba(138, 92, 255, .28), transparent 70%),
+        linear-gradient(180deg, var(--fond-1), var(--fond-0));
+    border: 1px solid var(--bord);
+}
+
+.fond-lueur {
     position: absolute;
-    top: 180px;
-    left: 50%;
-    transform: translate(-50%);
-    width: 140px;
-    height: 140px;
-    transition: opacity .3s, top 1.5s;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .55;
+}
+
+.fond-lueur-1 {
+    left: -120px;
+    top: 60px;
+    background: #ff2f86;
+    animation: derive 9s ease-in-out infinite alternate;
+}
+
+.fond-lueur-2 {
+    right: -130px;
+    bottom: -40px;
+    background: #6a5cff;
+    animation: derive 11s ease-in-out infinite alternate-reverse;
+}
+
+.light .fond-lueur {
+    opacity: .25;
+}
+
+@keyframes derive {
+    to { transform: translate(60px, -40px) scale(1.15); }
+}
+
+/* ------------------------------------------------------------------ contenu */
+
+#splash {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 64px;
+    text-align: center;
+}
+
+.splash-logo {
+    position: relative;
+    width: 190px;
+    aspect-ratio: 820 / 752;
+}
+
+.splash {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
     opacity: 0;
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(255, 47, 134, .4));
 }
 
 .splash.opacity {
-    opacity: 1;
+    animation: logo-entree 1s var(--ressort) forwards, flotte 5s 1s ease-in-out infinite;
 }
 
-.splash.translate {
-    top: 129px;
+.splash-halo {
+    position: absolute;
+    inset: -30%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 47, 134, .55), rgba(138, 92, 255, .25) 40%, transparent 70%);
+    filter: blur(22px);
+    opacity: 0;
+    animation: apparait .8s .2s forwards, respire 4s 1s ease-in-out infinite;
+}
+
+.splash-anneau {
+    position: absolute;
+    inset: -7% -11%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 0 14%, rgba(255, 47, 134, .9) 26%, transparent 38% 58%, rgba(106, 120, 255, .9) 72%, transparent 84%);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
+    opacity: 0;
+    animation: apparait .8s .5s forwards, tourne 3.2s linear infinite;
+}
+
+.splash-titre {
+    margin-top: 24px;
+    font-size: 30px;
+    font-weight: 850;
+    letter-spacing: -.035em;
+    background: linear-gradient(100deg, #ffffff 0%, #ffe1f0 22%, #ff5fa8 42%, #b98cff 58%, #ffffff 78%, #ffffff 100%);
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: monte .7s .35s var(--doux) forwards, reflet 4s 1s linear infinite;
+}
+
+.light .splash-titre {
+    background-image: linear-gradient(100deg, #1b1036 0%, #3a1f6e 22%, #ff2f86 42%, #7a4dff 58%, #1b1036 78%, #1b1036 100%);
 }
 
 .splash-message {
-    position: absolute;
-    top: 289px;
-    left: 0px;
-    width: 400px;
-    font: normal normal bold 19px/29px Poppins;
-    text-align: center;
-    letter-spacing: 0px;
-    transition: opacity 1.5s;
-    color: var(--color);
+    margin: 8px 30px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--texte-2);
     opacity: 0;
-}
-
-.splash-message.opacity {
-    opacity: 1;
+    transition: opacity .8s, translate .8s var(--doux);
+    translate: 0 8px;
 }
 
 .splash-author {
-    position: absolute;
-    top: 326px;
-    left: 0px;
-    width: 400px;
-    text-align: center;
-    transition: opacity 1.5s;
-    font: normal normal normal 9px/13px Poppins;
-    color: var(--color);
+    margin: 4px 0 0;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--texte-3);
     opacity: 0;
+    transition: opacity .8s .1s;
 }
 
-.splash-author .author {
-    font: normal normal bold 9px/13px Poppins;
-}
-
+.splash-message.opacity,
 .splash-author.opacity {
     opacity: 1;
+    translate: 0 0;
+}
+
+.splash-bas {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    bottom: 58px;
 }
 
 .message {
-    position: absolute;
-    top: 347px;
-    left: 0px;
-    width: 400px;
-    text-align: center;
-    transition: opacity 1.5s;
-    font: normal normal bold 18px/27px Poppins;
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--color);
     opacity: 0;
-}
-
-.download-update {
-    position: absolute;
-    left: 25%;
-    margin-top: 20px;
-    width: 200px;
-    font: normal normal bold 22px / 45px Poppins;
-    color: var(--color);
-    border: 2px solid var(--color);
-    border-radius: 15px;
-    transition: background-color .2s, color .2s;
-}
-
-.download-update:hover {
-    background-color: var(--color);
-    color: var(--background);
-    cursor: pointer;
+    transition: opacity .8s;
 }
 
 .message.opacity {
     opacity: 1;
 }
 
-.progress {
-    position: absolute;
-    top: 410px;
-    left: 106px;
-    width: 189px;
-    height: 10px;
-    appearance: none;
-    transition: opacity .2s;
-    opacity: 0;
+.splash-barre {
+    position: relative;
+    height: 6px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    overflow: hidden;
 }
 
-.show {
-    opacity: 1;
+.progress {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    opacity: 0;
+    transition: opacity .2s;
 }
 
 .progress::-webkit-progress-bar {
-    background-color: var(--background);
-    border: solid 1px var(--element-color);
-    border-radius: 10px;
+    background: transparent;
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--element-color);
-    border-radius: 10px;
+    background: var(--degrade);
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(255, 47, 134, .6);
+    transition: width .3s;
+}
+
+.progress.show {
+    opacity: 1;
+}
+
+/* Barre d'attente tant qu'aucun téléchargement n'a commencé */
+.attente {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 34%;
+    border-radius: 6px;
+    background: var(--degrade);
+    box-shadow: 0 0 12px rgba(255, 47, 134, .6);
+    animation: va-et-vient 1.4s ease-in-out infinite;
+}
+
+.progress.show + .attente {
+    display: none;
+}
+
+.splash-version {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    right: 0;
+}
+
+.download-update {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 28px;
+    border-radius: 12px;
+    background: var(--degrade);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ animations */
+
+@keyframes logo-entree {
+    0% { opacity: 0; scale: .55; filter: blur(14px); }
+    70% { opacity: 1; scale: 1.05; filter: blur(0) drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(255, 47, 134, .4)); }
+    100% { opacity: 1; scale: 1; filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(255, 47, 134, .4)); }
+}
+
+@keyframes flotte {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -7px; }
+}
+
+@keyframes apparait {
+    to { opacity: .8; }
+}
+
+@keyframes respire {
+    0%, 100% { scale: .94; }
+    50% { scale: 1.06; }
+}
+
+@keyframes tourne {
+    to { rotate: 360deg; }
+}
+
+@keyframes monte {
+    from { opacity: 0; translate: 0 10px; }
+    to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes reflet {
+    from { background-position: 100% 0; }
+    to { background-position: -160% 0; }
+}
+
+@keyframes va-et-vient {
+    0% { left: -34%; }
+    100% { left: 100%; }
 }

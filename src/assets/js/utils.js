@@ -22,27 +22,20 @@ async function setBackground(theme) {
         theme = configClient?.launcher_config?.theme || "auto"
         theme = await ipcRenderer.invoke('is-dark-theme', theme).then(res => res)
     }
-    let background
-    let body = document.body;
-    body.className = theme ? 'dark global' : 'light global';
-    if (fs.existsSync(`${__dirname}/assets/images/background/easterEgg`) && Math.random() < 0.005) {
-        let backgrounds = fs.readdirSync(`${__dirname}/assets/images/background/easterEgg`);
-        let Background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-        background = `url(./assets/images/background/easterEgg/${Background})`;
-    } else if (fs.existsSync(`${__dirname}/assets/images/background/${theme ? 'dark' : 'light'}`)) {
-        let backgrounds = fs.readdirSync(`${__dirname}/assets/images/background/${theme ? 'dark' : 'light'}`);
-        let Background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-        background = `linear-gradient(#00000080, #00000080), url(./assets/images/background/${theme ? 'dark' : 'light'}/${Background})`;
-    }
-    body.style.backgroundImage = background ? background : theme ? '#000' : '#fff';
-    body.style.backgroundSize = 'cover';
+    // Le fond (lueurs, grille, cubes) est dessiné en CSS + canvas : seul le thème change ici
+    document.body.classList.toggle('dark', !!theme);
+    document.body.classList.toggle('light', !theme);
+    document.body.classList.add('global');
 }
 
 async function changePanel(id) {
-    let panel = document.querySelector(`.${id}`);
-    let active = document.querySelector(`.active`)
-    if (active) active.classList.toggle("active");
+    let panel = document.querySelector(`.panels .${id}`);
+    let active = document.querySelector(`.panels .active`)
+    if (active === panel) return;
+    if (active) active.classList.remove("active");
     panel.classList.add("active");
+    document.body.dataset.panel = id;
+    document.querySelectorAll('.rail-btn[data-panel]').forEach(b => b.classList.toggle('rail-actif', b.dataset.panel == id));
 }
 
 async function appdata() {
@@ -89,7 +82,10 @@ async function accountSelect(data) {
 
     if (activeAccount) activeAccount.classList.toggle('account-select');
     account.classList.add('account-select');
+    let joueur = document.querySelector('.rail-joueur');
+    if (joueur) joueur.dataset.bulle = data.name;
     if (data?.profile?.skins[0]?.base64) headplayer(data.profile.skins[0].base64);
+    else document.querySelector(".player-head").style.backgroundImage = '';
 }
 
 async function headplayer(skinBase64) {
@@ -98,36 +94,35 @@ async function headplayer(skinBase64) {
 }
 
 async function setStatus(opt) {
-    let nameServerElement = document.querySelector('.server-status-name')
-    let statusServerElement = document.querySelector('.server-status-text')
-    let playersOnline = document.querySelector('.status-player-count .player-count')
-
-    if (!opt) {
-        statusServerElement.classList.add('red')
-        statusServerElement.innerHTML = `Ferme - 0 ms`
-        document.querySelector('.status-player-count').classList.add('red')
-        playersOnline.innerHTML = '0'
-        return
+    let statut = document.querySelector('.statut')
+    if (!statut) return
+    let texte = statut.querySelector('.statut-texte')
+    let joueurs = statut.querySelector('.player-count')
+    let ping = statut.querySelector('.statut-ping')
+    let fermer = () => {
+        statut.dataset.etat = 'hors-ligne'
+        texte.textContent = 'Serveur fermé'
+        joueurs.textContent = '0'
+        ping.textContent = '– ms'
     }
+    if (!opt) return fermer()
 
     let { ip, port, nameServer } = opt
-    nameServerElement.innerHTML = nameServer
+    if (nameServer) document.querySelector('.server-status-name').textContent = nameServer
+    if (statut.dataset.etat !== 'en-ligne') {
+        statut.dataset.etat = 'chargement'
+        texte.textContent = 'Connexion au serveur…'
+    }
     let status = new Status(ip, port);
     let statusServer = await status.getStatus().then(res => res).catch(err => err);
 
     if (!statusServer.error) {
-        statusServerElement.classList.remove('red')
-        document.querySelector('.status-player-count').classList.remove('red')
-        statusServerElement.innerHTML = `En ligne - ${statusServer.ms ? statusServer.ms : 0} ms`
-        playersOnline.innerHTML = statusServer.playersConnect ? statusServer.playersConnect : '0'
-    } else {
-        statusServerElement.classList.add('red')
-        statusServerElement.innerHTML = `Ferme - 0 ms`
-        document.querySelector('.status-player-count').classList.add('red')
-        playersOnline.innerHTML = '0'
-    }
+        statut.dataset.etat = 'en-ligne'
+        texte.textContent = 'En ligne'
+        joueurs.textContent = statusServer.playersConnect ? statusServer.playersConnect : '0'
+        ping.textContent = `${statusServer.ms ? statusServer.ms : 0} ms`
+    } else fermer()
 }
-
 
 export {
     appdata as appdata,

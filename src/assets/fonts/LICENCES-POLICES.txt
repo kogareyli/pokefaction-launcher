@@ -1,0 +1,15 @@
+Polices incluses dans le launcher
+
+Inter (Inter-latin-var.woff2)
+  Copyright (c) 2016 The Inter Project Authors — https://github.com/rsms/inter
+  Licence : SIL Open Font License 1.1 — https://openfontlicense.org
+
+JetBrains Mono (JetBrainsMono-latin-500.woff2)
+  Copyright 2020 The JetBrains Mono Project Authors — https://github.com/JetBrains/JetBrainsMono
+  Licence : SIL Open Font License 1.1 — https://openfontlicense.org
+
+Poppins (Poppins-Regular.woff2, Poppins-Bold.woff2)
+  Copyright 2020 The Poppins Project Authors — https://github.com/itfoundry/Poppins
+  Licence : SIL Open Font License 1.1 — https://openfontlicense.org
+
+Fichiers obtenus via Fontsource (https://fontsource.org), sous-ensemble « latin ».

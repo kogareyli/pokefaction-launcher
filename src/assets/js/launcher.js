@@ -9,6 +9,7 @@ import Settings from './panels/settings.js';
 
 // import modules
 import { logger, config, changePanel, database, popup, setBackground, accountSelect, addAccount, pkg } from './utils.js';
+import Fond from './utils/fond.js';
 const { AZauth, Microsoft, Mojang } = require('minecraft-java-core');
 
 // libs
@@ -22,7 +23,9 @@ class Launcher {
         console.log('Initializing Launcher...');
         this.shortcut()
         await setBackground()
+        new Fond(document.querySelector('.fond-particules'));
         this.initFrame();
+        this.initRail();
         this.config = await config.GetConfig().then(res => res).catch(err => err);
         if (await this.config.error) return this.errorConnect()
         this.db = new database();
@@ -57,6 +60,17 @@ class Launcher {
             color: 'red',
             exit: true,
             options: true
+        });
+    }
+
+    // Barre latérale : Accueil / Paramètres, et la tête du joueur ouvre ses comptes
+    initRail() {
+        document.querySelectorAll('.rail-btn[data-panel]').forEach(btn => {
+            btn.addEventListener('click', () => changePanel(btn.dataset.panel));
+        });
+        document.querySelector('.rail-joueur').addEventListener('click', () => {
+            changePanel('settings');
+            document.querySelector('.nav-settings-btn#account')?.click();
         });
     }
 

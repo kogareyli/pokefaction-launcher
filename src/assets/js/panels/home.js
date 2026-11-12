@@ -107,80 +107,41 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
-        document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
     }
 
     async news() {
         let newsElement = document.querySelector('.news-list');
         let news = await config.getNews(this.config).then(res => res).catch(err => false);
+        let carte = (i, date, titre, contenu, auteur) => {
+            let bloc = document.createElement('div');
+            bloc.classList.add('news-block');
+            bloc.style.setProperty('--i', i);
+            bloc.innerHTML = `
+                <div class="news-header">
+                    <div class="news-date">
+                        <div class="day">${date.day}</div>
+                        <div class="month">${date.court}</div>
+                    </div>
+                    <div class="header-text">
+                        <div class="title">${titre}</div>
+                    </div>
+                </div>
+                <div class="news-content">
+                    <div class="bbWrapper">
+                        <p>${contenu}</p>
+                        ${auteur ? `<p class="news-author">Par <span>${auteur}</span></p>` : ''}
+                    </div>
+                </div>`;
+            newsElement.appendChild(bloc);
+        };
         if (news) {
             if (!news.length) {
-                let blockNews = document.createElement('div');
-                const date = this.getdate(new Date())
-                blockNews.classList.add('news-block');
-                blockNews.innerHTML = `
-                    <div class="news-header">
-                        <img class="server-status-icon" src="assets/images/icon/icon.png">
-                        <div class="header-text">
-                            <div class="title">Aucun news n'ai actuellement disponible.</div>
-                        </div>
-                        <div class="date">
-                            <div class="day">${date.day}</div>
-                            <div class="month">${date.month}</div>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="bbWrapper">
-                            <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
-                        </div>
-                    </div>`
-                newsElement.appendChild(blockNews);
+                carte(0, this.getdate(new Date()), 'Aucune actualité pour le moment', 'Tu pourras suivre ici toutes les nouveautés du serveur.');
             } else {
-                for (let News of news) {
-                    let date = this.getdate(News.publish_date)
-                    let blockNews = document.createElement('div');
-                    blockNews.classList.add('news-block');
-                    blockNews.innerHTML = `
-                        <div class="news-header">
-                            <img class="server-status-icon" src="assets/images/icon/icon.png">
-                            <div class="header-text">
-                                <div class="title">${News.title}</div>
-                            </div>
-                            <div class="date">
-                                <div class="day">${date.day}</div>
-                                <div class="month">${date.month}</div>
-                            </div>
-                        </div>
-                        <div class="news-content">
-                            <div class="bbWrapper">
-                                <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Auteur - <span>${News.author}</span></p>
-                            </div>
-                        </div>`
-                    newsElement.appendChild(blockNews);
-                }
+                news.forEach((News, i) => carte(i, this.getdate(News.publish_date), News.title, News.content.replace(/\n/g, '</br>'), News.author));
             }
         } else {
-            let blockNews = document.createElement('div');
-            const date = this.getdate(new Date())
-            blockNews.classList.add('news-block');
-            blockNews.innerHTML = `
-                <div class="news-header">
-                        <img class="server-status-icon" src="assets/images/icon/icon.png">
-                        <div class="header-text">
-                            <div class="title">Error.</div>
-                        </div>
-                        <div class="date">
-                            <div class="day">${date.day}</div>
-                            <div class="month">${date.month}</div>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="bbWrapper">
-                            <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
-                        </div>
-                    </div>`
-            newsElement.appendChild(blockNews);
+            carte(0, this.getdate(new Date()), 'Actualités indisponibles', 'Impossible de récupérer les actualités.</br>Vérifie ta connexion internet.');
         }
     }
 
@@ -232,8 +193,19 @@ class Home {
                     }
                 }
             } else console.log(`Initializing instance ${instance.name}...`)
-            if (instance.name == instanceSelect) setStatus(instance.status)
+            if (instance.name == instanceSelect) {
+                setStatus(instance.status)
+                this.afficherVersion(instance)
+            }
         }
+
+        // Statut du serveur rafraîchi toutes les minutes (seulement quand l'accueil est affiché)
+        setInterval(async () => {
+            if (!document.querySelector('.home.active') || document.hidden) return
+            let configClient = await this.db.readData('configClient')
+            let instance = instancesList.find(i => i.name == configClient?.instance_select)
+            if (instance) setStatus(instance.status)
+        }, 60000)
 
         instancePopup.addEventListener('click', async e => {
             let configClient = await this.db.readData('configClient')
@@ -251,6 +223,7 @@ class Home {
                 instancePopup.style.display = 'none'
                 let instance = await config.getInstanceList()
                 let options = instance.find(i => i.name == configClient.instance_select)
+                this.afficherVersion(options)
                 await setStatus(options.status)
             }
         })
@@ -291,6 +264,27 @@ class Home {
         instanceCloseBTN.addEventListener('click', () => instancePopup.style.display = 'none')
     }
 
+    afficherVersion(instance) {
+        let version = document.querySelector('.hero-version')
+        if (version && instance?.loader) version.textContent = `${instance.loader.minecraft_version} · Cobbleverse`
+    }
+
+    // Barre de progression : texte, pourcentage, remplissage (ou animation d'attente si max = 0)
+    progression(texte, valeur = 0, max = 0) {
+        document.querySelector('.info-starting-game-text').textContent = texte
+        let pourcent = document.querySelector('.info-pourcent')
+        let barre = document.querySelector('.barre')
+        if (max > 0) {
+            let p = Math.max(0, Math.min(100, valeur / max * 100))
+            pourcent.textContent = `${p.toFixed(0)} %`
+            barre.classList.remove('attente')
+            barre.querySelector('.barre-remplie').style.setProperty('--p', `${p}%`)
+        } else {
+            pourcent.textContent = ''
+            barre.classList.add('attente')
+        }
+    }
+
     async startGame() {
         let launch = new Launch()
         let configClient = await this.db.readData('configClient')
@@ -309,7 +303,7 @@ class Home {
         if (this.config.auth === 'pokefaction') {
             playInstanceBTN.style.display = "none"
             infoStartingBOX.style.display = "block"
-            infoStarting.innerHTML = `Connexion au compte PokéFaction...`
+            this.progression('Connexion au compte PokéFaction…')
             try {
                 if (!authenticator?.pokefaction?.session) throw new Error('Session expirée : reconnecte-toi.')
                 let api = new PokeFactionAPI(this.config.pokefaction_api)
@@ -382,6 +376,7 @@ class Home {
         playInstanceBTN.style.display = "none"
         infoStartingBOX.style.display = "block"
         progressBar.style.display = "";
+        this.progression('Préparation…')
         ipcRenderer.send('main-window-progress-load')
 
         launch.on('extract', extract => {
@@ -390,14 +385,14 @@ class Home {
         });
 
         launch.on('progress', (progress, size) => {
-            infoStarting.innerHTML = `Téléchargement ${((progress / size) * 100).toFixed(0)}%`
+            this.progression('Téléchargement des fichiers', progress, size)
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
             progressBar.max = size;
         });
 
         launch.on('check', (progress, size) => {
-            infoStarting.innerHTML = `Vérification ${((progress / size) * 100).toFixed(0)}%`
+            this.progression('Vérification des fichiers', progress, size)
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
             progressBar.max = size;
@@ -417,7 +412,7 @@ class Home {
         launch.on('patch', patch => {
             console.log(patch);
             ipcRenderer.send('main-window-progress-load')
-            infoStarting.innerHTML = `Patch en cours...`
+            this.progression('Installation de Fabric…')
         });
 
         // Journal du jeu : gardé pour expliquer un plantage et pour l'envoyer à un admin
@@ -431,7 +426,8 @@ class Home {
             };
             new logger('Minecraft', '#36b030');
             ipcRenderer.send('main-window-progress-load')
-            infoStarting.innerHTML = `Demarrage en cours...`
+            this.progression('Lancement de Minecraft…')
+            document.body.classList.add('en-jeu')
             console.log(e);
             let ligne = String(e)
             journalJeu.push(ligne)
@@ -447,6 +443,7 @@ class Home {
             infoStartingBOX.style.display = "none"
             playInstanceBTN.style.display = "flex"
             infoStarting.innerHTML = `Vérification`
+            document.body.classList.remove('en-jeu')
             new logger(pkg.name, '#7289da');
             console.log('Close');
 
@@ -486,6 +483,7 @@ class Home {
             infoStartingBOX.style.display = "none"
             playInstanceBTN.style.display = "flex"
             infoStarting.innerHTML = `Vérification`
+            document.body.classList.remove('en-jeu')
             new logger(pkg.name, '#7289da');
             console.log(err);
         });
@@ -497,7 +495,8 @@ class Home {
         let month = date.getMonth() + 1
         let day = date.getDate()
         let allMonth = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
-        return { year: year, month: allMonth[month - 1], day: day }
+        let court = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
+        return { year: year, month: allMonth[month - 1], court: court[month - 1], day: day }
     }
 }
 export default Home;

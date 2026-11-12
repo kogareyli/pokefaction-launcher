@@ -4,13 +4,30 @@
         <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
         <link rel="stylesheet" href="assets/css/index.css">
     </head>
-    <body>
+    <body class="dark global">
+        <div class="fond" aria-hidden="true">
+            <div class="fond-lueur fond-lueur-1"></div>
+            <div class="fond-lueur fond-lueur-2"></div>
+        </div>
+        <div class="dragbar"></div>
+
         <div id="splash" style="display:none">
-            <img class="splash" src="assets/images/icon/icon.png" />
+            <div class="splash-logo">
+                <div class="splash-halo"></div>
+                <div class="splash-anneau"></div>
+                <img class="splash" src="assets/images/logo/logo.png" />
+            </div>
+            <div class="splash-titre">PokéFaction</div>
             <p class="splash-message"></p>
             <p class="splash-author"><span class="author"></span></p>
-            <p class="message">Recherche de mise à jour...</p>
-            <progress value="0" max="0" class="progress"></progress>
+            <div class="splash-bas">
+                <p class="message">Recherche de mise à jour...</p>
+                <div class="splash-barre">
+                    <progress value="0" max="0" class="progress"></progress>
+                    <div class="attente"></div>
+                </div>
+            </div>
+            <div class="splash-version etiquette"></div>
         </div>
         <script src="assets/js/index.js" type="module"></script>
     </body>

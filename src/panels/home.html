@@ -1,52 +1,57 @@
 <div class="container">
-    <div class="status-server">
-        <img class="server-status-icon" src="assets/images/icon/icon.png">
-        <div class="server-status-infos">
-            <div class="server-status-name">PokéFaction</div>
-            <div class="server-status-text">operationeel - 0 ms</div>
+    <section class="hero">
+        <div class="hero-haut">
+            <span class="etiquette">Serveur Minecraft · <span class="hero-version">COBBLEVERSE</span></span>
         </div>
-        <div class="status-player-count">
-            <div class="player-count">0</div>
-        </div>
-    </div>
 
-    <div class="home-bottom">
-        <div class="new-tab">
-            <div class="titre-tab-new">Actualités</div>
-            <div class="news-list content-scroll"></div>
+        <div class="hero-logo">
+            <div class="hero-halo"></div>
+            <div class="hero-anneau"></div>
+            <img class="hero-logo-img" src="assets/images/logo/logo.png" alt="PokéFaction" />
         </div>
-        <div class="social-tab">
-            <div class="social-list content-scroll">
-                <div data-url="https://xn--pokfaction-d7a.com" class="social-block">
-                    <div class="icon-web icon-social"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="sidebar">
-        <div class="player-options">
-            <div class="player-head"></div>
+        <h1 class="hero-titre"><span class="server-status-name">PokéFaction</span></h1>
+        <p class="hero-slogan">Capture. Conquiers. Règne sur ta faction.</p>
+
+        <div class="statut" data-etat="chargement">
+            <span class="statut-point"></span>
+            <span class="statut-texte server-status-text">Connexion au serveur…</span>
+            <span class="statut-sep"></span>
+            <span class="statut-joueurs status-player-count"><b class="player-count">–</b> en jeu</span>
+            <span class="statut-sep"></span>
+            <span class="statut-ping">– ms</span>
         </div>
 
         <div class="play-elements">
             <div class="play-instance">
-                <button class="play-btn">Jouer</button>
+                <button class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
+                    <span>Jouer</span>
+                </button>
                 <div class="instance-select icon-arrow"></div>
             </div>
             <div class="info-starting-game">
-                <div class="info-starting-game-text">Connexion...</div>
-                <progress value="0" max="0" class="progress-bar"></progress>
+                <div class="info-ligne">
+                    <span class="info-starting-game-text">Connexion...</span>
+                    <span class="info-pourcent"></span>
+                </div>
+                <div class="barre"><progress value="0" max="0" class="progress-bar"></progress><div class="barre-remplie"></div></div>
             </div>
         </div>
+    </section>
 
-        <div class="settings-btn icon-settings"></div>
-    </div>
+    <aside class="new-tab">
+        <div class="new-tab-tete">
+            <span class="etiquette">01 · Actualités</span>
+            <div class="titre-tab-new">Quoi de neuf</div>
+        </div>
+        <div class="news-list content-scroll"></div>
+    </aside>
 
     <div class="instance-popup">
         <div class="instances-tab">
             <div class="close-popup icon-close"></div>
-            <p>Choisissez votre instance...</p>
+            <p>Choisis ton instance</p>
             <div class="instances-List"></div>
         </div>
     </div>
