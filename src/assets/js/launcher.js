@@ -175,15 +175,20 @@ class Launcher {
                         background: false
                     });
 
-                    let refresh_accounts = await new Microsoft(this.config.client_id).refresh(account);
+                    let refresh_accounts;
+                    try {
+                        refresh_accounts = await new Microsoft(this.config.client_id).refresh(account);
+                    } catch (err) {
+                        refresh_accounts = { error: true, errorMessage: err?.message || String(err) };
+                    }
 
-                    if (refresh_accounts.error) {
-                        await this.db.deleteData('accounts', account_ID)
-                        if (account_ID == account_selected) {
-                            configClient.account_selected = null
-                            await this.db.updateData('configClient', configClient)
-                        }
-                        console.error(`[Account] ${account.name}: ${refresh_accounts.errorMessage}`);
+                    if (!refresh_accounts || refresh_accounts.error) {
+                        // Microsoft n'a pas répondu (coupure réseau, serveur lent…) : on GARDE le compte.
+                        // Le serveur PokéFaction vérifie le compte PokéFaction (ticket), pas le jeton Microsoft :
+                        // le joueur peut jouer quand même, et le jeton sera rafraîchi au prochain démarrage.
+                        console.error(`[Account] ${account.name}: rafraîchissement Microsoft raté, compte gardé : ${refresh_accounts?.errorMessage || refresh_accounts?.message || 'inconnu'}`);
+                        await addAccount(account)
+                        if (account_ID == account_selected) accountSelect(account)
                         continue;
                     }
 
