@@ -75,13 +75,56 @@ ipcMain.handle('is-dark-theme', (_, theme) => {
 
 app.on('window-all-closed', () => app.quit());
 
+// ------------------------------------------------------------------ mise à jour du launcher
+// Journal lisible : %APPDATA%\pokefaction-launcher\maj-launcher.txt (à envoyer à un admin si ça bloque)
+function journalMaj(niveau, ...msg) {
+    try {
+        const fichier = path.join(app.getPath('userData'), 'maj-launcher.txt');
+        if (fs.existsSync(fichier) && fs.statSync(fichier).size > 300000) fs.renameSync(fichier, fichier + '.ancien');
+        const texte = msg.map(m => m instanceof Error ? (m.stack || m.message) : typeof m === 'string' ? m : JSON.stringify(m)).join(' ');
+        fs.appendFileSync(fichier, `[${new Date().toLocaleString('fr-FR')}] [${niveau}] v${app.getVersion()} ${texte}\n`);
+    } catch { /* pas grave */ }
+}
+
+autoUpdater.logger = {
+    info: (...m) => journalMaj('info', ...m),
+    warn: (...m) => journalMaj('attention', ...m),
+    error: (...m) => journalMaj('erreur', ...m),
+    debug: () => {}
+};
 autoUpdater.autoDownload = false;
+autoUpdater.autoInstallOnAppQuit = true;
+
+// Une installation qui échoue deux fois de suite (antivirus, Contrôle intelligent des applications…)
+// n'est plus retentée à chaque démarrage : le joueur passe directement au launcher.
+const fichierTentative = () => path.join(app.getPath('userData'), 'maj-tentative.json');
+function lireTentative() {
+    try { return JSON.parse(fs.readFileSync(fichierTentative(), 'utf8')); } catch { return null; }
+}
+function majBloquee(version) {
+    const t = lireTentative();
+    return !!t && t.version === version && t.essais >= 2;
+}
+app.whenReady().then(() => {
+    const t = lireTentative();
+    // Mise à jour réussie (ou plus ancienne que la version installée) : on oublie la tentative
+    if (t && t.version === app.getVersion()) {
+        journalMaj('info', `mise à jour vers ${t.version} réussie`);
+        try { fs.unlinkSync(fichierTentative()); } catch { }
+    }
+});
+
+let majAbandonnee = false;
+let versionProposee = null;
+const fenetreMaj = () => UpdateWindow.getWindow();
+const versFenetreMaj = (canal, ...args) => { const w = fenetreMaj(); if (w && !w.isDestroyed()) w.webContents.send(canal, ...args); };
 
 ipcMain.handle('update-app', async () => {
     return await new Promise(async (resolve, reject) => {
         autoUpdater.checkForUpdates().then(res => {
             resolve(res);
         }).catch(error => {
+            journalMaj('erreur', 'recherche impossible', error);
             reject({
                 error: true,
                 message: error
@@ -90,30 +133,43 @@ ipcMain.handle('update-app', async () => {
     })
 })
 
-autoUpdater.on('update-available', () => {
-    const updateWindow = UpdateWindow.getWindow();
-    if (updateWindow) updateWindow.webContents.send('updateAvailable');
+autoUpdater.on('update-available', (info) => {
+    versionProposee = info?.version;
+    if (majBloquee(info?.version)) {
+        journalMaj('attention', `${info.version} : installation déjà ratée 2 fois, ignorée`);
+        return versFenetreMaj('maj-bloquee', info.version);
+    }
+    versFenetreMaj('updateAvailable', info?.version);
 });
 
 ipcMain.on('start-update', () => {
-    autoUpdater.downloadUpdate();
+    majAbandonnee = false;
+    autoUpdater.downloadUpdate().catch(err => journalMaj('erreur', 'téléchargement', err));
 })
 
-autoUpdater.on('update-not-available', () => {
-    const updateWindow = UpdateWindow.getWindow();
-    if (updateWindow) updateWindow.webContents.send('update-not-available');
+// Le splash a abandonné (téléchargement trop lent / bloqué) : le launcher démarre normalement,
+// et si le téléchargement finit plus tard, la mise à jour s'installera à la fermeture du launcher.
+ipcMain.on('maj-abandon', () => {
+    majAbandonnee = true;
+    journalMaj('attention', "mise à jour abandonnée par l'écran de démarrage (trop lente ou bloquée)");
 });
 
-autoUpdater.on('update-downloaded', () => {
-    autoUpdater.quitAndInstall();
+autoUpdater.on('update-not-available', () => versFenetreMaj('update-not-available'));
+
+autoUpdater.on('update-downloaded', (info) => {
+    if (majAbandonnee) return journalMaj('info', 'téléchargée après abandon : installée à la fermeture');
+    const t = lireTentative();
+    const essais = t && t.version === info.version ? t.essais + 1 : 1;
+    try { fs.writeFileSync(fichierTentative(), JSON.stringify({ version: info.version, essais })); } catch { }
+    journalMaj('info', `installation de ${info.version} (essai ${essais})`);
+    versFenetreMaj('update-downloaded', info.version);
+    // Petit délai pour que le joueur voie « Installation… », puis l'installeur remplace le launcher et le relance
+    setTimeout(() => autoUpdater.quitAndInstall(false, true), 900);
 });
 
-autoUpdater.on('download-progress', (progress) => {
-    const updateWindow = UpdateWindow.getWindow();
-    if (updateWindow) updateWindow.webContents.send('download-progress', progress);
-})
+autoUpdater.on('download-progress', (progress) => versFenetreMaj('download-progress', progress))
 
 autoUpdater.on('error', (err) => {
-    const updateWindow = UpdateWindow.getWindow();
-    if (updateWindow) updateWindow.webContents.send('error', err);
+    journalMaj('erreur', err);
+    versFenetreMaj('error', String(err?.message || err));
 });

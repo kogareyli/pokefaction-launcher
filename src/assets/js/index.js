@@ -51,37 +51,73 @@ class Splash {
         this.checkUpdate();
     }
 
+    // Ne reste jamais bloqué : sans nouvelle de la mise à jour, le launcher démarre quand même
+    // (le modpack est synchronisé par le launcher lui-même, la mise à jour du launcher peut attendre).
     async checkUpdate() {
-        this.setStatus(`Recherche de mise à jour...`);
+        this.setStatus('Recherche de mise à jour...');
+        this.veille(20000, 'Pas de réponse du serveur de mises à jour');
 
         ipcRenderer.invoke('update-app').then().catch(err => {
             console.error(err);
-            return this.maintenanceCheck();
+            return this.continuer();
         });
 
-        ipcRenderer.on('updateAvailable', () => {
-            this.setStatus(`Mise à jour disponible !`);
+        ipcRenderer.on('updateAvailable', (event, version) => {
+            this.setStatus(`Mise à jour ${version ? 'v' + version + ' ' : ''}trouvée !`);
             if (os.platform() == 'win32') {
                 this.toggleProgress();
+                this.veille(45000, 'Téléchargement de la mise à jour trop lent');
                 ipcRenderer.send('start-update');
             }
-            else return this.dowloadUpdate();
+            else { clearTimeout(this.minuteur); return this.dowloadUpdate(); }
+        })
+
+        ipcRenderer.on('maj-bloquee', (event, version) => {
+            this.setStatus('Mise à jour bloquée sur ce PC (antivirus ?).<br>Tu joues avec la version actuelle.');
+            setTimeout(() => this.continuer(), 2500);
         })
 
         ipcRenderer.on('error', (event, err) => {
             if (err) console.error(err);
-            return this.maintenanceCheck();
+            return this.continuer();
         })
 
         ipcRenderer.on('download-progress', (event, progress) => {
             ipcRenderer.send('update-window-progress', { progress: progress.transferred, size: progress.total })
             this.setProgress(progress.transferred, progress.total);
+            const mo = n => (n / 1048576).toFixed(1).replace('.', ',');
+            this.setStatus(`Téléchargement de la mise à jour : ${Math.floor(progress.percent || 0)} %<br><span class="detail">${mo(progress.transferred)} / ${mo(progress.total)} Mo</span>`);
+            // Tant que ça avance, on laisse faire (45 s sans progrès = abandon)
+            this.veille(45000, 'Téléchargement de la mise à jour bloqué');
+        })
+
+        ipcRenderer.on('update-downloaded', () => {
+            this.setStatus('Installation de la mise à jour…<br><span class="detail">Le launcher va redémarrer tout seul.</span>');
+            // Si l'installeur ne se lance pas (antivirus), on ne laisse pas le joueur bloqué
+            this.veille(25000, "L'installation ne s'est pas lancée");
         })
 
         ipcRenderer.on('update-not-available', () => {
-            console.error("Mise à jour non disponible");
-            this.maintenanceCheck();
+            this.continuer();
         })
+    }
+
+    // Minuteur de secours : relancé à chaque nouvelle étape, il fait démarrer le launcher s'il expire
+    veille(ms, raison) {
+        clearTimeout(this.minuteur);
+        this.minuteur = setTimeout(() => {
+            console.error(raison);
+            ipcRenderer.send('maj-abandon');
+            this.setStatus(`${raison}.<br><span class="detail">Tu joues avec la version actuelle, elle se mettra à jour plus tard.</span>`);
+            setTimeout(() => this.continuer(), 2500);
+        }, ms);
+    }
+
+    continuer() {
+        clearTimeout(this.minuteur);
+        if (this.suite) return;
+        this.suite = true;
+        this.maintenanceCheck();
     }
 
     getLatestReleaseForOS(os, preferredFormat, asset) {

@@ -306,3 +306,9 @@ img {
     0% { left: -34%; }
     100% { left: 100%; }
 }
+
+.message .detail {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--texte-2);
+}
