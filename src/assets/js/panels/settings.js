@@ -5,6 +5,7 @@
 
 import { changePanel, accountSelect, database, Slider, config, setStatus, popup, appdata, dossierJeu, setBackground } from '../utils.js'
 import { PokeFactionAPI } from '../utils/pokefaction-api.js';
+import ChoixSkin from '../utils/skin-choix.js'
 const { ipcRenderer } = require('electron');
 const os = require('os');
 
@@ -19,6 +20,7 @@ class Settings {
         this.javaPath()
         this.resolution()
         this.launcher()
+        new ChoixSkin().init(this.db)
     }
 
     navBTN() {

@@ -4,6 +4,7 @@
         <p>Paramètres</p>
         <div class="nav-box">
             <div id="account" class="nav-settings-btn active-settings-BTN">Comptes</div>
+            <div id="skin" class="nav-settings-btn">Mon skin</div>
             <div id="java" class="nav-settings-btn">Java et RAM</div>
             <div id="resolution" class="nav-settings-btn">Résolution</div>
             <div id="launcher" class="nav-settings-btn">Launcher</div>
@@ -20,6 +21,48 @@
                     <div class="icon-account-add"></div>
                 </div>
                 <div class="add-text-profile">Ajouter un compte</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="skin-tab" class="container-settings content-scroll">
+        <div class="titre-tab">Mon skin <span class="skin-pour">· <span class="skin-compte">—</span></span></div>
+        <div class="settings-elements-box skin-boite">
+            <div class="skin-scene">
+                <div class="skin-socle"></div>
+                <canvas class="skin-canvas" width="160" height="320"></canvas>
+                <div class="skin-etat"></div>
+            </div>
+            <div class="skin-reglages">
+                <div class="setting-text">Ton skin est vu par tous les joueurs du serveur. Il s'applique à ta prochaine connexion.</div>
+                <div class="skin-modes">
+                    <button class="skin-mode" data-mode="auto">Automatique</button>
+                    <button class="skin-mode" data-mode="mojang">Copier un joueur</button>
+                    <button class="skin-mode" data-mode="fichier">Mon image PNG</button>
+                </div>
+                <div class="skin-panneau" data-mode="auto">
+                    <div class="setting-text">Le skin de ton compte Minecraft officiel (compte Microsoft). Sans compte officiel : Steve ou Alex.</div>
+                </div>
+                <div class="skin-panneau" data-mode="mojang">
+                    <div class="skin-ligne">
+                        <input type="text" class="skin-pseudo" placeholder="Pseudo Minecraft (ex. Dream)" maxlength="16" spellcheck="false">
+                        <button class="skin-voir skin-bouton-2">Voir</button>
+                    </div>
+                </div>
+                <div class="skin-panneau" data-mode="fichier">
+                    <div class="skin-ligne">
+                        <button class="skin-parcourir skin-bouton-2">Choisir une image…</button>
+                        <span class="skin-nom-fichier">PNG 64 × 64</span>
+                        <input type="file" class="skin-fichier" accept=".png,image/png">
+                    </div>
+                    <div class="skin-ligne">
+                        <button class="skin-modele" data-modele="classic">Bras classiques (Steve)</button>
+                        <button class="skin-modele" data-modele="slim">Bras fins (Alex)</button>
+                    </div>
+                    <div class="setting-text skin-astuce">Des milliers de skins gratuits : namemc.com, minecraftskins.com…</div>
+                </div>
+                <button class="skin-enregistrer">Enregistrer</button>
+                <div class="skin-message"></div>
             </div>
         </div>
     </div>

@@ -332,6 +332,14 @@ class Home {
             }
         }
 
+        // Skin choisi dans le launcher : le mod PokéFaction l'envoie au serveur en arrivant
+        try {
+            let dossierPF = `${chemin}/instances/${options.name}/pokefaction`
+            fs.mkdirSync(dossierPF, { recursive: true })
+            let choixSkin = configClient.skins?.[String(authenticator?.name || '').toLowerCase()] || { type: 'auto' }
+            fs.writeFileSync(`${dossierPF}/skin.json`, JSON.stringify(choixSkin))
+        } catch (err) { console.error('skin.json', err) }
+
         let opt = {
             url: options.url,
             authenticator: authenticator,
