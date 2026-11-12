@@ -110,8 +110,14 @@
  {
   "path": "config/cobblemon/main.json",
   "size": 3405,
-  "hash": "b2734c4d6195befc5690b088d95e6bb6bab8e1ed",
+  "hash": "e02d3069f87149986a380272a44ec9a974d3ed5b",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemon/main.json"
+ },
+ {
+  "path": "config/cobblemon/spawning/best-spawner-config.json",
+  "size": 399,
+  "hash": "cbe84176bb6bdd5f70e0a8d9d5fa7e88b89bce4b",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemon/spawning/best-spawner-config.json"
  },
  {
   "path": "config/cobblemon_shiny_rarities-client.toml",
@@ -331,8 +337,8 @@
  },
  {
   "path": "config/defaultoptions/options.txt",
-  "size": 3197,
-  "hash": "39cd33f39ebe772709eb26d31c93f6d138c7a6ed",
+  "size": 3228,
+  "hash": "c6d6e704703633f718d3dfd592bbe214e44be73f",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/defaultoptions/options.txt"
  },
  {
@@ -846,6 +852,12 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/waystones-common.toml"
  },
  {
+  "path": "config/xaero/minimap/server_profiles/cobbleverse.cfg",
+  "size": 207,
+  "hash": "e7db2bf5b0c7e3a082c4c7cc73a467c758eaa15b",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/xaero/minimap/server_profiles/cobbleverse.cfg"
+ },
+ {
   "path": "config/yacl.json5",
   "size": 250,
   "hash": "622920f29084efcd3a8d0b2a0ea0756fece182d2",
@@ -868,12 +880,6 @@
   "size": 9062,
   "hash": "844dfb2b684277e62e90e46b2f8c479f22fd2b17",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/datapacks/COBBLEVERSE%20-%20No%20Ender%20Dragon.zip"
- },
- {
-  "path": "datapacks/COBBLEVERSE - No Hunger.zip",
-  "size": 8925,
-  "hash": "7d9f0f02379471fbefe8daadf1614c48eadd049a",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/datapacks/COBBLEVERSE%20-%20No%20Hunger.zip"
  },
  {
   "path": "datapacks/COBBLEVERSE-DP-v21-CF.zip",
@@ -1048,6 +1054,12 @@
   "size": 260470,
   "hash": "ad63e64fa2121c4a19f3ac72a9cd84313ac8390c",
   "url": "https://edge.forgecdn.net/files/8050/484/catchrate-display-fabric-2.8.22.jar"
+ },
+ {
+  "path": "mods/Chunky-Fabric-1.4.23.jar",
+  "size": 342979,
+  "hash": "6c8098fc0f124c7b6492de60db0108747f7f9821",
+  "url": "https://edge.forgecdn.net/files/6383/251/Chunky-Fabric-1.4.23.jar"
  },
  {
   "path": "mods/cloth-config-15.0.140-fabric.jar",
@@ -1590,10 +1602,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-1.1.1.jar",
-  "size": 83382,
-  "hash": "2aab574d3fdb8b6bbbf569c15f1773cbf21725ab",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-1.1.1.jar"
+  "path": "mods/pokefaction-core-1.3.0.jar",
+  "size": 115197,
+  "hash": "42ece411a5bfe3bed46b6b72c691b6fe41b6e332",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-1.3.0.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
@@ -1800,6 +1812,12 @@
   "url": "https://edge.forgecdn.net/files/5830/452/worldedit-mod-7.3.8.jar"
  },
  {
+  "path": "mods/xaerominimap-fabric-1.21.1-26.6.0.jar",
+  "size": 2234556,
+  "hash": "5fbb03dd3f22c0c3d5466d1366222d7d277a8df3",
+  "url": "https://edge.forgecdn.net/files/9067/178/xaerominimap-fabric-1.21.1-26.6.0.jar"
+ },
+ {
   "path": "mods/yet_another_config_lib_v3-3.8.2+1.21.1-fabric.jar",
   "size": 1131265,
   "hash": "e075503382f70715ab9fc6f66d603397a86eb3e0",
@@ -1918,6 +1936,12 @@
   "size": 852471,
   "hash": "b9ddfb4614220612c7492666db730393954435b8",
   "url": "https://edge.forgecdn.net/files/7402/610/Icon%20Fresh%200.4.zip"
+ },
+ {
+  "path": "resourcepacks/PokeFaction Musique.zip",
+  "size": 39029645,
+  "hash": "9e684ffc4298bdd2ca1b156bc69e91c675f86868",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/resourcepacks/PokeFaction%20Musique.zip"
  },
  {
   "path": "shaderpacks/COBBLEVERSE - Shaders (High Quality).txt",

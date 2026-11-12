@@ -964,5 +964,17 @@
   "size": 27680,
   "hash": "c790bd1c15a216f0291a99ac1e4dc1f4829270fc",
   "url": "https://edge.forgecdn.net/files/8888/955/cupboard-fabric-1.21.1-4.2.jar"
+ },
+ {
+  "path": "mods/Chunky-Fabric-1.4.23.jar",
+  "size": 342979,
+  "hash": "6c8098fc0f124c7b6492de60db0108747f7f9821",
+  "url": "https://edge.forgecdn.net/files/6383/251/Chunky-Fabric-1.4.23.jar"
+ },
+ {
+  "path": "mods/xaerominimap-fabric-1.21.1-26.6.0.jar",
+  "size": 2234556,
+  "hash": "5fbb03dd3f22c0c3d5466d1366222d7d277a8df3",
+  "url": "https://edge.forgecdn.net/files/9067/178/xaerominimap-fabric-1.21.1-26.6.0.jar"
  }
 ]

@@ -35,8 +35,8 @@
   "experienceShareMultiplier": 0.5,
   "luckyEggMultiplier": 1.5,
   "allowSpectating": true,
-  "experienceMultiplier": 2.0,
-  "pokemonPerChunk": 1.0,
+  "experienceMultiplier": 1.0,
+  "pokemonPerChunk": 1.5,
   "pokeSnackPokemonPerChunk": 2.0,
   "passiveStatuses": {
     "cobblemon:poison": "180-300",

@@ -184,7 +184,9 @@
             "config/VillagerConfig/villagerconfig.json5",
             "config/defaultoptions/options.txt",
             "config/defaultoptions/keybindings.txt",
-            "config/defaultoptions/servers.dat"
+            "config/defaultoptions/servers.dat",
+            "config/cobblemon/spawning/best-spawner-config.json",
+            "config/xaero/minimap/server_profiles/cobbleverse.cfg"
         ],
         "whitelistActive": false,
         "whitelist": [],
