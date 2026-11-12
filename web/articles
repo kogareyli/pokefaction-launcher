@@ -1,5 +1,16 @@
 [
     {
+        "title": "Les arènes t'attendent",
+        "content": "Une arène par type, à Kanto et à Johto : tape /arene en jeu pour choisir la tienne, elle apparaît sur ta minimap.\nAu lobby, traverse le portail bleu pour partir à l'aventure.\n\nSuis le serveur sur TikTok : @pokefaction",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-12",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/arene-eau.jpg",
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/arene-eau-interieur.jpg",
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/canyon.jpg"
+        ]
+    },
+    {
         "title": "Bienvenue sur PokéFaction !",
         "content": "Clique sur JOUER : le launcher installe tout (Java, mods, packs) puis te connecte directement au serveur.\nLe premier lancement est long (environ 430 Mo à télécharger), les suivants sont rapides.\n\nÀ ton arrivée : choisis ton starter, lis les règles au lobby et tape /guide.",
         "author": "Staff PokéFaction",
