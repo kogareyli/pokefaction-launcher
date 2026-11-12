@@ -112,7 +112,14 @@ class Home {
     async news() {
         let newsElement = document.querySelector('.news-list');
         let news = await config.getNews(this.config).then(res => res).catch(err => false);
-        let carte = (i, date, titre, contenu, auteur) => {
+        // Images d'un article : seulement des liens https (hébergées avec le launcher sur GitHub), 3 au plus
+        let images = (liste) => {
+            let urls = (Array.isArray(liste) ? liste : liste ? [liste] : []).filter(u => typeof u === 'string' && u.startsWith('https://')).slice(0, 3);
+            if (!urls.length) return '';
+            return `<div class="news-images" data-n="${urls.length}">${urls.map(u =>
+                `<button class="news-image" data-src="${encodeURI(u)}"><img src="${encodeURI(u)}" loading="lazy" alt="" /></button>`).join('')}</div>`;
+        };
+        let carte = (i, date, titre, contenu, auteur, img) => {
             let bloc = document.createElement('div');
             bloc.classList.add('news-block');
             bloc.style.setProperty('--i', i);
@@ -126,6 +133,7 @@ class Home {
                         <div class="title">${titre}</div>
                     </div>
                 </div>
+                ${images(img)}
                 <div class="news-content">
                     <div class="bbWrapper">
                         <p>${contenu}</p>
@@ -138,11 +146,29 @@ class Home {
             if (!news.length) {
                 carte(0, this.getdate(new Date()), 'Aucune actualité pour le moment', 'Tu pourras suivre ici toutes les nouveautés du serveur.');
             } else {
-                news.forEach((News, i) => carte(i, this.getdate(News.publish_date), News.title, News.content.replace(/\n/g, '</br>'), News.author));
+                news.forEach((News, i) => carte(i, this.getdate(News.publish_date), News.title, News.content.replace(/\n/g, '</br>'), News.author, News.images || News.image));
+                this.visionneuse(newsElement);
             }
         } else {
             carte(0, this.getdate(new Date()), 'Actualités indisponibles', 'Impossible de récupérer les actualités.</br>Vérifie ta connexion internet.');
         }
+    }
+
+    // Clic sur une image d'actualité : affichée en grand ; clic ou Échap pour fermer
+    visionneuse(liste) {
+        let fond = document.createElement('div');
+        fond.className = 'visionneuse';
+        fond.innerHTML = '<img alt="" />';
+        document.body.appendChild(fond);
+        let fermer = () => fond.classList.remove('ouverte');
+        fond.addEventListener('click', fermer);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') fermer(); });
+        liste.addEventListener('click', e => {
+            let bouton = e.target.closest('.news-image');
+            if (!bouton) return;
+            fond.querySelector('img').src = bouton.dataset.src;
+            fond.classList.add('ouverte');
+        });
     }
 
     socialLick() {

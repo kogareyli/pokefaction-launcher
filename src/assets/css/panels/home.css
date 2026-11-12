@@ -73,7 +73,6 @@
     border: 1px dashed rgba(255, 255, 255, .14);
 }
 
-.home.active .hero-haut { animation: entree .7s .05s var(--doux) both; }
 .home.active .hero-logo-img { animation: entree-logo 1.1s .1s var(--ressort) both, flotte-logo 6s 1.2s ease-in-out infinite; }
 .home.active .hero-halo { animation: entree .9s both, respire 4.5s 1s ease-in-out infinite; }
 .home.active .hero-anneau { animation: entree 1.2s .3s both, tourne 16s linear infinite; }
@@ -366,7 +365,7 @@
 }
 
 .titre-tab-new {
-    margin-top: 6px;
+    margin-top: 0;
     font-size: 22px;
     font-weight: 800;
     letter-spacing: -.025em;
@@ -436,6 +435,86 @@
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: -.01em;
+}
+
+/* Images d'un article : une grande, puis deux côte à côte */
+.news-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.news-image {
+    position: relative;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: var(--surface-2);
+    cursor: zoom-in;
+}
+
+.news-images[data-n="1"] .news-image,
+.news-images[data-n="3"] .news-image:first-child {
+    grid-column: 1 / -1;
+}
+
+.news-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s var(--doux), filter .4s;
+}
+
+.news-image:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.15);
+}
+
+.news-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+    pointer-events: none;
+}
+
+.visionneuse {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background: rgba(8, 4, 16, .82);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+    cursor: zoom-out;
+}
+
+.visionneuse.ouverte {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.visionneuse img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 14px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, .6), 0 0 0 1px rgba(255, 255, 255, .1);
+    transform: scale(.94);
+    transition: transform .4s var(--ressort);
+}
+
+.visionneuse.ouverte img {
+    transform: none;
 }
 
 .news-content p {
