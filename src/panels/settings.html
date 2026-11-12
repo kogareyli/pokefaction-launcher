@@ -3,10 +3,13 @@
         <p>Paramètres</p>
         <div class="nav-box">
             <div id="account" class="nav-settings-btn active-settings-BTN">Comptes</div>
+            <div id="profil" class="nav-settings-btn">Mon profil</div>
             <div id="skin" class="nav-settings-btn">Mon skin</div>
             <div id="java" class="nav-settings-btn">Java et RAM</div>
             <div id="resolution" class="nav-settings-btn">Résolution</div>
+            <div id="graphismes" class="nav-settings-btn">Graphismes</div>
             <div id="launcher" class="nav-settings-btn">Launcher</div>
+            <div id="bug" class="nav-settings-btn">Signaler un bug</div>
             <div id="save" class="nav-settings-btn">← Retour à l'accueil</div>
         </div>
     </div>
@@ -132,6 +135,44 @@
                     <input type="number" class="height-size input-resolution">
                 </div>
                 <div class="size-reset size-btn">Par defaut</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="profil-tab" class="container-settings content-scroll">
+        <div class="pf-entete">
+            <div class="titre-tab">Mon profil</div>
+            <button class="pf-profil-rafraichir close-btn">Actualiser</button>
+        </div>
+        <div class="settings-elements-box pf-profil"><div class="pf-vide">Chargement…</div></div>
+    </div>
+
+    <div id="graphismes-tab" class="container-settings content-scroll">
+        <div class="titre-tab">Graphismes</div>
+        <div class="settings-elements-box">
+            <div class="setting-text">
+                Choisis un réglage : il s'applique quand tu cliques sur <b>JOUER</b>. Tu peux toujours changer les options dans le jeu.
+            </div>
+            <div class="pf-modes">
+                <button class="pf-mode close-btn" data-mode="faible"><b>PC faible</b><span>Plus de FPS : distance 8, sans ombres ni shaders</span></button>
+                <button class="pf-mode close-btn" data-mode="equilibre"><b>Équilibré</b><span>Joli et fluide : distance 12, sans shaders</span></button>
+                <button class="pf-mode close-btn" data-mode="beau"><b>Beau</b><span>Shaders et distance 14 : pour les bons PC</span></button>
+                <button class="pf-mode close-btn" data-mode="perso"><b>Mes réglages</b><span>Le launcher ne touche à rien</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bug-tab" class="container-settings content-scroll">
+        <div class="titre-tab">Signaler un bug</div>
+        <div class="settings-elements-box">
+            <div class="setting-text">
+                Explique ce qui s'est passé : où tu étais, ce que tu faisais, ce qui ne marche pas. Le staff le reçoit directement.
+            </div>
+            <textarea class="pf-bug-texte" maxlength="2000" rows="6" placeholder="Ex. : en combat contre un Pokémon sauvage, le combat ne se termine pas…"></textarea>
+            <label class="pf-bug-case"><input type="checkbox" class="pf-bug-journal" checked> Joindre le journal du jeu (aide à trouver le problème)</label>
+            <div class="pf-bug-bas">
+                <button class="pf-bug-envoyer close-btn active-close">Envoyer</button>
+                <span class="pf-bug-etat"></span>
             </div>
         </div>
     </div>

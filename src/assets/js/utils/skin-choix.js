@@ -84,6 +84,16 @@ function teteEnImage(img) {
     return c.toDataURL();
 }
 
+/** Tête du skin choisi dans le launcher (null si « automatique »). */
+export async function teteDuSkinChoisi(choix) {
+    if (!choix || choix.type === 'auto' || !choix.valeur) return null;
+    let src;
+    if (choix.type === 'mojang') src = await telechargerImage(`https://mc-heads.net/skin/${encodeURIComponent(choix.valeur)}`);
+    else if (choix.type === 'web') src = await telechargerImage(choix.valeur);
+    else return null;
+    return teteEnImage(await chargerImage(src));
+}
+
 /** Envoi à MineSkin (sans clé : 10 envois par minute). Renvoie le lien textures.minecraft.net. */
 async function envoyerMineSkin(octets, modele) {
     const frontiere = '----PokeFaction' + Date.now().toString(16);

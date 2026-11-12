@@ -694,3 +694,219 @@
 .skin-message.skin-erreur {
     color: #ff7a93;
 }
+
+/*******************************************************************************
+ * Mon profil, Graphismes, Signaler un bug                                     *
+ ******************************************************************************/
+
+.pf-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pf-entete .close-btn {
+    width: auto;
+    padding: .5rem 1rem;
+}
+
+.pf-vide {
+    color: var(--texte-2);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pf-carte-joueur {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pf-tete {
+    width: 56px;
+    height: 56px;
+    flex: none;
+    border-radius: 12px;
+    background-color: var(--surface-2);
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.pf-pseudo {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.pf-sous {
+    margin-top: 2px;
+    font-size: 13px;
+    color: var(--texte-2);
+}
+
+.pf-grade {
+    font-weight: 700;
+}
+
+.pf-barre {
+    height: 4px;
+    margin: 16px 0;
+    border-radius: 4px;
+    background: var(--surface-2);
+    overflow: hidden;
+}
+
+.pf-barre div {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--rose);
+}
+
+.pf-grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.pf-case {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--bord);
+}
+
+.pf-case span {
+    font-size: 12px;
+    color: var(--texte-3);
+}
+
+.pf-case b {
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+}
+
+.pf-titre-equipe {
+    margin: 18px 0 10px;
+    font-weight: 700;
+}
+
+.pf-equipe {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.pf-pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 4px 8px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--bord);
+    text-align: center;
+}
+
+.pf-pokemon.pf-shiny {
+    border-color: rgba(242, 210, 122, .5);
+}
+
+.pf-pokemon img {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+}
+
+.pf-pokemon-nom {
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 650;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pf-pokemon-niv {
+    font-size: 11px;
+    color: var(--texte-3);
+}
+
+.pf-maj {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--texte-3);
+}
+
+.pf-modes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.pf-mode.close-btn {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+}
+
+.pf-mode span {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--texte-2);
+}
+
+.pf-bug-texte {
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--bord-fort);
+    background: rgba(0, 0, 0, .25);
+    color: var(--color);
+    font: 14px/1.5 var(--police);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.pf-bug-texte:focus {
+    outline: 2px solid var(--rose);
+    outline-offset: 1px;
+}
+
+.pf-bug-case {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--texte-2);
+}
+
+.pf-bug-bas {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.pf-bug-envoyer.close-btn {
+    width: auto;
+}
+
+.pf-bug-etat {
+    font-size: 13px;
+    color: var(--texte-2);
+}
+
+.pf-bug-etat.pf-ok {
+    color: var(--vert);
+}
+
+.pf-bug-etat.pf-erreur {
+    color: var(--rouge);
+}

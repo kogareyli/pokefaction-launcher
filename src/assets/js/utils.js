@@ -14,6 +14,7 @@ import logger from './utils/logger.js';
 import popup from './utils/popup.js';
 import { skin2D } from './utils/skin.js';
 import slider from './utils/slider.js';
+import { teteDuSkinChoisi } from './utils/skin-choix.js';
 
 async function setBackground(theme) {
     if (typeof theme == 'undefined') {
@@ -84,8 +85,14 @@ async function accountSelect(data) {
     account.classList.add('account-select');
     let joueur = document.querySelector('.rail-joueur');
     if (joueur) joueur.dataset.bulle = data.name;
-    if (data?.profile?.skins[0]?.base64) headplayer(data.profile.skins[0].base64);
+    if (data?.profile?.skins[0]?.base64) await headplayer(data.profile.skins[0].base64);
     else document.querySelector(".player-head").style.backgroundImage = '';
+    // Skin choisi dans « Mon skin » : la tête de la barre latérale le suit
+    try {
+        const cfg = await new database().readData('configClient');
+        const tete = await teteDuSkinChoisi(cfg?.skins?.[String(data?.name || '').toLowerCase()]);
+        if (tete) document.querySelector(".player-head").style.backgroundImage = `url(${tete})`;
+    } catch (err) { console.error('tête du skin', err) }
 }
 
 async function headplayer(skinBase64) {

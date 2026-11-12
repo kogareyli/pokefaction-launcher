@@ -6,6 +6,7 @@ import { config, database, logger, changePanel, appdata, dossierJeu, setStatus, 
 
 const { Launch } = require('minecraft-java-core')
 import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
+import { appliquerGraphismes } from '../utils/onglets-pf.js'
 const { shell, ipcRenderer } = require('electron')
 const fs = require('fs')
 
@@ -367,9 +368,15 @@ class Home {
                 let api = new PokeFactionAPI(this.config.pokefaction_api)
                 if (authenticator.meta?.type === 'Xbox') {
                     // Compte Microsoft : on revérifie auprès de Mojang (suit aussi un changement de pseudo)
-                    let reponse = await api.microsoft(authenticator)
-                    authenticator.pokefaction = { session: reponse.session, pseudo: reponse.pseudo, type: reponse.type }
-                    await this.db.updateData('accounts', authenticator, authenticator.ID)
+                    // Si Microsoft / Mojang ne répondent pas, on garde la session PokéFaction déjà enregistrée
+                    try {
+                        let reponse = await api.microsoft(authenticator)
+                        authenticator.pokefaction = { session: reponse.session, pseudo: reponse.pseudo, type: reponse.type }
+                        await this.db.updateData('accounts', authenticator, authenticator.ID)
+                    } catch (err) {
+                        if (/^Session expirée/.test(err.message)) throw err
+                        console.error('[Compte] vérification Microsoft impossible, session gardée :', err.message)
+                    }
                 }
                 let ticket = await api.ticket(authenticator.pokefaction.session)
                 let serveurs = [options.status?.ip, ...(options.serveurs_pokefaction || [])].filter(Boolean)
@@ -389,6 +396,9 @@ class Home {
                 return
             }
         }
+
+        // Graphismes choisis dans les paramètres (PC faible / équilibré / beau)
+        try { appliquerGraphismes(`${chemin}/instances/${options.name}`, configClient.graphismes) } catch (err) { console.error('graphismes', err) }
 
         // Skin choisi dans le launcher : le mod PokéFaction l'envoie au serveur en arrivant
         try {
