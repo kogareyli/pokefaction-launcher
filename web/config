@@ -1,6 +1,6 @@
 {
-    "maintenance": false,
-    "maintenance_message": "Le serveur est en maintenance (mise à jour), il revient très vite !",
+    "maintenance": true,
+    "maintenance_message": "Grosse mise à jour en cours (Hoenn, Sinnoh, toutes les Ligues…), le serveur revient très vite !",
     "online": false,
     "client_id": "",
     "dataDirectory": "PokeFaction",
@@ -10,5 +10,5 @@
         "url": "https://fsqmzwsjuzryjdxfamlg.supabase.co",
         "cle": "sb_publishable_KPeiANMak9RBxAVts2Gt_A_S7paP9wU"
     },
-    "maintenance_fin": ""
+    "maintenance_fin": "2026-11-12T23:00:20.769Z"
 }
