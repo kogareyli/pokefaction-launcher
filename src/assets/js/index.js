@@ -72,8 +72,19 @@ class Splash {
             else { clearTimeout(this.minuteur); return this.dowloadUpdate(); }
         })
 
-        ipcRenderer.on('maj-bloquee', (event, version) => {
-            this.setStatus('Mise à jour bloquée sur ce PC (antivirus ?).<br>Tu joues avec la version actuelle.');
+        ipcRenderer.on('maj-bloquee', async (event, version) => {
+            this.setStatus("La mise à jour automatique est bloquée sur ce PC.<br><span class=\"detail\">Téléchargement de l'installeur…</span>");
+            if (!this.progress.classList.contains('show')) this.toggleProgress();
+            this.veille(90000, "Téléchargement de l'installeur trop lent");
+            const r = await ipcRenderer.invoke('maj-manuelle', version).catch(e => ({ ok: false, raison: String(e) }));
+            if (this.suite) return;
+            if (r.ok) {
+                clearTimeout(this.minuteur);
+                this.setStatus('Installeur ouvert : laisse-le faire.<br><span class="detail">Le launcher se ferme et se rouvrira à jour.</span>');
+                return;
+            }
+            clearTimeout(this.minuteur);
+            this.setStatus('Mise à jour bloquée sur ce PC (antivirus ?).<br><span class="detail">Tu joues avec la version actuelle.</span>');
             setTimeout(() => this.continuer(), 2500);
         })
 

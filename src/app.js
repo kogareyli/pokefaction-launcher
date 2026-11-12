@@ -3,7 +3,8 @@
  * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 
-const { app, ipcMain, nativeTheme } = require('electron');
+const { app, ipcMain, nativeTheme, shell } = require('electron');
+const https = require('https');
 const { Microsoft } = require('minecraft-java-core');
 const { autoUpdater } = require('electron-updater')
 
@@ -155,6 +156,55 @@ ipcMain.on('maj-abandon', () => {
 });
 
 autoUpdater.on('update-not-available', () => versFenetreMaj('update-not-available'));
+
+// Téléchargement simple (suit les redirections de GitHub), avec progression
+function telecharger(url, dest, progression, redirections = 0) {
+    return new Promise((resolve, reject) => {
+        https.get(url, { headers: { 'User-Agent': 'PokeFaction-Launcher' } }, res => {
+            if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location && redirections < 6) {
+                res.resume();
+                return resolve(telecharger(new URL(res.headers.location, url).toString(), dest, progression, redirections + 1));
+            }
+            if (res.statusCode !== 200) { res.resume(); return reject(new Error('HTTP ' + res.statusCode)); }
+            const total = Number(res.headers['content-length']) || 0;
+            let recu = 0;
+            const fichier = fs.createWriteStream(dest);
+            res.on('data', morceau => {
+                recu += morceau.length;
+                if (total) progression({ transferred: recu, total, percent: recu / total * 100 });
+            });
+            res.pipe(fichier);
+            fichier.on('finish', () => fichier.close(() => resolve(dest)));
+            fichier.on('error', reject);
+            res.on('error', reject);
+        }).on('error', reject);
+    });
+}
+
+// Après 2 installations ratées : on télécharge l'installeur dans « Téléchargements » et on l'ouvre,
+// comme si le joueur l'avait téléchargé lui-même (au plus une fois par jour).
+ipcMain.handle('maj-manuelle', async (_, version) => {
+    const t = lireTentative() || {};
+    if (t.manuelLe && Date.now() - t.manuelLe < 24 * 3600 * 1000) return { ok: false, raison: "déjà proposé aujourd'hui" };
+    majAbandonnee = false;
+    const depot = require('../package.json').repository.url.replace('git+', '').replace('.git', '').replace('https://github.com/', '');
+    const dest = path.join(app.getPath('downloads'), `PokeFaction-${version}-installation.exe`);
+    try {
+        journalMaj('info', `installation manuelle de ${version} : téléchargement vers ${dest}`);
+        await telecharger(`https://github.com/${depot}/releases/download/v${version}/PokeFaction-win-x64.exe`, dest,
+            p => versFenetreMaj('download-progress', p));
+        if (majAbandonnee) return { ok: false, raison: 'abandon' };
+        fs.writeFileSync(fichierTentative(), JSON.stringify({ ...t, version, manuelLe: Date.now() }));
+        const erreur = await shell.openPath(dest);
+        if (erreur) throw new Error(erreur);
+        journalMaj('info', 'installeur ouvert, fermeture du launcher');
+        setTimeout(() => app.quit(), 2500);
+        return { ok: true };
+    } catch (err) {
+        journalMaj('erreur', 'installation manuelle', err);
+        return { ok: false, raison: String(err?.message || err) };
+    }
+});
 
 autoUpdater.on('update-downloaded', (info) => {
     if (majAbandonnee) return journalMaj('info', 'téléchargée après abandon : installée à la fermeture');
