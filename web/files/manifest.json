@@ -1488,12 +1488,6 @@
   "url": "https://edge.forgecdn.net/files/5437/294/MouseTweaks-fabric-mc1.21-2.26.jar"
  },
  {
-  "path": "mods/Multiworld-Fabric-bundle.jar",
-  "size": 733917,
-  "hash": "58d3bec9b9f94c191ced6d6a3c66ad70d6651259",
-  "url": "https://edge.forgecdn.net/files/7064/310/Multiworld-Fabric-bundle.jar"
- },
- {
   "path": "mods/musicnotification-fabric-3.0.0+mc1.21.1.jar",
   "size": 139713,
   "hash": "c27e43fec57825e2ac45d39a9366150b45d409ec",
@@ -1614,10 +1608,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-2.1.2.jar",
-  "size": 640178,
-  "hash": "0532d1c7320c808dfed1f86fe6372afb606a2ff4",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-2.1.2.jar"
+  "path": "mods/pokefaction-core-2.1.3.jar",
+  "size": 1074885,
+  "hash": "1c79f4ca5611c5054ff3080941696b301833f6e1",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-2.1.3.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
