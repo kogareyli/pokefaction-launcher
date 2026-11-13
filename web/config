@@ -1,5 +1,5 @@
 {
-    "maintenance": true,
+    "maintenance": false,
     "maintenance_message": "Mise à jour en cours (skins 3D, capes, particules), le serveur revient dans quelques minutes !",
     "online": false,
     "client_id": "",
@@ -10,5 +10,5 @@
         "url": "https://fsqmzwsjuzryjdxfamlg.supabase.co",
         "cle": "sb_publishable_KPeiANMak9RBxAVts2Gt_A_S7paP9wU"
     },
-    "maintenance_fin": "2026-11-13T00:08:19.743Z"
+    "maintenance_fin": ""
 }
