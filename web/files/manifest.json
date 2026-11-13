@@ -1608,10 +1608,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-2.1.3.jar",
-  "size": 1074885,
-  "hash": "1c79f4ca5611c5054ff3080941696b301833f6e1",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-2.1.3.jar"
+  "path": "mods/pokefaction-core-2.1.4.jar",
+  "size": 1077050,
+  "hash": "c35c6b56d322b0f4e2e1248e4270350c8ec55c35",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-2.1.4.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
