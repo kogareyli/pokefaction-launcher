@@ -308,6 +308,7 @@ class Home {
         ipcRenderer.on('maj-installation', () => this.progression('Installation… le launcher va redémarrer'))
         ipcRenderer.on('maj-erreur', () => {
             // Impossible de mettre à jour maintenant : on joue quand même avec la version actuelle
+            this.majEnCours = false
             this.progression('Mise à jour impossible pour le moment, lancement du jeu…')
             setTimeout(() => this.startGame(true), 1500)
         })
@@ -330,7 +331,28 @@ class Home {
         }
     }
 
+    // Un seul lancement à la fois : avant, chaque clic sur JOUER pendant les vérifications (Microsoft lent ou en
+    // panne) lançait un Minecraft de plus. Le bouton est caché tout de suite et réaffiché si on ne lance pas.
     async startGame(sansMaj = false) {
+        if (this.lancementEnCours) return
+        this.lancementEnCours = true
+        const bouton = document.querySelector('.play-instance'), boite = document.querySelector('.info-starting-game')
+        bouton.style.display = 'none'
+        boite.style.display = 'block'
+        this.progression('Préparation…')
+        let lance = false
+        try {
+            lance = await this.demarrerJeu(sansMaj)
+        } finally {
+            if (!lance) {
+                this.lancementEnCours = false
+                if (!this.majEnCours) { bouton.style.display = 'flex'; boite.style.display = 'none' }
+            }
+        }
+    }
+
+    /** Prépare et lance le jeu. true = le jeu est lancé (la fin du lancement est gérée par close / error). */
+    async demarrerJeu(sansMaj) {
         // Maintenance en cours ? (activée par le PokéFaction Panel pendant les mises à jour du serveur)
         try {
             let conf = await config.GetConfig()
@@ -343,7 +365,7 @@ class Home {
         // Les mods, eux, sont vérifiés à chaque lancement (liste relue en ligne juste en dessous).
         if (!sansMaj) {
             let maj = await ipcRenderer.invoke('maj-avant-jeu').catch(() => null)
-            if (maj?.version) return this.mettreAJourLauncher(maj.version)
+            if (maj?.version) { this.majEnCours = true; this.mettreAJourLauncher(maj.version); return false }
         }
         let launch = new Launch()
         let configClient = await this.db.readData('configClient')
@@ -393,7 +415,7 @@ class Home {
                     changePanel('login')
                 }
                 new popup().openPopup({ title: 'Compte PokéFaction', content: err.message, color: 'red', options: true })
-                return
+                return false
             }
         }
 
@@ -448,6 +470,8 @@ class Home {
         }
 
         launch.Launch(opt);
+        // Le jeu a-t-il démarré ? (après, une « erreur » de la bibliothèque n'est plus un problème de téléchargement)
+        let jeuDemarre = false
 
         playInstanceBTN.style.display = "none"
         infoStartingBOX.style.display = "block"
@@ -496,6 +520,7 @@ class Home {
         let tailleJournal = 0
 
         launch.on('data', (e) => {
+            jeuDemarre = true
             progressBar.style.display = "none"
             if (configClient.launcher_config.closeLauncher == 'close-launcher') {
                 ipcRenderer.send("main-window-hide")
@@ -512,6 +537,7 @@ class Home {
         })
 
         launch.on('close', code => {
+            this.lancementEnCours = false
             // Le jeu est fermé : on enregistre le journal, et s'il n'y a pas eu de vrai plantage, tout se ferme
             // (le launcher cherchera les mises à jour à sa prochaine ouverture).
             let sortieJeu = masquerSecrets(journalJeu.join(''))
@@ -546,6 +572,12 @@ class Home {
         });
 
         launch.on('error', err => {
+            this.lancementEnCours = false
+            // Jeu déjà démarré (fermé par le joueur, etc.) : pas de message « vérifie ta connexion », juste le journal
+            if (jeuDemarre) {
+                journaliserErreur(chemin, 'après le démarrage du jeu : ' + messageErreur(err))
+                return
+            }
             let popupError = new popup()
             // minecraft-java-core renvoie soit { error: '…' }, soit une vraie erreur Windows (err.message) :
             // avant, seul err.error était affiché, d'où le message « undefined ».
@@ -570,6 +602,7 @@ class Home {
             new logger(pkg.name, '#7289da');
             console.log(err);
         });
+        return true
     }
 
     getdate(e) {
