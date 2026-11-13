@@ -1614,10 +1614,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-2.0.6.jar",
-  "size": 592419,
-  "hash": "eec569d5c2612fcf6c0795bdfc5f57dc43cc2036",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-2.0.6.jar"
+  "path": "mods/pokefaction-core-2.0.7.jar",
+  "size": 593145,
+  "hash": "fe1b2dbd92648ded219f10173c68b3657d750203",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-2.0.7.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
@@ -1702,6 +1702,12 @@
   "size": 30864,
   "hash": "29e38954300c8d37c99964d34a1963537358c8dc",
   "url": "https://edge.forgecdn.net/files/7948/874/simpletpa-fabric-1.21.1-1.1.0.jar"
+ },
+ {
+  "path": "mods/skinlayers3d-fabric-1.11.4-mc1.21.1.jar",
+  "size": 1914438,
+  "hash": "59b73891befcbd20a977a903eac8e212287a31f8",
+  "url": "https://cdn.modrinth.com/data/zV5r3pPn/versions/U5tvqtlF/skinlayers3d-fabric-1.11.4-mc1.21.1.jar"
  },
  {
   "path": "mods/skinrestorer-2.11.1+1.21-fabric.jar",
@@ -1816,6 +1822,12 @@
   "size": 355303,
   "hash": "0b9c27925a041b3dee88bd10aa5e06ef7ee4f08d",
   "url": "https://edge.forgecdn.net/files/8252/200/villagerconfig-fabric-4.5.4%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/waveycapes-fabric-1.11.3-mc1.21.1.jar",
+  "size": 1782952,
+  "hash": "c51800ebca81b48604071e31dcaa7043d4cc2272",
+  "url": "https://cdn.modrinth.com/data/kYuIpRLv/versions/NuT1fOdy/waveycapes-fabric-1.11.3-mc1.21.1.jar"
  },
  {
   "path": "mods/waystones-fabric-1.21.1-21.1.37.jar",

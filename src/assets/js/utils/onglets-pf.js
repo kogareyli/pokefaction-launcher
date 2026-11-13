@@ -51,8 +51,9 @@ export function appliquerGraphismes(dossierInstance, mode) {
     if (!m) return; // « perso » : on ne touche à rien
     // options.txt : on remplace seulement nos clés, le reste (touches, son…) ne bouge pas
     const fichier = `${dossierInstance}/options.txt`;
-    let lignes = [];
-    try { lignes = fs.readFileSync(fichier, 'utf8').split(/\r?\n/).filter(l => l.length); } catch { /* premier lancement */ }
+    // Premier lancement (pas d'options.txt) : on n'en crée pas, sinon Default Options ne poserait pas les touches du modpack
+    if (!fs.existsSync(fichier)) return;
+    let lignes = fs.readFileSync(fichier, 'utf8').split(/\r?\n/).filter(l => l.length);
     const vus = new Set();
     lignes = lignes.map(l => {
         const k = l.slice(0, l.indexOf(':'));

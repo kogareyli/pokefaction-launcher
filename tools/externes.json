@@ -982,5 +982,17 @@
   "size": 291538,
   "hash": "36ca853bf92b71f6ba950af1749a2944711b9e72",
   "url": "https://cdn.modrinth.com/data/ghrZDhGW/versions/lvRKajvV/skinrestorer-2.11.1%2B1.21-fabric.jar"
+ },
+ {
+  "path": "mods/skinlayers3d-fabric-1.11.4-mc1.21.1.jar",
+  "size": 1914438,
+  "hash": "59b73891befcbd20a977a903eac8e212287a31f8",
+  "url": "https://cdn.modrinth.com/data/zV5r3pPn/versions/U5tvqtlF/skinlayers3d-fabric-1.11.4-mc1.21.1.jar"
+ },
+ {
+  "path": "mods/waveycapes-fabric-1.11.3-mc1.21.1.jar",
+  "size": 1782952,
+  "hash": "c51800ebca81b48604071e31dcaa7043d4cc2272",
+  "url": "https://cdn.modrinth.com/data/kYuIpRLv/versions/NuT1fOdy/waveycapes-fabric-1.11.3-mc1.21.1.jar"
  }
 ]
