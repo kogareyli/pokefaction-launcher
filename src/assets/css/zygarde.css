@@ -718,3 +718,15 @@ body[data-panel="settings"] .reseaux { display: none; }
 .home .container.accueil::-webkit-scrollbar-thumb { background: rgba(75, 211, 123, .35); border-radius: 8px; }
 .accueil-haut { gap: 22px; margin-bottom: 26px; }
 .accueil .actus { flex: 0 0 auto; height: max(440px, 74vh); }
+
+/* 3.0.3 : le cadre gris revient, à la taille du bouton, et Jouer est centré sous le logo */
+.accueil-haut { align-items: center; width: max-content; }
+.accueil .play-elements { margin: 0; align-items: center; }
+.play-cadre {
+    padding: 6px !important;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, .05) !important;
+    border: 1px solid rgba(255, 255, 255, .08) !important;
+}
+.accueil .play-btn { justify-content: center; }
+.accueil .play-instance { height: auto !important; }

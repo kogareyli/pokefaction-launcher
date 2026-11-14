@@ -265,6 +265,7 @@ class Settings {
 
         let themeBox = document.querySelector(".theme-box");
         let theme = configClient?.launcher_config?.theme || "auto";
+        if (!themeBox) return; // 3.0.3 : plus de choix du thème, toujours sombre
 
         if (theme == "auto") {
             document.querySelector('.theme-btn-auto').classList.add('active-theme');

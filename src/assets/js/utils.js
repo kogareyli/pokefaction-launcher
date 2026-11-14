@@ -17,6 +17,7 @@ import slider from './utils/slider.js';
 import { teteDuSkinChoisi } from './utils/skin-choix.js';
 
 async function setBackground(theme) {
+    theme = true; // 3.0.3 : toujours le thème sombre
     if (typeof theme == 'undefined') {
         let databaseLauncher = new database();
         let configClient = await databaseLauncher.readData('configClient');
