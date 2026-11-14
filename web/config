@@ -1,6 +1,6 @@
 {
-    "maintenance": true,
-    "maintenance_message": "Le serveur revient à 18 h avec une grosse mise à jour. Grand rassemblement à 21 h : tout le monde au temple !",
+    "maintenance": false,
+    "maintenance_message": "Le serveur est en maintenance (mise à jour), il revient très vite !",
     "online": false,
     "client_id": "",
     "dataDirectory": "PokeFaction",
@@ -10,5 +10,5 @@
         "url": "https://fsqmzwsjuzryjdxfamlg.supabase.co",
         "cle": "sb_publishable_KPeiANMak9RBxAVts2Gt_A_S7paP9wU"
     },
-    "maintenance_fin": "2026-11-14T17:00:00.000Z"
+    "maintenance_fin": ""
 }
