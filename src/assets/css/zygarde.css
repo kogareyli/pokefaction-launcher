@@ -735,5 +735,5 @@ body[data-panel="settings"] .reseaux { display: none; }
 .accueil-haut { align-items: flex-start; gap: 8px; margin-bottom: 0; }
 .accueil .play-elements { align-items: flex-start; margin: 0 0 0 4px; }
 
-/* 3.0.5 : logo un peu plus haut */
-.home .container.accueil { padding-top: 40px; }
+/* 3.0.6 : seul le logo monte (Jouer et les actus restent à leur place) */
+.accueil-logo { position: relative; top: -24px; }
