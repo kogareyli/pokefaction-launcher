@@ -295,11 +295,14 @@ body[data-panel="settings"] .reseaux { display: none; }
     margin: 0 0 0 34px;
 }
 
+/* 3.0.1 : plus de cadre clair autour de Jouer (trop gros), seulement le bouton */
 .play-cadre {
-    padding: 6px;
-    border-radius: 17px;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid rgba(255, 255, 255, .07);
+    display: inline-flex;
+    width: max-content;
+    padding: 0;
+    border-radius: 12px;
+    background: none;
+    border: none;
 }
 
 .play-cadre:has(.play-instance[style*="none"]) { display: none; }
@@ -698,3 +701,20 @@ body[data-panel="settings"] .reseaux { display: none; }
 .actus.n4 .actu:nth-child(4) { grid-column: 2 / span 2; }
 
 .connexion .login-pokefaction .connect, .connexion .login-pokefaction .connect:hover { box-shadow: none !important; }
+
+/* 3.0.1 : bouton Jouer plus compact */
+.accueil .play-btn { width: auto !important; min-width: 0 !important; height: 46px; padding: 0 30px; }
+.accueil .play-instance { width: auto !important; min-width: 0 !important; }
+
+/* 3.0.1 : accueil déroulant, logo et Jouer un peu plus bas, actus en dessous */
+.home .container.accueil {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 64px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(75, 211, 123, .35) transparent;
+}
+.home .container.accueil::-webkit-scrollbar { width: 8px; }
+.home .container.accueil::-webkit-scrollbar-thumb { background: rgba(75, 211, 123, .35); border-radius: 8px; }
+.accueil-haut { gap: 22px; margin-bottom: 26px; }
+.accueil .actus { flex: 0 0 auto; height: max(440px, 74vh); }
