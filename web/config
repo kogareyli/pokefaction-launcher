@@ -1,6 +1,6 @@
 {
-    "maintenance": false,
-    "maintenance_message": "Mise à jour en cours (skins 3D, capes, particules), le serveur revient dans quelques minutes !",
+    "maintenance": true,
+    "maintenance_message": "Le serveur revient à 18 h avec une grosse mise à jour. Grand rassemblement à 21 h : tout le monde au temple !",
     "online": false,
     "client_id": "",
     "dataDirectory": "PokeFaction",
@@ -10,5 +10,5 @@
         "url": "https://fsqmzwsjuzryjdxfamlg.supabase.co",
         "cle": "sb_publishable_KPeiANMak9RBxAVts2Gt_A_S7paP9wU"
     },
-    "maintenance_fin": ""
+    "maintenance_fin": "2026-11-14T17:00:00.000Z"
 }
