@@ -1,7 +1,7 @@
 [
     {
-        "title": "PokéFaction 4.0 : le PvP change tout",
-        "content": "Nouvelle arène PvP dans son propre monde, fermée : impossible d'en sortir à pied. Tape /pvp et choisis ton kit : Guerrier, Archer, Tank ou Rapide. Tes affaires sont gardées de côté, rien n'est perdu.\n\nDuels 1 contre 1 avec mise : /duel <joueur>. Le classement PvP est récompensé chaque dimanche à 22 h.\n\nNouveau aussi : la boutique rachète tes shiny (/rachat) et tu peux te faire une liste d'amis (/friend add <joueur>).\n\nEt encore : caméra de combat plus proche qui ne traverse plus les murs, protection de 3 s après une téléportation, starters montables, tableaux de classement au lobby, et ton légendaire caché s'enfuit pour toujours après 4 K.O. !",
+        "title": "PokéFaction 4.1 : PvP, duels et échanges",
+        "content": "Nouvelle arène PvP dans son propre monde, fermée : impossible d'en sortir à pied. Tape /pvp et choisis ton kit (Guerrier, Archer, Tank ou Rapide). Tes affaires sont gardées de côté, rien n'est perdu.\n\nDuels 1 contre 1 avec mise : /duel <joueur>. Classement PvP récompensé chaque dimanche à 22 h.\n\nÉchanges de Pokémon : /echange <place> <Pokémon voulu>. La boutique rachète aussi tes shiny (/rachat). Liste d'amis : /friend.\n\nEt aussi : nuit de sang avec un vrai ciel rouge et une lune rouge, parkour rallongé (40 sauts, à pied !), caméra de combat qui ne traverse plus les murs, protection de 3 s après une téléportation, starters montables, et ton légendaire caché s'enfuit pour toujours après 4 K.O. !",
         "author": "Staff PokéFaction",
         "publish_date": "2026-11-14"
     },
