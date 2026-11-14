@@ -71,7 +71,7 @@ function diagnosticPlantage(sortie, dossier) {
         return 'Le jeu a manqué de mémoire. Ouvre les paramètres du launcher (roue en bas à droite), puis Java, ' +
             'et monte la RAM maximum à 6 Go si ton PC a 12 Go ou plus.'
     }
-    if (/EPERM|EACCES|AccessDenied|Access is denied|Accès refusé|ClassNotFoundException|NoClassDefFoundError|ZipException|zip END header|invalid LOC header/i.test(sortie)) {
+    if (/EPERM|EACCES|AccessDenied|Access is denied|Accès refusé|ZipException|zip END header|invalid LOC header/i.test(sortie)) {
         return 'Des fichiers du jeu sont abîmés ou bloqués, souvent par un antivirus (Norton, Avast…). Ajoute ' +
             `<b>${dossier}</b> aux exclusions de ton antivirus, puis relance Jouer : ` +
             'le launcher retélécharge ce qui manque.'
@@ -536,7 +536,9 @@ class Home {
             // (le launcher cherchera les mises à jour à sa prochaine ouverture).
             let sortieJeu = masquerSecrets(journalJeu.join(''))
             ecrireJournalJeu(chemin, sortieJeu)
-            if (!diagnosticPlantage(sortieJeu, echapper(cheminWindows(chemin))) && configClient.launcher_config.closeLauncher != 'close-none') {
+            // 3.0.2 : diagnostic seulement si le jeu s'est vraiment arrêté en erreur (code ≠ 0). Quitter le jeu = rien.
+            const vraiPlantage = code !== 0 && code !== null;
+            if (!(vraiPlantage && diagnosticPlantage(sortieJeu, echapper(cheminWindows(chemin)))) && configClient.launcher_config.closeLauncher != 'close-none') {
                 ipcRenderer.send('main-window-close')
                 return
             }
@@ -553,7 +555,7 @@ class Home {
 
             let sortie = sortieJeu
             let dossierWindows = echapper(cheminWindows(chemin))
-            let plantage = diagnosticPlantage(sortie, dossierWindows)
+            let plantage = vraiPlantage ? diagnosticPlantage(sortie, dossierWindows) : null
             if (plantage) {
                 new popup().openPopup({
                     title: 'Le jeu s\'est fermé',

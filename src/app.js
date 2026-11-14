@@ -28,6 +28,16 @@ if (dev) {
 
 Store.initRenderer();
 
+// 3.0.2 : relancer le launcher pendant une partie le rouvre. S'il était caché (jeu en cours), il redémarre pour
+// prendre sa dernière version ; le jeu, lancé à part (detached), continue de tourner.
+app.on('second-instance', () => {
+    try {
+        const w = MainWindow.getWindow();
+        if (w && !w.isDestroyed() && !w.isVisible()) { app.relaunch(); app.exit(0); return; }
+        if (w && !w.isDestroyed()) { if (w.isMinimized()) w.restore(); w.show(); w.focus(); }
+    } catch (e) { console.error(e); }
+});
+
 if (!app.requestSingleInstanceLock()) app.quit();
 else app.whenReady().then(() => {
     if (dev) return MainWindow.createWindow()
