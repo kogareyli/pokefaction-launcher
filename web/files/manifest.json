@@ -1608,10 +1608,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-2.5.1.jar",
-  "size": 836901,
-  "hash": "5ec08c0bc7df9af13a8a8137d9379fa0b20f8bb5",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-2.5.1.jar"
+  "path": "mods/pokefaction-core-3.0.0.jar",
+  "size": 937653,
+  "hash": "1fdca21b1d447b992f0e8634e657d545422f7dbc",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-3.0.0.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
@@ -1840,6 +1840,12 @@
   "size": 2234556,
   "hash": "5fbb03dd3f22c0c3d5466d1366222d7d277a8df3",
   "url": "https://edge.forgecdn.net/files/9067/178/xaerominimap-fabric-1.21.1-26.6.0.jar"
+ },
+ {
+  "path": "mods/xaeroworldmap-fabric-1.21.1-1.47.0.jar",
+  "size": 1456162,
+  "hash": "db7ad23fe512dbc13a8286844fd9277c08a7ef5a",
+  "url": "https://cdn.modrinth.com/data/NcUtCpym/versions/XIR7GzC3/xaeroworldmap-fabric-1.21.1-1.47.0.jar"
  },
  {
   "path": "mods/yet_another_config_lib_v3-3.8.2+1.21.1-fabric.jar",

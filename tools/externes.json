@@ -988,5 +988,11 @@
   "size": 1782952,
   "hash": "c51800ebca81b48604071e31dcaa7043d4cc2272",
   "url": "https://cdn.modrinth.com/data/kYuIpRLv/versions/NuT1fOdy/waveycapes-fabric-1.11.3-mc1.21.1.jar"
+ },
+ {
+  "path": "mods/xaeroworldmap-fabric-1.21.1-1.47.0.jar",
+  "size": 1456162,
+  "hash": "db7ad23fe512dbc13a8286844fd9277c08a7ef5a",
+  "url": "https://cdn.modrinth.com/data/NcUtCpym/versions/XIR7GzC3/xaeroworldmap-fabric-1.21.1-1.47.0.jar"
  }
 ]
