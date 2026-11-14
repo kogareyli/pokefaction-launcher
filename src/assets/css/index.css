@@ -49,7 +49,7 @@ img {
     inset: 0;
     overflow: hidden;
     background:
-        radial-gradient(420px 320px at 50% 30%, rgba(138, 92, 255, .28), transparent 70%),
+        radial-gradient(420px 320px at 50% 30%, rgba(30, 122, 74, .28), transparent 70%),
         linear-gradient(180deg, var(--fond-1), var(--fond-0));
     border: 1px solid var(--bord);
 }
@@ -66,14 +66,14 @@ img {
 .fond-lueur-1 {
     left: -120px;
     top: 60px;
-    background: #ff2f86;
+    background: #4bd37b;
     animation: derive 9s ease-in-out infinite alternate;
 }
 
 .fond-lueur-2 {
     right: -130px;
     bottom: -40px;
-    background: #6a5cff;
+    background: #1e7a4a;
     animation: derive 11s ease-in-out infinite alternate-reverse;
 }
 
@@ -109,7 +109,7 @@ img {
     width: 100%;
     height: 100%;
     opacity: 0;
-    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(255, 47, 134, .4));
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(75, 211, 123, .4));
 }
 
 .splash.opacity {
@@ -120,7 +120,7 @@ img {
     position: absolute;
     inset: -30%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 47, 134, .55), rgba(138, 92, 255, .25) 40%, transparent 70%);
+    background: radial-gradient(circle, rgba(75, 211, 123, .55), rgba(30, 122, 74, .25) 40%, transparent 70%);
     filter: blur(22px);
     opacity: 0;
     animation: apparait .8s .2s forwards, respire 4s 1s ease-in-out infinite;
@@ -130,7 +130,7 @@ img {
     position: absolute;
     inset: -7% -11%;
     border-radius: 50%;
-    background: conic-gradient(from 0deg, transparent 0 14%, rgba(255, 47, 134, .9) 26%, transparent 38% 58%, rgba(106, 120, 255, .9) 72%, transparent 84%);
+    background: conic-gradient(from 0deg, transparent 0 14%, rgba(75, 211, 123, .9) 26%, transparent 38% 58%, rgba(47, 157, 99, .9) 72%, transparent 84%);
     -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
     opacity: 0;
     animation: apparait .8s .5s forwards, tourne 3.2s linear infinite;
@@ -151,7 +151,7 @@ img {
 }
 
 .light .splash-titre {
-    background-image: linear-gradient(100deg, #1b1036 0%, #3a1f6e 22%, #ff2f86 42%, #7a4dff 58%, #1b1036 78%, #1b1036 100%);
+    background-image: linear-gradient(100deg, #0c120f 0%, #12301f 22%, #4bd37b 42%, #1e7a4a 58%, #0c120f 78%, #0c120f 100%);
 }
 
 .splash-message {
@@ -224,7 +224,7 @@ img {
 .progress::-webkit-progress-value {
     background: var(--degrade);
     border-radius: 6px;
-    box-shadow: 0 0 12px rgba(255, 47, 134, .6);
+    box-shadow: 0 0 12px rgba(75, 211, 123, .6);
     transition: width .3s;
 }
 
@@ -240,7 +240,7 @@ img {
     width: 34%;
     border-radius: 6px;
     background: var(--degrade);
-    box-shadow: 0 0 12px rgba(255, 47, 134, .6);
+    box-shadow: 0 0 12px rgba(75, 211, 123, .6);
     animation: va-et-vient 1.4s ease-in-out infinite;
 }
 
@@ -270,8 +270,8 @@ img {
 
 @keyframes logo-entree {
     0% { opacity: 0; scale: .55; filter: blur(14px); }
-    70% { opacity: 1; scale: 1.05; filter: blur(0) drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(255, 47, 134, .4)); }
-    100% { opacity: 1; scale: 1; filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(255, 47, 134, .4)); }
+    70% { opacity: 1; scale: 1.05; filter: blur(0) drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(75, 211, 123, .4)); }
+    100% { opacity: 1; scale: 1; filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(75, 211, 123, .4)); }
 }
 
 @keyframes flotte {

@@ -1,28 +1,18 @@
-<div class="container">
-    <section class="hero">
-        <div class="hero-logo">
-            <div class="hero-halo"></div>
-            <div class="hero-anneau"></div>
-            <img class="hero-logo-img" src="assets/images/logo/logo.png" alt="PokéFaction" />
-        </div>
-
-        <h1 class="hero-titre"><span class="server-status-name">PokéFaction</span></h1>
-        <p class="hero-slogan">Capture. Conquiers. Règne sur ta faction.</p>
-
-        <div class="statut" data-etat="chargement">
-            <span class="statut-point"></span>
-            <span class="statut-texte server-status-text">Connexion au serveur…</span>
-            <span class="statut-sep"></span>
-            <span class="statut-joueurs status-player-count"><b class="player-count">–</b> en jeu</span>
+<div class="container accueil">
+    <section class="accueil-haut">
+        <div class="accueil-logo">
+            <img class="accueil-logo-img" src="assets/images/logo/logo.png" alt="PokéFaction" />
         </div>
 
         <div class="play-elements">
-            <div class="play-instance">
-                <button class="play-btn">
-                    <svg viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
-                    <span>Jouer</span>
-                </button>
-                <div class="instance-select icon-arrow"></div>
+            <div class="play-cadre">
+                <div class="play-instance">
+                    <button class="play-btn">
+                        <svg viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
+                        <span>Jouer</span>
+                    </button>
+                    <div class="instance-select icon-arrow"></div>
+                </div>
             </div>
             <div class="info-starting-game">
                 <div class="info-ligne">
@@ -34,12 +24,21 @@
         </div>
     </section>
 
-    <aside class="new-tab">
-        <div class="new-tab-tete">
-            <div class="titre-tab-new">Quoi de neuf</div>
-        </div>
-        <div class="news-list content-scroll"></div>
-    </aside>
+    <!-- Actualités : une grande carte « À la une » et les suivantes en petit -->
+    <section class="actus news-list"></section>
+
+    <div class="article-ouvert">
+        <article class="article-carte">
+            <button class="article-fermer" aria-label="Fermer">×</button>
+            <div class="article-image"></div>
+            <div class="article-corps">
+                <span class="article-date"></span>
+                <h2 class="article-titre"></h2>
+                <div class="article-texte"></div>
+                <div class="article-auteur"></div>
+            </div>
+        </article>
+    </div>
 
     <div class="instance-popup">
         <div class="instances-tab">

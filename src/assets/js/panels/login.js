@@ -5,7 +5,7 @@
 const { AZauth, Mojang } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
 
-import { popup, database, changePanel, accountSelect, addAccount, config, setStatus } from '../utils.js';
+import { popup, database, changePanel, accountSelect, addAccount, config, setStatus, pkg } from '../utils.js';
 import { PokeFactionAPI } from '../utils/pokefaction-api.js';
 
 class Login {
@@ -81,6 +81,25 @@ class Login {
         let inscription = false;
 
         panneau.style.display = 'block';
+
+        // 3.0 : carte « Compte PokéFaction » au-dessus de la barre, version, membres du Discord, « Rester connecté »
+        panneau.querySelector('.pf-ouvrir-compte')?.addEventListener('click', () => panneau.classList.toggle('pf-carte-ouverte'));
+        const version = panneau.querySelector('.connexion-version');
+        if (version) version.textContent = 'v' + pkg.version;
+        const rester = panneau.querySelector('.pf-rester');
+        if (rester) {
+            rester.checked = localStorage.getItem('pf-rester') !== 'false';
+            rester.addEventListener('change', () => localStorage.setItem('pf-rester', rester.checked ? 'true' : 'false'));
+        }
+        fetch('https://discord.com/api/v9/invites/8gRP8NfN4?with_counts=true', { signal: AbortSignal.timeout(8000) })
+            .then(r => r.json())
+            .then(j => {
+                const n = j && (j.approximate_member_count || j.profile?.member_count);
+                const el = panneau.querySelector('.discord-membres');
+                if (n && el) el.textContent = Number(n).toLocaleString('fr-FR');
+                else panneau.querySelector('.connexion-discord')?.classList.add('cache');
+            })
+            .catch(() => panneau.querySelector('.connexion-discord')?.classList.add('cache'));
 
         const api = () => new PokeFactionAPI(this.config.pokefaction_api);
         const occupe = (oui) => {

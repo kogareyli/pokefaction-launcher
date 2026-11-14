@@ -4,7 +4,8 @@
  * Tout s'arrête quand la fenêtre est cachée ou pendant une partie (body.en-jeu).
  */
 
-const COULEURS = ['255,47,134', '212,60,255', '138,92,255', '79,124,255', '255,120,190'];
+// Thème Zygarde : des « cellules » vertes discrètes
+const COULEURS = ['75,211,123', '60,192,109', '143,227,174', '47,157,99'];
 
 function hasard(min, max) {
     return min + Math.random() * (max - min);
@@ -42,7 +43,7 @@ export default class Fond {
         this.canvas.height = Math.round(this.h * dpr);
         this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        const voulu = Math.round(Math.min(70, Math.max(24, this.l * this.h / 16000)));
+        const voulu = Math.round(Math.min(36, Math.max(14, this.l * this.h / 28000)));
         while (this.cubes.length < voulu) this.cubes.push(this.nouveau(true));
         this.cubes.length = voulu;
         if (this.calme) this.dessiner(0);
@@ -61,7 +62,7 @@ export default class Fond {
             phase: hasard(0, Math.PI * 2),
             angle: hasard(0, Math.PI * 2),
             rotation: hasard(-.6, .6),
-            alpha: etincelle ? hasard(.35, .9) : hasard(.12, .45) * (.5 + z),
+            alpha: etincelle ? hasard(.25, .6) : hasard(.08, .28) * (.5 + z),
             couleur: COULEURS[Math.floor(Math.random() * COULEURS.length)],
             etincelle
         };
@@ -88,7 +89,7 @@ export default class Fond {
         if (this.image++ % 90 === 0) {
             const v = parseFloat(getComputedStyle(document.body).getPropertyValue('--particules'));
             this.force = isNaN(v) ? 1 : v;
-            this.logo = document.querySelector('.home.active .hero-logo');
+            this.logo = document.querySelector('.home.active .accueil-logo');
         }
 
         // La souris déplace doucement la « caméra »
@@ -131,9 +132,6 @@ export default class Fond {
             ctx.translate(x, y);
             ctx.rotate(c.angle);
             const s = c.taille;
-            // halo
-            ctx.fillStyle = `rgba(${c.couleur},${a * .18})`;
-            ctx.fillRect(-s, -s, s * 2, s * 2);
             // cube : face pleine + liseré clair en haut (effet « pixel »)
             ctx.fillStyle = `rgba(${c.couleur},${a})`;
             ctx.fillRect(-s / 2, -s / 2, s, s);

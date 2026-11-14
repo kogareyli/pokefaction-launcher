@@ -68,6 +68,9 @@ class Launcher {
         document.querySelectorAll('.rail-btn[data-panel]').forEach(btn => {
             btn.addEventListener('click', () => changePanel(btn.dataset.panel));
         });
+        document.querySelectorAll('[data-panel-haut]').forEach(btn => {
+            btn.addEventListener('click', () => { if (document.body.dataset.panel !== 'login') changePanel(btn.dataset.panelHaut); });
+        });
         document.querySelector('.rail-joueur').addEventListener('click', () => {
             changePanel('settings');
             document.querySelector('.nav-settings-btn#account')?.click();
@@ -144,6 +147,12 @@ class Launcher {
 
     async startLauncher() {
         let accounts = await this.db.readAllData('accounts')
+        // « Rester connecté » décoché à la connexion : on repart sans compte au lancement suivant
+        if (localStorage.getItem('pf-rester') === 'false' && accounts?.length) {
+            for (let account of accounts) await this.db.deleteData('accounts', account.ID)
+            accounts = []
+            localStorage.removeItem('pf-rester')
+        }
         let configClient = await this.db.readData('configClient')
         let account_selected = configClient ? configClient.account_selected : null
         let popupRefresh = new popup();

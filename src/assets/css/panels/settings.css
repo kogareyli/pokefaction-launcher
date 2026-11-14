@@ -67,7 +67,7 @@
 .active-settings-BTN:hover {
     color: var(--color);
     background: var(--degrade-doux);
-    box-shadow: inset 0 0 0 1px rgba(255, 47, 134, .3);
+    box-shadow: inset 0 0 0 1px rgba(75, 211, 123, .3);
     padding-left: 18px;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .nav-box #save:hover {
-    border-color: rgba(255, 47, 134, .4);
+    border-color: rgba(75, 211, 123, .4);
     padding-left: 14px;
 }
 
@@ -172,7 +172,7 @@
     font-size: 13px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 6px 16px rgba(255, 47, 134, .25);
+    box-shadow: 0 6px 16px rgba(75, 211, 123, .25);
     transition: transform .3s var(--ressort), background-position .5s;
 }
 
@@ -206,7 +206,7 @@
 .input-resolution:focus,
 .input-max-files:focus {
     border-color: var(--rose);
-    box-shadow: 0 0 0 4px rgba(255, 47, 134, .15);
+    box-shadow: 0 0 0 4px rgba(75, 211, 123, .15);
 }
 
 /*******************************************************************************
@@ -244,8 +244,8 @@
 .account-select,
 .account-select:hover {
     background: var(--degrade-doux);
-    border-color: rgba(255, 47, 134, .55);
-    box-shadow: 0 10px 30px rgba(255, 47, 134, .15);
+    border-color: rgba(75, 211, 123, .55);
+    box-shadow: 0 10px 30px rgba(75, 211, 123, .15);
 }
 
 .accounts-list #add {
@@ -367,7 +367,7 @@
     border-radius: 50%;
     background: #fff;
     border: 4px solid var(--rose);
-    box-shadow: 0 0 0 4px rgba(255, 47, 134, .18), 0 4px 10px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 0 4px rgba(75, 211, 123, .18), 0 4px 10px rgba(0, 0, 0, .3);
     cursor: grab;
     transition: transform .2s var(--ressort);
 }
@@ -501,7 +501,7 @@
 .theme-btn:hover,
 .close-btn:hover {
     transform: translateY(-2px);
-    border-color: rgba(255, 47, 134, .4);
+    border-color: rgba(75, 211, 123, .4);
 }
 
 .close-btn {
@@ -512,7 +512,7 @@
 .active-close {
     background: var(--degrade-doux);
     border-color: var(--rose);
-    box-shadow: 0 0 0 3px rgba(255, 47, 134, .15);
+    box-shadow: 0 0 0 3px rgba(75, 211, 123, .15);
 }
 
 /*******************************************************************************
@@ -539,7 +539,7 @@
     width: 200px;
     height: 360px;
     border-radius: 16px;
-    background: radial-gradient(circle at 50% 40%, rgba(255, 47, 134, .22), transparent 65%), var(--surface);
+    background: radial-gradient(circle at 50% 40%, rgba(75, 211, 123, .22), transparent 65%), var(--surface);
     border: 1px solid var(--bord);
 }
 
@@ -607,14 +607,14 @@
 .skin-modele:hover,
 .skin-bouton-2:hover {
     transform: translateY(-2px);
-    border-color: rgba(255, 47, 134, .4);
+    border-color: rgba(75, 211, 123, .4);
 }
 
 .skin-mode.skin-actif,
 .skin-modele.skin-actif {
     background: var(--degrade-doux);
     border-color: var(--rose);
-    box-shadow: 0 0 0 3px rgba(255, 47, 134, .15);
+    box-shadow: 0 0 0 3px rgba(75, 211, 123, .15);
 }
 
 .skin-panneau {
@@ -642,7 +642,7 @@
 
 .skin-pseudo:focus {
     border-color: var(--rose);
-    box-shadow: 0 0 0 4px rgba(255, 47, 134, .15);
+    box-shadow: 0 0 0 4px rgba(75, 211, 123, .15);
 }
 
 .skin-fichier {
@@ -670,7 +670,7 @@
     font-size: 14px;
     font-weight: 750;
     cursor: pointer;
-    box-shadow: 0 10px 26px rgba(255, 47, 134, .3);
+    box-shadow: 0 10px 26px rgba(75, 211, 123, .3);
     transition: transform .3s var(--ressort), background-position .5s;
 }
 

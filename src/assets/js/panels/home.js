@@ -111,65 +111,59 @@ class Home {
     }
 
     async news() {
-        let newsElement = document.querySelector('.news-list');
+        let liste = document.querySelector('.news-list');
         let news = await config.getNews(this.config).then(res => res).catch(err => false);
-        // Images d'un article : seulement des liens https (hébergées avec le launcher sur GitHub), 3 au plus
-        let images = (liste) => {
-            let urls = (Array.isArray(liste) ? liste : liste ? [liste] : []).filter(u => typeof u === 'string' && u.startsWith('https://')).slice(0, 3);
-            if (!urls.length) return '';
-            return `<div class="news-images" data-n="${urls.length}">${urls.map(u =>
-                `<button class="news-image" data-src="${encodeURI(u)}"><img src="${encodeURI(u)}" loading="lazy" alt="" /></button>`).join('')}</div>`;
+        // Images : seulement des liens https (hébergées avec le launcher sur GitHub) ; sinon une image du serveur
+        const parDefaut = ['assets/images/default/connexion.jpg', 'assets/images/default/paysage.png'];
+        const premiereImage = (n, i) => {
+            let urls = (Array.isArray(n.images) ? n.images : n.images ? [n.images] : n.image ? [n.image] : [])
+                .filter(u => typeof u === 'string' && u.startsWith('https://'));
+            return urls.length ? encodeURI(urls[0]) : parDefaut[i % parDefaut.length];
         };
-        let carte = (i, date, titre, contenu, auteur, img) => {
-            let bloc = document.createElement('div');
-            bloc.classList.add('news-block');
-            bloc.style.setProperty('--i', i);
-            bloc.innerHTML = `
-                <div class="news-header">
-                    <div class="news-date">
-                        <div class="day">${date.day}</div>
-                        <div class="month">${date.court}</div>
-                    </div>
-                    <div class="header-text">
-                        <div class="title">${titre}</div>
-                    </div>
-                </div>
-                ${images(img)}
-                <div class="news-content">
-                    <div class="bbWrapper">
-                        <p>${contenu}</p>
-                        ${auteur ? `<p class="news-author">Par <span>${auteur}</span></p>` : ''}
-                    </div>
-                </div>`;
-            newsElement.appendChild(bloc);
-        };
-        if (news) {
-            if (!news.length) {
-                carte(0, this.getdate(new Date()), 'Aucune actualité pour le moment', 'Tu pourras suivre ici toutes les nouveautés du serveur.');
-            } else {
-                news.forEach((News, i) => carte(i, this.getdate(News.publish_date), News.title, News.content.replace(/\n/g, '</br>'), News.author, News.images || News.image));
-                this.visionneuse(newsElement);
-            }
-        } else {
-            carte(0, this.getdate(new Date()), 'Actualités indisponibles', 'Impossible de récupérer les actualités.</br>Vérifie ta connexion internet.');
+        const texte = (s) => echapper(String(s || ''));
+        if (!news || !news.length) {
+            news = [{ title: news ? 'Aucune actualité pour le moment' : 'Actualités indisponibles',
+                content: news ? 'Tu pourras suivre ici toutes les nouveautés du serveur.' : 'Vérifie ta connexion internet.', publish_date: new Date() }];
         }
+        liste.classList.add('n' + Math.min(5, news.length));
+        news.slice(0, 5).forEach((n, i) => {
+            let carte = document.createElement('button');
+            carte.className = 'actu' + (i === 0 ? ' actu-une' : '');
+            carte.style.setProperty('--i', i);
+            let date = this.getdate(n.publish_date);
+            let extrait = String(n.content || '').split('\n').filter(l => l.trim())[0] || '';
+            carte.innerHTML = `
+                <img class="actu-img" src="${premiereImage(n, i)}" alt="" loading="lazy" />
+                <div class="actu-voile"></div>
+                ${i === 0 ? '<span class="actu-etiquette">À la une</span>' : ''}
+                <div class="actu-texte">
+                    <div class="actu-titre">${texte(n.title)}</div>
+                    ${i === 0 ? `<p class="actu-extrait">${texte(extrait)}</p>` : ''}
+                    <div class="actu-bas">${i === 0 && n.author ? `<span>Par ${texte(n.author)}</span>` : '<span></span>'}<span>${date.day} ${date.month} ${date.year}</span></div>
+                </div>`;
+            carte.addEventListener('click', () => this.ouvrirArticle(n, premiereImage(n, i), date));
+            liste.appendChild(carte);
+        });
+        // Fermer l'article : croix, clic à côté, Échap
+        let fond = document.querySelector('.article-ouvert');
+        fond.addEventListener('click', e => { if (e.target === fond || e.target.closest('.article-fermer')) fond.classList.remove('ouvert'); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') fond.classList.remove('ouvert'); });
     }
 
-    // Clic sur une image d'actualité : affichée en grand ; clic ou Échap pour fermer
-    visionneuse(liste) {
-        let fond = document.createElement('div');
-        fond.className = 'visionneuse';
-        fond.innerHTML = '<img alt="" />';
-        document.body.appendChild(fond);
-        let fermer = () => fond.classList.remove('ouverte');
-        fond.addEventListener('click', fermer);
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') fermer(); });
-        liste.addEventListener('click', e => {
-            let bouton = e.target.closest('.news-image');
-            if (!bouton) return;
-            fond.querySelector('img').src = bouton.dataset.src;
-            fond.classList.add('ouverte');
-        });
+    ouvrirArticle(n, image, date) {
+        let fond = document.querySelector('.article-ouvert');
+        fond.querySelector('.article-image').style.backgroundImage = `url("${image}")`;
+        fond.querySelector('.article-date').textContent = `${date.day} ${date.month} ${date.year}`;
+        fond.querySelector('.article-titre').textContent = n.title || '';
+        let corps = fond.querySelector('.article-texte');
+        corps.textContent = '';
+        for (let ligne of String(n.content || '').split('\n')) {
+            let p = document.createElement('p');
+            p.textContent = ligne;
+            corps.appendChild(p);
+        }
+        fond.querySelector('.article-auteur').textContent = n.author ? 'Par ' + n.author : '';
+        fond.classList.add('ouvert');
     }
 
     socialLick() {

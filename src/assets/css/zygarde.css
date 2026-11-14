@@ -1,0 +1,700 @@
+/*******************************************************************************
+ * Launcher 3.0 — thème Zygarde (noir verdâtre, vert émeraude), mise en page
+ * façon « client » : barre fine à gauche, logo + Jouer, actualités en cartes,
+ * réseaux à droite, joueurs en ligne en haut à droite, connexion plein écran.
+ * Chargé en dernier : il remplace les anciennes règles de mise en page.
+ ******************************************************************************/
+
+body {
+    background: #090e0b;
+}
+
+/* ------------------------------------------------------------------ fond */
+.fond {
+    background: #090e0b;
+}
+
+.fond-hexa {
+    position: absolute;
+    inset: 0;
+    opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 1 L55 16.5 L55 47.5 L28 63 L1 47.5 L1 16.5 Z M28 64 L28 97' fill='none' stroke='%234bd37b' stroke-width='1.2'/%3E%3C/svg%3E");
+    background-size: 56px 97px;
+}
+
+.fond-particules {
+    opacity: .9;
+}
+
+/* ------------------------------------------------------------------ bulles d'aide */
+.rail [data-bulle],
+.reseaux [data-bulle],
+.barre-haut [data-bulle] {
+    position: relative;
+}
+
+.rail [data-bulle]::after,
+.reseaux [data-bulle]::after,
+.barre-haut [data-bulle]::after {
+    content: attr(data-bulle);
+    position: absolute;
+    white-space: nowrap;
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #eef7f1;
+    background: #18231d;
+    border: 1px solid rgba(255, 255, 255, .08);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s, transform .15s;
+    z-index: 40;
+}
+
+.rail [data-bulle]::after { left: calc(100% + 10px); top: 50%; transform: translate(-4px, -50%); }
+.reseaux [data-bulle]::after { right: calc(100% + 10px); top: 50%; transform: translate(4px, -50%); }
+.barre-haut [data-bulle]::after { top: calc(100% + 8px); right: 0; transform: translateY(-4px); }
+
+.rail [data-bulle]:hover::after,
+.reseaux [data-bulle]:hover::after,
+.barre-haut [data-bulle]:hover::after {
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+
+.barre-haut [data-bulle]:hover::after { transform: none; }
+
+/* ------------------------------------------------------------------ barre de gauche */
+.rail {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 46px 0 14px;
+    background: #0c120f;
+    border-right: 1px solid rgba(255, 255, 255, .05);
+    z-index: 12;
+    -webkit-app-region: no-drag;
+}
+
+body[data-panel="login"] .rail { display: none; }
+
+.rail-trait-haut {
+    width: 26px;
+    height: 1px;
+    background: rgba(255, 255, 255, .08);
+    margin-bottom: 4px;
+}
+
+.rail-serveur,
+.rail-verrou {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rail-serveur {
+    background: rgba(75, 211, 123, .12);
+    border: 1.5px solid #4bd37b;
+    cursor: pointer;
+    padding: 0;
+}
+
+.rail-serveur img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.rail-serveur::before { display: none !important; }
+
+.rail-verrou {
+    background: rgba(255, 255, 255, .035);
+    border: 1px solid rgba(255, 255, 255, .05);
+}
+
+.rail-verrou svg {
+    width: 17px;
+    height: 17px;
+    fill: rgba(238, 247, 241, .3);
+}
+
+.rail-espace { flex: 1; }
+
+.rail-reglages {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.rail-reglages svg { width: 20px; height: 20px; fill: rgba(238, 247, 241, .55); transition: fill .15s; }
+.rail-reglages:hover svg, .rail-reglages.rail-actif svg { fill: #4bd37b; }
+.rail-reglages.rail-actif::before { display: none !important; }
+
+/* ------------------------------------------------------------------ en haut à droite */
+.barre-haut {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 4px;
+    border-radius: 14px;
+    background: rgba(12, 18, 15, .88);
+    border: 1px solid rgba(255, 255, 255, .07);
+    z-index: 21;
+    -webkit-app-region: no-drag;
+}
+
+.barre-haut .statut {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .05);
+    font-size: 12.5px;
+    color: #eef7f1;
+}
+
+.barre-haut .statut svg { width: 15px; height: 15px; fill: rgba(238, 247, 241, .75); }
+.barre-haut .statut-texte { display: none; }
+.barre-haut .statut-point { width: 7px; height: 7px; border-radius: 50%; background: #6b7a71; }
+.barre-haut .statut[data-etat="en-ligne"] .statut-point { background: #4bd37b; }
+.barre-haut .statut[data-etat="hors-ligne"] .statut-point { background: #ff5d6d; }
+
+.haut-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.haut-btn svg { width: 16px; height: 16px; fill: rgba(238, 247, 241, .7); }
+.haut-btn:hover { background: rgba(255, 255, 255, .07); }
+
+.barre-haut .other .frame {
+    position: static;
+    display: flex;
+    gap: 2px;
+}
+
+.barre-haut .other .button-frame {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.barre-haut .other .button-frame:hover { background: rgba(255, 255, 255, .07); }
+.barre-haut .other .icon-close:hover { background: rgba(255, 93, 109, .85); color: #fff; }
+.barre-haut .other #maximize { display: none; }
+
+body[data-panel="login"] .barre-haut .statut,
+body[data-panel="login"] .barre-haut .haut-btn { display: none; }
+
+/* ------------------------------------------------------------------ réseaux à droite */
+.reseaux {
+    position: fixed;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 16px;
+    background: rgba(12, 18, 15, .88);
+    border: 1px solid rgba(255, 255, 255, .07);
+    z-index: 12;
+}
+
+body[data-panel="login"] .reseaux,
+body[data-panel="settings"] .reseaux { display: none; }
+
+.reseau {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.reseau svg { width: 18px; height: 18px; fill: rgba(238, 247, 241, .75); transition: fill .15s; }
+.reseau:hover { background: rgba(255, 255, 255, .06); }
+.reseau:hover svg { fill: #fff; }
+
+.reseau-trait {
+    height: 1px;
+    margin: 4px 6px;
+    background: rgba(255, 255, 255, .08);
+}
+
+/* ------------------------------------------------------------------ accueil */
+.home .container.accueil {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 26px 80px 24px 104px;
+    grid-template-columns: none;
+}
+
+.accueil-haut {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.accueil-logo {
+    height: clamp(110px, 25vh, 200px);
+    transform: perspective(900px) rotateX(var(--incl-y, 0deg)) rotateY(var(--incl-x, 0deg));
+    transition: transform .25s ease-out;
+}
+
+.accueil-logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.home.active .accueil-logo { animation: z-entree .7s .05s var(--doux) both; }
+.home.active .play-elements { animation: z-entree .7s .15s var(--doux) both; }
+
+.accueil .play-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 0 34px;
+}
+
+.play-cadre {
+    padding: 6px;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .07);
+}
+
+.play-cadre:has(.play-instance[style*="none"]) { display: none; }
+
+.accueil .play-instance {
+    display: flex;
+    padding: 0;
+}
+
+.accueil .play-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 52px;
+    padding: 0 38px;
+    border-radius: 12px;
+    border: none;
+    background: #22894f;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: .01em;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background .15s, transform .15s;
+}
+
+.accueil .play-btn::before,
+.accueil .play-btn::after { display: none !important; }
+
+.accueil .play-btn svg { width: 16px; height: 16px; fill: #fff; }
+.accueil .play-btn:hover { background: #2a9d5c; transform: translateY(-1px); }
+.accueil .play-btn:active { transform: none; }
+
+.accueil .instance-select { display: none; }
+
+.accueil .info-starting-game {
+    width: min(380px, 42vw);
+    margin: 6px 0 0;
+}
+
+/* ------------------------------------------------------------------ actualités en cartes */
+.actus {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1.55fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+}
+
+.actu {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, .06);
+    background: #121a16;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+    color: #fff;
+    font-family: var(--police);
+}
+
+.home.active .actu { animation: z-entree .6s calc(.2s + var(--i) * 70ms) var(--doux) both; }
+
+.actu-une { grid-row: 1 / span 2; }
+.actus .actu:only-child { grid-column: 1 / span 3; }
+
+.actu-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s var(--doux);
+}
+
+.actu:hover .actu-img { transform: scale(1.04); }
+
+/* Voile sombre en bas : le texte reste lisible sur n'importe quelle image */
+.actu-voile {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(7, 11, 9, .94) 0%, rgba(7, 11, 9, .55) 45%, rgba(7, 11, 9, .05) 100%);
+}
+
+.actu-etiquette {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .14);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.actu-texte {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 12px;
+}
+
+.actu-titre {
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.actu-une .actu-titre { font-size: 19px; }
+
+.actu-extrait {
+    margin: 6px 0 0;
+    font-size: 12px;
+    line-height: 1.45;
+    color: rgba(238, 247, 241, .72);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.actu-bas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 10.5px;
+    color: rgba(238, 247, 241, .5);
+}
+
+/* Article ouvert */
+.article-ouvert {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .62);
+    z-index: 30;
+}
+
+.article-ouvert.ouvert { display: flex; animation: fondu .25s both; }
+
+.article-carte {
+    position: relative;
+    width: min(720px, 78vw);
+    max-height: 82vh;
+    overflow: auto;
+    border-radius: 18px;
+    background: #0f1713;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.article-image {
+    height: 220px;
+    background: #121a16 center / cover no-repeat;
+}
+
+.article-corps { padding: 18px 24px 22px; }
+.article-date { font-size: 11px; color: #4bd37b; font-weight: 700; }
+.article-titre { margin: 6px 0 10px; font-size: 22px; }
+.article-texte p { margin: .35em 0; line-height: 1.55; color: rgba(238, 247, 241, .82); font-size: 13.5px; }
+.article-auteur { margin-top: 12px; font-size: 12px; color: rgba(238, 247, 241, .5); }
+
+.article-fermer {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, .55);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ connexion plein écran */
+.login .container.connexion {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.connexion-fond {
+    position: absolute;
+    inset: 0;
+    background: url("../images/default/connexion.jpg") center / cover no-repeat;
+}
+
+.connexion-fond::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 10, 8, .9) 0%, rgba(6, 10, 8, .25) 42%, rgba(6, 10, 8, .4) 100%);
+}
+
+.login.active .connexion-fond { animation: z-zoom 14s ease-out both; }
+
+.connexion-logo {
+    position: absolute;
+    top: 16px;
+    left: 22px;
+    height: 70px;
+    z-index: 2;
+}
+
+.connexion .login-pokefaction {
+    position: absolute;
+    inset: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    min-width: 0;
+    animation: none !important;
+    pointer-events: none;
+}
+
+.connexion .login-pokefaction > * { pointer-events: auto; }
+
+.connexion-barre {
+    position: absolute;
+    left: 50%;
+    bottom: 42px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px 8px 8px;
+    border-radius: 16px;
+    background: rgba(11, 17, 14, .9);
+    border: 1px solid rgba(255, 255, 255, .08);
+    white-space: nowrap;
+}
+
+.login.active .connexion-barre { animation: z-monte .6s .15s var(--doux) both; }
+
+.connexion-langue {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, .08);
+    font-size: 11px;
+    font-weight: 800;
+    color: #eef7f1;
+}
+
+.connexion .pf-microsoft {
+    margin: 0;
+    width: auto;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 11px;
+    border: none;
+    background: #1f8f51;
+    color: #fff;
+    font-size: 13.5px;
+    font-weight: 800;
+    box-shadow: none;
+}
+
+.connexion .pf-microsoft:hover:not(:disabled) { background: #26a35d; transform: none; }
+
+.pf-ouvrir-compte {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 11px;
+    border: none;
+    background: rgba(255, 255, 255, .07);
+    color: #eef7f1;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pf-ouvrir-compte:hover,
+.pf-carte-ouverte .pf-ouvrir-compte { background: rgba(255, 255, 255, .12); }
+
+.connexion-rester {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(238, 247, 241, .8);
+    cursor: pointer;
+}
+
+.connexion-rester input { accent-color: #4bd37b; width: 15px; height: 15px; }
+
+.connexion-discord {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, .08);
+    font-size: 12.5px;
+    color: #eef7f1;
+}
+
+.connexion-discord svg { width: 17px; height: 17px; fill: rgba(238, 247, 241, .8); }
+.connexion-discord.cache { display: none; }
+
+.connexion-copyright {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    text-align: center;
+    font-size: 10.5px;
+    color: rgba(238, 247, 241, .45);
+}
+
+/* Carte du compte PokéFaction (au-dessus de la barre) */
+.pf-carte {
+    position: absolute;
+    left: 50%;
+    bottom: 104px;
+    width: 340px;
+    padding: 16px 16px 6px;
+    border-radius: 16px;
+    background: rgba(11, 17, 14, .95);
+    border: 1px solid rgba(255, 255, 255, .08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 10px);
+    transition: opacity .25s, transform .3s var(--doux), visibility 0s linear .3s;
+}
+
+.pf-carte-ouverte .pf-carte {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition: opacity .25s, transform .3s var(--doux), visibility 0s;
+}
+
+.connexion .pf-onglet-actif { background: rgba(75, 211, 123, .16); color: #eef7f1; }
+.connexion .pf-champ:focus { border-color: #4bd37b; }
+.connexion .login-pokefaction .connect { background: #1f8f51; }
+
+@keyframes z-entree {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+}
+
+@keyframes z-monte {
+    from { opacity: 0; transform: translate(-50%, 14px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes z-zoom {
+    from { transform: scale(1.06); }
+    to { transform: scale(1); }
+}
+
+/* Fenêtre étroite : actus sur deux colonnes */
+@media (max-width: 1100px) {
+    .actus { grid-template-columns: 1.4fr 1fr; }
+    .actus .actu:nth-child(n+4) { display: none; }
+}
+
+/* ------------------------------------------------------------------ restes de l'ancien thème : plus de halos */
+.fond { background: #090e0b !important; }
+.rail-logo, .rail-btn, .rail-actif, .rail-actif:hover, .popup-tab, .popup-button, .popup-button:hover { box-shadow: none !important; }
+.rail-actif::before { display: none !important; }
+.rail-joueur .player-head, .rail-joueur:hover .player-head { box-shadow: 0 0 0 2px #0c120f, 0 0 0 3px rgba(75, 211, 123, .55) !important; }
+.rail-joueur::after { display: none !important; }
+.accueil .play-instance { background: none !important; box-shadow: none !important; border: none !important; }
+.accueil .play-btn { text-transform: none; }
+.statut-point { box-shadow: none !important; }
+.popup-button { background: #1f8f51 !important; }
+
+/* Connexion : la barre et la carte se placent sur toute la largeur */
+.connexion .login-pokefaction { width: auto; max-width: none; left: 0; top: 0; right: 0; bottom: 0; }
+
+/* Actus : la grille s'adapte au nombre d'articles */
+.actus.n1 { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+.actus.n2 { grid-template-columns: 1.55fr 1fr; grid-template-rows: 1fr; }
+.actus.n2 .actu-une, .actus.n1 .actu-une { grid-row: auto; }
+.actus.n3 { grid-template-columns: 1.55fr 1fr; grid-template-rows: 1fr 1fr; }
+.actus.n4 { grid-template-columns: 1.55fr 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.actus.n4 .actu:nth-child(4) { grid-column: 2 / span 2; }
+
+.connexion .login-pokefaction .connect, .connexion .login-pokefaction .connect:hover { box-shadow: none !important; }

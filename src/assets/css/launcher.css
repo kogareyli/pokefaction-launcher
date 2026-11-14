@@ -3,6 +3,7 @@
 @import 'panels/login.css';
 @import 'panels/home.css';
 @import 'panels/settings.css';
+@import 'zygarde.css';
 
 * {
     outline: none;
@@ -80,8 +81,8 @@ input::-webkit-inner-spin-button {
     overflow: hidden;
     pointer-events: none;
     background:
-        radial-gradient(1100px 620px at 72% -12%, rgba(138, 92, 255, .22), transparent 62%),
-        radial-gradient(900px 560px at -8% 108%, rgba(255, 47, 134, .16), transparent 60%),
+        radial-gradient(1100px 620px at 72% -12%, rgba(30, 122, 74, .22), transparent 62%),
+        radial-gradient(900px 560px at -8% 108%, rgba(75, 211, 123, .16), transparent 60%),
         linear-gradient(180deg, var(--fond-1), var(--fond-0));
 }
 
@@ -100,14 +101,14 @@ input::-webkit-inner-spin-button {
 .fond-lueur-1 {
     left: -8%;
     top: 4%;
-    background: radial-gradient(circle, #ff2f86 0%, transparent 70%);
+    background: radial-gradient(circle, #4bd37b 0%, transparent 70%);
     animation: derive-1 26s ease-in-out infinite alternate;
 }
 
 .fond-lueur-2 {
     right: -10%;
     top: -14%;
-    background: radial-gradient(circle, #7a4dff 0%, transparent 70%);
+    background: radial-gradient(circle, #1e7a4a 0%, transparent 70%);
     animation: derive-2 32s ease-in-out infinite alternate;
 }
 
@@ -146,8 +147,8 @@ input::-webkit-inner-spin-button {
     bottom: -2%;
     height: 46%;
     background-image:
-        linear-gradient(rgba(212, 60, 255, .22) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 60, 255, .22) 1px, transparent 1px);
+        linear-gradient(rgba(60, 192, 109, .22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(60, 192, 109, .22) 1px, transparent 1px);
     background-size: 56px 56px;
     transform: perspective(420px) rotateX(64deg);
     transform-origin: 50% 100%;
@@ -315,7 +316,7 @@ body[data-panel="login"] .rail {
     width: 50px;
     height: auto;
     margin-bottom: 10px;
-    filter: drop-shadow(0 0 10px rgba(255, 47, 134, .45));
+    filter: drop-shadow(0 0 10px rgba(75, 211, 123, .45));
     animation: flotte 5s ease-in-out infinite;
     -webkit-app-region: drag;
 }
@@ -375,7 +376,7 @@ body[data-panel="login"] .rail {
 .rail-actif:hover {
     color: #fff;
     background: var(--degrade-doux);
-    box-shadow: inset 0 0 0 1px rgba(255, 47, 134, .35), 0 6px 20px rgba(255, 47, 134, .18);
+    box-shadow: inset 0 0 0 1px rgba(75, 211, 123, .35), 0 6px 20px rgba(75, 211, 123, .18);
 }
 
 .light .rail-actif,
@@ -440,13 +441,13 @@ body[data-panel="login"] .rail {
     border-radius: 12px;
     background: url('../images/default/setve.png') center / cover no-repeat;
     image-rendering: pixelated;
-    box-shadow: 0 0 0 2px var(--fond-1), 0 0 0 4px rgba(255, 47, 134, .55);
+    box-shadow: 0 0 0 2px var(--fond-1), 0 0 0 4px rgba(75, 211, 123, .55);
     pointer-events: none;
     transition: box-shadow .3s;
 }
 
 .rail-joueur:hover .player-head {
-    box-shadow: 0 0 0 2px var(--fond-1), 0 0 0 4px var(--rose), 0 0 18px rgba(255, 47, 134, .6);
+    box-shadow: 0 0 0 2px var(--fond-1), 0 0 0 4px var(--rose), 0 0 18px rgba(75, 211, 123, .6);
 }
 
 .rail-joueur-point {
@@ -492,7 +493,7 @@ body[data-panel="login"] .rail {
     background: var(--surface-forte);
     border: 1px solid var(--bord-fort);
     border-radius: 20px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 47, 134, .08), 0 0 60px rgba(255, 47, 134, .12);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(75, 211, 123, .08), 0 0 60px rgba(75, 211, 123, .12);
     backdrop-filter: blur(20px);
     animation: surgit .45s var(--ressort);
 }
@@ -554,14 +555,14 @@ body[data-panel="login"] .rail {
     font-size: .95rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 8px 22px rgba(255, 47, 134, .3);
+    box-shadow: 0 8px 22px rgba(75, 211, 123, .3);
     transition: transform .25s var(--ressort), box-shadow .25s, background-position .4s;
 }
 
 .popup-button:hover {
     transform: translateY(-2px);
     background-position: 100% 0;
-    box-shadow: 0 12px 28px rgba(255, 47, 134, .42);
+    box-shadow: 0 12px 28px rgba(75, 211, 123, .42);
 }
 
 @keyframes fondu {
