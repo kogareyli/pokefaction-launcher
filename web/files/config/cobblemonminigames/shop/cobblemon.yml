@@ -123,14 +123,6 @@ categories:
             id: "cobblemon:cherish_ball"
             price: 120
             rarity: rare
-          - type: item
-            id: "cobblemon:ancient_origin_ball"
-            price: 900
-            rarity: ultra-rare
-          - type: item
-            id: "cobblemon:master_ball"
-            price: 1200
-            rarity: ultra-rare
 
       - name: "Crafting Materials"
         items:
@@ -622,30 +614,30 @@ categories:
         items:
           - type: item
             id: "cobblemon:exp_candy_xs"
-            price: 5
+            price: 8
             quantity: 5
             rarity: common
           - type: item
             id: "cobblemon:exp_candy_s"
-            price: 10
+            price: 15
             quantity: 5
             rarity: common
           - type: item
             id: "cobblemon:exp_candy_m"
-            price: 30
+            price: 45
             quantity: 3
             rarity: uncommon
           - type: item
             id: "cobblemon:exp_candy_l"
-            price: 70
+            price: 105
             rarity: uncommon
           - type: item
             id: "cobblemon:exp_candy_xl"
-            price: 140
+            price: 210
             rarity: rare
           - type: item
             id: "cobblemon:rare_candy"
-            price: 240
+            price: 360
             rarity: rare
 
       - name: "Vitamins"
@@ -774,7 +766,7 @@ categories:
             rarity: uncommon
 
   - id: pokemon
-    enabled: true
+    enabled: false
     name: "Pokemon"
     icon: "cobblemon:poke_ball"
     subcategories:
