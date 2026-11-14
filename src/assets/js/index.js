@@ -33,7 +33,7 @@ class Splash {
             { "message": "Prêt à capturer ?", "author": "PokéFaction" },
             { "message": "Ta faction t'attend.", "author": "PokéFaction" },
             { "message": "Un Pokémon sauvage apparaît !", "author": "PokéFaction" },
-            { "message": "Launcher basé sur Selvania, par Luuxis.", "author": "Luuxis" }
+            { "message": "Bonne chasse, dresseur !", "author": "PokéFaction" }
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
