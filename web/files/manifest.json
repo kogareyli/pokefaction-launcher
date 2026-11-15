@@ -1620,10 +1620,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-4.7.2.jar",
-  "size": 1201734,
-  "hash": "b9ba4e5dc2cdee2eaa63a18256caa521e76ef901",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-4.7.2.jar"
+  "path": "mods/pokefaction-core-4.9.0.jar",
+  "size": 1271640,
+  "hash": "5d594fe348146ca1b163a16b9a66f160032f6b96",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-4.9.0.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
@@ -1996,6 +1996,12 @@
   "size": 852471,
   "hash": "b9ddfb4614220612c7492666db730393954435b8",
   "url": "https://edge.forgecdn.net/files/7402/610/Icon%20Fresh%200.4.zip"
+ },
+ {
+  "path": "resourcepacks/PokeFaction Interface.zip",
+  "size": 19237,
+  "hash": "2ba5c50ccf8d7b4634c6afa727cb94cbd149d35f",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/resourcepacks/PokeFaction%20Interface.zip"
  },
  {
   "path": "resourcepacks/PokeFaction Musique.zip",

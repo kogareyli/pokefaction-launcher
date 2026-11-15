@@ -1,5 +1,14 @@
 [
     {
+        "title": "Grosse mise à jour : raids, tour de combat, combats classés",
+        "content": "• Raid du soir : chaque soir à 21 h (sauf le samedi), un boss géant apparaît au lobby. Combattez-le tous : s’il tombe, 400 $ et des objets pour chacun, et une chance de repartir avec lui. /raid\n• Tour de combat : /tour. Des dresseurs de plus en plus forts, tout le monde au niveau 50, tes Pokémon ne risquent rien. Des jetons à chaque étage et une boutique.\n• Combats classés : /classe. Combat Pokémon contre un autre joueur, au niveau 50, rien n’est perdu. Rangs Bronze → Maître, top 5 récompensé chaque mois.\n• Au lobby : pluie de Poké Balls (18 h et 22 h), largage de tonneaux (19 h), quiz Pokémon dans le chat, et 15 trésors cachés dans le temple (/tresors).\n• Échange miracle : /miracle. Tu donnes un Pokémon, tu en reçois un au hasard.\n• Combo de capture : attrape le même Pokémon plusieurs fois de suite pour plus de chances de shiny et de meilleurs IV.\n• Menus au style du résumé Pokémon, journal de combat transparent, caméra de combat corrigée.\n• Les lits ne changent plus ton point de réapparition, et le stuff d’un joueur mort se ramasse tout de suite.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+        ]
+    },
+    {
         "title": "PokéFaction 4.7 : territoires, personnages Pokémon, raids",
         "content": "Territoire de faction, en simple : va où tu veux ta base et tape /f claim. Un carré de 3×3 chunks se pose autour de toi, il passe à 5×5 au niveau 5 de faction, 7×7 au niveau 10 et 9×9 au niveau 15 (tout seul). Les autres factions n’y cassent, ne posent et n’ouvrent rien, et tu le vois sur la carte (touche M). /f territoire pour voir où il est.\n\nLes personnages du lobby et de l’île du tuto sont maintenant des personnages Pokémon : Professeur Chen, Infirmière Joëlle, Ondine, Pierre, Sacha, l’Agente Jenny… Et James de la Team Rocket rachète tes Pokémon (les shiny bien plus cher).\n\nRaids : jusqu’à 4 joueurs dans chaque raid, et des récompenses en argent revues à la baisse. Parkour : le record est affiché à l’arrivée. La boussole du légendaire est retirée.",
         "author": "Staff PokéFaction",
