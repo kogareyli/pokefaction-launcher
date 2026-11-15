@@ -1,5 +1,14 @@
 [
     {
+        "title": "PokéFaction 4.5 : la draconite",
+        "content": "Un nouveau minerai, au-dessus de la netherite : la draconite. Il se cache tout au fond, dans l’ardoise des abîmes (couches −60 à −37), jamais à l’air libre : il faut creuser. Pioche en diamant minimum. On en trouve aussi parfois dans les trésors de l’End, des bastions et des cités antiques.\n\nDraconite brute → four → lingot. Le gabarit d’amélioration se fabrique avec 4 lingots de draconite, 4 diamants et 1 lingot de netherite (et se copie avec 7 diamants et de l’ardoise). À la table de forge : ton objet en netherite + le gabarit + un lingot.\n\nL’armure en draconite est plus robuste que la netherite et te fait moins reculer, les outils et l’épée sont un cran au-dessus. Rien ne brûle dans la lave.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/batiment-interieur.jpg"
+        ]
+    },
+    {
         "title": "PokéFaction 4.4 : l’île du tuto",
         "content": "Nouveau : l’île du tuto. Six personnages t’apprennent les bases : tes premiers outils, les Poké Balls, la capture, le soin. 100 $ par étape et une récompense à la fin. Tout le monde y passe une fois à sa prochaine connexion, puis le Passeur te ramène exactement là où tu étais. Pour y retourner : /tuto, ou le Professeur sur la place du lobby.\n\nSur la place du lobby, quatre personnages se baladent : le Collectionneur rachète tes pièces antiques (tiens-les en main et clique, accroupi pour tout vendre), l’Infirmière soigne ton équipe, le Professeur t’emmène au tuto et la Guide ouvre le guide.",
         "author": "Staff PokéFaction",
