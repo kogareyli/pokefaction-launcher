@@ -194,7 +194,7 @@
         "whitelist": [],
         "status": {
             "nameServer": "PokéFaction",
-            "ip": "impairment-session.tun.ply.gg",
+            "ip": "play.pokefaction.com",
             "port": 25565
         },
         "jvm_args": [
@@ -204,7 +204,7 @@
         ],
         "game_args": [
             "--quickPlayMultiplayer",
-            "impairment-session.tun.ply.gg"
+            "play.pokefaction.com"
         ]
     }
 }

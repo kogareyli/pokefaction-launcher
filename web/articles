@@ -1,5 +1,14 @@
 [
     {
+        "title": "Mise à jour 5.0 : Pokédex, objectif commun, ascenseurs, nouveau menu",
+        "content": "• Nouveau menu : le menu façon jeux Pokémon garde sa taille habituelle, avec le fond du launcher sur toutes les pages.\n• Combats classés et tour de combat réparés : 3, 2, 1 sur le terrain avant le combat, et la fenêtre de combat se rouvre toute seule (touche R sinon).\n• /dex : un cadeau à chaque palier du Pokédex (5 % → 100 %), et un Pokédex shiny avec ses propres récompenses.\n• Objectif commun : lundi, mercredi et vendredi à 20 h, tout le serveur a 30 min pour capturer ou battre des Pokémon ensemble. Réussi = récompense pour tous les participants.\n• /planning : tous les événements de la semaine avec l'heure.\n• Coffres privés : pose un panneau « [privé] » sur ton coffre, seuls toi et les pseudos écrits dessus l'ouvrent.\n• Ascenseur (8 fer + 1 perle de l'Ender) : saute pour monter, accroupis-toi pour descendre.\n• Draconite : pioche de terrassement (3×3) et hache de bûcheron (l'arbre entier). S'accroupir = un seul bloc.\n• /vendre : le serveur achète tes récoltes, minerais et butin, avec 5 offres du jour à +20 %.\n• Calendrier de l'Avent du 1er au 24 décembre (/avent).\n• Règles : nouvel onglet « Mode classé », et les commandes se lancent d'un clic.\n• Les personnages du lobby ne bougent plus.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+        ]
+    },
+    {
         "title": "Grosse mise à jour : raids, tour de combat, combats classés",
         "content": "• Raid du soir : chaque soir à 21 h (sauf le samedi), un boss géant apparaît au lobby. Combattez-le tous : s’il tombe, 400 $ et des objets pour chacun, et une chance de repartir avec lui. /raid\n• Tour de combat : /tour. Des dresseurs de plus en plus forts, tout le monde au niveau 50, tes Pokémon ne risquent rien. Des jetons à chaque étage et une boutique.\n• Combats classés : /classe. Combat Pokémon contre un autre joueur, au niveau 50, rien n’est perdu. Rangs Bronze → Maître, top 5 récompensé chaque mois.\n• Au lobby : pluie de Poké Balls (18 h et 22 h), largage de tonneaux (19 h), quiz Pokémon dans le chat, et 15 trésors cachés dans le temple (/tresors).\n• Échange miracle : /miracle. Tu donnes un Pokémon, tu en reçois un au hasard.\n• Combo de capture : attrape le même Pokémon plusieurs fois de suite pour plus de chances de shiny et de meilleurs IV.\n• Menus au style du résumé Pokémon, journal de combat transparent, caméra de combat corrigée.\n• Les lits ne changent plus ton point de réapparition, et le stuff d’un joueur mort se ramasse tout de suite.",
         "author": "Staff PokéFaction",
