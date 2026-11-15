@@ -7,6 +7,7 @@ import { config, database, logger, changePanel, appdata, dossierJeu, setStatus, 
 const { Launch } = require('minecraft-java-core')
 import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
 import { appliquerGraphismes, appliquerEcranChargement } from '../utils/onglets-pf.js'
+import { analyserJeu } from '../utils/anti-triche.js'
 const { shell, ipcRenderer } = require('electron')
 const fs = require('fs')
 
@@ -464,6 +465,17 @@ class Home {
                 max: `${configClient.java_config.java_memory.max * 1024}M`
             }
         }
+
+        // 4.2 : anti-triche PokéFaction, analyse visible du dossier du jeu juste avant de le lancer
+        playInstanceBTN.style.display = "none"
+        infoStartingBOX.style.display = "block"
+        try {
+            const corrige = await analyserJeu(`${chemin}/instances/${options.name}`, (t, v, m) => this.progression(t, v, m))
+            if (corrige.length) {
+                const html = corrige.map(c => c.replace(/[&<>"']/g, x => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[x]))).join('<br>')
+                new popup().openPopup({ title: 'Anti-triche PokéFaction', content: html, color: 'red', options: true })
+            }
+        } catch (err) { console.error('anti-triche', err) }
 
         launch.Launch(opt);
         // Le jeu a-t-il démarré ? (après, une « erreur » de la bibliothèque n'est plus un problème de téléchargement)

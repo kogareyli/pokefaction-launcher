@@ -1,5 +1,15 @@
 [
     {
+        "title": "PokéFaction 4.2 : nouveau Nether, nouvel End",
+        "content": "Le Nether et l’End ont été refaits. Nether : nouveaux biomes, Château interdit, sanctuaires, villages de Piglins et forteresses bien plus grandes. End : Citadelle fantôme, vaisseaux géants, tours et ruines sur les îles extérieures. Les Ligues sont toujours là.\n\nAprès une téléportation, tu es protégé 2 minutes (frapper ou casser un bloc arrête la protection).\nLes coffres du lobby s’ouvrent.\nNouvel anti-triche, actif pendant toute la partie : x-ray et mods de triche = expulsion, puis bannissement.\nLes menus passent aux couleurs du nouveau logo.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg",
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/nouveau-logo.jpg"
+        ]
+    },
+    {
         "title": "Nouveau logo : Rayquaza shiny",
         "content": "PokéFaction a un nouveau logo : la tête de Rayquaza shiny.\n\nLe launcher, le site et l'écran de chargement du jeu passent en noir et or.",
         "author": "Staff PokéFaction",
