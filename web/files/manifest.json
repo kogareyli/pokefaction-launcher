@@ -217,44 +217,44 @@
  },
  {
   "path": "config/cobblemonraiddens/tier_five.json5",
-  "size": 2128,
-  "hash": "83d04de34a7fd591ddf8e26df61840419a073034",
+  "size": 2266,
+  "hash": "e8746223dd8decf380a470d16989562e7e45073a",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemonraiddens/tier_five.json5"
  },
  {
   "path": "config/cobblemonraiddens/tier_four.json5",
-  "size": 2125,
-  "hash": "0ab7486722446d76237a75b51dc0e21088f23994",
+  "size": 2225,
+  "hash": "e44063383e7c9acfb21b965bec9c6276f6e7dec8",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemonraiddens/tier_four.json5"
  },
  {
   "path": "config/cobblemonraiddens/tier_one.json5",
-  "size": 2121,
-  "hash": "1adef190760bbff3c48e8236762d8dc8aa9a843e",
+  "size": 2136,
+  "hash": "e3cedbf38880ed26be53f7befddbf94ed9e798b4",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemonraiddens/tier_one.json5"
  },
  {
   "path": "config/cobblemonraiddens/tier_seven.json5",
-  "size": 2164,
-  "hash": "98e25363f8ca6f99864d67df0489e483fe527a7c",
+  "size": 2347,
+  "hash": "ae07dd11910729e725d1af736b6eaaf3bb1a92fa",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemonraiddens/tier_seven.json5"
  },
  {
   "path": "config/cobblemonraiddens/tier_six.json5",
-  "size": 2127,
-  "hash": "7294d2c998ae3a292d921101f6908f9586dce23c",
+  "size": 2305,
+  "hash": "2d71b271c3512733bc3e1d379735529800b651f8",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemonraiddens/tier_six.json5"
  },
  {
   "path": "config/cobblemonraiddens/tier_three.json5",
-  "size": 2121,
-  "hash": "0d7e8b255cd3ceb1ede5998553224e2cc40cf2fb",
+  "size": 2136,
+  "hash": "c7b2487c33a7035655e0909a59f4137376b410fd",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemonraiddens/tier_three.json5"
  },
  {
   "path": "config/cobblemonraiddens/tier_two.json5",
-  "size": 2121,
-  "hash": "7399fa266fcdd38d5bea3907135b301f78069828",
+  "size": 2136,
+  "hash": "57647a3e3aa78b3b2d2d5ba71f26d87e4db2eb5b",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemonraiddens/tier_two.json5"
  },
  {
@@ -1506,12 +1506,6 @@
   "url": "https://edge.forgecdn.net/files/5437/294/MouseTweaks-fabric-mc1.21-2.26.jar"
  },
  {
-  "path": "mods/musicnotification-fabric-3.0.0+mc1.21.1.jar",
-  "size": 139713,
-  "hash": "c27e43fec57825e2ac45d39a9366150b45d409ec",
-  "url": "https://edge.forgecdn.net/files/7918/233/musicnotification-fabric-3.0.0%2Bmc1.21.1.jar"
- },
- {
   "path": "mods/neruina-3.3.3+1.21.1-fabric.jar",
   "size": 860092,
   "hash": "33cfda42d642db4854c3617b75f511669ff43d6b",
@@ -1626,10 +1620,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-4.6.0.jar",
-  "size": 1157138,
-  "hash": "fd91cbff3bf785668d3ea8da5110fd10bc68cd3c",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-4.6.0.jar"
+  "path": "mods/pokefaction-core-4.7.0.jar",
+  "size": 1195899,
+  "hash": "1034784c2df589461ee03d3e8e20512c5b703bb1",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-4.7.0.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",

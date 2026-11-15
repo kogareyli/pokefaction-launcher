@@ -894,12 +894,6 @@
   "url": "https://edge.forgecdn.net/files/5973/189/resourcefullib-fabric-1.21-3.0.12.jar"
  },
  {
-  "path": "mods/musicnotification-fabric-3.0.0+mc1.21.1.jar",
-  "size": 139713,
-  "hash": "c27e43fec57825e2ac45d39a9366150b45d409ec",
-  "url": "https://edge.forgecdn.net/files/7918/233/musicnotification-fabric-3.0.0%2Bmc1.21.1.jar"
- },
- {
   "path": "mods/customsplashscreen-2.2.0.jar",
   "size": 660554,
   "hash": "bb79f8974e619e077d60a6bdffe389913b84defd",

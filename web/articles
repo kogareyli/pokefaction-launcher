@@ -1,5 +1,14 @@
 [
     {
+        "title": "PokéFaction 4.7 : territoires, personnages Pokémon, raids",
+        "content": "Territoire de faction, en simple : va où tu veux ta base et tape /f claim. Un carré de 3×3 chunks se pose autour de toi, il passe à 5×5 au niveau 5 de faction, 7×7 au niveau 10 et 9×9 au niveau 15 (tout seul). Les autres factions n’y cassent, ne posent et n’ouvrent rien, et tu le vois sur la carte (touche M). /f territoire pour voir où il est.\n\nLes personnages du lobby et de l’île du tuto sont maintenant des personnages Pokémon : Professeur Chen, Infirmière Joëlle, Ondine, Pierre, Sacha, l’Agente Jenny… Et James de la Team Rocket rachète tes Pokémon (les shiny bien plus cher).\n\nRaids : jusqu’à 4 joueurs dans chaque raid, et des récompenses en argent revues à la baisse. Parkour : le record est affiché à l’arrivée. La boussole du légendaire est retirée.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
+        ]
+    },
+    {
         "title": "Nouvelles musiques",
         "content": "Toutes les musiques ont changé : des morceaux calmes façon JRPG quand tu explores, plus sombres dans le Nether, l’End et les grottes, et des musiques de combat nerveuses contre les sauvages, les dresseurs et les joueurs. Toutes libres de droits (CC0). Le volume de la musique reste à 20 % : tu peux le monter dans Options → Musique et sons.",
         "author": "Staff PokéFaction",
