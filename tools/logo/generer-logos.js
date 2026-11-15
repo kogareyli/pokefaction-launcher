@@ -82,8 +82,9 @@ async function ecrire(img, fichier) {
 
 (async () => {
   const brut = await Jimp.read(path.join(__dirname, 'logo-officiel.png'));
-  const nu = rogner(brut, 0);
-  const logo = rogner(contour(nu, Math.round(Math.max(nu.bitmap.width, nu.bitmap.height) * 0.011), [0x4a, 0x4a, 0x4f]), 0.01);
+  // Le logo tel qu'Eddy l'a fait (bords noirs). Pas de contour gris : Eddy n'en veut pas (15/11).
+  // contour() reste disponible si un jour il en faut un : contour(logo, rayon, [r, g, b]).
+  const logo = rogner(brut, 0.01);
   const logo800 = reduire(logo, 800, Math.round(800 * logo.bitmap.height / logo.bitmap.width));
 
   // Launcher
