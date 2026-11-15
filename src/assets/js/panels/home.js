@@ -6,7 +6,7 @@ import { config, database, logger, changePanel, appdata, dossierJeu, setStatus, 
 
 const { Launch } = require('minecraft-java-core')
 import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
-import { appliquerGraphismes } from '../utils/onglets-pf.js'
+import { appliquerGraphismes, appliquerEcranChargement } from '../utils/onglets-pf.js'
 const { shell, ipcRenderer } = require('electron')
 const fs = require('fs')
 
@@ -415,6 +415,8 @@ class Home {
 
         // Graphismes choisis dans les paramètres (PC faible / équilibré / beau)
         try { appliquerGraphismes(`${chemin}/instances/${options.name}`, configClient.graphismes) } catch (err) { console.error('graphismes', err) }
+        // Écran de chargement du jeu : logo PokéFaction sur fond sombre (au lieu du logo Mojang sur fond rouge)
+        try { await appliquerEcranChargement(`${chemin}/instances/${options.name}`) } catch (err) { console.error('écran de chargement', err) }
 
         // Skin choisi dans le launcher : le mod PokéFaction l'envoie au serveur en arrivant
         try {

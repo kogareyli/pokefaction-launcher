@@ -1,18 +1,19 @@
 /* Couleurs et réglages communs du launcher PokéFaction */
 .global {
-    /* Thème Zygarde (3.0) : noir verdâtre + vert émeraude. Les anciens noms (rose, violet) gardent leur rôle d'accent. */
-    --zygarde: #4bd37b;
-    --zygarde-fonce: #1e7a4a;
-    --zygarde-clair: #8fe3ae;
-    --rose: #4bd37b;
-    --magenta: #3cc06d;
-    --violet: #1e7a4a;
-    --bleu: #2f9d63;
+    /* Thème Rayquaza shiny : noir de son corps, or de son anneau (le seul accent), rose seulement dans le logo.
+       Les anciens noms (rose, violet) gardent leur rôle d'accent. */
+    --rayquaza-or: #f5b50c;
+    --rayquaza-bouton: #f2b112;
+    --rayquaza-rose: #f0186e; /* bouche du logo : à garder pour de très petits détails */
+    --rose: #f5b50c;
+    --magenta: #e6a50a;
+    --violet: #9c7208;
+    --bleu: #d99e0a;
     --vert: #6fe3c0;
     --rouge: #ff5d6d;
-    --degrade: linear-gradient(#22894f, #22894f);
-    --degrade-doux: linear-gradient(rgba(75, 211, 123, .12), rgba(75, 211, 123, .12));
-    --element-color: #4bd37b;
+    --degrade: linear-gradient(#f2b112, #f2b112);
+    --degrade-doux: linear-gradient(rgba(245, 181, 12, .12), rgba(245, 181, 12, .12));
+    --element-color: #f5b50c;
     --police: 'Inter', 'Segoe UI', system-ui, sans-serif;
     --mono: 'JetBrains Mono', 'Cascadia Mono', Consolas, monospace;
     --rayon: 16px;
@@ -24,20 +25,20 @@
 }
 
 .dark {
-    --color: #eef7f1;
-    --texte-2: rgba(238, 247, 241, .68);
-    --texte-3: rgba(238, 247, 241, .42);
-    --fond-0: #070b09;
-    --fond-1: #0c120f;
-    --fond-2: #131c17;
+    --color: #f2f2f0;
+    --texte-2: rgba(242, 242, 240, .68);
+    --texte-3: rgba(242, 242, 240, .42);
+    --fond-0: #080809;
+    --fond-1: #0f0f10;
+    --fond-2: #161617;
     --surface: rgba(255, 255, 255, .045);
     --surface-2: rgba(255, 255, 255, .08);
-    --surface-forte: rgba(12, 19, 15, .86);
+    --surface-forte: rgba(15, 15, 16, .86);
     --bord: rgba(255, 255, 255, .09);
     --bord-fort: rgba(255, 255, 255, .16);
-    --background: #0c120f;
+    --background: #0f0f10;
     --background-element: rgba(255, 255, 255, .07);
-    --background-transparent: rgba(12, 18, 15, .78);
+    --background-transparent: rgba(15, 15, 16, .78);
     --shadow: rgba(0, 0, 0, .55);
     --particules: 1;
     --svg-color: brightness(0) saturate(100%) invert(100%) sepia(55%) saturate(23%) hue-rotate(236deg) brightness(108%) contrast(92%);

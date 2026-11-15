@@ -79,6 +79,35 @@ export function appliquerGraphismes(dossierInstance, mode) {
     } catch (err) { console.error('iris.properties', err); }
 }
 
+// ---------------------------------------------------------------- Écran de chargement du jeu
+/**
+ * Écran de chargement de Minecraft (mod Custom Splash Screen) aux couleurs PokéFaction :
+ * logo Rayquaza sur fond sombre au lieu du logo Mojang sur fond rouge. Refait à chaque Jouer
+ * (le dossier config n'est installé qu'une fois par le launcher, les anciens joueurs l'ont aussi).
+ */
+export async function appliquerEcranChargement(dossierInstance) {
+    const dossier = `${dossierInstance}/config`;
+    if (!fs.existsSync(dossier)) return; // premier lancement : le modpack pose d'abord ses réglages
+    // fichier du launcher (à côté de launcher.html, aussi dans app.asar) : fs le lit, fetch refuse file://
+    const image = fs.readFileSync(require('url').fileURLToPath(new URL('assets/images/logo/ecran-chargement.png', location.href)));
+    fs.mkdirSync(`${dossier}/customsplashscreen`, { recursive: true });
+    const logo = `${dossier}/customsplashscreen/square_logo.png`;
+    if (!fs.existsSync(logo) || !fs.readFileSync(logo).equals(image)) fs.writeFileSync(logo, image);
+    const fichier = `${dossier}/customsplashscreen.json`;
+    let cfg = {};
+    try { cfg = JSON.parse(fs.readFileSync(fichier, 'utf8')); } catch { /* absent ou abîmé : on le refait */ }
+    Object.assign(cfg, {
+        logoStyle: 'Aspect1to1',
+        logoBlend: false,
+        backgroundImage: false,
+        splashBackgroundColor: '#0A0A0B',
+        splashProgressBarColor: '#F2B112',
+        splashProgressFrameColor: '#383838',
+        splashProgressBackgroundColor: '#0A0A0B',
+    });
+    fs.writeFileSync(fichier, JSON.stringify(cfg, null, 2));
+}
+
 // ---------------------------------------------------------------- Mon profil
 /** Rendu de la carte « Mon profil » (r = réponse de pf_mon_profil, tete = background-image de la tête). */
 export function rendreProfil(zone, r, tete) {

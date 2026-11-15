@@ -4,8 +4,8 @@
  * Tout s'arrête quand la fenêtre est cachée ou pendant une partie (body.en-jeu).
  */
 
-// Thème Zygarde : des « cellules » vertes discrètes
-const COULEURS = ['75,211,123', '60,192,109', '143,227,174', '47,157,99'];
+// Thème Rayquaza shiny : l'or de son anneau et le gris de son corps
+const COULEURS = ['245,181,12', '60,60,62', '100,100,104', '245,181,12', '72,72,76'];
 
 function hasard(min, max) {
     return min + Math.random() * (max - min);

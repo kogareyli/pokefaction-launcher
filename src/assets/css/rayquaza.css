@@ -1,25 +1,34 @@
 /*******************************************************************************
- * Launcher 3.0 — thème Zygarde (noir verdâtre, vert émeraude), mise en page
- * façon « client » : barre fine à gauche, logo + Jouer, actualités en cartes,
- * réseaux à droite, joueurs en ligne en haut à droite, connexion plein écran.
+ * Launcher — thème Rayquaza shiny (logo : tête noire, anneau doré, bouche rose). Noir de son corps,
+ * or de son anneau = le seul accent (boutons, détails), le rose reste dans le logo.
+ * Mise en page façon « client » : barre fine à gauche, logo + Jouer, actualités en
+ * cartes, réseaux à droite, joueurs en ligne en haut à droite, connexion plein écran.
  * Chargé en dernier : il remplace les anciennes règles de mise en page.
  ******************************************************************************/
 
 body {
-    background: #090e0b;
+    background: #0a0a0b;
 }
 
 /* ------------------------------------------------------------------ fond */
+/* Le ciel de Rayquaza : noir, un peu plus clair en haut, une trace dorée en bas, sans lueur.
+   (!important : launcher.css, chargé après ce fichier, a encore l'ancien fond.) */
 .fond {
-    background: #090e0b;
+    background:
+        radial-gradient(90% 65% at 78% -12%, #1b1a17 0%, rgba(27, 26, 23, 0) 70%),
+        radial-gradient(70% 55% at 0% 112%, rgba(245, 181, 12, .05) 0%, rgba(245, 181, 12, 0) 70%),
+        #0a0a0b !important;
 }
 
-.fond-hexa {
+/* Quelques anneaux dorés (les marques de Rayquaza) et des étoiles, très discrets, plus nets en haut */
+.fond-motif {
     position: absolute;
     inset: 0;
-    opacity: .05;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 1 L55 16.5 L55 47.5 L28 63 L1 47.5 L1 16.5 Z M28 64 L28 97' fill='none' stroke='%234bd37b' stroke-width='1.2'/%3E%3C/svg%3E");
-    background-size: 56px 97px;
+    opacity: .085;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23f5b50c' stroke-width='1.4'%3E%3Ccircle cx='64' cy='92' r='7'/%3E%3Ccircle cx='322' cy='138' r='10'/%3E%3Ccircle cx='424' cy='58' r='3.5'/%3E%3Ccircle cx='236' cy='262' r='4.5'/%3E%3Ccircle cx='384' cy='384' r='7'/%3E%3Ccircle cx='96' cy='340' r='3.5'/%3E%3Ccircle cx='178' cy='468' r='5'/%3E%3C/g%3E%3Cg fill='%23f5b50c'%3E%3Ccircle cx='196' cy='46' r='1.4'/%3E%3Ccircle cx='130' cy='190' r='1.2'/%3E%3Ccircle cx='292' cy='420' r='1.1'/%3E%3Ccircle cx='36' cy='470' r='1.4'/%3E%3Ccircle cx='446' cy='176' r='1'/%3E%3Ccircle cx='24' cy='226' r='1'/%3E%3Ccircle cx='338' cy='28' r='1.2'/%3E%3Ccircle cx='118' cy='26' r='1'/%3E%3Ccircle cx='468' cy='290' r='1.3'/%3E%3Ccircle cx='250' cy='120' r='0.9'/%3E%3Ccircle cx='60' cy='250' r='0.9'/%3E%3Ccircle cx='410' cy='470' r='1.1'/%3E%3Ccircle cx='272' cy='344' r='0.8'/%3E%3Ccircle cx='490' cy='420' r='0.9'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 520px 520px;
+    -webkit-mask: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, .35) 100%);
+    mask: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, .35) 100%);
 }
 
 .fond-particules {
@@ -43,8 +52,8 @@ body {
     border-radius: 8px;
     font-size: 11.5px;
     font-weight: 600;
-    color: #eef7f1;
-    background: #18231d;
+    color: #f2f2f0;
+    background: #1c1c1e;
     border: 1px solid rgba(255, 255, 255, .08);
     opacity: 0;
     pointer-events: none;
@@ -77,7 +86,7 @@ body {
     align-items: center;
     gap: 10px;
     padding: 46px 0 14px;
-    background: #0c120f;
+    background: #0f0f10;
     border-right: 1px solid rgba(255, 255, 255, .05);
     z-index: 12;
     -webkit-app-region: no-drag;
@@ -103,8 +112,8 @@ body[data-panel="login"] .rail { display: none; }
 }
 
 .rail-serveur {
-    background: rgba(75, 211, 123, .12);
-    border: 1.5px solid #4bd37b;
+    background: rgba(245, 181, 12, .12);
+    border: 1.5px solid #f5b50c;
     cursor: pointer;
     padding: 0;
 }
@@ -125,7 +134,7 @@ body[data-panel="login"] .rail { display: none; }
 .rail-verrou svg {
     width: 17px;
     height: 17px;
-    fill: rgba(238, 247, 241, .3);
+    fill: rgba(242, 242, 240, .3);
 }
 
 .rail-espace { flex: 1; }
@@ -142,8 +151,8 @@ body[data-panel="login"] .rail { display: none; }
     cursor: pointer;
 }
 
-.rail-reglages svg { width: 20px; height: 20px; fill: rgba(238, 247, 241, .55); transition: fill .15s; }
-.rail-reglages:hover svg, .rail-reglages.rail-actif svg { fill: #4bd37b; }
+.rail-reglages svg { width: 20px; height: 20px; fill: rgba(242, 242, 240, .55); transition: fill .15s; }
+.rail-reglages:hover svg, .rail-reglages.rail-actif svg { fill: #f5b50c; }
 .rail-reglages.rail-actif::before { display: none !important; }
 
 /* ------------------------------------------------------------------ en haut à droite */
@@ -156,7 +165,7 @@ body[data-panel="login"] .rail { display: none; }
     gap: 2px;
     padding: 4px;
     border-radius: 14px;
-    background: rgba(12, 18, 15, .88);
+    background: rgba(15, 15, 16, .88);
     border: 1px solid rgba(255, 255, 255, .07);
     z-index: 21;
     -webkit-app-region: no-drag;
@@ -171,13 +180,13 @@ body[data-panel="login"] .rail { display: none; }
     border-radius: 10px;
     background: rgba(255, 255, 255, .05);
     font-size: 12.5px;
-    color: #eef7f1;
+    color: #f2f2f0;
 }
 
-.barre-haut .statut svg { width: 15px; height: 15px; fill: rgba(238, 247, 241, .75); }
+.barre-haut .statut svg { width: 15px; height: 15px; fill: rgba(242, 242, 240, .75); }
 .barre-haut .statut-texte { display: none; }
-.barre-haut .statut-point { width: 7px; height: 7px; border-radius: 50%; background: #6b7a71; }
-.barre-haut .statut[data-etat="en-ligne"] .statut-point { background: #4bd37b; }
+.barre-haut .statut-point { width: 7px; height: 7px; border-radius: 50%; background: #76767a; }
+.barre-haut .statut[data-etat="en-ligne"] .statut-point { background: #5fd39a; } /* en ligne = vert, comme partout */
 .barre-haut .statut[data-etat="hors-ligne"] .statut-point { background: #ff5d6d; }
 
 .haut-btn {
@@ -192,7 +201,7 @@ body[data-panel="login"] .rail { display: none; }
     cursor: pointer;
 }
 
-.haut-btn svg { width: 16px; height: 16px; fill: rgba(238, 247, 241, .7); }
+.haut-btn svg { width: 16px; height: 16px; fill: rgba(242, 242, 240, .7); }
 .haut-btn:hover { background: rgba(255, 255, 255, .07); }
 
 .barre-haut .other .frame {
@@ -225,7 +234,7 @@ body[data-panel="login"] .barre-haut .haut-btn { display: none; }
     gap: 4px;
     padding: 6px;
     border-radius: 16px;
-    background: rgba(12, 18, 15, .88);
+    background: rgba(15, 15, 16, .88);
     border: 1px solid rgba(255, 255, 255, .07);
     z-index: 12;
 }
@@ -245,7 +254,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     cursor: pointer;
 }
 
-.reseau svg { width: 18px; height: 18px; fill: rgba(238, 247, 241, .75); transition: fill .15s; }
+.reseau svg { width: 18px; height: 18px; fill: rgba(242, 242, 240, .75); transition: fill .15s; }
 .reseau:hover { background: rgba(255, 255, 255, .06); }
 .reseau:hover svg { fill: #fff; }
 
@@ -320,7 +329,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     padding: 0 38px;
     border-radius: 12px;
     border: none;
-    background: #22894f;
+    background: #f2b112;
     color: #fff;
     font-size: 17px;
     font-weight: 800;
@@ -334,7 +343,7 @@ body[data-panel="settings"] .reseaux { display: none; }
 .accueil .play-btn::after { display: none !important; }
 
 .accueil .play-btn svg { width: 16px; height: 16px; fill: #fff; }
-.accueil .play-btn:hover { background: #2a9d5c; transform: translateY(-1px); }
+.accueil .play-btn:hover { background: #f7c234; transform: translateY(-1px); }
 .accueil .play-btn:active { transform: none; }
 
 .accueil .instance-select { display: none; }
@@ -359,7 +368,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     overflow: hidden;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, .06);
-    background: #121a16;
+    background: #151516;
     padding: 0;
     text-align: left;
     cursor: pointer;
@@ -387,7 +396,7 @@ body[data-panel="settings"] .reseaux { display: none; }
 .actu-voile {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(7, 11, 9, .94) 0%, rgba(7, 11, 9, .55) 45%, rgba(7, 11, 9, .05) 100%);
+    background: linear-gradient(to top, rgba(8, 8, 9, .94) 0%, rgba(8, 8, 9, .55) 45%, rgba(8, 8, 9, .05) 100%);
 }
 
 .actu-etiquette {
@@ -426,7 +435,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     margin: 6px 0 0;
     font-size: 12px;
     line-height: 1.45;
-    color: rgba(238, 247, 241, .72);
+    color: rgba(242, 242, 240, .72);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -438,7 +447,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     justify-content: space-between;
     margin-top: 8px;
     font-size: 10.5px;
-    color: rgba(238, 247, 241, .5);
+    color: rgba(242, 242, 240, .5);
 }
 
 /* Article ouvert */
@@ -460,20 +469,20 @@ body[data-panel="settings"] .reseaux { display: none; }
     max-height: 82vh;
     overflow: auto;
     border-radius: 18px;
-    background: #0f1713;
+    background: #111112;
     border: 1px solid rgba(255, 255, 255, .08);
 }
 
 .article-image {
     height: 220px;
-    background: #121a16 center / cover no-repeat;
+    background: #151516 center / cover no-repeat;
 }
 
 .article-corps { padding: 18px 24px 22px; }
-.article-date { font-size: 11px; color: #4bd37b; font-weight: 700; }
+.article-date { font-size: 11px; color: #f5b50c; font-weight: 700; }
 .article-titre { margin: 6px 0 10px; font-size: 22px; }
-.article-texte p { margin: .35em 0; line-height: 1.55; color: rgba(238, 247, 241, .82); font-size: 13.5px; }
-.article-auteur { margin-top: 12px; font-size: 12px; color: rgba(238, 247, 241, .5); }
+.article-texte p { margin: .35em 0; line-height: 1.55; color: rgba(242, 242, 240, .82); font-size: 13.5px; }
+.article-auteur { margin-top: 12px; font-size: 12px; color: rgba(242, 242, 240, .5); }
 
 .article-fermer {
     position: absolute;
@@ -506,7 +515,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(6, 10, 8, .9) 0%, rgba(6, 10, 8, .25) 42%, rgba(6, 10, 8, .4) 100%);
+    background: linear-gradient(to top, rgba(7, 7, 8, .9) 0%, rgba(7, 7, 8, .25) 42%, rgba(7, 7, 8, .4) 100%);
 }
 
 .login.active .connexion-fond { animation: z-zoom 14s ease-out both; }
@@ -545,7 +554,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     gap: 10px;
     padding: 8px 12px 8px 8px;
     border-radius: 16px;
-    background: rgba(11, 17, 14, .9);
+    background: rgba(14, 14, 15, .9);
     border: 1px solid rgba(255, 255, 255, .08);
     white-space: nowrap;
 }
@@ -562,7 +571,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     background: rgba(255, 255, 255, .08);
     font-size: 11px;
     font-weight: 800;
-    color: #eef7f1;
+    color: #f2f2f0;
 }
 
 .connexion .pf-microsoft {
@@ -572,14 +581,14 @@ body[data-panel="settings"] .reseaux { display: none; }
     padding: 0 20px;
     border-radius: 11px;
     border: none;
-    background: #1f8f51;
+    background: #f2b112;
     color: #fff;
     font-size: 13.5px;
     font-weight: 800;
     box-shadow: none;
 }
 
-.connexion .pf-microsoft:hover:not(:disabled) { background: #26a35d; transform: none; }
+.connexion .pf-microsoft:hover:not(:disabled) { background: #f7c234; transform: none; }
 
 .pf-ouvrir-compte {
     height: 40px;
@@ -587,7 +596,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     border-radius: 11px;
     border: none;
     background: rgba(255, 255, 255, .07);
-    color: #eef7f1;
+    color: #f2f2f0;
     font-size: 12.5px;
     font-weight: 700;
     cursor: pointer;
@@ -601,11 +610,11 @@ body[data-panel="settings"] .reseaux { display: none; }
     align-items: center;
     gap: 6px;
     font-size: 12px;
-    color: rgba(238, 247, 241, .8);
+    color: rgba(242, 242, 240, .8);
     cursor: pointer;
 }
 
-.connexion-rester input { accent-color: #4bd37b; width: 15px; height: 15px; }
+.connexion-rester input { accent-color: #f5b50c; width: 15px; height: 15px; }
 
 .connexion-discord {
     display: flex;
@@ -614,10 +623,10 @@ body[data-panel="settings"] .reseaux { display: none; }
     padding-left: 10px;
     border-left: 1px solid rgba(255, 255, 255, .08);
     font-size: 12.5px;
-    color: #eef7f1;
+    color: #f2f2f0;
 }
 
-.connexion-discord svg { width: 17px; height: 17px; fill: rgba(238, 247, 241, .8); }
+.connexion-discord svg { width: 17px; height: 17px; fill: rgba(242, 242, 240, .8); }
 .connexion-discord.cache { display: none; }
 
 .connexion-copyright {
@@ -627,7 +636,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     bottom: 12px;
     text-align: center;
     font-size: 10.5px;
-    color: rgba(238, 247, 241, .45);
+    color: rgba(242, 242, 240, .45);
 }
 
 /* Carte du compte PokéFaction (au-dessus de la barre) */
@@ -638,7 +647,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     width: 340px;
     padding: 16px 16px 6px;
     border-radius: 16px;
-    background: rgba(11, 17, 14, .95);
+    background: rgba(14, 14, 15, .95);
     border: 1px solid rgba(255, 255, 255, .08);
     opacity: 0;
     visibility: hidden;
@@ -653,9 +662,9 @@ body[data-panel="settings"] .reseaux { display: none; }
     transition: opacity .25s, transform .3s var(--doux), visibility 0s;
 }
 
-.connexion .pf-onglet-actif { background: rgba(75, 211, 123, .16); color: #eef7f1; }
-.connexion .pf-champ:focus { border-color: #4bd37b; }
-.connexion .login-pokefaction .connect { background: #1f8f51; }
+.connexion .pf-onglet-actif { background: rgba(245, 181, 12, .16); color: #f2f2f0; }
+.connexion .pf-champ:focus { border-color: #f5b50c; }
+.connexion .login-pokefaction .connect { background: #f2b112; }
 
 @keyframes z-entree {
     from { opacity: 0; transform: translateY(12px); }
@@ -679,15 +688,15 @@ body[data-panel="settings"] .reseaux { display: none; }
 }
 
 /* ------------------------------------------------------------------ restes de l'ancien thème : plus de halos */
-.fond { background: #090e0b !important; }
+
 .rail-logo, .rail-btn, .rail-actif, .rail-actif:hover, .popup-tab, .popup-button, .popup-button:hover { box-shadow: none !important; }
 .rail-actif::before { display: none !important; }
-.rail-joueur .player-head, .rail-joueur:hover .player-head { box-shadow: 0 0 0 2px #0c120f, 0 0 0 3px rgba(75, 211, 123, .55) !important; }
+.rail-joueur .player-head, .rail-joueur:hover .player-head { box-shadow: 0 0 0 2px #0f0f10, 0 0 0 3px rgba(245, 181, 12, .55) !important; }
 .rail-joueur::after { display: none !important; }
 .accueil .play-instance { background: none !important; box-shadow: none !important; border: none !important; }
 .accueil .play-btn { text-transform: none; }
 .statut-point { box-shadow: none !important; }
-.popup-button { background: #1f8f51 !important; }
+.popup-button { background: #f2b112 !important; }
 
 /* Connexion : la barre et la carte se placent sur toute la largeur */
 .connexion .login-pokefaction { width: auto; max-width: none; left: 0; top: 0; right: 0; bottom: 0; }
@@ -712,10 +721,10 @@ body[data-panel="settings"] .reseaux { display: none; }
     overflow-x: hidden;
     padding-top: 64px;
     scrollbar-width: thin;
-    scrollbar-color: rgba(75, 211, 123, .35) transparent;
+    scrollbar-color: rgba(245, 181, 12, .35) transparent;
 }
 .home .container.accueil::-webkit-scrollbar { width: 8px; }
-.home .container.accueil::-webkit-scrollbar-thumb { background: rgba(75, 211, 123, .35); border-radius: 8px; }
+.home .container.accueil::-webkit-scrollbar-thumb { background: rgba(245, 181, 12, .35); border-radius: 8px; }
 .accueil-haut { gap: 22px; margin-bottom: 26px; }
 .accueil .actus { flex: 0 0 auto; height: max(440px, 74vh); }
 
@@ -737,3 +746,23 @@ body[data-panel="settings"] .reseaux { display: none; }
 
 /* 3.0.6 : seul le logo monte (Jouer et les actus restent à leur place) */
 .accueil-logo { position: relative; top: -24px; }
+
+/* ------------------------------------------------------------------ Rayquaza shiny : boutons dorés */
+/* L'or de l'anneau est le seul accent. Sur un fond doré, le texte et les icônes sont presque noirs (contraste 10:1). */
+.accueil .play-btn,
+.connexion .pf-microsoft,
+.connexion .login-pokefaction .connect,
+.connect,
+.popup-button,
+.max-files-btn,
+.add-profile,
+.skin-enregistrer,
+.download-update {
+    color: #141210 !important;
+}
+.accueil .play-btn svg,
+.add-profile svg,
+.connect svg,
+.popup-button svg { fill: #141210 !important; }
+/* Le carré Microsoft garde ses couleurs, sur une pastille sombre pour rester lisible sur l'or */
+.connexion .pf-microsoft .pf-ms-logo { padding: 3px; border-radius: 4px; background: #141210; }

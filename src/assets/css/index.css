@@ -49,7 +49,7 @@ img {
     inset: 0;
     overflow: hidden;
     background:
-        radial-gradient(420px 320px at 50% 30%, rgba(30, 122, 74, .28), transparent 70%),
+        radial-gradient(420px 320px at 50% 30%, rgba(156, 114, 8, .28), transparent 70%),
         linear-gradient(180deg, var(--fond-1), var(--fond-0));
     border: 1px solid var(--bord);
 }
@@ -66,14 +66,14 @@ img {
 .fond-lueur-1 {
     left: -120px;
     top: 60px;
-    background: #4bd37b;
+    background: #f5b50c;
     animation: derive 9s ease-in-out infinite alternate;
 }
 
 .fond-lueur-2 {
     right: -130px;
     bottom: -40px;
-    background: #1e7a4a;
+    background: #9c7208;
     animation: derive 11s ease-in-out infinite alternate-reverse;
 }
 
@@ -109,7 +109,7 @@ img {
     width: 100%;
     height: 100%;
     opacity: 0;
-    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(75, 211, 123, .4));
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(0, 0, 0, 0));
 }
 
 .splash.opacity {
@@ -120,7 +120,7 @@ img {
     position: absolute;
     inset: -30%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(75, 211, 123, .55), rgba(30, 122, 74, .25) 40%, transparent 70%);
+    background: radial-gradient(circle, rgba(245, 181, 12, .55), rgba(156, 114, 8, .25) 40%, transparent 70%);
     filter: blur(22px);
     opacity: 0;
     animation: apparait .8s .2s forwards, respire 4s 1s ease-in-out infinite;
@@ -130,7 +130,7 @@ img {
     position: absolute;
     inset: -7% -11%;
     border-radius: 50%;
-    background: conic-gradient(from 0deg, transparent 0 14%, rgba(75, 211, 123, .9) 26%, transparent 38% 58%, rgba(47, 157, 99, .9) 72%, transparent 84%);
+    background: conic-gradient(from 0deg, transparent 0 14%, rgba(245, 181, 12, .9) 26%, transparent 38% 58%, rgba(217, 158, 10, .9) 72%, transparent 84%);
     -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
     opacity: 0;
     animation: apparait .8s .5s forwards, tourne 3.2s linear infinite;
@@ -141,7 +141,7 @@ img {
     font-size: 30px;
     font-weight: 850;
     letter-spacing: -.035em;
-    background: linear-gradient(100deg, #ffffff 0%, #d8f7e4 22%, #4bd37b 42%, #6fe3c0 58%, #ffffff 78%, #ffffff 100%);
+    background: linear-gradient(100deg, #ffffff 0%, #fdf0cc 22%, #f5b50c 42%, #6fe3c0 58%, #ffffff 78%, #ffffff 100%);
     background-size: 260% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -151,7 +151,7 @@ img {
 }
 
 .light .splash-titre {
-    background-image: linear-gradient(100deg, #0c120f 0%, #12301f 22%, #4bd37b 42%, #1e7a4a 58%, #0c120f 78%, #0c120f 100%);
+    background-image: linear-gradient(100deg, #0f0f10 0%, #2e2306 22%, #f5b50c 42%, #9c7208 58%, #0f0f10 78%, #0f0f10 100%);
 }
 
 .splash-message {
@@ -224,7 +224,7 @@ img {
 .progress::-webkit-progress-value {
     background: var(--degrade);
     border-radius: 6px;
-    box-shadow: 0 0 12px rgba(75, 211, 123, .6);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0);
     transition: width .3s;
 }
 
@@ -240,7 +240,7 @@ img {
     width: 34%;
     border-radius: 6px;
     background: var(--degrade);
-    box-shadow: 0 0 12px rgba(75, 211, 123, .6);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0);
     animation: va-et-vient 1.4s ease-in-out infinite;
 }
 
@@ -270,8 +270,8 @@ img {
 
 @keyframes logo-entree {
     0% { opacity: 0; scale: .55; filter: blur(14px); }
-    70% { opacity: 1; scale: 1.05; filter: blur(0) drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(75, 211, 123, .4)); }
-    100% { opacity: 1; scale: 1; filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(75, 211, 123, .4)); }
+    70% { opacity: 1; scale: 1.05; filter: blur(0) drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(0, 0, 0, 0)); }
+    100% { opacity: 1; scale: 1; filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .5)) drop-shadow(0 0 22px rgba(0, 0, 0, 0)); }
 }
 
 @keyframes flotte {
@@ -322,6 +322,36 @@ img {
     margin: 0;
     text-align: center;
     font-size: 11px;
-    color: rgba(230, 242, 234, .55);
+    color: rgba(238, 238, 236, .55);
 }
-.splash-credit b { color: #8fe3ae; font-weight: 700; }
+.splash-credit b { color: #f7d27a; font-weight: 700; }
+
+/* ------------------------------------------------------------------ thème Rayquaza shiny (sobre) */
+/* Ciel sombre comme le launcher, pas de lueurs ni de reflet : le logo, le nom, la barre. */
+.fond {
+    background:
+        radial-gradient(90% 70% at 78% -14%, #1b1a17 0%, rgba(27, 26, 23, 0) 70%),
+        radial-gradient(70% 60% at 0% 115%, rgba(245, 181, 12, .07) 0%, rgba(245, 181, 12, 0) 70%),
+        #0a0a0b;
+}
+.fond-lueur, .splash-halo { display: none; }
+.splash-logo { aspect-ratio: 800 / 768; }
+.splash { filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .45)); }
+@keyframes logo-entree {
+    0% { opacity: 0; scale: .6; filter: blur(10px); }
+    70% { opacity: 1; scale: 1.04; filter: blur(0) drop-shadow(0 14px 22px rgba(0, 0, 0, .45)); }
+    100% { opacity: 1; scale: 1; filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .45)); }
+}
+/* L'anneau qui tourne pendant le chargement : l'or des anneaux de Rayquaza */
+.splash-anneau {
+    background: conic-gradient(from 0deg, transparent 0 18%, rgba(245, 181, 12, .7) 30%, transparent 42% 100%);
+}
+@keyframes apparait { to { opacity: .55; } }
+.splash-titre {
+    background: none;
+    color: #f2f2f0;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    animation: monte .7s .35s var(--doux) forwards;
+}
+.progress::-webkit-progress-value, .attente { background: #f2b112; box-shadow: none; }
