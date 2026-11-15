@@ -1,5 +1,14 @@
 [
     {
+        "title": "PokéFaction 4.4 : l’île du tuto",
+        "content": "Nouveau : l’île du tuto. Six personnages t’apprennent les bases : tes premiers outils, les Poké Balls, la capture, le soin. 100 $ par étape et une récompense à la fin. Tout le monde y passe une fois à sa prochaine connexion, puis le Passeur te ramène exactement là où tu étais. Pour y retourner : /tuto, ou le Professeur sur la place du lobby.\n\nSur la place du lobby, quatre personnages se baladent : le Collectionneur rachète tes pièces antiques (tiens-les en main et clique, accroupi pour tout vendre), l’Infirmière soigne ton équipe, le Professeur t’emmène au tuto et la Guide ouvre le guide.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
+        ]
+    },
+    {
         "title": "PokéFaction 4.3 : badges, combats Pokémon et sacs",
         "content": "Quand tu bats un champion, ses récompenses arrivent directement dans ton inventaire et le badge se range tout seul dans ta boîte à badges, avec une petite fête. Ta collection est dans /menu → Profil → Mes badges.\n\nCombat Pokémon contre un joueur : si tous tes Pokémon sont K.O., tu meurs et ton stuff tombe par terre (tes Pokémon restent à toi).\nÀ la mort, ton sac à dos reste avec toi, mais ce qu’il y a dedans tombe par terre.\n\nNouvelle page Grades dans le /menu, protection après téléportation corrigée, objets Pokémon dans les coffres du Nether et de l’End, et un cadeau de mise à jour pour tout le monde.",
         "author": "Staff PokéFaction",
