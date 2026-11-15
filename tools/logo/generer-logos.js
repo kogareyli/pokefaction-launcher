@@ -88,6 +88,11 @@ async function ecrire(img, fichier) {
 
   // Launcher
   await ecrire(logo800, path.join(launcher, 'src/assets/images/logo/logo.png'));
+  // Petites tailles réduites ici (moyenne de surface) : le navigateur, lui, rend un 800 px réduit à 36 px crénelé.
+  // Utilisées avec srcset (1x, 2x, 3x selon le zoom de Windows).
+  for (const l of [48, 96, 144, 200, 400]) {
+    await ecrire(reduire(logo, l, Math.round(l * logo.bitmap.height / logo.bitmap.width)), path.join(launcher, `src/assets/images/logo/logo-${l}.png`));
+  }
   await ecrire(carre(logo, 1024, 0.03), path.join(launcher, 'src/assets/images/icon/icon.png'));
   // Écran de chargement du jeu (Custom Splash Screen « Aspect1to1 ») : copié dans l'instance au clic sur Jouer
   await ecrire(carre(logo, 512, 0.04), path.join(launcher, 'src/assets/images/logo/ecran-chargement.png'));
@@ -104,6 +109,7 @@ async function ecrire(img, fichier) {
   const panel = path.join(serveur, 'PokeFaction-Panel');
   if (fs.existsSync(panel)) {
     await ecrire(logo800, path.join(panel, 'logo.png'));
+    await ecrire(reduire(logo, 144, Math.round(144 * logo.bitmap.height / logo.bitmap.width)), path.join(panel, 'logo-144.png'));
     const b = await carre(logo, 256, 0.02).getBuffer('image/png');
     fs.writeFileSync(path.join(panel, 'icone.ico'), png2icons.createICO(b, png2icons.HERMITE, 0, false));
     console.log('écrit PokeFaction-Panel/icone.ico');
