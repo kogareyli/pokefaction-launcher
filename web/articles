@@ -1,5 +1,14 @@
 [
     {
+        "title": "PokéFaction 4.6 : nouvelles surprises, évolutions en couleur",
+        "content": "Deux nouvelles surprises en semaine (à la place des Pokémon géants) :\n• Le shiny fugitif : un Pokémon shiny s’échappe et brille à travers les murs. Sa zone est annoncée toutes les 2 minutes, de plus en plus précise. Le premier qui le capture le garde, avec 1000 $ en plus.\n• Le défi du type : un type est tiré au sort, le premier à capturer 3 Pokémon de ce type gagne 1500 $ (750 $ et 375 $ pour les suivants), et chaque bonne capture rapporte 50 $.\n\nLes évolutions prennent la couleur du type : une spirale de la couleur de ton Pokémon, puis un éclat de la couleur de sa nouvelle forme, avec « Évolution ! » à l’écran.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/ville.jpg"
+        ]
+    },
+    {
         "title": "PokéFaction 4.5 : la draconite",
         "content": "Un nouveau minerai, au-dessus de la netherite : la draconite. Il se cache tout au fond, dans l’ardoise des abîmes (couches −60 à −37), jamais à l’air libre : il faut creuser. Pioche en diamant minimum. On en trouve aussi parfois dans les trésors de l’End, des bastions et des cités antiques.\n\nDraconite brute → four → lingot. Le gabarit d’amélioration se fabrique avec 4 lingots de draconite, 4 diamants et 1 lingot de netherite (et se copie avec 7 diamants et de l’ardoise). À la table de forge : ton objet en netherite + le gabarit + un lingot.\n\nL’armure en draconite est plus robuste que la netherite et te fait moins reculer, les outils et l’épée sont un cran au-dessus. Rien ne brûle dans la lave.",
         "author": "Staff PokéFaction",
