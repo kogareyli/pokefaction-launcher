@@ -1,5 +1,14 @@
 [
     {
+        "title": "Nouvelles musiques",
+        "content": "Toutes les musiques ont changé : des morceaux calmes façon JRPG quand tu explores, plus sombres dans le Nether, l’End et les grottes, et des musiques de combat nerveuses contre les sauvages, les dresseurs et les joueurs. Toutes libres de droits (CC0). Le volume de la musique reste à 20 % : tu peux le monter dans Options → Musique et sons.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg"
+        ]
+    },
+    {
         "title": "PokéFaction 4.6 : nouvelles surprises, évolutions en couleur",
         "content": "Deux nouvelles surprises en semaine (à la place des Pokémon géants) :\n• Le shiny fugitif : un Pokémon shiny s’échappe et brille à travers les murs. Sa zone est annoncée toutes les 2 minutes, de plus en plus précise. Le premier qui le capture le garde, avec 1000 $ en plus.\n• Le défi du type : un type est tiré au sort, le premier à capturer 3 Pokémon de ce type gagne 1500 $ (750 $ et 375 $ pour les suivants), et chaque bonne capture rapporte 50 $.\n\nLes évolutions prennent la couleur du type : une spirale de la couleur de ton Pokémon, puis un éclat de la couleur de sa nouvelle forme, avec « Évolution ! » à l’écran.",
         "author": "Staff PokéFaction",
