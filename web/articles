@@ -1,15 +1,33 @@
 [
     {
+        "title": "Nouveau logo : Rayquaza shiny",
+        "content": "PokéFaction a un nouveau logo : la tête de Rayquaza shiny.\n\nLe launcher, le site et l'écran de chargement du jeu passent en noir et or.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/nouveau-logo.jpg",
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg",
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
+        ]
+    },
+    {
         "title": "PokéFaction 4.1 : PvP, duels et échanges",
         "content": "Nouvelle arène PvP dans son propre monde, fermée : impossible d'en sortir à pied. Tape /pvp et choisis ton kit (Guerrier, Archer, Tank ou Rapide). Tes affaires sont gardées de côté, rien n'est perdu.\n\nDuels 1 contre 1 avec mise : /duel <joueur>. Classement PvP récompensé chaque dimanche à 22 h.\n\nÉchanges de Pokémon : /echange <place> <Pokémon voulu>. La boutique rachète aussi tes shiny (/rachat). Liste d'amis : /friend.\n\nEt aussi : nuit de sang avec un vrai ciel rouge et une lune rouge, parkour rallongé (40 sauts, à pied !), caméra de combat qui ne traverse plus les murs, protection de 3 s après une téléportation, starters montables, et ton légendaire caché s'enfuit pour toujours après 4 K.O. !",
         "author": "Staff PokéFaction",
-        "publish_date": "2026-11-14"
+        "publish_date": "2026-11-14",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/salle-interieur.jpg",
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg"
+        ]
     },
     {
         "title": "PokéFaction 3.0 est là !",
         "content": "Tout passe aux couleurs de Zygarde : le launcher, le serveur et le site.\n\nGrande carte (touche M) : les territoires des factions, seulement là où tu es déjà passé.\nNiveaux de faction : jouez ensemble pour gagner plus de terrain.\nPillage : /f pillage dans une base ennemie, 5 min de siège, coffres ouverts si vous gagnez.\nGuide des légendaires dans /menu, avec « Me guider » sur la minimap.\nCaméra de combat qui tourne autour des Pokémon.\nÉvénements PvP mercredi, vendredi et dimanche.\n\nCe soir 21 h : grand rassemblement dans la Zone de chasse, Pokémon en masse et shiny à ton niveau !",
         "author": "Staff PokéFaction",
-        "publish_date": "2026-11-14"
+        "publish_date": "2026-11-14",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/ville.jpg"
+        ]
     },
     {
         "title": "Nouveau : le menu PokéFaction",
@@ -26,6 +44,9 @@
         "title": "Bienvenue sur PokéFaction !",
         "content": "Clique sur JOUER : le launcher installe tout (Java, mods, packs) puis te connecte directement au serveur.\nLe premier lancement est long (environ 430 Mo à télécharger), les suivants sont rapides.\n\nÀ ton arrivée : choisis ton starter, lis les règles au lobby et tape /guide.",
         "author": "Staff PokéFaction",
-        "publish_date": "2026-11-11"
+        "publish_date": "2026-11-11",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/batiment-interieur.jpg"
+        ]
     }
 ]
