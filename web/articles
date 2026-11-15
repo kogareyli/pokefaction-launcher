@@ -1,5 +1,14 @@
 [
     {
+        "title": "PokéFaction 4.3 : badges, combats Pokémon et sacs",
+        "content": "Quand tu bats un champion, ses récompenses arrivent directement dans ton inventaire et le badge se range tout seul dans ta boîte à badges, avec une petite fête. Ta collection est dans /menu → Profil → Mes badges.\n\nCombat Pokémon contre un joueur : si tous tes Pokémon sont K.O., tu meurs et ton stuff tombe par terre (tes Pokémon restent à toi).\nÀ la mort, ton sac à dos reste avec toi, mais ce qu’il y a dedans tombe par terre.\n\nNouvelle page Grades dans le /menu, protection après téléportation corrigée, objets Pokémon dans les coffres du Nether et de l’End, et un cadeau de mise à jour pour tout le monde.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-15",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/salle-interieur.jpg"
+        ]
+    },
+    {
         "title": "PokéFaction 4.2 : nouveau Nether, nouvel End",
         "content": "Le Nether et l’End ont été refaits. Nether : nouveaux biomes, Château interdit, sanctuaires, villages de Piglins et forteresses bien plus grandes. End : Citadelle fantôme, vaisseaux géants, tours et ruines sur les îles extérieures. Les Ligues sont toujours là.\n\nAprès une téléportation, tu es protégé 2 minutes (frapper ou casser un bloc arrête la protection).\nLes coffres du lobby s’ouvrent.\nNouvel anti-triche, actif pendant toute la partie : x-ray et mods de triche = expulsion, puis bannissement.\nLes menus passent aux couleurs du nouveau logo.",
         "author": "Staff PokéFaction",
