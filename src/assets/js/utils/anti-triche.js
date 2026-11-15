@@ -71,33 +71,63 @@ function packXray(chemin, nom) {
     return null;
 }
 
+// Mods et clients de triche connus (nom du fichier .jar, ou dossier laissé par le client dans le jeu)
+const TRICHE = /meteor|wurst|aristois|liquidbounce|baritone|xray|x-ray|freecam|bleachhack|thunderhack|boze|coffee|rusherhack|kamiblue|impact|inertia|killaura|autoclicker|seedcracker|sigma|lambda/i;
+const DOSSIERS_TRICHE = ['meteor-client', 'wurst', 'baritone', 'LiquidBounce', 'liquidbounce', 'aristois', 'thunderhack', 'bleachhack', 'boze', 'rusherhack'];
+
+const pause = ms => new Promise(r => setTimeout(r, ms));
+
 /**
- * Analyse le dossier du jeu. progression(texte, valeur, max) affiche l'étape dans le launcher.
- * Renvoie la liste de ce qui a été corrigé (pour la bulle d'information), vide si tout va bien.
+ * Analyse le dossier du jeu, étape par étape. etape({ texte, pct, fait, corrige }) affiche l'avancement (fenêtre
+ * « PokéFaction Anti-Cheat » et barre du launcher). Renvoie ce qui a été corrigé, vide si tout va bien.
  */
-export async function analyserJeu(dossierInstance, progression) {
+export async function analyserJeu(dossierInstance, etape) {
     const debut = Date.now();
     const corrige = [];
+    const signaler = (texte, pct, fait, estCorrige) => { try { etape({ texte, pct, fait, corrige: estCorrige }); } catch { } };
+    const quarantaine = nom => { const d = path.join(dossierInstance, nom); fs.mkdirSync(d, { recursive: true }); return d; };
+
+    // 1. Mods : un .jar de triche est retiré (le launcher efface ensuite tout ce qui n'est pas dans le modpack)
+    signaler('Vérification des mods…', 8);
+    const mods = path.join(dossierInstance, 'mods');
+    const jars = fs.existsSync(mods) ? fs.readdirSync(mods).filter(f => /\.jar$/i.test(f)) : [];
+    for (const nom of jars) {
+        if (!TRICHE.test(nom) || /^pokefaction/i.test(nom)) continue;
+        try {
+            fs.renameSync(path.join(mods, nom), path.join(quarantaine('mods-retires'), nom));
+            corrige.push(`Mod de triche retiré : « ${nom} »`);
+        } catch { corrige.push(`Mod de triche trouvé : « ${nom} »`); }
+    }
+    await pause(350);
+    signaler('Vérification des mods…', 25, `${jars.length} mods vérifiés`);
+
+    // 2. Clients de triche : dossiers qu'ils laissent dans le jeu (signalé seulement : le jeu est surveillé ensuite)
+    signaler('Recherche de clients de triche…', 35);
+    const traces = DOSSIERS_TRICHE.filter(d => fs.existsSync(path.join(dossierInstance, d)));
+    await pause(300);
+    signaler('Recherche de clients de triche…', 48, traces.length ? `Traces de ${traces.join(', ')} (surveillé pendant la partie)` : 'Aucun client de triche', traces.length > 0);
+
+    // 3. Packs de ressources x-ray : déplacés dans « resourcepacks-retires »
     const packs = path.join(dossierInstance, 'resourcepacks');
     const liste = fs.existsSync(packs) ? fs.readdirSync(packs) : [];
-    const total = liste.length + 1;
     let n = 0;
     for (const nom of liste) {
-        progression('Anti-triche PokéFaction : analyse de ton jeu…', ++n, total);
+        signaler(`Analyse des packs de ressources… (${++n}/${liste.length})`, 48 + Math.round(32 * n / Math.max(1, liste.length)));
         const raison = packXray(path.join(packs, nom), nom);
         if (raison) {
-            const quarantaine = path.join(dossierInstance, 'resourcepacks-retires');
-            fs.mkdirSync(quarantaine, { recursive: true });
             try {
-                fs.renameSync(path.join(packs, nom), path.join(quarantaine, nom));
+                fs.renameSync(path.join(packs, nom), path.join(quarantaine('resourcepacks-retires'), nom));
                 corrige.push(`Pack x-ray retiré : « ${nom} » (${raison}), mis dans resourcepacks-retires`);
             } catch { corrige.push(`Pack x-ray trouvé : « ${nom} » (impossible de le déplacer)`); }
         }
-        await new Promise(r => setTimeout(r, 0));
+        await pause(0);
     }
-    // Luminosité : la barre du jeu s'arrête à 100 % (gamma 1.0). Au-dessus = modifié à la main pour voir dans le noir.
+    await pause(250);
+    signaler('Analyse des packs de ressources…', 80, liste.length ? `${liste.length} pack${liste.length > 1 ? 's' : ''} analysé${liste.length > 1 ? 's' : ''}` : 'Aucun pack de ressources');
+
+    // 4. Luminosité : la barre du jeu s'arrête à 100 % (gamma 1.0). Au-dessus = modifié à la main pour voir dans le noir.
+    signaler('Vérification des réglages…', 88);
     const options = path.join(dossierInstance, 'options.txt');
-    progression('Anti-triche PokéFaction : analyse de ton jeu…', total, total);
     try {
         if (fs.existsSync(options)) {
             const t = fs.readFileSync(options, 'utf8');
@@ -108,8 +138,12 @@ export async function analyserJeu(dossierInstance, progression) {
             }
         }
     } catch { /* options.txt occupé : on laisse, le serveur vérifiera */ }
-    // L'étape reste visible au moins un instant : elle est là pour qu'on la voie
-    const reste = 1200 - (Date.now() - debut);
-    if (reste > 0) await new Promise(r => setTimeout(r, reste));
+    await pause(250);
+    for (const c of corrige) signaler(null, null, c, true);
+    signaler(corrige.length ? 'Problèmes corrigés, lancement du jeu…' : 'Aucune triche détectée · protection active', 100, corrige.length ? null : 'Réglages vérifiés');
+    try { etape({ fin: true }); } catch { }
+    // L'analyse reste visible au moins ~2,5 s : elle est là pour qu'on la voie (et que ça décourage)
+    const reste = 2500 - (Date.now() - debut);
+    if (reste > 0) await pause(reste);
     return corrige;
 }

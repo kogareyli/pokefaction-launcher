@@ -14,6 +14,7 @@ const Store = require('electron-store');
 
 const UpdateWindow = require("./assets/js/windows/updateWindow.js");
 const MainWindow = require("./assets/js/windows/mainWindow.js");
+const AntiCheat = require("./assets/js/windows/antiCheat.js");
 
 let dev = process.env.NODE_ENV === 'dev';
 
@@ -59,6 +60,14 @@ ipcMain.on('update-window-dev-tools', () => UpdateWindow.getWindow().webContents
 ipcMain.on('update-window-progress', (event, options) => UpdateWindow.getWindow().setProgressBar(options.progress / options.size))
 ipcMain.on('update-window-progress-reset', () => UpdateWindow.getWindow().setProgressBar(-1))
 ipcMain.on('update-window-progress-load', () => UpdateWindow.getWindow().setProgressBar(2))
+
+// 4.3 : PokéFaction Anti-Cheat (fenêtre d'analyse au clic sur Jouer, icône près de l'horloge pendant la partie)
+ipcMain.handle('anticheat-ouvrir', () => AntiCheat.ouvrir())
+ipcMain.on('anticheat-progres', (event, p) => AntiCheat.progres(p))
+ipcMain.on('anticheat-fermer', () => AntiCheat.fermer())
+ipcMain.on('anticheat-actif', () => AntiCheat.activer())
+ipcMain.on('anticheat-stop', () => AntiCheat.desactiver())
+app.on('before-quit', () => AntiCheat.desactiver())
 
 ipcMain.handle('path-user-data', () => app.getPath('userData'))
 ipcMain.handle('appData', e => app.getPath('appData'))

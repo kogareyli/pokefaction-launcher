@@ -416,6 +416,17 @@ class Home {
 
         // Graphismes choisis dans les paramètres (PC faible / équilibré / beau)
         try { appliquerGraphismes(`${chemin}/instances/${options.name}`, configClient.graphismes) } catch (err) { console.error('graphismes', err) }
+        // 4.3 : musique à 20 % pour tout le monde, une seule fois (ensuite chacun la règle comme il veut)
+        try {
+            const opts = `${chemin}/instances/${options.name}/options.txt`
+            if (!configClient.musique20 && fs.existsSync(opts)) {
+                let t = fs.readFileSync(opts, 'utf8')
+                t = /^soundCategory_music:/m.test(t) ? t.replace(/^soundCategory_music:.*$/m, 'soundCategory_music:0.2') : t.replace(/\s*$/, '\nsoundCategory_music:0.2\n')
+                fs.writeFileSync(opts, t)
+                configClient.musique20 = true
+                await this.db.updateData('configClient', configClient)
+            }
+        } catch (err) { console.error('musique', err) }
         // Écran de chargement du jeu : logo PokéFaction sur fond sombre (au lieu du logo Mojang sur fond rouge)
         try { await appliquerEcranChargement(`${chemin}/instances/${options.name}`) } catch (err) { console.error('écran de chargement', err) }
 
@@ -466,16 +477,23 @@ class Home {
             }
         }
 
-        // 4.2 : anti-triche PokéFaction, analyse visible du dossier du jeu juste avant de le lancer
+        // 4.3 : PokéFaction Anti-Cheat, comme Vanguard : petite fenêtre d'analyse du jeu avant de le lancer,
+        // puis une icône près de l'horloge pendant la partie (assets/js/windows/antiCheat.js)
         playInstanceBTN.style.display = "none"
         infoStartingBOX.style.display = "block"
         try {
-            const corrige = await analyserJeu(`${chemin}/instances/${options.name}`, (t, v, m) => this.progression(t, v, m))
+            await ipcRenderer.invoke('anticheat-ouvrir').catch(() => false)
+            const corrige = await analyserJeu(`${chemin}/instances/${options.name}`, p => {
+                ipcRenderer.send('anticheat-progres', p)
+                if (p.texte) this.progression('PokéFaction Anti-Cheat : ' + p.texte, p.pct ?? 0, 100)
+            })
+            ipcRenderer.send('anticheat-fermer')
+            ipcRenderer.send('anticheat-actif')
             if (corrige.length) {
                 const html = corrige.map(c => c.replace(/[&<>"']/g, x => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[x]))).join('<br>')
-                new popup().openPopup({ title: 'Anti-triche PokéFaction', content: html, color: 'red', options: true })
+                new popup().openPopup({ title: 'PokéFaction Anti-Cheat', content: html, color: 'red', options: true })
             }
-        } catch (err) { console.error('anti-triche', err) }
+        } catch (err) { console.error('anti-triche', err); ipcRenderer.send('anticheat-fermer') }
 
         launch.Launch(opt);
         // Le jeu a-t-il démarré ? (après, une « erreur » de la bibliothèque n'est plus un problème de téléchargement)
@@ -545,6 +563,7 @@ class Home {
         })
 
         launch.on('close', code => {
+            ipcRenderer.send('anticheat-stop') // plus d'icône anti-triche : la partie est finie
             this.lancementEnCours = false
             // Le jeu est fermé : on enregistre le journal, et s'il n'y a pas eu de vrai plantage, tout se ferme
             // (le launcher cherchera les mises à jour à sa prochaine ouverture).
@@ -588,6 +607,7 @@ class Home {
                 journaliserErreur(chemin, 'après le démarrage du jeu : ' + messageErreur(err))
                 return
             }
+            ipcRenderer.send('anticheat-stop') // le jeu n'a pas démarré : plus d'icône anti-triche
             let popupError = new popup()
             // minecraft-java-core renvoie soit { error: '…' }, soit une vraie erreur Windows (err.message) :
             // avant, seul err.error était affiché, d'où le message « undefined ».
