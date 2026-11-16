@@ -1,5 +1,14 @@
 [
     {
+        "title": "Mise à jour 5.3 : tournoi, cœur de faction, primes, Ligue",
+        "content": "• Tournoi ranked chaque samedi à 19 h 30 : /tournoi rejoindre (inscriptions dès 19 h 15), 8 joueurs, élimination directe, /tournoi regarder pour suivre les matchs. Gagnant : 5 000 $.\n• Cœur de faction : posez-le dans votre territoire. S'il est cassé pendant un pillage réussi, l'attaquant gagne 2 000 $ et la base reste ouverte 5 min de plus.\n• Saison des factions : /saison. Pillages réussis, défenses et XP de faction donnent des points ; le top 3 du mois gagne de l'argent pour chaque membre et un titre ♛.\n• Primes : /prime <joueur> <montant>. Celui qui l'élimine l'empoche (pas sa propre faction).\n• Ligue : dès le premier membre du Conseil, ton équipe est verrouillée jusqu'au bout, et pas de soin sauf tes potions (/ligue).\n• Menu : nouvelles pages Pokédex (récompenses à prendre) et Planning des événements.\n• Grades : plus de « devient VÉTÉRAN » en boucle. /classe est remplacé par /ranked, et les rangs ranked montent plus haut (Maître à 2 000).",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-16",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+        ]
+    },
+    {
         "title": "Mise à jour 5.2 : /ranked",
         "content": "• /ranked : un menu rien que pour les combats classés. Ton blason de rang (Bronze, Argent, Or, Platine, Diamant, Maître), tes points, la barre jusqu'au rang suivant et le bouton « Lancer ranked ».\n• Personne ne cherche ? Au bout de 30 s, un dresseur IA à ton niveau arrive (jusqu'au rang Or). Une victoire contre l'IA rapporte moitié moins de points.\n• Classement top 10, tes derniers combats (points gagnés et perdus), et les récompenses de saison : chaque mois, de 200 à 5 000 $ selon ton rang, plus ton titre de rang dans le tab.\n• Ligues : tous les dresseurs des Ligues (Conseil 4 et Maître) sont maintenant au niveau 80.\n• Plus d'élytres sur le serveur : celles que vous aviez sont remboursées 1 000 $.\n• La boussole radar se range où tu veux dans ton inventaire, mais ne peut plus en sortir (pas de coffre, pas de jet, gardée à la mort).",
         "author": "Staff PokéFaction",
