@@ -109,8 +109,8 @@
  },
  {
   "path": "config/cobblemon/main.json",
-  "size": 3405,
-  "hash": "703aa11f6299e32cf2776aac6f448f514eae3433",
+  "size": 3360,
+  "hash": "14a684b00f2ebe77f8fc188c4246120b7af84b37",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemon/main.json"
  },
  {
@@ -181,8 +181,8 @@
  },
  {
   "path": "config/cobblemonminigames/shop/cobblemon.yml",
-  "size": 28275,
-  "hash": "078c7616a7c13e6eadbb5970eb16ab021d0113e3",
+  "size": 28279,
+  "hash": "b69c2b6da4b1effbea348de99afa00a804c5c38a",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemonminigames/shop/cobblemon.yml"
  },
  {
@@ -1620,10 +1620,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-5.0.2.jar",
-  "size": 1347588,
-  "hash": "384da8d3826cfbcd60f734fde047a5721e9b27e0",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-5.0.2.jar"
+  "path": "mods/pokefaction-core-5.1.0.jar",
+  "size": 1367608,
+  "hash": "359fdacede2b967a41b87ff9c001387ee03abaae",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-5.1.0.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",

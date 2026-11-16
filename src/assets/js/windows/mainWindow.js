@@ -28,7 +28,7 @@ function createWindow() {
         minWidth: 980,
         minHeight: 552,
         resizable: true,
-        icon: `./src/assets/images/icon/icon.${os.platform() === "win32" ? "ico" : "png"}`,
+        icon: require("path").join(require("electron").app.getAppPath(), `src/assets/images/icon/icon.${os.platform() === "win32" ? "ico" : "png"}`), // 5.1 : même icône que le panel, chemin valable une fois installé
         frame: false,
         show: false,
         webPreferences: {

@@ -614,30 +614,30 @@ categories:
         items:
           - type: item
             id: "cobblemon:exp_candy_xs"
-            price: 8
+            price: 40
             quantity: 5
             rarity: common
           - type: item
             id: "cobblemon:exp_candy_s"
-            price: 15
+            price: 75
             quantity: 5
             rarity: common
           - type: item
             id: "cobblemon:exp_candy_m"
-            price: 45
+            price: 225
             quantity: 3
             rarity: uncommon
           - type: item
             id: "cobblemon:exp_candy_l"
-            price: 105
+            price: 525
             rarity: uncommon
           - type: item
             id: "cobblemon:exp_candy_xl"
-            price: 210
+            price: 1050
             rarity: rare
           - type: item
             id: "cobblemon:rare_candy"
-            price: 360
+            price: 1800
             rarity: rare
 
       - name: "Vitamins"

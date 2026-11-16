@@ -99,7 +99,7 @@ export async function analyserJeu(dossierInstance, etape) {
         } catch { corrige.push(`Mod de triche trouvé : « ${nom} »`); }
     }
     await pause(350);
-    signaler('Vérification des mods…', 25, `${jars.length} mods vérifiés`);
+    signaler('Vérification des mods…', 25, 'Mods vérifiés');
 
     // 2. Clients de triche : dossiers qu'ils laissent dans le jeu (signalé seulement : le jeu est surveillé ensuite)
     signaler('Recherche de clients de triche…', 35);
