@@ -1,5 +1,14 @@
 [
     {
+        "title": "Mise à jour 5.2 : /ranked",
+        "content": "• /ranked : un menu rien que pour les combats classés. Ton blason de rang (Bronze, Argent, Or, Platine, Diamant, Maître), tes points, la barre jusqu'au rang suivant et le bouton « Lancer ranked ».\n• Personne ne cherche ? Au bout de 30 s, un dresseur IA à ton niveau arrive (jusqu'au rang Or). Une victoire contre l'IA rapporte moitié moins de points.\n• Classement top 10, tes derniers combats (points gagnés et perdus), et les récompenses de saison : chaque mois, de 200 à 5 000 $ selon ton rang, plus ton titre de rang dans le tab.\n• Ligues : tous les dresseurs des Ligues (Conseil 4 et Maître) sont maintenant au niveau 80.\n• Plus d'élytres sur le serveur : celles que vous aviez sont remboursées 1 000 $.\n• La boussole radar se range où tu veux dans ton inventaire, mais ne peut plus en sortir (pas de coffre, pas de jet, gardée à la mort).",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-16",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+        ]
+    },
+    {
         "title": "Mise à jour 5.1 : l'aventure devient plus dure",
         "content": "• Plus dur : l'XP des Pokémon est divisée par 2, et tes Pokémon ne dépassent plus le niveau du prochain champion. Les champions et dresseurs ont 5 niveaux de plus. La route jusqu'à la Ligue se mérite.\n• Plus aucun bonbon offert (récompenses, dresseurs, cadeaux…). Ils restent en boutique, beaucoup plus chers. Plus de pluie de Poké Balls.\n• Moins de diamants : moins de filons dans les nouvelles zones, plus de diamants dans les récompenses ni chez les villageois.\n• Méga-Bracelet au 4e champion battu, Bracelet Dynamax au 8e (donnés automatiquement, avec l'explication).\n• Boussole radar pour tout le monde (/radar si perdue) : elle pointe le joueur le plus proche qui n'est pas dans sa base de faction.\n• Pillage refait : /f pillage, puis choisis Épée (PvP) ou Pokémon (combat Pokémon automatique). Battez les défenseurs pour ouvrir la base, ou 2 min si personne ne défend.\n• Ligues et bâtiments protégés : on ne peut plus y poser de blocs (PvP et coffres restent ouverts).\n• Rayquaza n'apparaît plus dans la nature.\n• Le contenu du sac à dos tombe bien à la mort, même porté sur le dos.",
         "author": "Staff PokéFaction",
