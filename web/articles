@@ -1,5 +1,14 @@
 [
     {
+        "title": "Mise à jour 5.4 : passe de combat, expéditions, Roi de la colline",
+        "content": "• Passe de combat : une saison par mois, 30 paliers. Tu montes en jouant (captures, combats, dresseurs, temps de jeu) et tu prends une récompense à chaque palier dans /menu → Passe. Une piste Premium arrive bientôt.\n• Expéditions : envoie des Pokémon de ton PC en expédition 1 h, 4 h ou 8 h. Ils reviennent avec de l'argent et des objets.\n• Zone Safari : le dimanche à 16 h, 1 h de Pokémon rares, des shiny plus fréquents et 30 Safari Balls offertes (/safari).\n• Saison du mois : chaque mois, un type de Pokémon apparaît plus souvent (/saisonmonde).\n• Succès et titres : 33 succès, et ton titre préféré s'affiche dans le tab (/menu → Succès).\n• Factions : banque commune (/f banque), Roi de la colline le mardi et le jeudi à 21 h 30, guerres déclarées (/f guerre), 4 avant-postes à capturer qui rapportent toutes les heures.\n• Menu : 18 cases sur 3 lignes, avec Paramètres, et des barres de niveau animées (dresseur et faction).",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-16",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+        ]
+    },
+    {
         "title": "Mise à jour 5.3 : tournoi, cœur de faction, primes, Ligue",
         "content": "• Tournoi ranked chaque samedi à 19 h 30 : /ranked tournoi rejoindre (inscriptions dès 19 h 15), 8 joueurs, élimination directe, /ranked tournoi regarder pour suivre les matchs. Gagnant : 5 000 $.\n• Cœur de faction : posez-le dans votre territoire. S'il est cassé pendant un pillage réussi, l'attaquant gagne 2 000 $ et la base reste ouverte 5 min de plus.\n• Saison des factions : /saison. Pillages réussis, défenses et XP de faction donnent des points ; le top 3 du mois gagne de l'argent pour chaque membre et un titre ♛.\n• Ligue : dès le premier membre du Conseil, ton équipe est verrouillée jusqu'au bout, et pas de soin sauf tes potions (/ligue).\n• Menu : nouvelles pages Pokédex (récompenses à prendre) et Planning des événements.\n• Grades : plus de « devient VÉTÉRAN » en boucle. /classe est remplacé par /ranked, et les rangs ranked montent plus haut (Maître à 2 000).",
         "author": "Staff PokéFaction",
