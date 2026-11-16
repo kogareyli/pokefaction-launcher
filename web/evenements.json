@@ -1,0 +1,167 @@
+{
+  "_explication": "Planning de la semaine (heure de Paris) pour les notifications du launcher. Fait par tools/evenements-launcher.js depuis la config du serveur.",
+  "evenements": [
+    {
+      "jour": "MONDAY",
+      "heure": "19:00",
+      "titre": "Largage au lobby",
+      "texte": "Des tonneaux à ouvrir au lobby (3 par joueur)."
+    },
+    {
+      "jour": "MONDAY",
+      "heure": "20:00",
+      "titre": "Objectif commun",
+      "texte": "Tout le serveur ensemble pour un objectif (/objectif)."
+    },
+    {
+      "jour": "MONDAY",
+      "heure": "21:00",
+      "titre": "Raid du soir",
+      "texte": "Un raid à plusieurs commence (/raid)."
+    },
+    {
+      "jour": "TUESDAY",
+      "heure": "19:00",
+      "titre": "Largage au lobby",
+      "texte": "Des tonneaux à ouvrir au lobby (3 par joueur)."
+    },
+    {
+      "jour": "TUESDAY",
+      "heure": "21:00",
+      "titre": "Raid du soir",
+      "texte": "Un raid à plusieurs commence (/raid)."
+    },
+    {
+      "jour": "TUESDAY",
+      "heure": "21:30",
+      "titre": "Roi de la colline",
+      "texte": "La faction qui tient la zone gagne de l’argent."
+    },
+    {
+      "jour": "WEDNESDAY",
+      "heure": "19:00",
+      "titre": "Largage au lobby",
+      "texte": "Des tonneaux à ouvrir au lobby (3 par joueur)."
+    },
+    {
+      "jour": "WEDNESDAY",
+      "heure": "20:00",
+      "titre": "Objectif commun",
+      "texte": "Tout le serveur ensemble pour un objectif (/objectif)."
+    },
+    {
+      "jour": "WEDNESDAY",
+      "heure": "21:00",
+      "titre": "PvP : Survivant",
+      "texte": "Chacun pour soi dans l’arène PvP (/pvpevent)."
+    },
+    {
+      "jour": "WEDNESDAY",
+      "heure": "21:00",
+      "titre": "Raid du soir",
+      "texte": "Un raid à plusieurs commence (/raid)."
+    },
+    {
+      "jour": "THURSDAY",
+      "heure": "19:00",
+      "titre": "Largage au lobby",
+      "texte": "Des tonneaux à ouvrir au lobby (3 par joueur)."
+    },
+    {
+      "jour": "THURSDAY",
+      "heure": "21:00",
+      "titre": "Raid du soir",
+      "texte": "Un raid à plusieurs commence (/raid)."
+    },
+    {
+      "jour": "THURSDAY",
+      "heure": "21:30",
+      "titre": "Roi de la colline",
+      "texte": "La faction qui tient la zone gagne de l’argent."
+    },
+    {
+      "jour": "FRIDAY",
+      "heure": "19:00",
+      "titre": "Largage au lobby",
+      "texte": "Des tonneaux à ouvrir au lobby (3 par joueur)."
+    },
+    {
+      "jour": "FRIDAY",
+      "heure": "20:00",
+      "titre": "Objectif commun",
+      "texte": "Tout le serveur ensemble pour un objectif (/objectif)."
+    },
+    {
+      "jour": "FRIDAY",
+      "heure": "21:00",
+      "titre": "PvP : Guerre des factions",
+      "texte": "Les factions s’affrontent dans l’arène PvP (/pvpevent)."
+    },
+    {
+      "jour": "FRIDAY",
+      "heure": "21:00",
+      "titre": "Raid du soir",
+      "texte": "Un raid à plusieurs commence (/raid)."
+    },
+    {
+      "jour": "SATURDAY",
+      "heure": "19:00",
+      "titre": "Largage au lobby",
+      "texte": "Des tonneaux à ouvrir au lobby (3 par joueur)."
+    },
+    {
+      "jour": "SATURDAY",
+      "heure": "19:30",
+      "titre": "Tournoi ranked",
+      "texte": "Inscriptions 15 min avant : /ranked tournoi."
+    },
+    {
+      "jour": "SATURDAY",
+      "heure": "21:00",
+      "titre": "Grand rassemblement",
+      "texte": "Tout le monde est téléporté : boss géant, chasse et tirage au sort."
+    },
+    {
+      "jour": "SATURDAY",
+      "heure": "21:20",
+      "titre": "Chasse au shiny",
+      "texte": "Les shiny apparaissent bien plus souvent pendant un moment."
+    },
+    {
+      "jour": "SUNDAY",
+      "heure": "16:00",
+      "titre": "Zone Safari",
+      "texte": "Ouverte pour un moment : /safari."
+    },
+    {
+      "jour": "SUNDAY",
+      "heure": "17:00",
+      "titre": "PvP : Survivant",
+      "texte": "Chacun pour soi dans l’arène PvP (/pvpevent)."
+    },
+    {
+      "jour": "SUNDAY",
+      "heure": "18:00",
+      "titre": "Double XP",
+      "texte": "Toute l’XP compte double."
+    },
+    {
+      "jour": "SUNDAY",
+      "heure": "19:00",
+      "titre": "Largage au lobby",
+      "texte": "Des tonneaux à ouvrir au lobby (3 par joueur)."
+    },
+    {
+      "jour": "SUNDAY",
+      "heure": "21:00",
+      "titre": "Course aux captures",
+      "texte": "Celui qui capture le plus gagne de l’argent."
+    },
+    {
+      "jour": "SUNDAY",
+      "heure": "21:00",
+      "titre": "Raid du soir",
+      "texte": "Un raid à plusieurs commence (/raid)."
+    }
+  ]
+}

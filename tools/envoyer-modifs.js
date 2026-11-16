@@ -268,6 +268,13 @@ async function main() {
         catch (e) { stop(`Impossible de récupérer GitHub (pas d'internet ?)\n${e.stderr || e.message}`); }
     }
 
+    // 3.4.0 : planning des notifications du launcher, refait depuis la config du serveur
+    let planningChange = false;
+    if (!SIMULATION) {
+        try { planningChange = require('./evenements-launcher.js').generer().change; }
+        catch (e) { console.log(jaune(' Planning des notifications pas mis à jour : ' + e.message)); }
+    }
+
     console.log(gris(' Comparaison de ton instance CurseForge avec le serveur et le launcher…'));
     const instance = inventaireInstance();
     const reglages = inventaireReglages();
@@ -297,7 +304,7 @@ async function main() {
         console.log(cyan(' Les prochaines fois, seuls les réglages que tu modifies seront envoyés.'));
     }
 
-    if (planVide(plan) && !version) {
+    if (planVide(plan) && !version && !planningChange) {
         if (plan.premiereFois && !SIMULATION) ecrireEtat(reglages);
         console.log(vert('\n ✔ Rien à envoyer : le serveur et le launcher sont déjà pareils que ton CurseForge.\n'));
         return;

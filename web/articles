@@ -1,5 +1,23 @@
 [
     {
+        "title": "Mise à jour 6.1 : quêtes de faction, chat allié, marché noir, concours",
+        "content": "• Quêtes de faction : chaque lundi, 3 objectifs communs à toute la faction (/quetes). Quête finie = argent dans la banque de la faction, les 3 = bonus de 3 000 $.\n• Chat privé : /ac message pour ta faction et vos alliés, /fc pour ta faction seule (ou les boutons de l'onglet Alliances).\n• Marché noir : une heure par jour, à un endroit secret, le Marchand de l'ombre vend des objets rares et chers. Une rumeur dit où chercher (/marchenoir).\n• Concours de capture du jour : capture le meilleur Pokémon (IV) de l'espèce du jour avant 22 h, les 3 premiers gagnent (/concours).\n• Mentor : /parrain <joueur> dans tes 2 premières heures, et vous gagnez tous les deux à chaque étape (niveaux 5, 10, 20, premier champion).\n• Badges de grade : des ailes ou un ruban aussi dans le chat et le tab, et un badge au-dessus de la tête pour tous les grades.\n• Largage du lobby : 3 tonneaux par joueur, pour que tout le monde en profite.\n• Launcher : bouton à deux flèches à côté de Jouer pour vérifier les mises à jour, et une notification Windows quand un événement commence (le launcher reste près de l'horloge, clic droit sur son icône pour couper).",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-16",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+        ]
+    },
+    {
+        "title": "Mise à jour 6.0 : nouveau menu, profil, badges, alliances, radio",
+        "content": "• Menu : chaque page s'ouvre en grand avec « ← Retour » (Échap revient à l'accueil). Plus de barre à gauche.\n• Profil : ta carte de dresseur, avec ton perso en 3D, toutes tes infos et tes prochaines récompenses de niveau.\n• Badges de grade en pixel art au-dessus des têtes, avec des ailes pour le staff.\n• Alliances entre factions : /alliance, ou les boutons de /f menu (demander une alliance, déclarer la guerre, piller).\n• Radio PokéFaction : la musique du serveur directement en jeu. Touche J pour l'allumer ou l'éteindre.\n• Anti-triche renforcé : le serveur surveille lui-même les mouvements, les coups et le minage, et les packs de ressources sont revérifiés en continu.",
+        "author": "Staff PokéFaction",
+        "publish_date": "2026-11-16",
+        "images": [
+            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+        ]
+    },
+    {
         "title": "Mise à jour 5.4 : passe de combat, expéditions, Roi de la colline",
         "content": "• Passe de combat : une saison par mois, 30 paliers. Tu montes en jouant (captures, combats, dresseurs, temps de jeu) et tu prends une récompense à chaque palier dans /menu → Passe. Une piste Premium arrive bientôt.\n• Expéditions : envoie des Pokémon de ton PC en expédition 1 h, 4 h ou 8 h. Ils reviennent avec de l'argent et des objets.\n• Zone Safari : le dimanche à 16 h, 1 h de Pokémon rares, des shiny plus fréquents et 30 Safari Balls offertes (/safari).\n• Saison du mois : chaque mois, un type de Pokémon apparaît plus souvent (/saisonmonde).\n• Succès et titres : 33 succès, et ton titre préféré s'affiche dans le tab (/menu → Succès).\n• Factions : banque commune (/f banque), Roi de la colline le mardi et le jeudi à 21 h 30, guerres déclarées (/f guerre), 4 avant-postes à capturer qui rapportent toutes les heures.\n• Menu : 18 cases sur 3 lignes, avec Paramètres, et des barres de niveau animées (dresseur et faction).",
         "author": "Staff PokéFaction",

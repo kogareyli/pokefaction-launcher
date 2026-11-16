@@ -15,6 +15,7 @@ const Store = require('electron-store');
 const UpdateWindow = require("./assets/js/windows/updateWindow.js");
 const MainWindow = require("./assets/js/windows/mainWindow.js");
 const AntiCheat = require("./assets/js/windows/antiCheat.js");
+const Evenements = require("./assets/js/windows/evenements.js");
 
 let dev = process.env.NODE_ENV === 'dev';
 
@@ -41,14 +42,30 @@ app.on('second-instance', () => {
 
 if (!app.requestSingleInstanceLock()) app.quit();
 else app.whenReady().then(() => {
+    // 3.4.0 : notifications des événements du serveur (le launcher peut rester près de l'horloge)
+    try { Evenements.demarrer(require('../package.json').url, ouvrirFenetre, () => app.quit()); } catch (e) { console.error(e); }
     if (dev) return MainWindow.createWindow()
     UpdateWindow.createWindow()
 });
 
+// 3.4.0 : rouvrir le launcher (icône près de l'horloge, notification, ou double-clic sur le raccourci)
+function ouvrirFenetre() {
+    const w = MainWindow.getWindow();
+    if (w && !w.isDestroyed()) { if (w.isMinimized()) w.restore(); w.show(); w.focus(); }
+    else if (!UpdateWindow.getWindow()) MainWindow.createWindow();
+    Evenements.cacherIcone();
+}
+app.on('second-instance', () => ouvrirFenetre());
+
 ipcMain.on('main-window-open', () => MainWindow.createWindow())
 ipcMain.on('main-window-dev-tools', () => MainWindow.getWindow().webContents.openDevTools({ mode: 'detach' }))
 ipcMain.on('main-window-dev-tools-close', () => MainWindow.getWindow().webContents.closeDevTools())
-ipcMain.on('main-window-close', () => MainWindow.destroyWindow())
+// 3.4.0 : fermer = rester près de l'horloge pour les notifications d'événements (si le joueur les veut)
+ipcMain.on('main-window-close', () => {
+    const w = MainWindow.getWindow();
+    if (w && !w.isDestroyed() && Evenements.enArrierePlan()) w.hide();
+    else MainWindow.destroyWindow();
+})
 ipcMain.on('main-window-reload', () => MainWindow.getWindow().reload())
 ipcMain.on('main-window-progress', (event, options) => MainWindow.getWindow().setProgressBar(options.progress / options.size))
 ipcMain.on('main-window-progress-reset', () => MainWindow.getWindow().setProgressBar(-1))
@@ -67,7 +84,7 @@ ipcMain.on('anticheat-progres', (event, p) => AntiCheat.progres(p))
 ipcMain.on('anticheat-fermer', () => AntiCheat.fermer())
 ipcMain.on('anticheat-actif', () => AntiCheat.activer())
 ipcMain.on('anticheat-stop', () => AntiCheat.desactiver())
-app.on('before-quit', () => AntiCheat.desactiver())
+app.on('before-quit', () => { AntiCheat.desactiver(); Evenements.cacherIcone(); })
 
 ipcMain.handle('path-user-data', () => app.getPath('userData'))
 ipcMain.handle('appData', e => app.getPath('appData'))
@@ -271,6 +288,25 @@ ipcMain.handle('maj-avant-jeu', async () => {
     } catch (err) {
         journalMaj('erreur', 'vérification avant le jeu', err);
         return null;
+    }
+});
+
+// 3.4.0 : bouton « vérifier » à côté de Jouer
+ipcMain.handle('maj-verifier', async () => {
+    const actuelle = app.getVersion();
+    if (!app.isPackaged) return { aJour: true, version: actuelle };
+    try {
+        const res = await Promise.race([autoUpdater.checkForUpdates(), new Promise(r => setTimeout(() => r(null), 10000))]);
+        if (!res) return { erreur: 'trop long' };
+        const v = res?.updateInfo?.version;
+        if (v && plusRecente(v, actuelle) && !majBloquee(v)) {
+            journalMaj('info', `nouvelle version ${v} trouvée par le bouton de vérification`);
+            return { version: v };
+        }
+        return { aJour: true, version: actuelle };
+    } catch (err) {
+        journalMaj('erreur', 'vérification par le bouton', err);
+        return { erreur: String(err?.message || err) };
     }
 });
 

@@ -109,6 +109,59 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
+        this.boutonMaj()
+    }
+
+    // 3.4.0 : deux flèches à côté de Jouer : le launcher est-il à jour ? Sinon, la nouvelle version s'installe.
+    boutonMaj() {
+        const bouton = document.querySelector('.maj-btn'), etat = document.querySelector('.maj-etat')
+        if (!bouton || !etat) return
+        let effacer = null
+        const montrer = (texte, classe) => {
+            clearTimeout(effacer)
+            etat.textContent = texte
+            etat.className = 'maj-etat visible ' + (classe || '')
+            if (classe !== 'nouvelle') effacer = setTimeout(() => { etat.className = 'maj-etat' }, 5000)
+        }
+        bouton.addEventListener('click', async e => {
+            e.stopPropagation()
+            if (bouton.classList.contains('tourne') || this.lancementEnCours) return
+            bouton.classList.add('tourne')
+            montrer('Vérification…')
+            const debut = Date.now()
+            let res = null
+            try { res = await ipcRenderer.invoke('maj-verifier') } catch (err) { res = { erreur: String(err) } }
+            // Les flèches tournent au moins un tour complet (sinon on ne voit rien)
+            await new Promise(r => setTimeout(r, Math.max(0, 900 - (Date.now() - debut))))
+            bouton.classList.remove('tourne')
+            if (res?.version && !res.aJour) {
+                montrer(`Nouvelle version ${res.version} : installation…`, 'nouvelle')
+                this.installerDepuisBouton(res.version, montrer)
+            } else if (res?.aJour) {
+                montrer(`✓ Launcher à jour (version ${res.version})`, 'ok')
+            } else {
+                montrer('Vérification impossible : regarde ta connexion internet.', 'erreur')
+            }
+        })
+    }
+
+    installerDepuisBouton(version, montrer) {
+        this.majEnCours = true
+        document.querySelector('.play-instance').style.display = 'none'
+        document.querySelector('.info-starting-game').style.display = 'block'
+        this.progression(`Mise à jour du launcher ${version}…`)
+        ipcRenderer.removeAllListeners('maj-progression')
+        ipcRenderer.removeAllListeners('maj-installation')
+        ipcRenderer.removeAllListeners('maj-erreur')
+        ipcRenderer.on('maj-progression', (_, p) => this.progression(`Mise à jour du launcher ${version}`, Math.round(p.percent || 0), 100))
+        ipcRenderer.on('maj-installation', () => this.progression('Installation… le launcher va redémarrer'))
+        ipcRenderer.on('maj-erreur', () => {
+            this.majEnCours = false
+            document.querySelector('.play-instance').style.display = 'flex'
+            document.querySelector('.info-starting-game').style.display = 'none'
+            montrer('La mise à jour n\'a pas pu se faire. Réessaie plus tard.', 'erreur')
+        })
+        ipcRenderer.send('maj-installer')
     }
 
     async news() {
