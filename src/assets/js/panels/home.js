@@ -551,6 +551,7 @@ class Home {
         launch.Launch(opt);
         // Le jeu a-t-il démarré ? (après, une « erreur » de la bibliothèque n'est plus un problème de téléchargement)
         let jeuDemarre = false
+        let jeuEnRoute = false // le jeu est allé jusqu'à sa fenêtre (son, textures) : ensuite, le fermer n'ouvre plus aucun message
 
         playInstanceBTN.style.display = "none"
         infoStartingBOX.style.display = "block"
@@ -603,6 +604,7 @@ class Home {
 
         launch.on('data', (e) => {
             jeuDemarre = true
+            if (!jeuEnRoute && /Sound engine started|OpenAL initialized|Connecting to |Created: [0-9]+x[0-9]+/.test(String(e))) jeuEnRoute = true
             progressBar.style.display = "none"
             if (configClient.launcher_config.closeLauncher == 'close-launcher') {
                 ipcRenderer.send("main-window-hide")
@@ -644,7 +646,7 @@ class Home {
 
             let sortie = sortieJeu
             let dossierWindows = echapper(cheminWindows(chemin))
-            let plantage = vraiPlantage ? diagnosticPlantage(sortie, dossierWindows) : null
+            let plantage = vraiPlantage && !jeuEnRoute ? diagnosticPlantage(sortie, dossierWindows) : null
             if (plantage) {
                 new popup().openPopup({
                     title: 'Le jeu s\'est fermé',
