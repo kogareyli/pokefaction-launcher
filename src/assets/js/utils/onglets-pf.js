@@ -91,10 +91,11 @@ export function appliquerGraphismes(dossierInstance, mode) {
         let t = fs.existsSync(iris) ? fs.readFileSync(iris, 'utf8') : '';
         if (/^enableShaders=/m.test(t)) t = t.replace(/^enableShaders=.*$/m, `enableShaders=${m.shaders}`);
         else t += `\nenableShaders=${m.shaders}\n`;
-        if (m.shaders && !/^shaderPack=.+$/m.test(t)) {
+        // 6.4.1 (Eddy : « mets le shader Complementary ») : en mode Beau, toujours Complementary Unbound
+        if (m.shaders) {
             const packs = fs.existsSync(`${dossierInstance}/shaderpacks`) ? fs.readdirSync(`${dossierInstance}/shaderpacks`) : [];
-            const pack = packs.find(p => /complementary/i.test(p)) || packs.find(p => !p.endsWith('.txt'));
-            if (pack) t += `shaderPack=${pack}\n`;
+            const pack = packs.find(p => /complementary/i.test(p)) || (!/^shaderPack=.+$/m.test(t) && packs.find(p => !p.endsWith('.txt')));
+            if (pack) t = /^shaderPack=/m.test(t) ? t.replace(/^shaderPack=.*$/m, `shaderPack=${pack}`) : t + `shaderPack=${pack}\n`;
         }
         fs.mkdirSync(`${dossierInstance}/config`, { recursive: true });
         fs.writeFileSync(iris, t);

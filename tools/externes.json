@@ -1024,5 +1024,35 @@
   "size": 736418,
   "hash": "99096e90aba45f3fb4eec5b9daa8acdb6497fa72",
   "url": "https://cdn.modrinth.com/data/Z2mXHnxP/versions/gxBGYcIL/YungsBetterNetherFortresses-1.21.1-Fabric-3.1.5.jar"
+ },
+ {
+  "path": "mods/eating-animation-1.21+1.9.72.jar",
+  "size": 1060520,
+  "hash": "d89ecd0ac342697e0d1c3aaff1daa6c81bebe2f6",
+  "url": "https://cdn.modrinth.com/data/rUgZvGzi/versions/KWZCioh0/eating-animation-1.21%2B1.9.72.jar"
+ },
+ {
+  "path": "mods/fallingleaves-1.17.1+1.21.1.jar",
+  "size": 170056,
+  "hash": "5210b4cb359a95c53580b1399f98e51ab0967cc5",
+  "url": "https://cdn.modrinth.com/data/WhbRG4iK/versions/Y0zS16Bk/fallingleaves-1.17.1%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/lambdynamiclights-4.8.11+1.21.1.jar",
+  "size": 2023375,
+  "hash": "7b5afc75a094b4e8a7118f9856eec959b10f2422",
+  "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/ksaGCvSu/lambdynamiclights-4.8.11%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/visuality-0.7.7+1.21.jar",
+  "size": 79452,
+  "hash": "8d239710c1c1983d780ad04686c3c3d0d1b1585e",
+  "url": "https://cdn.modrinth.com/data/rI0hvYcd/versions/dhKbgdIb/visuality-0.7.7%2B1.21.jar"
+ },
+ {
+  "path": "mods/wakes-0.4.1+1.21.1.jar",
+  "size": 268435,
+  "hash": "c4f4d09a4b9362bcc952f370ce8c8b44d662dc42",
+  "url": "https://cdn.modrinth.com/data/dlNu0RQY/versions/WuY7eJX9/wakes-0.4.1%2B1.21.1.jar"
  }
 ]

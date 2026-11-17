@@ -787,3 +787,11 @@ body[data-panel="settings"] .reseaux { display: none; }
 .maj-etat.nouvelle { color: #f5b50c; }
 .maj-etat.erreur { color: #e5677a; }
 .play-cadre:has(.play-instance[style*="none"]) + .maj-etat { display: none; }
+
+/* 6.4.2 : actus = galerie d'images seules (Eddy : « mets juste des images, écris rien ») */
+.actus.galerie .actu-image { padding: 0; }
+.actus.galerie .actu-image .actu-img { filter: none; opacity: 1; }
+.actus.galerie .actu-image:hover .actu-img { transform: scale(1.04); }
+.article-ouvert.image-seule .article-corps { display: none; }
+.article-ouvert.image-seule .article-image { height: min(70vh, 520px); }
+.article-ouvert.image-seule .article-carte { width: min(88vw, 920px); max-width: none; }

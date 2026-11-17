@@ -179,23 +179,22 @@ class Home {
             news = [{ title: news ? 'Aucune actualité pour le moment' : 'Actualités indisponibles',
                 content: news ? 'Tu pourras suivre ici toutes les nouveautés du serveur.' : 'Vérifie ta connexion internet.', publish_date: new Date() }];
         }
-        liste.classList.add('n' + Math.min(5, news.length));
-        news.slice(0, 5).forEach((n, i) => {
+        // 6.4.2 (Eddy : « mets juste des images, plus de mises à jour, écris rien ») : une galerie d'images, sans titre ni texte.
+        // Toutes les images de web/articles sont mises à la suite (5 au plus) ; un clic = l'image en grand.
+        let images = [];
+        for (const n of news) for (const u of (Array.isArray(n.images) ? n.images : n.images ? [n.images] : n.image ? [n.image] : []))
+            if (typeof u === 'string' && u.startsWith('https://') && !images.includes(u)) images.push(encodeURI(u));
+        if (!images.length) images = parDefaut.slice();
+        images = images.slice(0, 5);
+        liste.classList.add('n' + images.length, 'galerie');
+        images.forEach((url, i) => {
             let carte = document.createElement('button');
-            carte.className = 'actu' + (i === 0 ? ' actu-une' : '');
+            carte.className = 'actu actu-image' + (i === 0 ? ' actu-une' : '');
             carte.style.setProperty('--i', i);
-            let date = this.getdate(n.publish_date);
-            let extrait = String(n.content || '').split('\n').filter(l => l.trim())[0] || '';
-            carte.innerHTML = `
-                <img class="actu-img" src="${premiereImage(n, i)}" alt="" loading="lazy" />
-                <div class="actu-voile"></div>
-                ${i === 0 ? '<span class="actu-etiquette">À la une</span>' : ''}
-                <div class="actu-texte">
-                    <div class="actu-titre">${texte(n.title)}</div>
-                    ${i === 0 ? `<p class="actu-extrait">${texte(extrait)}</p>` : ''}
-                    <div class="actu-bas">${i === 0 && n.author ? `<span>Par ${texte(n.author)}</span>` : '<span></span>'}<span>${date.day} ${date.month} ${date.year}</span></div>
-                </div>`;
-            carte.addEventListener('click', () => this.ouvrirArticle(n, premiereImage(n, i), date));
+            let img = document.createElement('img');
+            img.className = 'actu-img'; img.alt = ''; img.loading = 'lazy'; img.src = url;
+            carte.appendChild(img);
+            carte.addEventListener('click', () => this.ouvrirArticle({ title: '', content: '' }, url, null));
             liste.appendChild(carte);
         });
         // Fermer l'article : croix, clic à côté, Échap
@@ -207,7 +206,8 @@ class Home {
     ouvrirArticle(n, image, date) {
         let fond = document.querySelector('.article-ouvert');
         fond.querySelector('.article-image').style.backgroundImage = `url("${image}")`;
-        fond.querySelector('.article-date').textContent = `${date.day} ${date.month} ${date.year}`;
+        fond.querySelector('.article-date').textContent = date ? `${date.day} ${date.month} ${date.year}` : '';
+        fond.classList.toggle('image-seule', !date);
         fond.querySelector('.article-titre').textContent = n.title || '';
         let corps = fond.querySelector('.article-texte');
         corps.textContent = '';

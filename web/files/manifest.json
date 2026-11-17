@@ -103,8 +103,8 @@
  },
  {
   "path": "config/cobblemon-battle-extras.json",
-  "size": 4024,
-  "hash": "474144446726e3af1563fabd207dd203f0075a5f",
+  "size": 4027,
+  "hash": "48a4bcc8e795b3c8d9990b5fe877499454f3a8f5",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/cobblemon-battle-extras.json"
  },
  {
@@ -1206,6 +1206,12 @@
   "url": "https://edge.forgecdn.net/files/8286/308/defaultoptions-fabric-1.21.1-21.1.7.jar"
  },
  {
+  "path": "mods/eating-animation-1.21+1.9.72.jar",
+  "size": 1060520,
+  "hash": "d89ecd0ac342697e0d1c3aaff1daa6c81bebe2f6",
+  "url": "https://cdn.modrinth.com/data/rUgZvGzi/versions/KWZCioh0/eating-animation-1.21%2B1.9.72.jar"
+ },
+ {
   "path": "mods/entity_model_features-3.2.4-1.21-fabric.jar",
   "size": 565280,
   "hash": "4538d0eec804c3a8f8c3a6809f687e362df588cf",
@@ -1246,6 +1252,12 @@
   "size": 407156,
   "hash": "8de1af6c2ad2c3892b57f7899ea73e218b460aa7",
   "url": "https://edge.forgecdn.net/files/6467/637/factions-mc1.21-2.8.0.jar"
+ },
+ {
+  "path": "mods/fallingleaves-1.17.1+1.21.1.jar",
+  "size": 170056,
+  "hash": "5210b4cb359a95c53580b1399f98e51ab0967cc5",
+  "url": "https://cdn.modrinth.com/data/WhbRG4iK/versions/Y0zS16Bk/fallingleaves-1.17.1%2B1.21.1.jar"
  },
  {
   "path": "mods/FastRTP-1.5.1-1.21.jar",
@@ -1384,6 +1396,12 @@
   "size": 161045,
   "hash": "73e792eb5f120787becda4b87b6ff18b26caea50",
   "url": "https://edge.forgecdn.net/files/5460/550/krypton-0.2.8.jar"
+ },
+ {
+  "path": "mods/lambdynamiclights-4.8.11+1.21.1.jar",
+  "size": 2023375,
+  "hash": "7b5afc75a094b4e8a7118f9856eec959b10f2422",
+  "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/ksaGCvSu/lambdynamiclights-4.8.11%2B1.21.1.jar"
  },
  {
   "path": "mods/LegendaryMonuments-Cobbleverse.jar",
@@ -1620,10 +1638,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-6.4.1.jar",
-  "size": 13851808,
-  "hash": "1b263137b441cb6938aafac581fdf0e808c6b0c6",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-6.4.1.jar"
+  "path": "mods/pokefaction-core-6.4.2.jar",
+  "size": 10796792,
+  "hash": "68a4351ccf4afab88f461fa484460ace68d6f39a",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-6.4.2.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",
@@ -1828,6 +1846,18 @@
   "size": 355303,
   "hash": "0b9c27925a041b3dee88bd10aa5e06ef7ee4f08d",
   "url": "https://edge.forgecdn.net/files/8252/200/villagerconfig-fabric-4.5.4%2B1.21.1.jar"
+ },
+ {
+  "path": "mods/visuality-0.7.7+1.21.jar",
+  "size": 79452,
+  "hash": "8d239710c1c1983d780ad04686c3c3d0d1b1585e",
+  "url": "https://cdn.modrinth.com/data/rI0hvYcd/versions/dhKbgdIb/visuality-0.7.7%2B1.21.jar"
+ },
+ {
+  "path": "mods/wakes-0.4.1+1.21.1.jar",
+  "size": 268435,
+  "hash": "c4f4d09a4b9362bcc952f370ce8c8b44d662dc42",
+  "url": "https://cdn.modrinth.com/data/dlNu0RQY/versions/WuY7eJX9/wakes-0.4.1%2B1.21.1.jar"
  },
  {
   "path": "mods/waveycapes-fabric-1.11.3-mc1.21.1.jar",
