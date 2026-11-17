@@ -846,6 +846,10 @@
     margin-top: 16px;
 }
 
+.pf-mode[data-mode="auto"] {
+    grid-column: 1 / -1;
+}
+
 .pf-mode.close-btn {
     width: auto;
     display: flex;
