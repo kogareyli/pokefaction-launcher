@@ -1,7 +1,7 @@
 [
     {
-        "title": "Mise à jour 6.4 : les arènes en grand",
-        "content": "<p>• <b>Les arènes en grand</b> : l'épreuve de chaque arène (énigme + dresseurs) se fait maintenant dans une grande salle construite juste à côté de l'arène. On y entre à pied, plus de téléportation, et on s'y croise. Chaque salle a son style : toit, portique, vitraux, statues de Pokémon et décor du type. Sors au fond une fois l'épreuve finie : le champion t'attend. /leave pour ressortir.</p><p>• <b>Nouvel écran d'accueil</b> du jeu, et l'<b>île du tuto</b> refaite (chemin, arbres, mare, cascades, étapes décorées).</p><p>• <b>/vote</b> : chaque vote donne une clé pour le <b>coffre de vote</b> du lobby (les récompenses défilent avant de s'arrêter).</p><p>• Le launcher règle tout seul les <b>graphismes</b> selon ta carte graphique (shaders sur les bons PC). Tu peux changer dans les paramètres.</p><p>• Épées en draconite plus spectaculaires, moins de diamants, plus de combats bloqués sans boutons, le détail des attaques revient à son style d'origine (bouton +).</p>",
+        "title": "Mise à jour 6.4 : nouvel accueil et coffre de vote",
+        "content": "<p>• <b>Nouvel écran d'accueil</b> du jeu, et l'<b>île du tuto</b> refaite (chemin, arbres, mare, cascades, étapes décorées).</p><p>• <b>/vote</b> : chaque vote donne une clé pour le <b>coffre de vote</b> du lobby (les récompenses défilent avant de s'arrêter).</p><p>• Épreuves d'arène : <b>/leave</b> pour sortir.</p><p>• Le launcher règle tout seul les <b>graphismes</b> selon ta carte graphique (shaders sur les bons PC). Tu peux changer dans les paramètres.</p><p>• Épées en draconite plus spectaculaires, moins de diamants, plus de combats bloqués sans boutons, le détail des attaques revient à son style d'origine (bouton +).</p>",
         "author": "Staff PokéFaction",
         "publish_date": "2026-11-17T15:41:17.807Z",
         "images": [
