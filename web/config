@@ -1,5 +1,5 @@
 {
-    "maintenance": true,
+    "maintenance": false,
     "maintenance_message": "Grosse mise à jour en préparation : PokéFaction revient très vite avec plein de nouveautés !",
     "online": false,
     "client_id": "",
@@ -10,5 +10,5 @@
         "url": "https://fsqmzwsjuzryjdxfamlg.supabase.co",
         "cle": "sb_publishable_KPeiANMak9RBxAVts2Gt_A_S7paP9wU"
     },
-    "maintenance_fin": ""
+    "maintenance_fin": "2026-11-17T21:11:07.457Z"
 }
