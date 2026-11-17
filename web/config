@@ -1,5 +1,5 @@
 {
-    "maintenance": false,
+    "maintenance": true,
     "maintenance_message": "Grosse mise à jour en préparation : PokéFaction revient très vite avec plein de nouveautés !",
     "online": false,
     "client_id": "",
