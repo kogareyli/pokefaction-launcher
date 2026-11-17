@@ -149,12 +149,12 @@ class Home {
         this.majEnCours = true
         document.querySelector('.play-instance').style.display = 'none'
         document.querySelector('.info-starting-game').style.display = 'block'
-        this.progression(`Mise à jour du launcher ${version}…`)
+        this.progression(`LAUNCHER · mise à jour ${version}…`)
         ipcRenderer.removeAllListeners('maj-progression')
         ipcRenderer.removeAllListeners('maj-installation')
         ipcRenderer.removeAllListeners('maj-erreur')
-        ipcRenderer.on('maj-progression', (_, p) => this.progression(`Mise à jour du launcher ${version}`, Math.round(p.percent || 0), 100))
-        ipcRenderer.on('maj-installation', () => this.progression('Installation… le launcher va redémarrer'))
+        ipcRenderer.on('maj-progression', (_, p) => this.progression(`LAUNCHER · téléchargement de la version ${version}`, Math.round(p.percent || 0), 100))
+        ipcRenderer.on('maj-installation', () => this.progression('LAUNCHER · installation… il va redémarrer tout seul'))
         ipcRenderer.on('maj-erreur', () => {
             this.majEnCours = false
             document.querySelector('.play-instance').style.display = 'flex'
@@ -348,12 +348,12 @@ class Home {
     mettreAJourLauncher(version) {
         document.querySelector('.play-instance').style.display = 'none'
         document.querySelector('.info-starting-game').style.display = 'block'
-        this.progression(`Mise à jour du launcher ${version}…`)
+        this.progression(`LAUNCHER · mise à jour ${version}…`)
         ipcRenderer.removeAllListeners('maj-progression')
         ipcRenderer.removeAllListeners('maj-installation')
         ipcRenderer.removeAllListeners('maj-erreur')
-        ipcRenderer.on('maj-progression', (_, p) => this.progression(`Mise à jour du launcher ${version}`, Math.round(p.percent || 0), 100))
-        ipcRenderer.on('maj-installation', () => this.progression('Installation… le launcher va redémarrer'))
+        ipcRenderer.on('maj-progression', (_, p) => this.progression(`LAUNCHER · téléchargement de la version ${version}`, Math.round(p.percent || 0), 100))
+        ipcRenderer.on('maj-installation', () => this.progression('LAUNCHER · installation… il va redémarrer tout seul'))
         ipcRenderer.on('maj-erreur', () => {
             // Impossible de mettre à jour maintenant : on joue quand même avec la version actuelle
             this.majEnCours = false
@@ -564,14 +564,17 @@ class Home {
         });
 
         launch.on('progress', (progress, size) => {
-            this.progression('Téléchargement des fichiers', progress, size)
+            // 3.4.5 : des fichiers à télécharger = une mise à jour du JEU (mods, packs) : on le dit clairement, avec les Mo
+            const mo = n => (n / 1048576).toFixed(n > 10485760 ? 0 : 1)
+            this.progression(`JEU · mise à jour en cours (${mo(progress)} / ${mo(size)} Mo)`, progress, size)
+            this.majJeu = true
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
             progressBar.max = size;
         });
 
         launch.on('check', (progress, size) => {
-            this.progression('Vérification des fichiers', progress, size)
+            this.progression(this.majJeu ? 'JEU · mise à jour installée, vérification…' : 'JEU · vérification des fichiers…', progress, size)
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
             progressBar.max = size;

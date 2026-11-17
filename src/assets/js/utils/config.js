@@ -24,13 +24,15 @@ class Config {
     }
 
     async getInstanceList() {
-        let urlInstance = `${url}/instances`
+        // 3.4.5 : « ?t= » = jamais la version gardée en cache par GitHub (jusqu'à 5 min après une mise à jour du jeu)
+        let urlInstance = `${url}/instances?t=${Date.now()}`
         let instances = await nodeFetch(urlInstance).then(res => res.json()).catch(err => err)
         let instancesList = []
         instances = Object.entries(instances)
 
         for (let [name, data] of instances) {
             let instance = data
+            if (instance && typeof instance.url === 'string' && !instance.url.includes('?')) instance.url += `?t=${Date.now()}`
             instancesList.push(instance)
         }
         return instancesList
