@@ -45,8 +45,30 @@ export const MODES_GRAPHIQUES = {
     }
 };
 
+/**
+ * 6.4 (Eddy : « mets les réglages auto pour que les joueurs aient les trucs beaux ») : mode « auto » = le launcher regarde la
+ * carte graphique (nom donné par WebGL) et la mémoire : bonne carte → « beau » (shaders), moyenne → « équilibré », sinon « faible ».
+ */
+export function modeAuto() {
+    let carte = '';
+    try {
+        const gl = document.createElement('canvas').getContext('webgl');
+        const ext = gl && gl.getExtension('WEBGL_debug_renderer_info');
+        carte = String(ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : '').toLowerCase();
+    } catch { /* pas de WebGL */ }
+    const memoire = require('os').totalmem() / 1024 ** 3;
+    let mode = 'faible';
+    if (/rtx|gtx ?(10[6-8]0|16[5-6]0|titan)|rx ?([5-7]\d{3})|radeon pro|arc ?a[57]/.test(carte)) mode = 'beau';
+    else if (/geforce|gtx|quadro|radeon rx|rx ?\d{3}|radeon r9|iris(\(r\))? xe|arc|radeon\(tm\) graphics|radeon graphics|780m|680m/.test(carte)) mode = 'equilibre';
+    if (memoire < 8 && mode === 'beau') mode = 'equilibre';
+    if (memoire < 6) mode = 'faible';
+    console.log('[graphismes] auto :', carte || '(inconnue)', Math.round(memoire) + ' Go', '→', mode);
+    return mode;
+}
+
 /** Applique le mode choisi dans le dossier de l'instance, juste avant de lancer le jeu. */
 export function appliquerGraphismes(dossierInstance, mode) {
+    if (!mode || mode === 'auto') mode = modeAuto();
     const m = MODES_GRAPHIQUES[mode];
     if (!m) return; // « perso » : on ne touche à rien
     // options.txt : on remplace seulement nos clés, le reste (touches, son…) ne bouge pas
@@ -198,7 +220,7 @@ export default class OngletsPF {
         const boutons = document.querySelectorAll('.pf-mode');
         if (!boutons.length) return;
         const { configClient } = await this.compte();
-        const actuel = configClient?.graphismes || 'perso';
+        const actuel = configClient?.graphismes || 'auto';
         boutons.forEach(b => b.classList.toggle('active-close', b.dataset.mode === actuel));
         boutons.forEach(b => b.addEventListener('click', async () => {
             const cfg = await this.db.readData('configClient');
