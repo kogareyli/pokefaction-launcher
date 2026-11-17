@@ -913,8 +913,8 @@
  },
  {
   "path": "datapacks/COBBLEVERSE-RCT-DP-v20.zip",
-  "size": 360983,
-  "hash": "1a16cb75727a08ea04d4b2955cfb02a16da8c567",
+  "size": 336932,
+  "hash": "e2bb306a7766199f081f5ef4f0d9518f4bcab9ad",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/datapacks/COBBLEVERSE-RCT-DP-v20.zip"
  },
  {
@@ -1620,10 +1620,10 @@
   "url": "https://edge.forgecdn.net/files/6376/530/pokeblocks-1.4.0-1.21.1.jar"
  },
  {
-  "path": "mods/pokefaction-core-6.1.0.jar",
-  "size": 1775501,
-  "hash": "6de2e01a6fa75e9e09912777e36307e9bb9b2bfa",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-6.1.0.jar"
+  "path": "mods/pokefaction-core-6.3.0.jar",
+  "size": 2810971,
+  "hash": "baa34450ef583a293a4b88febb2db8ece033871e",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/mods/pokefaction-core-6.3.0.jar"
  },
  {
   "path": "mods/rctapi-fabric-1.21.1-0.15.2-beta.jar",

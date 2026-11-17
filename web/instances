@@ -205,6 +205,11 @@
         "game_args": [
             "--quickPlayMultiplayer",
             "play.pokefaction.com"
+        ],
+        "serveurs_pokefaction": [
+            "pokefaction.com",
+            "play.pokefaction.com",
+            "impairment-session.tun.ply.gg"
         ]
     }
 }

@@ -1,188 +1,197 @@
 [
-    {
-        "title": "Mise à jour 6.1 : quêtes de faction, chat allié, marché noir, concours",
-        "content": "• Quêtes de faction : chaque lundi, 3 objectifs communs à toute la faction (/quetes). Quête finie = argent dans la banque de la faction, les 3 = bonus de 3 000 $.\n• Chat privé : /ac message pour ta faction et vos alliés, /fc pour ta faction seule (ou les boutons de l'onglet Alliances).\n• Marché noir : une heure par jour, à un endroit secret, le Marchand de l'ombre vend des objets rares et chers. Une rumeur dit où chercher (/marchenoir).\n• Concours de capture du jour : capture le meilleur Pokémon (IV) de l'espèce du jour avant 22 h, les 3 premiers gagnent (/concours).\n• Mentor : /parrain <joueur> dans tes 2 premières heures, et vous gagnez tous les deux à chaque étape (niveaux 5, 10, 20, premier champion).\n• Badges de grade : des ailes ou un ruban aussi dans le chat et le tab, et un badge au-dessus de la tête pour tous les grades.\n• Largage du lobby : 3 tonneaux par joueur, pour que tout le monde en profite.\n• Launcher : bouton à deux flèches à côté de Jouer pour vérifier les mises à jour, et une notification Windows quand un événement commence (le launcher reste près de l'horloge, clic droit sur son icône pour couper).",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-16",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
-        ]
-    },
-    {
-        "title": "Mise à jour 6.0 : nouveau menu, profil, badges, alliances, radio",
-        "content": "• Menu : chaque page s'ouvre en grand avec « ← Retour » (Échap revient à l'accueil). Plus de barre à gauche.\n• Profil : ta carte de dresseur, avec ton perso en 3D, toutes tes infos et tes prochaines récompenses de niveau.\n• Badges de grade en pixel art au-dessus des têtes, avec des ailes pour le staff.\n• Alliances entre factions : /alliance, ou les boutons de /f menu (demander une alliance, déclarer la guerre, piller).\n• Radio PokéFaction : la musique du serveur directement en jeu. Touche J pour l'allumer ou l'éteindre.\n• Anti-triche renforcé : le serveur surveille lui-même les mouvements, les coups et le minage, et les packs de ressources sont revérifiés en continu.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-16",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
-        ]
-    },
-    {
-        "title": "Mise à jour 5.4 : passe de combat, expéditions, Roi de la colline",
-        "content": "• Passe de combat : une saison par mois, 30 paliers. Tu montes en jouant (captures, combats, dresseurs, temps de jeu) et tu prends une récompense à chaque palier dans /menu → Passe. Une piste Premium arrive bientôt.\n• Expéditions : envoie des Pokémon de ton PC en expédition 1 h, 4 h ou 8 h. Ils reviennent avec de l'argent et des objets.\n• Zone Safari : le dimanche à 16 h, 1 h de Pokémon rares, des shiny plus fréquents et 30 Safari Balls offertes (/safari).\n• Saison du mois : chaque mois, un type de Pokémon apparaît plus souvent (/saisonmonde).\n• Succès et titres : 33 succès, et ton titre préféré s'affiche dans le tab (/menu → Succès).\n• Factions : banque commune (/f banque), Roi de la colline le mardi et le jeudi à 21 h 30, guerres déclarées (/f guerre), 4 avant-postes à capturer qui rapportent toutes les heures.\n• Menu : 18 cases sur 3 lignes, avec Paramètres, et des barres de niveau animées (dresseur et faction).",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-16",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
-        ]
-    },
-    {
-        "title": "Mise à jour 5.3 : tournoi, cœur de faction, primes, Ligue",
-        "content": "• Tournoi ranked chaque samedi à 19 h 30 : /ranked tournoi rejoindre (inscriptions dès 19 h 15), 8 joueurs, élimination directe, /ranked tournoi regarder pour suivre les matchs. Gagnant : 5 000 $.\n• Cœur de faction : posez-le dans votre territoire. S'il est cassé pendant un pillage réussi, l'attaquant gagne 2 000 $ et la base reste ouverte 5 min de plus.\n• Saison des factions : /saison. Pillages réussis, défenses et XP de faction donnent des points ; le top 3 du mois gagne de l'argent pour chaque membre et un titre ♛.\n• Ligue : dès le premier membre du Conseil, ton équipe est verrouillée jusqu'au bout, et pas de soin sauf tes potions (/ligue).\n• Menu : nouvelles pages Pokédex (récompenses à prendre) et Planning des événements.\n• Grades : plus de « devient VÉTÉRAN » en boucle. /classe est remplacé par /ranked, et les rangs ranked montent plus haut (Maître à 2 000).",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-16",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
-        ]
-    },
-    {
-        "title": "Mise à jour 5.2 : /ranked",
-        "content": "• /ranked : un menu rien que pour les combats classés. Ton blason de rang (Bronze, Argent, Or, Platine, Diamant, Maître), tes points, la barre jusqu'au rang suivant et le bouton « Lancer ranked ».\n• Personne ne cherche ? Au bout de 30 s, un dresseur IA à ton niveau arrive (jusqu'au rang Or). Une victoire contre l'IA rapporte moitié moins de points.\n• Classement top 10, tes derniers combats (points gagnés et perdus), et les récompenses de saison : chaque mois, de 200 à 5 000 $ selon ton rang, plus ton titre de rang dans le tab.\n• Ligues : tous les dresseurs des Ligues (Conseil 4 et Maître) sont maintenant au niveau 80.\n• Plus d'élytres sur le serveur : celles que vous aviez sont remboursées 1 000 $.\n• La boussole radar se range où tu veux dans ton inventaire, mais ne peut plus en sortir (pas de coffre, pas de jet, gardée à la mort).",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-16",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
-        ]
-    },
-    {
-        "title": "Mise à jour 5.1 : l'aventure devient plus dure",
-        "content": "• Plus dur : l'XP des Pokémon est divisée par 2, et tes Pokémon ne dépassent plus le niveau du prochain champion. Les champions et dresseurs ont 5 niveaux de plus. La route jusqu'à la Ligue se mérite.\n• Plus aucun bonbon offert (récompenses, dresseurs, cadeaux…). Ils restent en boutique, beaucoup plus chers. Plus de pluie de Poké Balls.\n• Moins de diamants : moins de filons dans les nouvelles zones, plus de diamants dans les récompenses ni chez les villageois.\n• Méga-Bracelet au 4e champion battu, Bracelet Dynamax au 8e (donnés automatiquement, avec l'explication).\n• Boussole radar pour tout le monde (/radar si perdue) : elle pointe le joueur le plus proche qui n'est pas dans sa base de faction.\n• Pillage refait : /f pillage, puis choisis Épée (PvP) ou Pokémon (combat Pokémon automatique). Battez les défenseurs pour ouvrir la base, ou 2 min si personne ne défend.\n• Ligues et bâtiments protégés : on ne peut plus y poser de blocs (PvP et coffres restent ouverts).\n• Rayquaza n'apparaît plus dans la nature.\n• Le contenu du sac à dos tombe bien à la mort, même porté sur le dos.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-16",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
-        ]
-    },
-    {
-        "title": "Mise à jour 5.0 : Pokédex, objectif commun, ascenseurs, nouveau menu",
-        "content": "• Nouveau menu : le menu façon jeux Pokémon garde sa taille habituelle, avec le fond du launcher sur toutes les pages.\n• Combats classés et tour de combat réparés : 3, 2, 1 sur le terrain avant le combat, et la fenêtre de combat se rouvre toute seule (touche R sinon).\n• /dex : un cadeau à chaque palier du Pokédex (5 % → 100 %), et un Pokédex shiny avec ses propres récompenses.\n• Objectif commun : lundi, mercredi et vendredi à 20 h, tout le serveur a 30 min pour capturer ou battre des Pokémon ensemble. Réussi = récompense pour tous les participants.\n• /planning : tous les événements de la semaine avec l'heure.\n• Coffres privés : pose un panneau « [privé] » sur ton coffre, seuls toi et les pseudos écrits dessus l'ouvrent.\n• Ascenseur (8 fer + 1 perle de l'Ender) : saute pour monter, accroupis-toi pour descendre.\n• Draconite : pioche de terrassement (3×3) et hache de bûcheron (l'arbre entier). S'accroupir = un seul bloc.\n• /vendre : le serveur achète tes récoltes, minerais et butin, avec 5 offres du jour à +20 %.\n• Calendrier de l'Avent du 1er au 24 décembre (/avent).\n• Règles : nouvel onglet « Mode classé », et les commandes se lancent d'un clic.\n• Les personnages du lobby ne bougent plus.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
-        ]
-    },
-    {
-        "title": "Grosse mise à jour : raids, tour de combat, combats classés",
-        "content": "• Raid du soir : chaque soir à 21 h (sauf le samedi), un boss géant apparaît au lobby. Combattez-le tous : s’il tombe, 400 $ et des objets pour chacun, et une chance de repartir avec lui. /raid\n• Tour de combat : /tour. Des dresseurs de plus en plus forts, tout le monde au niveau 50, tes Pokémon ne risquent rien. Des jetons à chaque étage et une boutique.\n• Combats classés : /classe. Combat Pokémon contre un autre joueur, au niveau 50, rien n’est perdu. Rangs Bronze → Maître, top 5 récompensé chaque mois.\n• Au lobby : pluie de Poké Balls (18 h et 22 h), largage de tonneaux (19 h), quiz Pokémon dans le chat, et 15 trésors cachés dans le temple (/tresors).\n• Échange miracle : /miracle. Tu donnes un Pokémon, tu en reçois un au hasard.\n• Combo de capture : attrape le même Pokémon plusieurs fois de suite pour plus de chances de shiny et de meilleurs IV.\n• Menus au style du résumé Pokémon, journal de combat transparent, caméra de combat corrigée.\n• Les lits ne changent plus ton point de réapparition, et le stuff d’un joueur mort se ramasse tout de suite.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
-        ]
-    },
-    {
-        "title": "PokéFaction 4.7 : territoires, personnages Pokémon, raids",
-        "content": "Territoire de faction, en simple : va où tu veux ta base et tape /f claim. Un carré de 3×3 chunks se pose autour de toi, il passe à 5×5 au niveau 5 de faction, 7×7 au niveau 10 et 9×9 au niveau 15 (tout seul). Les autres factions n’y cassent, ne posent et n’ouvrent rien, et tu le vois sur la carte (touche M). /f territoire pour voir où il est.\n\nLes personnages du lobby et de l’île du tuto sont maintenant des personnages Pokémon : Professeur Chen, Infirmière Joëlle, Ondine, Pierre, Sacha, l’Agente Jenny… Et James de la Team Rocket rachète tes Pokémon (les shiny bien plus cher).\n\nRaids : jusqu’à 4 joueurs dans chaque raid, et des récompenses en argent revues à la baisse. Parkour : le record est affiché à l’arrivée. La boussole du légendaire est retirée.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
-        ]
-    },
-    {
-        "title": "Nouvelles musiques",
-        "content": "Toutes les musiques ont changé : des morceaux calmes façon JRPG quand tu explores, plus sombres dans le Nether, l’End et les grottes, et des musiques de combat nerveuses contre les sauvages, les dresseurs et les joueurs. Toutes libres de droits (CC0). Le volume de la musique reste à 20 % : tu peux le monter dans Options → Musique et sons.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg"
-        ]
-    },
-    {
-        "title": "PokéFaction 4.6 : nouvelles surprises, évolutions en couleur",
-        "content": "Deux nouvelles surprises en semaine (à la place des Pokémon géants) :\n• Le shiny fugitif : un Pokémon shiny s’échappe et brille à travers les murs. Sa zone est annoncée toutes les 2 minutes, de plus en plus précise. Le premier qui le capture le garde, avec 1000 $ en plus.\n• Le défi du type : un type est tiré au sort, le premier à capturer 3 Pokémon de ce type gagne 1500 $ (750 $ et 375 $ pour les suivants), et chaque bonne capture rapporte 50 $.\n\nLes évolutions prennent la couleur du type : une spirale de la couleur de ton Pokémon, puis un éclat de la couleur de sa nouvelle forme, avec « Évolution ! » à l’écran.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/ville.jpg"
-        ]
-    },
-    {
-        "title": "PokéFaction 4.5 : la draconite",
-        "content": "Un nouveau minerai, au-dessus de la netherite : la draconite. Il se cache tout au fond, dans l’ardoise des abîmes (couches −60 à −37), jamais à l’air libre : il faut creuser. Pioche en diamant minimum. On en trouve aussi parfois dans les trésors de l’End, des bastions et des cités antiques.\n\nDraconite brute → four → lingot. Le gabarit d’amélioration se fabrique avec 4 lingots de draconite, 4 diamants et 1 lingot de netherite (et se copie avec 7 diamants et de l’ardoise). À la table de forge : ton objet en netherite + le gabarit + un lingot.\n\nL’armure en draconite est plus robuste que la netherite et te fait moins reculer, les outils et l’épée sont un cran au-dessus. Rien ne brûle dans la lave.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/batiment-interieur.jpg"
-        ]
-    },
-    {
-        "title": "PokéFaction 4.4 : l’île du tuto",
-        "content": "Nouveau : l’île du tuto. Six personnages t’apprennent les bases : tes premiers outils, les Poké Balls, la capture, le soin. 100 $ par étape et une récompense à la fin. Tout le monde y passe une fois à sa prochaine connexion, puis le Passeur te ramène exactement là où tu étais. Pour y retourner : /tuto, ou le Professeur sur la place du lobby.\n\nSur la place du lobby, quatre personnages se baladent : le Collectionneur rachète tes pièces antiques (tiens-les en main et clique, accroupi pour tout vendre), l’Infirmière soigne ton équipe, le Professeur t’emmène au tuto et la Guide ouvre le guide.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
-        ]
-    },
-    {
-        "title": "PokéFaction 4.3 : badges, combats Pokémon et sacs",
-        "content": "Quand tu bats un champion, ses récompenses arrivent directement dans ton inventaire et le badge se range tout seul dans ta boîte à badges, avec une petite fête. Ta collection est dans /menu → Profil → Mes badges.\n\nCombat Pokémon contre un joueur : si tous tes Pokémon sont K.O., tu meurs et ton stuff tombe par terre (tes Pokémon restent à toi).\nÀ la mort, ton sac à dos reste avec toi, mais ce qu’il y a dedans tombe par terre.\n\nNouvelle page Grades dans le /menu, protection après téléportation corrigée, objets Pokémon dans les coffres du Nether et de l’End, et un cadeau de mise à jour pour tout le monde.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/salle-interieur.jpg"
-        ]
-    },
-    {
-        "title": "PokéFaction 4.2 : nouveau Nether, nouvel End",
-        "content": "Le Nether et l’End ont été refaits. Nether : nouveaux biomes, Château interdit, sanctuaires, villages de Piglins et forteresses bien plus grandes. End : Citadelle fantôme, vaisseaux géants, tours et ruines sur les îles extérieures. Les Ligues sont toujours là.\n\nAprès une téléportation, tu es protégé 2 minutes (frapper ou casser un bloc arrête la protection).\nLes coffres du lobby s’ouvrent.\nNouvel anti-triche, actif pendant toute la partie : x-ray et mods de triche = expulsion, puis bannissement.\nLes menus passent aux couleurs du nouveau logo.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg",
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/nouveau-logo.jpg"
-        ]
-    },
-    {
-        "title": "Nouveau logo : Rayquaza shiny",
-        "content": "PokéFaction a un nouveau logo : la tête de Rayquaza shiny.\n\nLe launcher, le site et l'écran de chargement du jeu passent en noir et or.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-15",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/nouveau-logo.jpg",
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg",
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
-        ]
-    },
-    {
-        "title": "PokéFaction 4.1 : PvP, duels et échanges",
-        "content": "Nouvelle arène PvP dans son propre monde, fermée : impossible d'en sortir à pied. Tape /pvp et choisis ton kit (Guerrier, Archer, Tank ou Rapide). Tes affaires sont gardées de côté, rien n'est perdu.\n\nDuels 1 contre 1 avec mise : /duel <joueur>. Classement PvP récompensé chaque dimanche à 22 h.\n\nÉchanges de Pokémon : /echange <place> <Pokémon voulu>. La boutique rachète aussi tes shiny (/rachat). Liste d'amis : /friend.\n\nEt aussi : nuit de sang avec un vrai ciel rouge et une lune rouge, parkour rallongé (40 sauts, à pied !), caméra de combat qui ne traverse plus les murs, protection de 3 s après une téléportation, starters montables, et ton légendaire caché s'enfuit pour toujours après 4 K.O. !",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-14",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/salle-interieur.jpg",
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg"
-        ]
-    },
-    {
-        "title": "PokéFaction 3.0 est là !",
-        "content": "Tout passe aux couleurs de Zygarde : le launcher, le serveur et le site.\n\nGrande carte (touche M) : les territoires des factions, seulement là où tu es déjà passé.\nNiveaux de faction : jouez ensemble pour gagner plus de terrain.\nPillage : /f pillage dans une base ennemie, 5 min de siège, coffres ouverts si vous gagnez.\nGuide des légendaires dans /menu, avec « Me guider » sur la minimap.\nCaméra de combat qui tourne autour des Pokémon.\nÉvénements PvP mercredi, vendredi et dimanche.\n\nCe soir 21 h : grand rassemblement dans la Zone de chasse, Pokémon en masse et shiny à ton niveau !",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-14",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/ville.jpg"
-        ]
-    },
-    {
-        "title": "Nouveau : le menu PokéFaction",
-        "content": "Tape /menu en jeu : factions, arènes, règles et ton profil dans de vrais écrans.\nCrée ta faction, invite tes amis et gère-la en quelques clics.\nTes arènes se débloquent dans l'ordre : /arene te montre la prochaine sur ta minimap.\n\nSuis le serveur sur TikTok : @pokefaction",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-12",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/arene-eau.jpg",
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/arene-eau-interieur.jpg",
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/canyon.jpg"
-        ]
-    },
-    {
-        "title": "Bienvenue sur PokéFaction !",
-        "content": "Clique sur JOUER : le launcher installe tout (Java, mods, packs) puis te connecte directement au serveur.\nLe premier lancement est long (environ 430 Mo à télécharger), les suivants sont rapides.\n\nÀ ton arrivée : choisis ton starter, lis les règles au lobby et tape /guide.",
-        "author": "Staff PokéFaction",
-        "publish_date": "2026-11-11",
-        "images": [
-            "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/batiment-interieur.jpg"
-        ]
-    }
+          {
+                    "title": "Mise à jour 6.3 : Rayquaza, The Secret",
+                    "content": "• L'aventure : après chaque arène, une Team vient te chercher à la sortie. Team Rocket, Aqua, Magma, Galaxie, Plasma (Ghetis), Flare (Lysandre)… Bats-la, sinon le champion suivant refuse le combat. Ils cherchent tous la même chose. /histoire pour savoir où tu en es.\n• Quelqu'un t'observe en secret… et à la fin de la Ligue, un boss t'attend.\n• Épreuve de l'arène, comme dans les jeux : avant chaque champion (sauf les Ligues), entre dans l'arène et résous son énigme (rochers à pousser, vannes, interrupteurs cachés, téléporteurs, glace qui craque, murs invisibles, quiz…) en battant ses dresseurs.\n• Vraies animations : la caméra filme l'arrivée des Teams, les badges et les évolutions ont leur écran comme dans les jeux, nouvel écran d'accueil du jeu « Entrer dans l'aventure ».\n• Météo des biomes : sable qui vole dans le désert, neige, pluie… et la vraie météo en combat (Tempête de sable, Neige, Pluie, Zénith).\n• PvP des factions : séries et têtes mises à prix (/series), défi Pokémon de guerre 3 contre 3 (/f defi) qui fait gagner du territoire, Gardien du cœur à battre pendant un pillage (/f gardien).\n• Dresseurs : comme dans les jeux, un dresseur qui te voit sur son chemin vient te défier. Battu = il ne te redéfie plus.\n• Arènes : faisables comme dans les jeux Pokémon, même sans le type opposé (moins de soins, IV moyens). Au début du combat, le champion te dit quels types il craint.\n• Niveaux : avant ton 2e badge, pas de capture au-dessus de ton Pokémon le plus fort. Un Pokémon trop fort reçu en échange reste dans ton équipe mais ne combat pas. Un peu plus d'XP.\n• Tuto : choisis ton starter dès l'arrivée (Kanto, Johto, Hoenn, Sinnoh), un vrai combat contre le Montagnard, les soins et les Rappels expliqués par Joëlle. Moins de texte à l'arrivée.\n• Raids à tour de rôle : un seul joueur combat le boss à la fois, les autres regardent et passent après.\n• Combat : un + sur chaque attaque pour voir son détail (fini les infobulles au survol), journal de combat caché (réglable dans /menu → Paramètres).\n• Cosmétiques : ailes d'Arceus en or et blanc, ailes de Rayquaza, auréole de Ho-Oh, Poké Ball dorée en orbite (/cosmetiques).\n• /payer pour donner de l'argent à un joueur, /debloquer si un combat reste coincé, grade Modo (peut rendre muet).\n• Corrections : reconnexion refusée « pseudo protégé », waystone du lobby, coffres de structure qui se remplissaient à nouveau, cochons à la mauvaise texture, deux musiques en même temps avec la radio, combat classé bloqué, plus de PC portable.\n• Établi du décorateur (/deco) : toutes les recettes des meubles du modpack. Coffres des maisons et des structures : un butin pour chaque joueur. Dresseurs du monde moins forts.\n• Corrections : vitrines des arènes vides pour celui qui a déjà pris l'objet, le boost ne débloque plus rien, un légendaire reçu en échange ne compte plus comme capturé.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-17",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/maj-6-2.png"
+                    ]
+          },
+          {
+                    "title": "Mise à jour 6.1 : quêtes de faction, chat allié, marché noir, concours",
+                    "content": "• Quêtes de faction : chaque lundi, 3 objectifs communs à toute la faction (/quetes). Quête finie = argent dans la banque de la faction, les 3 = bonus de 3 000 $.\n• Chat privé : /ac message pour ta faction et vos alliés, /fc pour ta faction seule (ou les boutons de l'onglet Alliances).\n• Marché noir : une heure par jour, à un endroit secret, le Marchand de l'ombre vend des objets rares et chers. Une rumeur dit où chercher (/marchenoir).\n• Concours de capture du jour : capture le meilleur Pokémon (IV) de l'espèce du jour avant 22 h, les 3 premiers gagnent (/concours).\n• Mentor : /parrain <joueur> dans tes 2 premières heures, et vous gagnez tous les deux à chaque étape (niveaux 5, 10, 20, premier champion).\n• Badges de grade : des ailes ou un ruban aussi dans le chat et le tab, et un badge au-dessus de la tête pour tous les grades.\n• Largage du lobby : 3 tonneaux par joueur, pour que tout le monde en profite.\n• Launcher : bouton à deux flèches à côté de Jouer pour vérifier les mises à jour, et une notification Windows quand un événement commence (le launcher reste près de l'horloge, clic droit sur son icône pour couper).",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-16",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+                    ]
+          },
+          {
+                    "title": "Mise à jour 6.0 : nouveau menu, profil, badges, alliances, radio",
+                    "content": "• Menu : chaque page s'ouvre en grand avec « ← Retour » (Échap revient à l'accueil). Plus de barre à gauche.\n• Profil : ta carte de dresseur, avec ton perso en 3D, toutes tes infos et tes prochaines récompenses de niveau.\n• Badges de grade en pixel art au-dessus des têtes, avec des ailes pour le staff.\n• Alliances entre factions : /alliance, ou les boutons de /f menu (demander une alliance, déclarer la guerre, piller).\n• Radio PokéFaction : la musique du serveur directement en jeu. Touche J pour l'allumer ou l'éteindre.\n• Anti-triche renforcé : le serveur surveille lui-même les mouvements, les coups et le minage, et les packs de ressources sont revérifiés en continu.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-16",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+                    ]
+          },
+          {
+                    "title": "Mise à jour 5.4 : passe de combat, expéditions, Roi de la colline",
+                    "content": "• Passe de combat : une saison par mois, 30 paliers. Tu montes en jouant (captures, combats, dresseurs, temps de jeu) et tu prends une récompense à chaque palier dans /menu → Passe. Une piste Premium arrive bientôt.\n• Expéditions : envoie des Pokémon de ton PC en expédition 1 h, 4 h ou 8 h. Ils reviennent avec de l'argent et des objets.\n• Zone Safari : le dimanche à 16 h, 1 h de Pokémon rares, des shiny plus fréquents et 30 Safari Balls offertes (/safari).\n• Saison du mois : chaque mois, un type de Pokémon apparaît plus souvent (/saisonmonde).\n• Succès et titres : 33 succès, et ton titre préféré s'affiche dans le tab (/menu → Succès).\n• Factions : banque commune (/f banque), Roi de la colline le mardi et le jeudi à 21 h 30, guerres déclarées (/f guerre), 4 avant-postes à capturer qui rapportent toutes les heures.\n• Menu : 18 cases sur 3 lignes, avec Paramètres, et des barres de niveau animées (dresseur et faction).",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-16",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+                    ]
+          },
+          {
+                    "title": "Mise à jour 5.3 : tournoi, cœur de faction, primes, Ligue",
+                    "content": "• Tournoi ranked chaque samedi à 19 h 30 : /ranked tournoi rejoindre (inscriptions dès 19 h 15), 8 joueurs, élimination directe, /ranked tournoi regarder pour suivre les matchs. Gagnant : 5 000 $.\n• Cœur de faction : posez-le dans votre territoire. S'il est cassé pendant un pillage réussi, l'attaquant gagne 2 000 $ et la base reste ouverte 5 min de plus.\n• Saison des factions : /saison. Pillages réussis, défenses et XP de faction donnent des points ; le top 3 du mois gagne de l'argent pour chaque membre et un titre ♛.\n• Ligue : dès le premier membre du Conseil, ton équipe est verrouillée jusqu'au bout, et pas de soin sauf tes potions (/ligue).\n• Menu : nouvelles pages Pokédex (récompenses à prendre) et Planning des événements.\n• Grades : plus de « devient VÉTÉRAN » en boucle. /classe est remplacé par /ranked, et les rangs ranked montent plus haut (Maître à 2 000).",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-16",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+                    ]
+          },
+          {
+                    "title": "Mise à jour 5.2 : /ranked",
+                    "content": "• /ranked : un menu rien que pour les combats classés. Ton blason de rang (Bronze, Argent, Or, Platine, Diamant, Maître), tes points, la barre jusqu'au rang suivant et le bouton « Lancer ranked ».\n• Personne ne cherche ? Au bout de 30 s, un dresseur IA à ton niveau arrive (jusqu'au rang Or). Une victoire contre l'IA rapporte moitié moins de points.\n• Classement top 10, tes derniers combats (points gagnés et perdus), et les récompenses de saison : chaque mois, de 200 à 5 000 $ selon ton rang, plus ton titre de rang dans le tab.\n• Ligues : tous les dresseurs des Ligues (Conseil 4 et Maître) sont maintenant au niveau 80.\n• Plus d'élytres sur le serveur : celles que vous aviez sont remboursées 1 000 $.\n• La boussole radar se range où tu veux dans ton inventaire, mais ne peut plus en sortir (pas de coffre, pas de jet, gardée à la mort).",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-16",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+                    ]
+          },
+          {
+                    "title": "Mise à jour 5.1 : l'aventure devient plus dure",
+                    "content": "• Plus dur : l'XP des Pokémon est divisée par 2, et tes Pokémon ne dépassent plus le niveau du prochain champion. Les champions et dresseurs ont 5 niveaux de plus. La route jusqu'à la Ligue se mérite.\n• Plus aucun bonbon offert (récompenses, dresseurs, cadeaux…). Ils restent en boutique, beaucoup plus chers. Plus de pluie de Poké Balls.\n• Moins de diamants : moins de filons dans les nouvelles zones, plus de diamants dans les récompenses ni chez les villageois.\n• Méga-Bracelet au 4e champion battu, Bracelet Dynamax au 8e (donnés automatiquement, avec l'explication).\n• Boussole radar pour tout le monde (/radar si perdue) : elle pointe le joueur le plus proche qui n'est pas dans sa base de faction.\n• Pillage refait : /f pillage, puis choisis Épée (PvP) ou Pokémon (combat Pokémon automatique). Battez les défenseurs pour ouvrir la base, ou 2 min si personne ne défend.\n• Ligues et bâtiments protégés : on ne peut plus y poser de blocs (PvP et coffres restent ouverts).\n• Rayquaza n'apparaît plus dans la nature.\n• Le contenu du sac à dos tombe bien à la mort, même porté sur le dos.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-16",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+                    ]
+          },
+          {
+                    "title": "Mise à jour 5.0 : Pokédex, objectif commun, ascenseurs, nouveau menu",
+                    "content": "• Nouveau menu : le menu façon jeux Pokémon garde sa taille habituelle, avec le fond du launcher sur toutes les pages.\n• Combats classés et tour de combat réparés : 3, 2, 1 sur le terrain avant le combat, et la fenêtre de combat se rouvre toute seule (touche R sinon).\n• /dex : un cadeau à chaque palier du Pokédex (5 % → 100 %), et un Pokédex shiny avec ses propres récompenses.\n• Objectif commun : lundi, mercredi et vendredi à 20 h, tout le serveur a 30 min pour capturer ou battre des Pokémon ensemble. Réussi = récompense pour tous les participants.\n• /planning : tous les événements de la semaine avec l'heure.\n• Coffres privés : pose un panneau « [privé] » sur ton coffre, seuls toi et les pseudos écrits dessus l'ouvrent.\n• Ascenseur (8 fer + 1 perle de l'Ender) : saute pour monter, accroupis-toi pour descendre.\n• Draconite : pioche de terrassement (3×3) et hache de bûcheron (l'arbre entier). S'accroupir = un seul bloc.\n• /vendre : le serveur achète tes récoltes, minerais et butin, avec 5 offres du jour à +20 %.\n• Calendrier de l'Avent du 1er au 24 décembre (/avent).\n• Règles : nouvel onglet « Mode classé », et les commandes se lancent d'un clic.\n• Les personnages du lobby ne bougent plus.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+                    ]
+          },
+          {
+                    "title": "Grosse mise à jour : raids, tour de combat, combats classés",
+                    "content": "• Raid du soir : chaque soir à 21 h (sauf le samedi), un boss géant apparaît au lobby. Combattez-le tous : s’il tombe, 400 $ et des objets pour chacun, et une chance de repartir avec lui. /raid\n• Tour de combat : /tour. Des dresseurs de plus en plus forts, tout le monde au niveau 50, tes Pokémon ne risquent rien. Des jetons à chaque étage et une boutique.\n• Combats classés : /classe. Combat Pokémon contre un autre joueur, au niveau 50, rien n’est perdu. Rangs Bronze → Maître, top 5 récompensé chaque mois.\n• Au lobby : pluie de Poké Balls (18 h et 22 h), largage de tonneaux (19 h), quiz Pokémon dans le chat, et 15 trésors cachés dans le temple (/tresors).\n• Échange miracle : /miracle. Tu donnes un Pokémon, tu en reçois un au hasard.\n• Combo de capture : attrape le même Pokémon plusieurs fois de suite pour plus de chances de shiny et de meilleurs IV.\n• Menus au style du résumé Pokémon, journal de combat transparent, caméra de combat corrigée.\n• Les lits ne changent plus ton point de réapparition, et le stuff d’un joueur mort se ramasse tout de suite.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg"
+                    ]
+          },
+          {
+                    "title": "PokéFaction 4.7 : territoires, personnages Pokémon, raids",
+                    "content": "Territoire de faction, en simple : va où tu veux ta base et tape /f claim. Un carré de 3×3 chunks se pose autour de toi, il passe à 5×5 au niveau 5 de faction, 7×7 au niveau 10 et 9×9 au niveau 15 (tout seul). Les autres factions n’y cassent, ne posent et n’ouvrent rien, et tu le vois sur la carte (touche M). /f territoire pour voir où il est.\n\nLes personnages du lobby et de l’île du tuto sont maintenant des personnages Pokémon : Professeur Chen, Infirmière Joëlle, Ondine, Pierre, Sacha, l’Agente Jenny… Et James de la Team Rocket rachète tes Pokémon (les shiny bien plus cher).\n\nRaids : jusqu’à 4 joueurs dans chaque raid, et des récompenses en argent revues à la baisse. Parkour : le record est affiché à l’arrivée. La boussole du légendaire est retirée.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
+                    ]
+          },
+          {
+                    "title": "Nouvelles musiques",
+                    "content": "Toutes les musiques ont changé : des morceaux calmes façon JRPG quand tu explores, plus sombres dans le Nether, l’End et les grottes, et des musiques de combat nerveuses contre les sauvages, les dresseurs et les joueurs. Toutes libres de droits (CC0). Le volume de la musique reste à 20 % : tu peux le monter dans Options → Musique et sons.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg"
+                    ]
+          },
+          {
+                    "title": "PokéFaction 4.6 : nouvelles surprises, évolutions en couleur",
+                    "content": "Deux nouvelles surprises en semaine (à la place des Pokémon géants) :\n• Le shiny fugitif : un Pokémon shiny s’échappe et brille à travers les murs. Sa zone est annoncée toutes les 2 minutes, de plus en plus précise. Le premier qui le capture le garde, avec 1000 $ en plus.\n• Le défi du type : un type est tiré au sort, le premier à capturer 3 Pokémon de ce type gagne 1500 $ (750 $ et 375 $ pour les suivants), et chaque bonne capture rapporte 50 $.\n\nLes évolutions prennent la couleur du type : une spirale de la couleur de ton Pokémon, puis un éclat de la couleur de sa nouvelle forme, avec « Évolution ! » à l’écran.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/ville.jpg"
+                    ]
+          },
+          {
+                    "title": "PokéFaction 4.5 : la draconite",
+                    "content": "Un nouveau minerai, au-dessus de la netherite : la draconite. Il se cache tout au fond, dans l’ardoise des abîmes (couches −60 à −37), jamais à l’air libre : il faut creuser. Pioche en diamant minimum. On en trouve aussi parfois dans les trésors de l’End, des bastions et des cités antiques.\n\nDraconite brute → four → lingot. Le gabarit d’amélioration se fabrique avec 4 lingots de draconite, 4 diamants et 1 lingot de netherite (et se copie avec 7 diamants et de l’ardoise). À la table de forge : ton objet en netherite + le gabarit + un lingot.\n\nL’armure en draconite est plus robuste que la netherite et te fait moins reculer, les outils et l’épée sont un cran au-dessus. Rien ne brûle dans la lave.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/batiment-interieur.jpg"
+                    ]
+          },
+          {
+                    "title": "PokéFaction 4.4 : l’île du tuto",
+                    "content": "Nouveau : l’île du tuto. Six personnages t’apprennent les bases : tes premiers outils, les Poké Balls, la capture, le soin. 100 $ par étape et une récompense à la fin. Tout le monde y passe une fois à sa prochaine connexion, puis le Passeur te ramène exactement là où tu étais. Pour y retourner : /tuto, ou le Professeur sur la place du lobby.\n\nSur la place du lobby, quatre personnages se baladent : le Collectionneur rachète tes pièces antiques (tiens-les en main et clique, accroupi pour tout vendre), l’Infirmière soigne ton équipe, le Professeur t’emmène au tuto et la Guide ouvre le guide.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
+                    ]
+          },
+          {
+                    "title": "PokéFaction 4.3 : badges, combats Pokémon et sacs",
+                    "content": "Quand tu bats un champion, ses récompenses arrivent directement dans ton inventaire et le badge se range tout seul dans ta boîte à badges, avec une petite fête. Ta collection est dans /menu → Profil → Mes badges.\n\nCombat Pokémon contre un joueur : si tous tes Pokémon sont K.O., tu meurs et ton stuff tombe par terre (tes Pokémon restent à toi).\nÀ la mort, ton sac à dos reste avec toi, mais ce qu’il y a dedans tombe par terre.\n\nNouvelle page Grades dans le /menu, protection après téléportation corrigée, objets Pokémon dans les coffres du Nether et de l’End, et un cadeau de mise à jour pour tout le monde.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/salle-interieur.jpg"
+                    ]
+          },
+          {
+                    "title": "PokéFaction 4.2 : nouveau Nether, nouvel End",
+                    "content": "Le Nether et l’End ont été refaits. Nether : nouveaux biomes, Château interdit, sanctuaires, villages de Piglins et forteresses bien plus grandes. End : Citadelle fantôme, vaisseaux géants, tours et ruines sur les îles extérieures. Les Ligues sont toujours là.\n\nAprès une téléportation, tu es protégé 2 minutes (frapper ou casser un bloc arrête la protection).\nLes coffres du lobby s’ouvrent.\nNouvel anti-triche, actif pendant toute la partie : x-ray et mods de triche = expulsion, puis bannissement.\nLes menus passent aux couleurs du nouveau logo.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg",
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/nouveau-logo.jpg"
+                    ]
+          },
+          {
+                    "title": "Nouveau logo : Rayquaza shiny",
+                    "content": "PokéFaction a un nouveau logo : la tête de Rayquaza shiny.\n\nLe launcher, le site et l'écran de chargement du jeu passent en noir et or.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-15",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/nouveau-logo.jpg",
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-temple.jpg",
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-place.jpg"
+                    ]
+          },
+          {
+                    "title": "PokéFaction 4.1 : PvP, duels et échanges",
+                    "content": "Nouvelle arène PvP dans son propre monde, fermée : impossible d'en sortir à pied. Tape /pvp et choisis ton kit (Guerrier, Archer, Tank ou Rapide). Tes affaires sont gardées de côté, rien n'est perdu.\n\nDuels 1 contre 1 avec mise : /duel <joueur>. Classement PvP récompensé chaque dimanche à 22 h.\n\nÉchanges de Pokémon : /echange <place> <Pokémon voulu>. La boutique rachète aussi tes shiny (/rachat). Liste d'amis : /friend.\n\nEt aussi : nuit de sang avec un vrai ciel rouge et une lune rouge, parkour rallongé (40 sauts, à pied !), caméra de combat qui ne traverse plus les murs, protection de 3 s après une téléportation, starters montables, et ton légendaire caché s'enfuit pour toujours après 4 K.O. !",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-14",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/salle-interieur.jpg",
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/lobby-ile.jpg"
+                    ]
+          },
+          {
+                    "title": "PokéFaction 3.0 est là !",
+                    "content": "Tout passe aux couleurs de Zygarde : le launcher, le serveur et le site.\n\nGrande carte (touche M) : les territoires des factions, seulement là où tu es déjà passé.\nNiveaux de faction : jouez ensemble pour gagner plus de terrain.\nPillage : /f pillage dans une base ennemie, 5 min de siège, coffres ouverts si vous gagnez.\nGuide des légendaires dans /menu, avec « Me guider » sur la minimap.\nCaméra de combat qui tourne autour des Pokémon.\nÉvénements PvP mercredi, vendredi et dimanche.\n\nCe soir 21 h : grand rassemblement dans la Zone de chasse, Pokémon en masse et shiny à ton niveau !",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-14",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/ville.jpg"
+                    ]
+          },
+          {
+                    "title": "Nouveau : le menu PokéFaction",
+                    "content": "Tape /menu en jeu : factions, arènes, règles et ton profil dans de vrais écrans.\nCrée ta faction, invite tes amis et gère-la en quelques clics.\nTes arènes se débloquent dans l'ordre : /arene te montre la prochaine sur ta minimap.\n\nSuis le serveur sur TikTok : @pokefaction",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-12",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/arene-eau.jpg",
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/arene-eau-interieur.jpg",
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/canyon.jpg"
+                    ]
+          },
+          {
+                    "title": "Bienvenue sur PokéFaction !",
+                    "content": "Clique sur JOUER : le launcher installe tout (Java, mods, packs) puis te connecte directement au serveur.\nLe premier lancement est long (environ 430 Mo à télécharger), les suivants sont rapides.\n\nÀ ton arrivée : choisis ton starter, lis les règles au lobby et tape /guide.",
+                    "author": "Staff PokéFaction",
+                    "publish_date": "2026-11-11",
+                    "images": [
+                              "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/images/batiment-interieur.jpg"
+                    ]
+          }
 ]
