@@ -8,6 +8,7 @@ const { Launch } = require('minecraft-java-core')
 import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
 import { appliquerGraphismes, appliquerEcranChargement } from '../utils/onglets-pf.js'
 import { analyserJeu } from '../utils/anti-triche.js'
+import { diaporama } from '../utils/diaporama.js'
 const { shell, ipcRenderer } = require('electron')
 const fs = require('fs')
 
@@ -185,18 +186,9 @@ class Home {
         for (const n of news) for (const u of (Array.isArray(n.images) ? n.images : n.images ? [n.images] : n.image ? [n.image] : []))
             if (typeof u === 'string' && u.startsWith('https://') && !images.includes(u)) images.push(encodeURI(u));
         if (!images.length) images = parDefaut.slice();
-        images = images.slice(0, 5);
-        liste.classList.add('n' + images.length, 'galerie');
-        images.forEach((url, i) => {
-            let carte = document.createElement('button');
-            carte.className = 'actu actu-image' + (i === 0 ? ' actu-une' : '');
-            carte.style.setProperty('--i', i);
-            let img = document.createElement('img');
-            img.className = 'actu-img'; img.alt = ''; img.loading = 'lazy'; img.src = url;
-            carte.appendChild(img);
-            carte.addEventListener('click', () => this.ouvrirArticle({ title: '', content: '' }, url, null));
-            liste.appendChild(carte);
-        });
+        images = images.slice(0, 6);
+        // 3.4.6 (Eddy : « refais les actus ») : un diaporama (grande image qui change toute seule, vignettes en dessous)
+        diaporama(liste, images, url => this.ouvrirArticle({ title: '', content: '' }, url, null));
         // Fermer l'article : croix, clic à côté, Échap
         let fond = document.querySelector('.article-ouvert');
         fond.addEventListener('click', e => { if (e.target === fond || e.target.closest('.article-fermer')) fond.classList.remove('ouvert'); });
