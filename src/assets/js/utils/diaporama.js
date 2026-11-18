@@ -12,6 +12,7 @@
  */
 export function diaporama(liste, images, ouvrir, pause = 6000) {
     liste.classList.add('diapo');
+    liste.closest('.accueil')?.classList.add('avec-diapo'); // mise en page sur un écran : logo et Jouer à gauche, diaporama à droite
     const scene = document.createElement('div');
     scene.className = 'diapo-scene';
     const bande = document.createElement('div');

@@ -831,10 +831,10 @@ body[data-panel="settings"] .reseaux { display: none; }
 .diapo-vignette.montree { opacity: 1; border-color: #f5b50c; }
 .home.active .diapo-vignette { animation: z-entree .5s calc(.3s + var(--i) * 60ms) var(--doux) backwards; }
 
-/* 3.4.7 : plus d'actus (aucune image dans web/articles) : le logo et Jouer au milieu de la page */
-.home .container.accueil.sans-actus { display: flex; align-items: center; justify-content: center; padding-top: 0; overflow: hidden; }
-.accueil.sans-actus .accueil-haut { align-items: center; margin: 0 0 40px; }
-.accueil.sans-actus .accueil-logo { top: 0; width: 250px; height: 244px; margin-bottom: 30px; }
-.accueil.sans-actus .accueil-logo-img { width: 250px; height: auto; }
-.accueil.sans-actus .play-elements { align-items: center; margin: 0; }
-.accueil.sans-actus .maj-etat { margin-left: 0; text-align: center; }
+/* 3.4.8 (Eddy : « remets en haut à gauche, c'est moche ») : le logo et Jouer restent toujours en haut à gauche, avec ou sans images */
+/* 3.4.8 (Eddy : « améliore ») : avec le diaporama, tout tient sur un écran. Le logo et Jouer restent en haut à gauche,
+   le diaporama prend toute la place à leur droite (plus de grand vide noir, plus besoin de faire défiler). */
+.home .container.accueil.avec-diapo { flex-direction: row; align-items: flex-start; gap: 46px; overflow: hidden; padding-bottom: 26px; }
+.accueil.avec-diapo .accueil-haut { flex: 0 0 auto; margin-bottom: 0; }
+.accueil.avec-diapo .actus { flex: 1 1 0; min-width: 0; height: 100%; } /* commence sous la barre du haut (joueurs en ligne, réglages) */
+.accueil.avec-diapo .diapo-vignettes { flex-basis: 70px; }
