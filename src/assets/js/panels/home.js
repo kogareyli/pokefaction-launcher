@@ -185,7 +185,8 @@ class Home {
         let images = [];
         for (const n of news) for (const u of (Array.isArray(n.images) ? n.images : n.images ? [n.images] : n.image ? [n.image] : []))
             if (typeof u === 'string' && u.startsWith('https://') && !images.includes(u)) images.push(encodeURI(u));
-        if (!images.length) images = parDefaut.slice();
+        // 3.4.7 (Eddy : « enlève toutes les images du launcher ») : aucune image dans web/articles = pas d'actus du tout (plus d'image de secours)
+        if (!images.length) { liste.style.display = 'none'; document.querySelector('.container.accueil')?.classList.add('sans-actus'); return; }
         images = images.slice(0, 6);
         // 3.4.6 (Eddy : « refais les actus ») : un diaporama (grande image qui change toute seule, vignettes en dessous)
         diaporama(liste, images, url => this.ouvrirArticle({ title: '', content: '' }, url, null));

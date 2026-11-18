@@ -2,6 +2,8 @@
  * Actualités en diaporama (3.4.6, Eddy : « refais les actus ») : une grande image qui change toute seule
  * (fondu + lent recul), des flèches au survol, les vignettes en dessous pour choisir. Images seules, aucun texte.
  * Pendant une partie (body.en-jeu) ou quand la souris est sur l'image, le diaporama attend.
+ * L'image affichée porte la classe « montree », surtout PAS « active » : launcher.css a une règle « .active » générale
+ * (visibility: visible) qui la laissait affichée par-dessus les Paramètres quand l'accueil était caché (3.4.6).
  *
  * @param {HTMLElement} liste   la section .actus
  * @param {string[]} images     liens des images (la première = la plus récente)
@@ -20,8 +22,8 @@ export function diaporama(liste, images, ouvrir, pause = 6000) {
     const montrer = (i) => {
         i = (i + images.length) % images.length;
         if (i === actuelle) return;
-        vues.forEach((v, k) => v.classList.toggle('active', k === i));
-        vignettes.forEach((v, k) => v.classList.toggle('active', k === i));
+        vues.forEach((v, k) => v.classList.toggle('montree', k === i));
+        vignettes.forEach((v, k) => v.classList.toggle('montree', k === i));
         actuelle = i;
     };
     const relancer = () => {
