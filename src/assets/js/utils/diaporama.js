@@ -12,7 +12,7 @@
  */
 export function diaporama(liste, images, ouvrir, pause = 6000) {
     liste.classList.add('diapo');
-    liste.closest('.accueil')?.classList.add('avec-diapo'); // mise en page sur un écran : logo et Jouer à gauche, diaporama à droite
+    liste.closest('.accueil')?.classList.add('avec-diapo'); // 3.5.0 : les images sont le fond de l'accueil, en plein cadre
     const scene = document.createElement('div');
     scene.className = 'diapo-scene';
     const bande = document.createElement('div');
@@ -31,7 +31,7 @@ export function diaporama(liste, images, ouvrir, pause = 6000) {
         clearInterval(minuterie);
         if (images.length < 2) return;
         minuterie = setInterval(() => {
-            if (document.body.classList.contains('en-jeu') || scene.matches(':hover') || document.hidden) return;
+            if (document.body.classList.contains('en-jeu') || bande.matches(':hover') || document.hidden) return;
             montrer(actuelle + 1);
         }, pause);
     };
@@ -55,7 +55,7 @@ export function diaporama(liste, images, ouvrir, pause = 6000) {
         f.addEventListener('click', e => { e.stopPropagation(); montrer(actuelle + pas); relancer(); });
         scene.appendChild(f);
     }
-    scene.addEventListener('click', () => ouvrir(images[Math.max(0, actuelle)]));
+    // 3.5.0 : l'image est le fond de l'accueil, un clic dessus n'ouvre plus rien (« ouvrir » reste dans la signature pour ne rien casser)
     liste.appendChild(scene);
     if (images.length > 1) liste.appendChild(bande);
     montrer(0);

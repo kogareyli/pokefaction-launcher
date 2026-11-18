@@ -832,9 +832,29 @@ body[data-panel="settings"] .reseaux { display: none; }
 .home.active .diapo-vignette { animation: z-entree .5s calc(.3s + var(--i) * 60ms) var(--doux) backwards; }
 
 /* 3.4.8 (Eddy : « remets en haut à gauche, c'est moche ») : le logo et Jouer restent toujours en haut à gauche, avec ou sans images */
-/* 3.4.8 (Eddy : « améliore ») : avec le diaporama, tout tient sur un écran. Le logo et Jouer restent en haut à gauche,
-   le diaporama prend toute la place à leur droite (plus de grand vide noir, plus besoin de faire défiler). */
-.home .container.accueil.avec-diapo { flex-direction: row; align-items: flex-start; gap: 46px; overflow: hidden; padding-bottom: 26px; }
-.accueil.avec-diapo .accueil-haut { flex: 0 0 auto; margin-bottom: 0; }
-.accueil.avec-diapo .actus { flex: 1 1 0; min-width: 0; height: 100%; } /* commence sous la barre du haut (joueurs en ligne, réglages) */
-.accueil.avec-diapo .diapo-vignettes { flex-basis: 70px; }
+/* 3.5.0 (Eddy : « le launcher c'est toujours moche ») : les captures du serveur sont le fond de l'accueil, en plein cadre.
+   Le logo et Jouer restent en haut à gauche, par-dessus ; l'image est assombrie à gauche (pour le logo) et en bas (pour les vignettes). */
+.home .container.accueil.avec-diapo { overflow: hidden; }
+.accueil.avec-diapo .accueil-haut { position: relative; z-index: 3; margin-bottom: 0; }
+.accueil.avec-diapo .actus.diapo { position: absolute; inset: 0; height: auto; display: block; z-index: 1; }
+.accueil.avec-diapo .diapo-scene { position: absolute; inset: 0; border: 0; border-radius: 0; background: #0a0a0b; cursor: default; animation: none; }
+.accueil.avec-diapo .diapo-img { transform: scale(1.09); transition: opacity 1.2s ease, transform 9s linear; }
+.accueil.avec-diapo .diapo-img.montree { transform: scale(1.0); }
+.accueil.avec-diapo .diapo-scene::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(8, 8, 9, .94) 0%, rgba(8, 8, 9, .78) 22%, rgba(8, 8, 9, .28) 46%, rgba(8, 8, 9, 0) 64%),
+        linear-gradient(0deg, rgba(8, 8, 9, .88) 0%, rgba(8, 8, 9, .30) 22%, rgba(8, 8, 9, 0) 40%),
+        linear-gradient(180deg, rgba(8, 8, 9, .62) 0%, rgba(8, 8, 9, 0) 16%);
+}
+.accueil.avec-diapo .diapo-fleche { top: auto; bottom: 30px; margin: 0; width: 34px; height: 34px; font-size: 20px; opacity: .85; z-index: 4; }
+.accueil.avec-diapo .diapo-fleche.gauche { left: auto; right: 74px; }
+.accueil.avec-diapo .diapo-fleche.droite { right: 30px; }
+.accueil.avec-diapo .diapo-vignettes {
+    position: absolute; right: 126px; bottom: 26px; z-index: 4; display: flex; gap: 8px; flex: none;
+}
+.accueil.avec-diapo .diapo-vignette { flex: 0 0 auto; width: 92px; height: 52px; border-radius: 9px; opacity: .55; }
+.accueil.avec-diapo .diapo-vignette.montree { opacity: 1; border-color: #f5b50c; box-shadow: 0 0 0 1px #f5b50c; }
+.accueil.avec-diapo .diapo-vignette:hover { opacity: 1; }
+/* le bouton Jouer se lit sur l'image : cadre un peu plus opaque */
+.accueil.avec-diapo .play-cadre { background: rgba(14, 14, 15, .82) !important; backdrop-filter: blur(6px); }
