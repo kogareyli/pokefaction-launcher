@@ -6,8 +6,9 @@ import { config, database, logger, changePanel, appdata, dossierJeu, setStatus, 
 
 const { Launch } = require('minecraft-java-core')
 import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
-import { appliquerGraphismes, appliquerEcranChargement } from '../utils/onglets-pf.js'
+import { appliquerGraphismes, appliquerEcranChargement, appliquerDemarrageRapide } from '../utils/onglets-pf.js'
 import { analyserJeu } from '../utils/anti-triche.js'
+import { accelererVerification } from '../utils/empreintes-cache.js'
 import { diaporama } from '../utils/diaporama.js'
 const { shell, ipcRenderer } = require('electron')
 const fs = require('fs')
@@ -475,6 +476,7 @@ class Home {
         } catch (err) { console.error('musique', err) }
         // Écran de chargement du jeu : logo PokéFaction sur fond sombre (au lieu du logo Mojang sur fond rouge)
         try { await appliquerEcranChargement(`${chemin}/instances/${options.name}`) } catch (err) { console.error('écran de chargement', err) }
+        try { await appliquerDemarrageRapide(`${chemin}/instances/${options.name}`) } catch (err) { console.error('démarrage rapide', err) }
 
         // Skin choisi dans le launcher : le mod PokéFaction l'envoie au serveur en arrivant
         try {
@@ -541,6 +543,8 @@ class Home {
             }
         } catch (err) { console.error('anti-triche', err); ipcRenderer.send('anticheat-fermer') }
 
+        // 3.5.1 : les fichiers inchangés depuis la dernière vérification ne sont pas relus (voir utils/empreintes-cache.js)
+        const enregistrerEmpreintes = accelererVerification(chemin)
         launch.Launch(opt);
         // Le jeu a-t-il démarré ? (après, une « erreur » de la bibliothèque n'est plus un problème de téléchargement)
         let jeuDemarre = false
@@ -596,6 +600,7 @@ class Home {
         let tailleJournal = 0
 
         launch.on('data', (e) => {
+            if (!jeuDemarre) { try { enregistrerEmpreintes() } catch { } }
             jeuDemarre = true
             if (!jeuEnRoute && /Sound engine started|OpenAL initialized|Connecting to |Created: [0-9]+x[0-9]+/.test(String(e))) jeuEnRoute = true
             progressBar.style.display = "none"

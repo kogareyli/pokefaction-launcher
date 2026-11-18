@@ -98,13 +98,13 @@ export async function analyserJeu(dossierInstance, etape) {
             corrige.push(`Mod de triche retiré : « ${nom} »`);
         } catch { corrige.push(`Mod de triche trouvé : « ${nom} »`); }
     }
-    await pause(350);
+    await pause(40);
     signaler('Vérification des mods…', 25, 'Mods vérifiés');
 
     // 2. Clients de triche : dossiers qu'ils laissent dans le jeu (signalé seulement : le jeu est surveillé ensuite)
     signaler('Recherche de clients de triche…', 35);
     const traces = DOSSIERS_TRICHE.filter(d => fs.existsSync(path.join(dossierInstance, d)));
-    await pause(300);
+    await pause(40);
     signaler('Recherche de clients de triche…', 48, traces.length ? `Traces de ${traces.join(', ')} (surveillé pendant la partie)` : 'Aucun client de triche', traces.length > 0);
 
     // 3. Packs de ressources x-ray : déplacés dans « resourcepacks-retires »
@@ -122,7 +122,7 @@ export async function analyserJeu(dossierInstance, etape) {
         }
         await pause(0);
     }
-    await pause(250);
+    await pause(40);
     signaler('Analyse des packs de ressources…', 80, liste.length ? `${liste.length} pack${liste.length > 1 ? 's' : ''} analysé${liste.length > 1 ? 's' : ''}` : 'Aucun pack de ressources');
 
     // 4. Luminosité : la barre du jeu s'arrête à 100 % (gamma 1.0). Au-dessus = modifié à la main pour voir dans le noir.
@@ -138,12 +138,12 @@ export async function analyserJeu(dossierInstance, etape) {
             }
         }
     } catch { /* options.txt occupé : on laisse, le serveur vérifiera */ }
-    await pause(250);
+    await pause(40);
     for (const c of corrige) signaler(null, null, c, true);
     signaler(corrige.length ? 'Problèmes corrigés, lancement du jeu…' : 'Aucune triche détectée · protection active', 100, corrige.length ? null : 'Réglages vérifiés');
     try { etape({ fin: true }); } catch { }
-    // L'analyse reste visible au moins ~2,5 s : elle est là pour qu'on la voie (et que ça décourage)
-    const reste = 2500 - (Date.now() - debut);
+    // 3.5.1 (Eddy : « que le lancement soit plus rapide ») : l'analyse reste visible 0,8 s au lieu de 2,5 s, et sans pauses entre les étapes
+    const reste = 800 - (Date.now() - debut);
     if (reste > 0) await pause(reste);
     return corrige;
 }

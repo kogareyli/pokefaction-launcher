@@ -6,6 +6,7 @@
  */
 import { PokeFactionAPI } from './pokefaction-api.js';
 const fs = require('fs');
+const path = require('path');
 const pkg = require('../package.json');
 
 const SPRITES = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
@@ -108,6 +109,21 @@ export function appliquerGraphismes(dossierInstance, mode) {
  * logo Rayquaza sur fond sombre au lieu du logo Mojang sur fond rouge. Refait à chaque Jouer
  * (le dossier config n'est installé qu'une fois par le launcher, les anciens joueurs l'ont aussi).
  */
+/**
+ * 3.5.1 (Eddy : « le lancement du jeu, que ce soit plus rapide ») : ModernFix ne charge les modèles des blocs et des objets
+ * que lorsqu'ils servent. Le jeu démarre plus vite et prend moins de mémoire. Pour revenir en arrière : mettre
+ * « mixin.perf.dynamic_resources=false » dans config/modernfix-mixins.properties (le launcher ne touche pas à un « false » écrit à la main).
+ */
+export async function appliquerDemarrageRapide(dossierInstance) {
+    const fichier = path.join(dossierInstance, 'config', 'modernfix-mixins.properties')
+    let texte = ''
+    try { texte = fs.readFileSync(fichier, 'utf8') } catch { /* pas encore de fichier : ModernFix le complétera */ }
+    if (/^\s*mixin\.perf\.dynamic_resources\s*=/m.test(texte)) return false // déjà réglé (par nous ou par le joueur)
+    fs.mkdirSync(path.dirname(fichier), { recursive: true })
+    fs.writeFileSync(fichier, texte + (texte && !texte.endsWith('\n') ? '\n' : '') + 'mixin.perf.dynamic_resources=true\n')
+    return true
+}
+
 export async function appliquerEcranChargement(dossierInstance) {
     const dossier = `${dossierInstance}/config`;
     if (!fs.existsSync(dossier)) return; // premier lancement : le modpack pose d'abord ses réglages

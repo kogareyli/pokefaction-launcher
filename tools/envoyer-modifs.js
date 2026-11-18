@@ -273,6 +273,10 @@ async function main() {
     if (!SIMULATION) {
         try { planningChange = require('./evenements-launcher.js').generer().change; }
         catch (e) { console.log(jaune(' Planning des notifications pas mis à jour : ' + e.message)); }
+        // 3.5.1 : la liste des mods attendus par l'anti-triche est refaite à chaque envoi (oubliée depuis le 15/11 : tous les
+        // joueurs étaient notés « mods hors modpack » pour des mods ajoutés entre-temps)
+        try { require('child_process').execFileSync(process.execPath, [path.join(__dirname, 'mods-attendus.js')], { stdio: 'ignore', env: process.env }); }
+        catch (e) { console.log(jaune(' Liste des mods attendus pas mise à jour : ' + e.message)); }
     }
 
     console.log(gris(' Comparaison de ton instance CurseForge avec le serveur et le launcher…'));
