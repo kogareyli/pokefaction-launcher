@@ -9,6 +9,7 @@ import { PokeFactionAPI, ecrireTicket } from '../utils/pokefaction-api.js'
 import { appliquerGraphismes, appliquerEcranChargement, appliquerDemarrageRapide } from '../utils/onglets-pf.js'
 import { analyserJeu } from '../utils/anti-triche.js'
 import { accelererVerification } from '../utils/empreintes-cache.js'
+import { fabricSansAttente, journalLancement } from '../utils/fabric-cache.js'
 import { diaporama } from '../utils/diaporama.js'
 const { shell, ipcRenderer } = require('electron')
 const fs = require('fs')
@@ -545,6 +546,20 @@ class Home {
 
         // 3.5.1 : les fichiers inchangés depuis la dernière vérification ne sont pas relus (voir utils/empreintes-cache.js)
         const enregistrerEmpreintes = accelererVerification(chemin)
+        // 3.5.2 : la fiche de Fabric est gardée sur le PC (le launcher restait figé sur « 23 / 23 Mo » quand le site de Fabric ramait),
+        // et chaque étape du lancement est notée dans lancement-launcher.txt
+        const journal = journalLancement(chemin)
+        fabricSansAttente(chemin, journal)
+        journal('Clic sur Jouer : lancement demandé')
+        let dernierSigne = Date.now(), etape = 'préparation'
+        const signe = (nom) => { dernierSigne = Date.now(); etape = nom }
+        // une étape qui dure : on le dit (au lieu d'une barre figée), avec l'étape en cours
+        const veille = setInterval(() => {
+            if (jeuDemarre || !this.lancementEnCours) { clearInterval(veille); return }
+            const s = Math.round((Date.now() - dernierSigne) / 1000)
+            if (s >= 12) this.progression(`Encore un instant… (${etape}, ${s} s)`)
+            if (s === 12 || s === 40) journal(`rien depuis ${s} s pendant : ${etape}`)
+        }, 1000)
         launch.Launch(opt);
         // Le jeu a-t-il démarré ? (après, une « erreur » de la bibliothèque n'est plus un problème de téléchargement)
         let jeuDemarre = false
@@ -557,6 +572,7 @@ class Home {
         ipcRenderer.send('main-window-progress-load')
 
         launch.on('extract', extract => {
+            signe('installation de Java'); journal('extraction (Java)', true)
             ipcRenderer.send('main-window-progress-load')
             console.log(extract);
         });
@@ -564,7 +580,16 @@ class Home {
         launch.on('progress', (progress, size) => {
             // 3.4.5 : des fichiers à télécharger = une mise à jour du JEU (mods, packs) : on le dit clairement, avec les Mo
             const mo = n => (n / 1048576).toFixed(n > 10485760 ? 0 : 1)
-            this.progression(`JEU · mise à jour en cours (${mo(progress)} / ${mo(size)} Mo)`, progress, size)
+            journal(`téléchargement : ${mo(size)} Mo à récupérer`, true)
+            if (size > 0 && progress >= size) {
+                // tout est téléchargé : la barre ne reste plus figée sur « 23 / 23 Mo », on dit ce qui se passe ensuite
+                signe('installation de la mise à jour')
+                journal(`téléchargement fini (${mo(size)} Mo)`, true)
+                this.progression('JEU · mise à jour installée, préparation du lancement…')
+            } else {
+                signe('téléchargement')
+                this.progression(`JEU · mise à jour en cours (${mo(progress)} / ${mo(size)} Mo)`, progress, size)
+            }
             this.majJeu = true
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
@@ -572,6 +597,8 @@ class Home {
         });
 
         launch.on('check', (progress, size) => {
+            signe('vérification des fichiers'); journal('vérification des fichiers', true)
+            if (size > 0 && progress >= size) journal('vérification finie', true)
             this.progression(this.majJeu ? 'JEU · mise à jour installée, vérification…' : 'JEU · vérification des fichiers…', progress, size)
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
@@ -590,6 +617,7 @@ class Home {
         })
 
         launch.on('patch', patch => {
+            signe('installation de Fabric'); journal('installation de Fabric', true)
             console.log(patch);
             ipcRenderer.send('main-window-progress-load')
             this.progression('Installation de Fabric…')
@@ -600,6 +628,7 @@ class Home {
         let tailleJournal = 0
 
         launch.on('data', (e) => {
+            if (!jeuDemarre) { journal('Minecraft démarre'); clearInterval(veille) }
             if (!jeuDemarre) { try { enregistrerEmpreintes() } catch { } }
             jeuDemarre = true
             if (!jeuEnRoute && /Sound engine started|OpenAL initialized|Connecting to |Created: [0-9]+x[0-9]+/.test(String(e))) jeuEnRoute = true
@@ -619,6 +648,7 @@ class Home {
         })
 
         launch.on('close', code => {
+            clearInterval(veille); journal('jeu fermé (code ' + code + ')')
             ipcRenderer.send('anticheat-stop') // plus d'icône anti-triche : la partie est finie
             this.lancementEnCours = false
             // Le jeu est fermé : on enregistre le journal, et s'il n'y a pas eu de vrai plantage, tout se ferme
@@ -657,6 +687,8 @@ class Home {
         });
 
         launch.on('error', err => {
+            clearInterval(veille)
+            try { journal('ERREUR : ' + (err?.error || err?.message || JSON.stringify(err)).toString().slice(0, 400)) } catch { }
             this.lancementEnCours = false
             // Jeu déjà démarré (fermé par le joueur, etc.) : pas de message « vérifie ta connexion », juste le journal
             if (jeuDemarre) {
