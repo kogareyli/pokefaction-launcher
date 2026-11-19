@@ -306,3 +306,23 @@
     20%, 60% { translate: -5px 0; }
     40%, 80% { translate: 5px 0; }
 }
+
+/* 3.5.3 : « Mot de passe oublié ? » sous le formulaire de connexion (caché quand on crée un compte) */
+.pf-oubli {
+    display: block;
+    margin: 2px auto 10px;
+    padding: 4px 6px;
+    border: 0;
+    background: none;
+    color: rgba(245, 245, 243, 0.62);
+    font: inherit;
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.pf-oubli:hover {
+    color: #f5b50c;
+}
+.login-pokefaction.pf-mode-inscription .pf-oubli {
+    display: none;
+}

@@ -117,6 +117,8 @@ class Login {
             afficherErreur('');
         };
 
+        // 3.5.3 : mot de passe oublié → la page du site (les comptes n'ont pas d'e-mail : on passe par /site en jeu, ou par le staff)
+        panneau.querySelector('.pf-oubli')?.addEventListener('click', () => require('electron').shell.openExternal('https://www.xn--pokfaction-d7a.com/mot-de-passe-oublie'));
         ongletConnexion.addEventListener('click', () => changerMode(false));
         ongletInscription.addEventListener('click', () => changerMode(true));
         panneau.querySelector('.cancel-pokefaction').addEventListener('click', () => {
