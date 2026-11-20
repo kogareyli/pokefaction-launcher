@@ -134,7 +134,7 @@
  {
   "path": "config/iris.properties",
   "size": 316,
-  "hash": "ff310cce1665bea9b68cf05a7d68e7cdb3d26088",
+  "hash": "73526109392c8449c7666ce97654afe9fcd53293",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/iris.properties"
  },
  {
@@ -184,6 +184,12 @@
   "size": 267,
   "hash": "38f2993a7d80d0a6a25eb6182bd6898af24a16eb",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/lithium.properties"
+ },
+ {
+  "path": "config/mcef/mcef.properties",
+  "size": 158,
+  "hash": "e3e9dd4c12b936b853d609d3c573dcef49ccc12f",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/mcef/mcef.properties"
  },
  {
   "path": "config/midnightlib.json",
@@ -268,6 +274,24 @@
   "size": 405,
   "hash": "fb17b271a4e7c91357d00a59a0b87eb5e3b6d139",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/puzzle.json"
+ },
+ {
+  "path": "config/questtrackerhud-client.json",
+  "size": 97,
+  "hash": "44fbfc3821773343141d9153d9d22cb85e2bc1f3",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/questtrackerhud-client.json"
+ },
+ {
+  "path": "config/saoui.json",
+  "size": 23,
+  "hash": "24dd06c35893bef5f2eb74b8d00ca0c951f95e51",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/saoui.json"
+ },
+ {
+  "path": "config/saoui/mcef-guard.properties",
+  "size": 149,
+  "hash": "b4ecbf7c6c17b9a312624167123ab71e5fcd32c6",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/saoui/mcef-guard.properties"
  },
  {
   "path": "config/sodium-extra-options.json",
@@ -570,6 +594,18 @@
   "url": "https://cdn.modrinth.com/data/qJDfP7WN/versions/eUN0SbET/main-menu-credits-1.2.0.jar"
  },
  {
+  "path": "mods/mcef-fabric-2.1.6-1.21.4.jar",
+  "size": 225365,
+  "hash": "9d9b9061c3981e601b67685841b5ebfb1ceb51ee",
+  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/mcef-fabric-2.1.6-1.21.4.jar"
+ },
+ {
+  "path": "mods/meg-client-mod-fabric-1.0-77c13bb.jar",
+  "size": 21183,
+  "hash": "129df023e704ace04d654eaf4f37b6661202e8bd",
+  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/meg-client-mod-fabric-1.0-77c13bb.jar"
+ },
+ {
   "path": "mods/mixintrace-1.1.1+1.17.jar",
   "size": 36039,
   "hash": "7fbb0130db0e427ee7180d304dfa65c46f0e3b69",
@@ -624,10 +660,10 @@
   "url": "https://cdn.modrinth.com/data/pJogNFap/versions/9c0Bw8AD/paginatedadvancements-2.6.1%2B1.21.4.jar"
  },
  {
-  "path": "mods/pokefaction-sao-0.1.1.jar",
-  "size": 42746,
-  "hash": "de9ea2dfd17916bfed342fb1d757e19bf24b7b3a",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.1.1.jar"
+  "path": "mods/pokefaction-sao-0.1.2.jar",
+  "size": 42899,
+  "hash": "a725bcd80815994ec23f13d8217c1c8bf6a17686",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.1.2.jar"
  },
  {
   "path": "mods/polytone-1.21.4-3.3.24-fabric.jar",
@@ -654,6 +690,24 @@
   "url": "https://cdn.modrinth.com/data/Bh37bMuy/versions/KoUrx3jJ/reeses-sodium-options-fabric-1.8.3%2Bmc1.21.4.jar"
  },
  {
+  "path": "mods/saoblessing-1.1.0.jar",
+  "size": 6827869,
+  "hash": "ef0749494eeb37c68998e2145310917c4c836156",
+  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/saoblessing-1.1.0.jar"
+ },
+ {
+  "path": "mods/saojob-1.1.4.jar",
+  "size": 44721204,
+  "hash": "781991bf214da0714a53b56d860f3750f1a9dee0",
+  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/saojob-1.1.4.jar"
+ },
+ {
+  "path": "mods/SAOUI-2.72.0.jar",
+  "size": 280569699,
+  "hash": "b5623f6ce050f974ed1e5e44fb3a613b3c11d3a2",
+  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/SAOUI-2.72.0.jar"
+ },
+ {
   "path": "mods/SereneSeasons-fabric-1.21.4-10.4.0.6.jar",
   "size": 389817,
   "hash": "77431ac4b0e003a17ef6431091e4c810e04e07b8",
@@ -678,6 +732,12 @@
   "url": "https://cdn.modrinth.com/data/qyVF9oeo/versions/6mKaWW6b/sound-physics-remastered-fabric-1.21.4-1.5.1.jar"
  },
  {
+  "path": "mods/trueinvisibility-1.0.0.jar",
+  "size": 21505,
+  "hash": "a2925ab4472ad228ef6d28ef468e60cf099cd57a",
+  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/trueinvisibility-1.0.0.jar"
+ },
+ {
   "path": "mods/yet_another_config_lib_v3-3.8.2+1.21.4-fabric.jar",
   "size": 1130824,
   "hash": "603164222915a5b2ef159a3aabae75f8bac268f7",
@@ -698,7 +758,7 @@
  {
   "path": "options.txt",
   "size": 6293,
-  "hash": "d682d7b3b6ae93fccf7b96ce39782c3b22b548bd",
+  "hash": "27eea48f5ce0e8eb9cf3cec0bf96e2e7c20ec3ed",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/options.txt"
  },
  {

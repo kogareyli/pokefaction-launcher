@@ -16,10 +16,14 @@ const SORTIE = path.join(RACINE, 'web/files-sao');
 const URL_BASE = 'https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/';
 const UA = { 'User-Agent': 'pokefaction-launcher-manifest/1.0' };
 
-// mods et packs de Triggers / SAOFR (tous droits réservés, liés à leurs plugins serveur) + ce qui ne sert qu'à eux
-const PROTEGES = [/^SAOUI-/, /^sao-ui-lib/, /^saoblessing/, /^saojob/, /^saolabyrinth/, /^altarmod/, /^companionsmod/, /^fracturedwar/,
-    /^relmod/, /^trueinvisibility/, /^z-plugin-companion/, /^zap-/, /^meg-client-mod/, /^journeymap-.*-sao\.jar$/, /^mcef-/,
-    /^entity_model_features-.*FPSFIX/, /^DistantHorizons-/, /^sao\.zip$/, /^FA_Player-.*SAO/];
+// mods et packs de Triggers / SAOFR marqués « tous droits réservés » dans leur propre fichier (ou sans licence), + remplacés par leur version publique
+const PROTEGES = [/^sao-ui-lib/, /^saolabyrinth/, /^altarmod/, /^companionsmod/, /^fracturedwar/, /^relmod/, /^z-plugin-companion/, /^zap-/,
+    /^journeymap-.*-sao\.jar$/, /^entity_model_features-.*FPSFIX/, /^DistantHorizons-/, /^sao\.zip$/, /^FA_Player-.*SAO/];
+// 20/11 (Eddy : « mets tous les mods ») : ceux de l'instance qui ne sont pas sur Modrinth mais dont le jar déclare une licence libre
+// (SAOUI, saoblessing, saojob : CC0 ; trueinvisibility : MIT ; meg-client-mod : AGPL ; mcef : LGPL) : hébergés dans la release « sao-fichiers »
+// (SAOUI fait 280 Mo : trop gros pour les fichiers du dépôt, limités à 100 Mo)
+const LIBRES = [/^SAOUI-/, /^saoblessing/, /^saojob/, /^trueinvisibility/, /^meg-client-mod/, /^mcef-/];
+const URL_RELEASE = 'https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/';
 // remplacements publics (même mod, version publiée sur Modrinth) et ajouts demandés
 const AJOUTS = [
     ['mods', 'journeymap', '1.21.4-6.0.0-beta.47+fabric'],
@@ -33,7 +37,7 @@ const AJOUTS = [
     ['shaderpacks', 'pastel-shaders', null],
 ];
 // configs qui ne servent qu'aux mods retirés
-const CONFIGS_RETIRES = [/^saoui/, /^questtrackerhud/, /^zsociete/, /^zsorts/, /^mcef/];
+const CONFIGS_RETIRES = [/^zsociete/, /^zsorts/];
 
 const sha1 = b => crypto.createHash('sha1').update(b).digest('hex');
 const protege = f => PROTEGES.some(r => r.test(f));
@@ -61,6 +65,11 @@ async function json(url, opts) { const r = await fetch(url, Object.assign({ head
     });
     for (const f of fichiers) {
         const v = trouves[f.sha];
+        if (!v && LIBRES.some(x => x.test(f.nom))) {
+            const taille = fs.statSync(path.join(SOURCE, f.dossier, f.nom)).size;
+            entrees.push({ path: `${f.dossier}/${f.nom}`, size: taille, hash: f.sha, url: URL_RELEASE + encodeURIComponent(f.nom) });
+            continue;
+        }
         if (!v) { console.log('  pas sur Modrinth (non repris) :', f.dossier + '/' + f.nom); continue; }
         const fichier = v.files.find(x => x.hashes.sha1 === f.sha);
         entrees.push({ path: `${f.dossier}/${fichier.filename}`, size: fichier.size, hash: f.sha, url: fichier.url });
@@ -83,8 +92,12 @@ async function json(url, opts) { const r = await fetch(url, Object.assign({ head
     entrees.push({ path: 'mods/' + nomJar, size: jar.length, hash: sha1(jar), url: URL_BASE + 'mods/' + encodeURIComponent(nomJar) });
 
     // 4) config/ et options.txt de l'instance (copiés chez nous)
+    const norme = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const nomInstalle = (dossier, nom) => { const e = entrees.find(x => x.path.startsWith(dossier + '/') && norme(x.path.slice(dossier.length + 1)) === norme(nom)); return e ? e.path.slice(dossier.length + 1) : null; };
     const copier = (rel) => {
-        const src = path.join(SOURCE, rel), dst = path.join(SORTIE, rel), b = fs.readFileSync(src);
+        const src = path.join(SOURCE, rel), dst = path.join(SORTIE, rel);
+        let b = fs.readFileSync(src);
+        if (/iris.properties$/.test(rel)) b = Buffer.from(b.toString('utf8').replace(/^shaderPack=(.*)$/m, (m, n) => 'shaderPack=' + (nomInstalle('shaderpacks', n.trim()) || n.trim())));
         fs.mkdirSync(path.dirname(dst), { recursive: true });
         fs.writeFileSync(dst, b);
         entrees.push({ path: rel.replace(/\\/g, '/'), size: b.length, hash: sha1(b), url: URL_BASE + rel.split(/[\\/]/).map(encodeURIComponent).join('/') });
@@ -99,7 +112,10 @@ async function json(url, opts) { const r = await fetch(url, Object.assign({ head
     parcourir('config');
     // options.txt : les packs de ressources = ceux qu'on installe vraiment (sans le pack de Triggers)
     let o = fs.readFileSync(path.join(SOURCE, 'options.txt'), 'utf8');
-    const packs = entrees.filter(e => e.path.startsWith('resourcepacks/')).map(e => 'file/' + e.path.slice('resourcepacks/'.length));
+    // même ordre que chez Triggers (les packs absents ou protégés en moins), puis les autres
+    const avant = JSON.parse((o.match(/^resourcePacks:(.*)$/m) || [, '[]'])[1]).filter(x => x.startsWith('file/')).map(x => nomInstalle('resourcepacks', x.slice(5))).filter(Boolean);
+    const tous = entrees.filter(e => e.path.startsWith('resourcepacks/')).map(e => e.path.slice('resourcepacks/'.length));
+    const packs = [...avant, ...tous.filter(n => !avant.includes(n))].map(n => 'file/' + n);
     o = o.replace(/^resourcePacks:.*$/m, 'resourcePacks:' + JSON.stringify(['vanilla', 'fabric', ...packs]));
     o = o.replace(/^lastServer:.*$/m, 'lastServer:');
     fs.writeFileSync(path.join(SORTIE, 'options.txt'), o);

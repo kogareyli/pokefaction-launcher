@@ -39,7 +39,7 @@ damageTiltStrength:1.0
 highContrast:false
 highContrastBlockOutline:false
 narratorHotkey:true
-resourcePacks:["vanilla","fabric","file/Better-Leaves-9.5.zip","file/Fancy Crops v1.3.zip","file/FreshAnimations_v1.10.4.zip","file/Enhanced Grass V1_4.zip","file/SaturatedGrass!(1.2v).zip"]
+resourcePacks:["vanilla","fabric","file/FreshAnimations_v1.10.4.zip","file/Better-Leaves-9.5.zip","file/Enhanced Grass V1_4.zip","file/Fancy Crops v1.3.zip","file/SaturatedGrass!(1.2v).zip"]
 incompatibleResourcePacks:["distanthorizons","entity_model_features","entity_texture_features","yet_another_config_lib_v3"]
 lastServer:
 lang:en_us
