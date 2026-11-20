@@ -21,11 +21,13 @@ const PROTEGES = [/^sao-ui-lib/, /^saolabyrinth/, /^altarmod/, /^companionsmod/,
     /^journeymap-.*-sao\.jar$/, /^entity_model_features-.*FPSFIX/,
     // mcef (navigateur intégré) : faisait planter le jeu au démarrage (20/11 : ses fichiers de Chrome, rangés dans mods/, sont effacés
     // par la vérification du launcher) ; aucun autre mod n'en a besoin
-    /^mcef-/, /^DistantHorizons-/, /^sao\.zip$/, /^FA_Player-.*SAO/];
+    /^mcef-/, /^SAOUI-/, /^DistantHorizons-/, /^sao\.zip$/, /^FA_Player-.*SAO/];
 // 20/11 (Eddy : « mets tous les mods ») : ceux de l'instance qui ne sont pas sur Modrinth mais dont le jar déclare une licence libre
 // (SAOUI, saoblessing, saojob : CC0 ; trueinvisibility : MIT ; meg-client-mod : AGPL ; mcef : LGPL) : hébergés dans la release « sao-fichiers »
 // (SAOUI fait 280 Mo : trop gros pour les fichiers du dépôt, limités à 100 Mo)
-const LIBRES = [/^SAOUI-/, /^saoblessing/, /^saojob/, /^trueinvisibility/, /^meg-client-mod/];
+// (SAOUI retiré le 20/11 : c'est le jeu de Triggers, son écran titre a « play.saominecraft.com » écrit dedans et son bouton Jouer y
+// envoyait les joueurs : xkeijiro s'est retrouvé sur leur serveur)
+const LIBRES = [/^saoblessing/, /^saojob/, /^trueinvisibility/, /^meg-client-mod/];
 const URL_RELEASE = 'https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/';
 // remplacements publics (même mod, version publiée sur Modrinth) et ajouts demandés
 const AJOUTS = [
@@ -40,7 +42,7 @@ const AJOUTS = [
     ['shaderpacks', 'pastel-shaders', null],
 ];
 // configs qui ne servent qu'aux mods retirés
-const CONFIGS_RETIRES = [/^zsociete/, /^zsorts/, /^mcef/];
+const CONFIGS_RETIRES = [/^zsociete/, /^zsorts/, /^mcef/, /^saoui/, /^questtrackerhud/];
 
 const sha1 = b => crypto.createHash('sha1').update(b).digest('hex');
 const protege = f => PROTEGES.some(r => r.test(f));

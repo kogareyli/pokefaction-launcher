@@ -270,24 +270,6 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/puzzle.json"
  },
  {
-  "path": "config/questtrackerhud-client.json",
-  "size": 97,
-  "hash": "44fbfc3821773343141d9153d9d22cb85e2bc1f3",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/questtrackerhud-client.json"
- },
- {
-  "path": "config/saoui.json",
-  "size": 23,
-  "hash": "24dd06c35893bef5f2eb74b8d00ca0c951f95e51",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/saoui.json"
- },
- {
-  "path": "config/saoui/mcef-guard.properties",
-  "size": 149,
-  "hash": "b4ecbf7c6c17b9a312624167123ab71e5fcd32c6",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/saoui/mcef-guard.properties"
- },
- {
   "path": "config/sodium-extra-options.json",
   "size": 1486,
   "hash": "f3fe34a46bd1e12b03c1c2af89e4bd8ff6761e26",
@@ -688,12 +670,6 @@
   "size": 44721204,
   "hash": "781991bf214da0714a53b56d860f3750f1a9dee0",
   "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/saojob-1.1.4.jar"
- },
- {
-  "path": "mods/SAOUI-2.72.0.jar",
-  "size": 280569699,
-  "hash": "b5623f6ce050f974ed1e5e44fb3a613b3c11d3a2",
-  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/SAOUI-2.72.0.jar"
  },
  {
   "path": "mods/SereneSeasons-fabric-1.21.4-10.4.0.6.jar",
