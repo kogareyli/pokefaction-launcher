@@ -690,10 +690,10 @@
   "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/saojob-1.1.4.jar"
  },
  {
-  "path": "mods/SAOUI-2.72.0-sao-reconnection.jar",
-  "size": 279672888,
-  "hash": "f302398c0b961e22595b4a02c3f95b1f5d17ebf0",
-  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/SAOUI-2.72.0-sao-reconnection.jar"
+  "path": "mods/SAOUI-2.72.0-sao-reconnection-2.jar",
+  "size": 279672927,
+  "hash": "30d4d9ad6a8bf06402a830526f2e4e1a861bdd9c",
+  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/SAOUI-2.72.0-sao-reconnection-2.jar"
  },
  {
   "path": "mods/SereneSeasons-fabric-1.21.4-10.4.0.6.jar",

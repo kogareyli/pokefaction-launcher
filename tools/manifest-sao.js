@@ -82,7 +82,7 @@ async function json(url, opts) { const r = await fetch(url, Object.assign({ head
 
     // 1b) notre version de SAOUI (« Sword Art Online Reconnection » : adresse, liens, nom et logos de Triggers retirés ;
     //     fabriquée par pokefaction-sao/outils/PatchSaoui.java ; le jar est dans sauvegardes-maj/), hébergée dans la release
-    const SAOUI_PF = 'C:/Users/koga/Desktop/ServeurCobbleverse/sauvegardes-maj/SAOUI-2.72.0-sao-reconnection.jar';
+    const SAOUI_PF = 'C:/Users/koga/Desktop/ServeurCobbleverse/sauvegardes-maj/SAOUI-2.72.0-sao-reconnection-2.jar';
     if (fs.existsSync(SAOUI_PF)) {
         const b = fs.readFileSync(SAOUI_PF);
         entrees.push({ path: 'mods/' + path.basename(SAOUI_PF), size: b.length, hash: sha1(b), url: URL_RELEASE + path.basename(SAOUI_PF) });
