@@ -250,7 +250,7 @@
         "whitelistActive": true,
         "whitelist": [],
         "status": {
-            "nameServer": "SAO",
+            "nameServer": "Reconnection",
             "ip": "dedication-conclusions.tun.ply.gg",
             "port": 19651
         },
@@ -267,7 +267,7 @@
             "dedication-conclusions.tun.ply.gg",
             "sao.pokefaction.com"
         ],
-        "sous_titre": "Serveur SAO",
+        "sous_titre": "Sword Art Online Reconnection",
         "case_visible": [
             "Starless_Kirito",
             "xkeijiro"

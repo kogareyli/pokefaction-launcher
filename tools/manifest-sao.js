@@ -42,7 +42,7 @@ const AJOUTS = [
     ['shaderpacks', 'pastel-shaders', null],
 ];
 // configs qui ne servent qu'aux mods retirés
-const CONFIGS_RETIRES = [/^zsociete/, /^zsorts/, /^mcef/, /^saoui/, /^questtrackerhud/];
+const CONFIGS_RETIRES = [/^zsociete/, /^zsorts/, /^mcef/];
 
 const sha1 = b => crypto.createHash('sha1').update(b).digest('hex');
 const protege = f => PROTEGES.some(r => r.test(f));
@@ -78,6 +78,14 @@ async function json(url, opts) { const r = await fetch(url, Object.assign({ head
         if (!v) { console.log('  pas sur Modrinth (non repris) :', f.dossier + '/' + f.nom); continue; }
         const fichier = v.files.find(x => x.hashes.sha1 === f.sha);
         entrees.push({ path: `${f.dossier}/${fichier.filename}`, size: fichier.size, hash: f.sha, url: fichier.url });
+    }
+
+    // 1b) notre version de SAOUI (« Sword Art Online Reconnection » : adresse, liens, nom et logos de Triggers retirés ;
+    //     fabriquée par pokefaction-sao/outils/PatchSaoui.java ; le jar est dans sauvegardes-maj/), hébergée dans la release
+    const SAOUI_PF = 'C:/Users/koga/Desktop/ServeurCobbleverse/sauvegardes-maj/SAOUI-2.72.0-reconnection.jar';
+    if (fs.existsSync(SAOUI_PF)) {
+        const b = fs.readFileSync(SAOUI_PF);
+        entrees.push({ path: 'mods/' + path.basename(SAOUI_PF), size: b.length, hash: sha1(b), url: URL_RELEASE + path.basename(SAOUI_PF) });
     }
 
     // 2) ajouts et remplacements publics

@@ -32,7 +32,7 @@ async function choisir(db, nom) {
         }
     } catch (e) { console.error('[SAO] statut', e); }
     const etiquette = document.querySelector('.accueil-instance');
-    if (etiquette) etiquette.textContent = sao ? 'Serveur SAO · Minecraft 1.21.4' : '';
+    if (etiquette) etiquette.textContent = sao ? 'Sword Art Online Reconnection' : '';
 }
 
 function fenetre(titre, html, couleur = 'var(--or)') {
@@ -43,21 +43,21 @@ async function cliqueSao(db, config) {
     const configClient = await db.readData('configClient');
     const compte = await db.readData('accounts', configClient.account_selected);
     const session = compte?.pokefaction?.session;
-    if (!session || config.auth !== 'pokefaction') return fenetre('Serveur SAO', 'Connecte-toi d\'abord à ton compte PokéFaction.', 'red');
+    if (!session || config.auth !== 'pokefaction') return fenetre('Sword Art Online Reconnection', 'Connecte-toi d\'abord à ton compte PokéFaction.', 'red');
     let api;
-    try { api = new PokeFactionAPI(config.pokefaction_api); } catch (e) { return fenetre('Serveur SAO', echap(e.message), 'red'); }
+    try { api = new PokeFactionAPI(config.pokefaction_api); } catch (e) { return fenetre('Sword Art Online Reconnection', echap(e.message), 'red'); }
     let etat;
     try { etat = await api.rpc('pf_acces_etat', { p_session: session, p_serveur: SERVEUR }); }
-    catch (e) { return fenetre('Serveur SAO', echap(e.message), 'red'); }
+    catch (e) { return fenetre('Sword Art Online Reconnection', echap(e.message), 'red'); }
     if (etat?.statut === 'accepte') {
         const { changePanel } = await import('../utils.js');
         await changePanel('home');
         await choisir(db, INSTANCE); // après changePanel (qui rallume la case PokéFaction)
         return;
     }
-    if (etat?.statut === 'demande') return fenetre('Serveur SAO', 'Ta demande est envoyée : <b>le staff doit l\'accepter</b>.<br>Reviens cliquer ici un peu plus tard.');
+    if (etat?.statut === 'demande') return fenetre('Sword Art Online Reconnection', 'Ta demande est envoyée : <b>le staff doit l\'accepter</b>.<br>Reviens cliquer ici un peu plus tard.');
     const refuse = etat?.statut === 'refuse';
-    fenetre('Serveur SAO',
+    fenetre('Sword Art Online Reconnection',
         (refuse ? 'Ta dernière demande a été refusée.<br>' : '') +
         'Ce serveur est <b>sur invitation</b> : demande l\'accès, le staff l\'accepte ou le refuse.<br><br>' +
         '<button class="bouton-sao-demander popup-button" style="display:inline-block">Demander l\'accès</button>');
@@ -65,8 +65,8 @@ async function cliqueSao(db, config) {
         e.stopPropagation();
         try {
             const r = await api.rpc('pf_acces_demander', { p_session: session, p_serveur: SERVEUR, p_message: '' });
-            fenetre('Serveur SAO', r?.statut === 'accepte' ? 'Tu as déjà accès : clique encore sur la case.' : 'Demande envoyée ! <b>Le staff doit l\'accepter.</b><br>Reviens cliquer ici un peu plus tard.');
-        } catch (err) { fenetre('Serveur SAO', echap(err.message), 'red'); }
+            fenetre('Sword Art Online Reconnection', r?.statut === 'accepte' ? 'Tu as déjà accès : clique encore sur la case.' : 'Demande envoyée ! <b>Le staff doit l\'accepter.</b><br>Reviens cliquer ici un peu plus tard.');
+        } catch (err) { fenetre('Sword Art Online Reconnection', echap(err.message), 'red'); }
     }, { once: true });
 }
 
