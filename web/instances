@@ -251,8 +251,8 @@
         "whitelist": [],
         "status": {
             "nameServer": "SAO",
-            "ip": "sao.pokefaction.com",
-            "port": 25565
+            "ip": "dedication-conclusions.tun.ply.gg",
+            "port": 19651
         },
         "jvm_args": [
             "-XX:+UseG1GC",
@@ -261,9 +261,10 @@
         ],
         "game_args": [
             "--quickPlayMultiplayer",
-            "sao.pokefaction.com"
+            "dedication-conclusions.tun.ply.gg:19651"
         ],
         "serveurs_pokefaction": [
+            "dedication-conclusions.tun.ply.gg",
             "sao.pokefaction.com"
         ],
         "sous_titre": "Serveur SAO"
