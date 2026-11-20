@@ -251,19 +251,21 @@
         "whitelist": [],
         "status": {
             "nameServer": "Reconnection",
-            "ip": "dedication-conclusions.tun.ply.gg",
-            "port": 19651
+            "ip": "dedication-legends.tun.ply.gg",
+            "port": 51933
         },
         "jvm_args": [
             "-XX:+UseG1GC",
             "-XX:+ParallelRefProcEnabled",
-            "-XX:MaxGCPauseMillis=200"
+            "-XX:MaxGCPauseMillis=200",
+            "-Dpfsao.adresse=dedication-legends.tun.ply.gg:51933"
         ],
         "game_args": [
             "--quickPlayMultiplayer",
-            "dedication-conclusions.tun.ply.gg:19651"
+            "dedication-legends.tun.ply.gg:51933"
         ],
         "serveurs_pokefaction": [
+            "dedication-legends.tun.ply.gg",
             "dedication-conclusions.tun.ply.gg",
             "sao.pokefaction.com"
         ],
