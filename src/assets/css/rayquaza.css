@@ -883,3 +883,5 @@ body.instance-sao .accueil .diapo-vignettes,
 body.instance-sao .accueil .diapo-fleche { display: none !important; }
 body.instance-sao .accueil.avec-diapo .play-cadre { background: rgba(14, 14, 15, .9) !important; backdrop-filter: none; }
 body.instance-sao .accueil-instance { margin-top: 18px; }
+
+.rail-sao[hidden], .rail-verrou[hidden] { display: none !important; }
