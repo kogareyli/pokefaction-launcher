@@ -648,10 +648,10 @@
   "url": "https://cdn.modrinth.com/data/pJogNFap/versions/9c0Bw8AD/paginatedadvancements-2.6.1%2B1.21.4.jar"
  },
  {
-  "path": "mods/pokefaction-sao-0.1.3.jar",
-  "size": 48197,
-  "hash": "35f1ee448ce71868f56e4bee1b3f381cef39e9af",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.1.3.jar"
+  "path": "mods/pokefaction-sao-0.2.0.jar",
+  "size": 73518,
+  "hash": "175eca659d970fb570660fd2afd290e27067eb1c",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.2.0.jar"
  },
  {
   "path": "mods/polytone-1.21.4-3.3.24-fabric.jar",
@@ -690,10 +690,10 @@
   "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/saojob-1.1.4.jar"
  },
  {
-  "path": "mods/SAOUI-2.72.0-reconnection.jar",
-  "size": 279671318,
-  "hash": "100b51394628073dc49793e16e41453926a6378e",
-  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/SAOUI-2.72.0-reconnection.jar"
+  "path": "mods/SAOUI-2.72.0-sao-reconnection.jar",
+  "size": 279672888,
+  "hash": "f302398c0b961e22595b4a02c3f95b1f5d17ebf0",
+  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/SAOUI-2.72.0-sao-reconnection.jar"
  },
  {
   "path": "mods/SereneSeasons-fabric-1.21.4-10.4.0.6.jar",
