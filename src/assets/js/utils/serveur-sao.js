@@ -70,6 +70,8 @@ async function cliqueSao(db, config) {
     }, { once: true });
 }
 
+const PAR_DEFAUT = ['Starless_Kirito', 'xkeijiro']; // si la liste en ligne n'est pas encore à jour (cache de GitHub)
+
 /** Case visible seulement pour les pseudos de la liste « case_visible » de l'instance SAO (web/instances) ; les autres gardent le cadenas. */
 async function caseVisible(db) {
     try {
@@ -77,7 +79,8 @@ async function caseVisible(db) {
         const compte = await db.readData('accounts', configClient.account_selected);
         const nom = String(compte?.name || compte?.pokefaction?.pseudo || '').toLowerCase();
         const sao = (await configLauncher.getInstanceList()).find(i => i.name === INSTANCE);
-        return !!nom && (sao?.case_visible || []).some(p => String(p).toLowerCase() === nom);
+        const liste = Array.isArray(sao?.case_visible) ? sao.case_visible : PAR_DEFAUT;
+        return !!nom && liste.some(p => String(p).toLowerCase() === nom);
     } catch { return false; }
 }
 
@@ -85,10 +88,10 @@ export async function initRailSao(db, config) {
     const bouton = document.querySelector('.rail-sao');
     if (!bouton) return;
     // Eddy (20/11) : « pour l'instant, garde le cadenas pour les autres, sauf xkeijiro et moi »
-    const visible = await caseVisible(db);
-    bouton.hidden = !visible;
     const cadenas = document.querySelector('.rail-verrou-sao');
-    if (cadenas) cadenas.hidden = visible;
+    const montrer = async () => { const v = await caseVisible(db); bouton.hidden = !v; if (cadenas) cadenas.hidden = v; };
+    await montrer();
+    setInterval(() => montrer().catch(() => {}), 30000); // (changement de compte, liste mise à jour en ligne)
     bouton.addEventListener('click', async () => { if (await caseVisible(db)) cliqueSao(db, config).catch(e => console.error('[SAO]', e)); });
     document.querySelector('.rail-serveur')?.addEventListener('click', () => choisir(db, INSTANCE_PF).catch(() => {}));
     // au démarrage, l'instance choisie est toujours PokéFaction (l'accès au 2e serveur se revérifie à chaque clic)
