@@ -873,3 +873,13 @@ body.instance-sao .rail-serveur { background: rgba(255, 255, 255, .035); border:
 .accueil-instance { min-height: 18px; margin: 6px 0 2px; font: 600 12px/18px 'JetBrains Mono', monospace; letter-spacing: .08em; color: #f5b50c; text-transform: uppercase; text-align: center; }
 /* le choix d'instance se fait par le rail : plus de petite flèche à côté de JOUER */
 .instance-select { display: none !important; }
+/* Serveur SAO choisi (Eddy, 20/11 : « enlève le fond et le logo PokéFaction dans le SAO, et les images en bas : laisse tout en noir ») */
+body.instance-sao .fond { background: #000 !important; }
+body.instance-sao .fond-motif,
+body.instance-sao .fond-particules,
+body.instance-sao .accueil-logo,
+body.instance-sao .accueil .actus,
+body.instance-sao .accueil .diapo-vignettes,
+body.instance-sao .accueil .diapo-fleche { display: none !important; }
+body.instance-sao .accueil.avec-diapo .play-cadre { background: rgba(14, 14, 15, .9) !important; backdrop-filter: none; }
+body.instance-sao .accueil-instance { margin-top: 18px; }
