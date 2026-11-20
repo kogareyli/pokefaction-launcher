@@ -624,10 +624,10 @@
   "url": "https://cdn.modrinth.com/data/pJogNFap/versions/9c0Bw8AD/paginatedadvancements-2.6.1%2B1.21.4.jar"
  },
  {
-  "path": "mods/pokefaction-sao-0.1.0.jar",
-  "size": 42712,
-  "hash": "7749141d5f695a872daff58d5ec3511fa6530175",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.1.0.jar"
+  "path": "mods/pokefaction-sao-0.1.1.jar",
+  "size": 42746,
+  "hash": "de9ea2dfd17916bfed342fb1d757e19bf24b7b3a",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.1.1.jar"
  },
  {
   "path": "mods/polytone-1.21.4-3.3.24-fabric.jar",
