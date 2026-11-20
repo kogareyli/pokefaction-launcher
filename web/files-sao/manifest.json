@@ -1,0 +1,776 @@
+[
+ {
+  "path": "config/animatica.properties",
+  "size": 0,
+  "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/animatica.properties"
+ },
+ {
+  "path": "config/bettergrass.json5",
+  "size": 918,
+  "hash": "8e38e499e5b86d93b39946fe3ace4eb9c7ee125c",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/bettergrass.json5"
+ },
+ {
+  "path": "config/capes.json5",
+  "size": 214,
+  "hash": "6f054d1a760b7e06d5cc4f9e400cda5a179df624",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/capes.json5"
+ },
+ {
+  "path": "config/continuity.json",
+  "size": 92,
+  "hash": "a4a92925d39f3fea97ba0934563219c98d622c7f",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/continuity.json"
+ },
+ {
+  "path": "config/CoroUtil/General.toml",
+  "size": 129,
+  "hash": "1233bc5e9b76ae23493ad31db26e92b7da397270",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/CoroUtil/General.toml"
+ },
+ {
+  "path": "config/crash_assistant/config.toml",
+  "size": 24207,
+  "hash": "d16ad5720eec39e044c1cf740c3b68ec19c612a1",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/crash_assistant/config.toml"
+ },
+ {
+  "path": "config/crash_assistant/crash_assistant_localization_overrides/README.md",
+  "size": 2650,
+  "hash": "fda2be339b85a2f66c558f8c842b3423c13f03a5",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/crash_assistant/crash_assistant_localization_overrides/README.md"
+ },
+ {
+  "path": "config/crash_assistant/scripts/log_analysis/example.jexl",
+  "size": 3495,
+  "hash": "e492d6b210af660f57e4ace58fb84c18230d1c9e",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/crash_assistant/scripts/log_analysis/example.jexl"
+ },
+ {
+  "path": "config/crash_assistant/scripts/startup/example.jexl",
+  "size": 4408,
+  "hash": "ef0a9386e87bc61457902ec5b2953a6ab4254d6e",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/crash_assistant/scripts/startup/example.jexl"
+ },
+ {
+  "path": "config/DistantHorizons.toml",
+  "size": 37986,
+  "hash": "e94db9685d89eb0b33579e73d0f65b242905d45a",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/DistantHorizons.toml"
+ },
+ {
+  "path": "config/dynamic_fps.json",
+  "size": 3,
+  "hash": "5f36b2ea290645ee34d943220a14b54ee5ea5be5",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/dynamic_fps.json"
+ },
+ {
+  "path": "config/enhanced_bes.properties",
+  "size": 532,
+  "hash": "2378cb0a043c00907fc1ee3e57e2ae289c91c9c7",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/enhanced_bes.properties"
+ },
+ {
+  "path": "config/entity_model_features.json",
+  "size": 1258,
+  "hash": "41b8dba9f4aa26ae3c7b511d6c5db3afcb7de5f9",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/entity_model_features.json"
+ },
+ {
+  "path": "config/entity_texture_features.json",
+  "size": 1452,
+  "hash": "5fc3d7567c74811f362b997baa24dc25c2163b6e",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/entity_texture_features.json"
+ },
+ {
+  "path": "config/entityculling.json",
+  "size": 2248,
+  "hash": "71d872172923ba0b593d8654bfd596f9520ddc8b",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/entityculling.json"
+ },
+ {
+  "path": "config/etf_warnings.json",
+  "size": 28,
+  "hash": "1573fc320a363b30a1a5e4cae1d4596ec177085d",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/etf_warnings.json"
+ },
+ {
+  "path": "config/fabric/indigo-renderer.properties",
+  "size": 290,
+  "hash": "7c65320b535007c2a5774586a91187a7c7c286d8",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/fabric/indigo-renderer.properties"
+ },
+ {
+  "path": "config/fastquit.toml",
+  "size": 120,
+  "hash": "1191a69ea53b19bbf99df2f779fecdb1c96ceb8e",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/fastquit.toml"
+ },
+ {
+  "path": "config/ferritecore.mixin.properties",
+  "size": 1615,
+  "hash": "8cec200d99bbe46689cbae8df75d62f4d52f68c1",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/ferritecore.mixin.properties"
+ },
+ {
+  "path": "config/flashback/imgui.ini",
+  "size": 635,
+  "hash": "8fe7a7c05a1cbcd5e889656988ce43050595e8fa",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/flashback/imgui.ini"
+ },
+ {
+  "path": "config/forgeconfigapiport.toml",
+  "size": 523,
+  "hash": "945e388c4165af7ad3ffa3bfcd89c1f0ccb14451",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/forgeconfigapiport.toml"
+ },
+ {
+  "path": "config/iris-excluded.json",
+  "size": 31,
+  "hash": "20bd3420b5c911402ac289c154b56ac1dd8f84ba",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/iris-excluded.json"
+ },
+ {
+  "path": "config/iris.properties",
+  "size": 316,
+  "hash": "ff310cce1665bea9b68cf05a7d68e7cdb3d26088",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/iris.properties"
+ },
+ {
+  "path": "config/isxander-main-menu-credits.json",
+  "size": 271,
+  "hash": "3eb934c0466555cf8f05d63598b8f3dc98b3ab17",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/isxander-main-menu-credits.json"
+ },
+ {
+  "path": "config/konkrete/locals/de_de.local",
+  "size": 369,
+  "hash": "02adaf2602f1ba03a9352db3d10a6fac3a02aea5",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/konkrete/locals/de_de.local"
+ },
+ {
+  "path": "config/konkrete/locals/en_us.local",
+  "size": 426,
+  "hash": "42badc338e767559db38a67bd3e8020a92000e56",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/konkrete/locals/en_us.local"
+ },
+ {
+  "path": "config/konkrete/locals/pl_pl.local",
+  "size": 313,
+  "hash": "adf2ded54b4952ca83af26a1217e2c5db8ac1429",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/konkrete/locals/pl_pl.local"
+ },
+ {
+  "path": "config/konkrete/locals/pt_br.local",
+  "size": 322,
+  "hash": "9c324fb4d33106366e6cbb5400c8c34f11539d34",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/konkrete/locals/pt_br.local"
+ },
+ {
+  "path": "config/lambdynlights.toml",
+  "size": 895,
+  "hash": "d2c9c33dbca792f29d6836c3ef738617f0664d47",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/lambdynlights.toml"
+ },
+ {
+  "path": "config/languagereload.json",
+  "size": 186,
+  "hash": "f1b1110ee4bdc2ab29133cb835aedd277f4eeced",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/languagereload.json"
+ },
+ {
+  "path": "config/lithium.properties",
+  "size": 267,
+  "hash": "38f2993a7d80d0a6a25eb6182bd6898af24a16eb",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/lithium.properties"
+ },
+ {
+  "path": "config/midnightlib.json",
+  "size": 37,
+  "hash": "ef717d24a45baf1406cd1c5600b176cb8b3cb2db",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/midnightlib.json"
+ },
+ {
+  "path": "config/modelfix-client.json",
+  "size": 347,
+  "hash": "0bfe4e2f2bf99c0cef5502d3bccfad608076d750",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/modelfix-client.json"
+ },
+ {
+  "path": "config/modernfix-mixins.properties",
+  "size": 3449,
+  "hash": "3ace8840c66edea990480583439937f4cbcec8e8",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/modernfix-mixins.properties"
+ },
+ {
+  "path": "config/modmenu.json",
+  "size": 840,
+  "hash": "d1f10fbacb91be7ec9b84ad261059c9fb4e5d62f",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/modmenu.json"
+ },
+ {
+  "path": "config/moreculling.toml",
+  "size": 540,
+  "hash": "2a51b59385de356e6fea91908e41a1a93f92ed55",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/moreculling.toml"
+ },
+ {
+  "path": "config/NoChatReports/NCR-Client.json",
+  "size": 565,
+  "hash": "7594fb92bb37cc128147af852921c2ccaa7b339f",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/NoChatReports/NCR-Client.json"
+ },
+ {
+  "path": "config/NoChatReports/NCR-Common.json",
+  "size": 230,
+  "hash": "6a83c8b806b818ae23a1976baa52bfc30436206a",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/NoChatReports/NCR-Common.json"
+ },
+ {
+  "path": "config/NoChatReports/NCR-Encryption.json",
+  "size": 521,
+  "hash": "c417abf7df5c7c48d12992c84c2ae62f01ce7b95",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/NoChatReports/NCR-Encryption.json"
+ },
+ {
+  "path": "config/NoChatReports/NCR-ServerPreferences.json",
+  "size": 24,
+  "hash": "3c04f45c210048b5e722b294dcc0d9f073374160",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/NoChatReports/NCR-ServerPreferences.json"
+ },
+ {
+  "path": "config/NoChatReports/README.md",
+  "size": 167,
+  "hash": "75d98286a0aa3e180708523c8f582a2d23e590b3",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/NoChatReports/README.md"
+ },
+ {
+  "path": "config/PaginatedAdvancements.json5",
+  "size": 327,
+  "hash": "f407404c1eca98e500f589394e3272f9c6b0680d",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/PaginatedAdvancements.json5"
+ },
+ {
+  "path": "config/presencefootsteps/updater.json",
+  "size": 68,
+  "hash": "75c10c3afddf1b1665036da06cd9c74d2ae84007",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/presencefootsteps/updater.json"
+ },
+ {
+  "path": "config/presencefootsteps/userconfig.json",
+  "size": 467,
+  "hash": "f0a78dddd2d9cdb762797625be731476c102ff11",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/presencefootsteps/userconfig.json"
+ },
+ {
+  "path": "config/puzzle.json",
+  "size": 405,
+  "hash": "fb17b271a4e7c91357d00a59a0b87eb5e3b6d139",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/puzzle.json"
+ },
+ {
+  "path": "config/sodium-extra-options.json",
+  "size": 1486,
+  "hash": "f3fe34a46bd1e12b03c1c2af89e4bd8ff6761e26",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sodium-extra-options.json"
+ },
+ {
+  "path": "config/sodium-extra.properties",
+  "size": 360,
+  "hash": "e90b2514226a0624cf42112b42477f9872598b89",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sodium-extra.properties"
+ },
+ {
+  "path": "config/sodium-fingerprint.json",
+  "size": 427,
+  "hash": "8a15efc20bf18559f4198f5e50590de93582f3c0",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sodium-fingerprint.json"
+ },
+ {
+  "path": "config/sodium-mixins.properties",
+  "size": 258,
+  "hash": "5455463ee999b945c1cff8ae90f2b705e19fb86c",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sodium-mixins.properties"
+ },
+ {
+  "path": "config/sodium-options.json",
+  "size": 686,
+  "hash": "7cb7ced431ad04414be5a7cc6bb9f2de3fcf51f5",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sodium-options.json"
+ },
+ {
+  "path": "config/sound_physics_remastered/occlusion.properties",
+  "size": 4831,
+  "hash": "63e8843f243c38bc7aa44d99ce4f562991890350",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sound_physics_remastered/occlusion.properties"
+ },
+ {
+  "path": "config/sound_physics_remastered/reflectivity.properties",
+  "size": 4713,
+  "hash": "95feb43eb67757038518212b08739cb39bb9763e",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sound_physics_remastered/reflectivity.properties"
+ },
+ {
+  "path": "config/sound_physics_remastered/sound_rates.properties",
+  "size": 65658,
+  "hash": "1ec9ce330ebcd9b031630de2f5df37cdf8880392",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sound_physics_remastered/sound_rates.properties"
+ },
+ {
+  "path": "config/sound_physics_remastered/soundphysics.properties",
+  "size": 5104,
+  "hash": "d28f5f62aebcbe96ce0ad333b8cb8298776d20f8",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/sound_physics_remastered/soundphysics.properties"
+ },
+ {
+  "path": "config/transition.json",
+  "size": 97,
+  "hash": "8b50cd4b9956dc3443acd38e47f80e23ff7712f5",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/transition.json"
+ },
+ {
+  "path": "config/trender.json",
+  "size": 47,
+  "hash": "1ecd2edb27bfbc69f24e0cd52d3a22f98bdce8f0",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/trender.json"
+ },
+ {
+  "path": "config/yacl.json5",
+  "size": 250,
+  "hash": "622920f29084efcd3a8d0b2a0ea0756fece182d2",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/yacl.json5"
+ },
+ {
+  "path": "config/yosbr/options.txt",
+  "size": 0,
+  "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/yosbr/options.txt"
+ },
+ {
+  "path": "config/zoomify.json",
+  "size": 708,
+  "hash": "d9a9878c8753f2580a0b43eb6afd7c6dfec31902",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/zoomify.json"
+ },
+ {
+  "path": "mods/animatica-0.6.1+1.21.4.jar",
+  "size": 71618,
+  "hash": "c3ea75ebd1d2bbf6257445abc06f162f34831ec6",
+  "url": "https://cdn.modrinth.com/data/PRN43VSY/versions/dlLDS43r/animatica-0.6.1%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/barriers-dont-block-rain-1.0.5.jar",
+  "size": 51151,
+  "hash": "231039963ae6b5ed3482f8541f776caa87b79904",
+  "url": "https://cdn.modrinth.com/data/CXLh6wxz/versions/6tFgkvlI/barriers-dont-block-rain-1.0.5.jar"
+ },
+ {
+  "path": "mods/BetterGrassify-1.7.0+fabric.1.21.4.jar",
+  "size": 155059,
+  "hash": "8bada432a857ce7af3772f60a19901ca85f3dfb3",
+  "url": "https://cdn.modrinth.com/data/m5T5xmUy/versions/HxwKuBEU/BetterGrassify-1.7.0%2Bfabric.1.21.4.jar"
+ },
+ {
+  "path": "mods/bettermounthud-1.2.5.jar",
+  "size": 21037,
+  "hash": "8ec8cc4a44623d696568870f7a226e2d30fc7af8",
+  "url": "https://cdn.modrinth.com/data/kqJFAPU9/versions/GGWgvqjm/bettermounthud-1.2.5.jar"
+ },
+ {
+  "path": "mods/BorderlessFullscreen-v2.2.1a-mc1.21.2.jar.jar",
+  "size": 107040,
+  "hash": "7e25be63a2ff7e4ed266e6913ea27999ebb8765e",
+  "url": "https://cdn.modrinth.com/data/UIexcMP1/versions/cWNwTFQE/BorderlessFullscreen-v2.2.1a-mc1.21.2.jar.jar"
+ },
+ {
+  "path": "mods/capes-1.5.5+1.21.4-fabric.jar",
+  "size": 77080,
+  "hash": "73a7b0a5a81217820c7c63aa5d59abbac8175240",
+  "url": "https://cdn.modrinth.com/data/89Wsn8GD/versions/W8c8LF0s/capes-1.5.5%2B1.21.4-fabric.jar"
+ },
+ {
+  "path": "mods/cloth-config-17.0.144-fabric.jar",
+  "size": 1152857,
+  "hash": "63a1a3b25c642f5a745dfcc9bdc0841660f560af",
+  "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/TJ6o2sr4/cloth-config-17.0.144-fabric.jar"
+ },
+ {
+  "path": "mods/continuity-3.0.0+1.21.4.jar",
+  "size": 1001061,
+  "hash": "7b22feac8ca586a8c371324cb83abe5546b22d45",
+  "url": "https://cdn.modrinth.com/data/1IjD5062/versions/esC1Vejm/continuity-3.0.0%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/controlify-3.0.1+lts+1.21.4-fabric.jar",
+  "size": 8020068,
+  "hash": "4d9bd17676355588771d086a8dc79ec1f5dc2cd4",
+  "url": "https://cdn.modrinth.com/data/DOUdJVEm/versions/iwIrWSbZ/controlify-3.0.1%2Blts%2B1.21.4-fabric.jar"
+ },
+ {
+  "path": "mods/coolrain-1.3.1-1.21.4.jar",
+  "size": 3128216,
+  "hash": "74e9f83c3b0ddf8b86866f730025141e4bc8a15f",
+  "url": "https://cdn.modrinth.com/data/iDyqnQLT/versions/xHb5kyEo/coolrain-1.3.1-1.21.4.jar"
+ },
+ {
+  "path": "mods/coroutil-fabric-1.21.4-1.3.8.jar",
+  "size": 3004762,
+  "hash": "88e640091d0c8c5842f1158656f2e025e5fac868",
+  "url": "https://cdn.modrinth.com/data/rLLJ1OZM/versions/kGU8LxQf/coroutil-fabric-1.21.4-1.3.8.jar"
+ },
+ {
+  "path": "mods/CrashAssistant-fabric-1.20.2-1.21.4-1.11.12.jar",
+  "size": 3493082,
+  "hash": "77001af81df5b141198807cfbae7d0903dd4293a",
+  "url": "https://cdn.modrinth.com/data/ix1qq8Ux/versions/AYajytbk/CrashAssistant-fabric-1.20.2-1.21.4-1.11.12.jar"
+ },
+ {
+  "path": "mods/Debugify-1.21.4+1.1.jar",
+  "size": 298681,
+  "hash": "ca7bf4d2bf863953c0265024619b536638827e8e",
+  "url": "https://cdn.modrinth.com/data/QwxR6Gcd/versions/yjpSgPEw/Debugify-1.21.4%2B1.1.jar"
+ },
+ {
+  "path": "mods/DistantHorizons-3.3.3-1.21.4-fabric-neoforge.jar",
+  "size": 28082806,
+  "hash": "88154dd94106c9f94472a36bf92538b2b8086366",
+  "url": "https://cdn.modrinth.com/data/uCdwusMi/versions/SSfzA0Av/DistantHorizons-3.3.3-1.21.4-fabric-neoforge.jar"
+ },
+ {
+  "path": "mods/dynamic-fps-3.11.8+minecraft-1.21.2-fabric.jar",
+  "size": 222371,
+  "hash": "59df2468ef923b95980b4c78709ab3c57d9528bf",
+  "url": "https://cdn.modrinth.com/data/LQ3K71Q1/versions/wMNsaKHd/dynamic-fps-3.11.8%2Bminecraft-1.21.2-fabric.jar"
+ },
+ {
+  "path": "mods/enhancedblockentities-0.11.3+1.21.4.jar",
+  "size": 207442,
+  "hash": "261b0e79ffbb79f9b708827333bd745620ebbec0",
+  "url": "https://cdn.modrinth.com/data/OVuFYfre/versions/YokFoILZ/enhancedblockentities-0.11.3%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/entity_model_features-3.3.12-1.21.4-fabric.jar",
+  "size": 660158,
+  "hash": "46ad65767d9e03e8a8442d1b7e658c02996aeb9f",
+  "url": "https://cdn.modrinth.com/data/4I1XuqiY/versions/whiK34v2/entity_model_features-3.3.12-1.21.4-fabric.jar"
+ },
+ {
+  "path": "mods/entity_texture_features-7.2.6-1.21.4-fabric.jar",
+  "size": 804121,
+  "hash": "8709ea30c2db59d5734de9c34dab5e067eb4752c",
+  "url": "https://cdn.modrinth.com/data/BVzZfTc1/versions/mZJ8B6L9/entity_texture_features-7.2.6-1.21.4-fabric.jar"
+ },
+ {
+  "path": "mods/entityculling-fabric-1.11.3-mc1.21.4.jar",
+  "size": 1521548,
+  "hash": "e1c127024df1338206607fec0984e9271cfce3ba",
+  "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/U6ZIDmEu/entityculling-fabric-1.11.3-mc1.21.4.jar"
+ },
+ {
+  "path": "mods/fabric-api-0.119.4+1.21.4.jar",
+  "size": 2149128,
+  "hash": "1c7871b6af04edc8b8f0dbad12606d67f6118a11",
+  "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/p96k10UR/fabric-api-0.119.4%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
+  "size": 8076363,
+  "hash": "620cb137a9dc69ce86f3114f19d9eedab16366f5",
+  "url": "https://cdn.modrinth.com/data/Ha28R6CL/versions/bdhiINYC/fabric-language-kotlin-1.13.13%2Bkotlin.2.4.10.jar"
+ },
+ {
+  "path": "mods/fabrishot-1.14.4.jar",
+  "size": 54322,
+  "hash": "f341ec6b2af0b397354fa80937f8e47d11ef8f4a",
+  "url": "https://cdn.modrinth.com/data/3qsfQtE9/versions/CULoAysC/fabrishot-1.14.4.jar"
+ },
+ {
+  "path": "mods/fastquit-3.0.0+1.21.4.jar",
+  "size": 59241,
+  "hash": "44e32d51d5ee75d9aaf5947394714af0640d798d",
+  "url": "https://cdn.modrinth.com/data/x1hIzbuY/versions/HdbAWjaF/fastquit-3.0.0%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/ferritecore-7.1.3-fabric.jar",
+  "size": 109879,
+  "hash": "7b08d3c7242b18c9e15c11d365d368dde6955a9c",
+  "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/7KqeXPRS/ferritecore-7.1.3-fabric.jar"
+ },
+ {
+  "path": "mods/Flashback-0.39.10-for-MC1.21.4.jar",
+  "size": 210790282,
+  "hash": "6c3774a2b83c438f65b1bd390f6dbeb7af825f3f",
+  "url": "https://cdn.modrinth.com/data/4das1Fjq/versions/ifmZXBGO/Flashback-0.39.10-for-MC1.21.4.jar"
+ },
+ {
+  "path": "mods/ForgeConfigAPIPort-v21.4.3-1.21.4-Fabric.jar",
+  "size": 644183,
+  "hash": "259055041a77543d7816b4b7019747e90b4592d0",
+  "url": "https://cdn.modrinth.com/data/ohNO6lps/versions/SSKF75hc/ForgeConfigAPIPort-v21.4.3-1.21.4-Fabric.jar"
+ },
+ {
+  "path": "mods/fwa+1.21.4-1.3.4.jar",
+  "size": 414697,
+  "hash": "15c61b2349443145f4e90c817ea266d2dd083aa3",
+  "url": "https://cdn.modrinth.com/data/IAzUFvS6/versions/NSk2vN4H/fwa%2B1.21.4-1.3.4.jar"
+ },
+ {
+  "path": "mods/GlitchCore-fabric-1.21.4-2.3.0.4.jar",
+  "size": 338781,
+  "hash": "568d8d24695cd153a4aef6d8a5191a3608d5eda1",
+  "url": "https://cdn.modrinth.com/data/s3dmwKy5/versions/gBxcKjMS/GlitchCore-fabric-1.21.4-2.3.0.4.jar"
+ },
+ {
+  "path": "mods/iris-fabric-1.8.8+mc1.21.4.jar",
+  "size": 2682702,
+  "hash": "54f7ab6450530bdca2ba44887b53458f78a256ef",
+  "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/Ca054sTe/iris-fabric-1.8.8%2Bmc1.21.4.jar"
+ },
+ {
+  "path": "mods/journeymap-fabric-1.21.4-6.0.0-beta.47.jar",
+  "size": 3514383,
+  "hash": "4e3ec44817e490b712c8a09079b4907526ab59cc",
+  "url": "https://cdn.modrinth.com/data/lfHFW1mp/versions/bjbTbat1/journeymap-fabric-1.21.4-6.0.0-beta.47.jar"
+ },
+ {
+  "path": "mods/justzoom_fabric_2.1.0_MC_1.21.4.jar",
+  "size": 225897,
+  "hash": "dcd95c8e4a1d893f3b62091f8a039dabf4261961",
+  "url": "https://cdn.modrinth.com/data/iAiqcykM/versions/XuLKI2zZ/justzoom_fabric_2.1.0_MC_1.21.4.jar"
+ },
+ {
+  "path": "mods/konkrete_fabric_1.9.9_MC_1.21.4.jar",
+  "size": 787890,
+  "hash": "af8d52b03ba5af9a6e10dcfed67ab862e2445d1b",
+  "url": "https://cdn.modrinth.com/data/J81TRJWm/versions/9I475ADm/konkrete_fabric_1.9.9_MC_1.21.4.jar"
+ },
+ {
+  "path": "mods/lambdynamiclights-4.1.3+1.21.4.jar",
+  "size": 1038224,
+  "hash": "184d228d5244d7a305358a6893d1928a37954cd6",
+  "url": "https://cdn.modrinth.com/data/yBW8D80W/versions/zghzVa4c/lambdynamiclights-4.1.3%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/language-reload-1.7.6+1.21.4.jar",
+  "size": 74631,
+  "hash": "599952d8018d6e1d89410f72033c162600e3cdea",
+  "url": "https://cdn.modrinth.com/data/uLbm7CG6/versions/vxcPpG8h/language-reload-1.7.6%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/lithium-fabric-0.15.3+mc1.21.4.jar",
+  "size": 797555,
+  "hash": "b7100505d1178b0f9a1dac4a24472ad1293b890c",
+  "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/u8pHPXJl/lithium-fabric-0.15.3%2Bmc1.21.4.jar"
+ },
+ {
+  "path": "mods/main-menu-credits-1.2.0.jar",
+  "size": 16640,
+  "hash": "37ad23f76336eedbd940a1f99c5e49d969fdee67",
+  "url": "https://cdn.modrinth.com/data/qJDfP7WN/versions/eUN0SbET/main-menu-credits-1.2.0.jar"
+ },
+ {
+  "path": "mods/mixintrace-1.1.1+1.17.jar",
+  "size": 36039,
+  "hash": "7fbb0130db0e427ee7180d304dfa65c46f0e3b69",
+  "url": "https://cdn.modrinth.com/data/sGmHWmeL/versions/1.1.1%2B1.17/mixintrace-1.1.1%2B1.17.jar"
+ },
+ {
+  "path": "mods/modelfix-1.21.3-1.10-fabric.jar",
+  "size": 66412,
+  "hash": "3f4d67c87d0a6e8c323f443635013bfd58b8872d",
+  "url": "https://cdn.modrinth.com/data/QdG47OkI/versions/h47zwBfZ/modelfix-1.21.3-1.10-fabric.jar"
+ },
+ {
+  "path": "mods/modernfix-fabric-5.20.3+mc1.21.4.jar",
+  "size": 436498,
+  "hash": "46dabb966c9772daf5d3af20fbadc8f2fbcbeb18",
+  "url": "https://cdn.modrinth.com/data/nmDcB62a/versions/ZGxQddYr/modernfix-fabric-5.20.3%2Bmc1.21.4.jar"
+ },
+ {
+  "path": "mods/modmenu-13.0.4.jar",
+  "size": 1050885,
+  "hash": "b5d816f6df9ffb9af8f9c2b43dfb15d9bbfcf400",
+  "url": "https://cdn.modrinth.com/data/mOgUt4GM/versions/qEKKsTqd/modmenu-13.0.4.jar"
+ },
+ {
+  "path": "mods/morechathistory-1.3.1.jar",
+  "size": 3573,
+  "hash": "b4337ef9dc0a6cdf31d8f3df68a6542f64f3625e",
+  "url": "https://cdn.modrinth.com/data/8qkXwOnk/versions/3siYJiWG/morechathistory-1.3.1.jar"
+ },
+ {
+  "path": "mods/moreculling-fabric-1.21.4-1.2.10.jar",
+  "size": 349756,
+  "hash": "9caa2f4d72cf2f5a80ebafab54ae4ee73f1b6bb5",
+  "url": "https://cdn.modrinth.com/data/51shyZVL/versions/gWgOJqk8/moreculling-fabric-1.21.4-1.2.10.jar"
+ },
+ {
+  "path": "mods/NoChatReports-FABRIC-1.21.4-v2.11.0.jar",
+  "size": 321286,
+  "hash": "9fc63f45ee0f157fd161f57f2af1db20ae603918",
+  "url": "https://cdn.modrinth.com/data/qQyHxfxd/versions/9xt05630/NoChatReports-FABRIC-1.21.4-v2.11.0.jar"
+ },
+ {
+  "path": "mods/optigui-2.3.0-beta.9+1.21.2.jar",
+  "size": 611321,
+  "hash": "94cb72f9b84bde0719970ec55ab086499065fe60",
+  "url": "https://cdn.modrinth.com/data/JuksLGBQ/versions/JVVQD89i/optigui-2.3.0-beta.9%2B1.21.2.jar"
+ },
+ {
+  "path": "mods/paginatedadvancements-2.6.1+1.21.4.jar",
+  "size": 81111,
+  "hash": "4a51479eec48b93de40b568231b084fb39eb6091",
+  "url": "https://cdn.modrinth.com/data/pJogNFap/versions/9c0Bw8AD/paginatedadvancements-2.6.1%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/pokefaction-sao-0.1.0.jar",
+  "size": 42712,
+  "hash": "7749141d5f695a872daff58d5ec3511fa6530175",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.1.0.jar"
+ },
+ {
+  "path": "mods/polytone-1.21.4-3.3.24-fabric.jar",
+  "size": 765617,
+  "hash": "41281c2d3086ab8c7c76433068ef4549e2655346",
+  "url": "https://cdn.modrinth.com/data/3qAYkBMB/versions/7rPD3Q0C/polytone-1.21.4-3.3.24-fabric.jar"
+ },
+ {
+  "path": "mods/PresenceFootsteps-1.11.2+1.21.4.jar",
+  "size": 5693946,
+  "hash": "5910a2ae8f0545e7f1be3d7b87e1c5a66be57326",
+  "url": "https://cdn.modrinth.com/data/rcTfTZr3/versions/TUw5heup/PresenceFootsteps-1.11.2%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/puzzle-fabric-2.3.0+1.21.4.jar",
+  "size": 146787,
+  "hash": "d6f156fa3a30b5e81aae7acb9b56d7f60fd9d044",
+  "url": "https://cdn.modrinth.com/data/3IuO68q1/versions/YGEnr37E/puzzle-fabric-2.3.0%2B1.21.4.jar"
+ },
+ {
+  "path": "mods/reeses-sodium-options-fabric-1.8.3+mc1.21.4.jar",
+  "size": 81067,
+  "hash": "c72f07a8f139f0420cbce29bd9eb29fb24db427f",
+  "url": "https://cdn.modrinth.com/data/Bh37bMuy/versions/KoUrx3jJ/reeses-sodium-options-fabric-1.8.3%2Bmc1.21.4.jar"
+ },
+ {
+  "path": "mods/SereneSeasons-fabric-1.21.4-10.4.0.6.jar",
+  "size": 389817,
+  "hash": "77431ac4b0e003a17ef6431091e4c810e04e07b8",
+  "url": "https://cdn.modrinth.com/data/e0bNACJD/versions/qanVNGyt/SereneSeasons-fabric-1.21.4-10.4.0.6.jar"
+ },
+ {
+  "path": "mods/sodium-extra-fabric-0.6.1+mc1.21.4.jar",
+  "size": 360180,
+  "hash": "c3bd0d2121653fec3c0f82a841d88e85e87f9796",
+  "url": "https://cdn.modrinth.com/data/PtjYWJkn/versions/f4TfteNb/sodium-extra-fabric-0.6.1%2Bmc1.21.4.jar"
+ },
+ {
+  "path": "mods/sodium-fabric-0.6.13+mc1.21.4.jar",
+  "size": 1306799,
+  "hash": "c881d2db971207c396b5629632437f1520c0c478",
+  "url": "https://cdn.modrinth.com/data/AANobbMI/versions/c3YkZvne/sodium-fabric-0.6.13%2Bmc1.21.4.jar"
+ },
+ {
+  "path": "mods/sound-physics-remastered-fabric-1.21.4-1.5.1.jar",
+  "size": 206279,
+  "hash": "9433e6d4df955e4006a8c2de0e893502b807fa3f",
+  "url": "https://cdn.modrinth.com/data/qyVF9oeo/versions/6mKaWW6b/sound-physics-remastered-fabric-1.21.4-1.5.1.jar"
+ },
+ {
+  "path": "mods/yet_another_config_lib_v3-3.8.2+1.21.4-fabric.jar",
+  "size": 1130824,
+  "hash": "603164222915a5b2ef159a3aabae75f8bac268f7",
+  "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/kcTd0BNZ/yet_another_config_lib_v3-3.8.2%2B1.21.4-fabric.jar"
+ },
+ {
+  "path": "mods/yosbr-0.1.2.jar",
+  "size": 17373,
+  "hash": "f0340e9c0bc95d67f3f3e9c1cd79b61054af11f9",
+  "url": "https://cdn.modrinth.com/data/WwbubTsV/versions/KMOzdYko/yosbr-0.1.2.jar"
+ },
+ {
+  "path": "mods/zoomify-2.15.2+1.21.5.jar",
+  "size": 872894,
+  "hash": "165adbb9c5c26761ace81ccd2cf561d1ca18cd72",
+  "url": "https://cdn.modrinth.com/data/w7ThoJFB/versions/r2ewk22o/zoomify-2.15.2%2B1.21.5.jar"
+ },
+ {
+  "path": "options.txt",
+  "size": 6293,
+  "hash": "d682d7b3b6ae93fccf7b96ce39782c3b22b548bd",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/options.txt"
+ },
+ {
+  "path": "resourcepacks/Better-Leaves-9.5.zip",
+  "size": 1923769,
+  "hash": "78b7e6cbb1661716423429d2c46ab08266cdf1f8",
+  "url": "https://cdn.modrinth.com/data/uvpymuxq/versions/XWtayRKd/Better-Leaves-9.5.zip"
+ },
+ {
+  "path": "resourcepacks/Enhanced Grass V1_4.zip",
+  "size": 131213,
+  "hash": "19ff092036fb7a1beb1353a01bc744cfa2007cc3",
+  "url": "https://cdn.modrinth.com/data/alsKcwM3/versions/y5tAorFa/Enhanced%20Grass%20V1_4.zip"
+ },
+ {
+  "path": "resourcepacks/Fancy Crops v1.3.zip",
+  "size": 92779,
+  "hash": "788e5169eb064b696b2e20d4c5d998cceb387a2e",
+  "url": "https://cdn.modrinth.com/data/UGEVQ6t9/versions/ZJEBZjg6/Fancy%20Crops%20v1.3.zip"
+ },
+ {
+  "path": "resourcepacks/FreshAnimations_v1.10.4.zip",
+  "size": 850941,
+  "hash": "73db740a6868e043c5e615c036fca2c912615b6e",
+  "url": "https://cdn.modrinth.com/data/50dA9Sha/versions/xN57JJts/FreshAnimations_v1.10.4.zip"
+ },
+ {
+  "path": "resourcepacks/SaturatedGrass!(1.2v).zip",
+  "size": 161052,
+  "hash": "46df64c3467b4fa4cec80cdc45b38c5de715038b",
+  "url": "https://cdn.modrinth.com/data/lqnzBmRw/versions/1dNpszbY/SaturatedGrass%21%281.2v%29.zip"
+ },
+ {
+  "path": "shaderpacks/Aurora's Shaders.zip",
+  "size": 403810,
+  "hash": "25fcf50b3292264d0eba6ea9c14a926310238651",
+  "url": "https://cdn.modrinth.com/data/hgAKxFQg/versions/dF60Go3s/Aurora%27s%20Shaders.zip"
+ },
+ {
+  "path": "shaderpacks/BSL_v8.4.02.zip",
+  "size": 1108429,
+  "hash": "f78b54af1ee94328a9ef66a5d2c854fc8504cac4",
+  "url": "https://cdn.modrinth.com/data/Q1vvjJYV/versions/hvfMfOAN/BSL_v8.4.02.zip"
+ },
+ {
+  "path": "shaderpacks/Fantasy Shaders Reimagined v1.1.zip",
+  "size": 492925,
+  "hash": "bb3e9a75c77171ca97698b02d7b497468a7b512e",
+  "url": "https://cdn.modrinth.com/data/l6di6hYz/versions/kqFlgfIA/Fantasy%20Shaders%20Reimagined%20v1.1.zip"
+ },
+ {
+  "path": "shaderpacks/miniature-shader-2.19.zip",
+  "size": 43913,
+  "hash": "f66501ebcc5197f72ef19065eb0fa851707d7f9f",
+  "url": "https://cdn.modrinth.com/data/UaS8ROxa/versions/LWmZ94RG/miniature-shader-2.19.zip"
+ },
+ {
+  "path": "shaderpacks/Noble v1.9.6.zip",
+  "size": 11490778,
+  "hash": "75134379c93dfd2b5526db74d12cadc1f93267b4",
+  "url": "https://cdn.modrinth.com/data/sclYVqbt/versions/3cIADbit/Noble%20v1.9.6.zip"
+ },
+ {
+  "path": "shaderpacks/photon_v1.2a.zip",
+  "size": 3737845,
+  "hash": "6ad7e57f22ceb5530b168d077414abc8387c9b04",
+  "url": "https://cdn.modrinth.com/data/lLqFfGNs/versions/rz2vlXVm/photon_v1.2a.zip"
+ },
+ {
+  "path": "shaderpacks/Solas Shader V2.8c.zip",
+  "size": 1389622,
+  "hash": "3ef52cce105a1e172c0b855b8fa7c3c0b5b7d037",
+  "url": "https://cdn.modrinth.com/data/EpQFjzrQ/versions/gO39AhUm/Solas%20Shader%20V2.8c.zip"
+ }
+]
