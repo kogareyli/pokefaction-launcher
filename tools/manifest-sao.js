@@ -18,11 +18,14 @@ const UA = { 'User-Agent': 'pokefaction-launcher-manifest/1.0' };
 
 // mods et packs de Triggers / SAOFR marqués « tous droits réservés » dans leur propre fichier (ou sans licence), + remplacés par leur version publique
 const PROTEGES = [/^sao-ui-lib/, /^saolabyrinth/, /^altarmod/, /^companionsmod/, /^fracturedwar/, /^relmod/, /^z-plugin-companion/, /^zap-/,
-    /^journeymap-.*-sao\.jar$/, /^entity_model_features-.*FPSFIX/, /^DistantHorizons-/, /^sao\.zip$/, /^FA_Player-.*SAO/];
+    /^journeymap-.*-sao\.jar$/, /^entity_model_features-.*FPSFIX/,
+    // mcef (navigateur intégré) : faisait planter le jeu au démarrage (20/11 : ses fichiers de Chrome, rangés dans mods/, sont effacés
+    // par la vérification du launcher) ; aucun autre mod n'en a besoin
+    /^mcef-/, /^DistantHorizons-/, /^sao\.zip$/, /^FA_Player-.*SAO/];
 // 20/11 (Eddy : « mets tous les mods ») : ceux de l'instance qui ne sont pas sur Modrinth mais dont le jar déclare une licence libre
 // (SAOUI, saoblessing, saojob : CC0 ; trueinvisibility : MIT ; meg-client-mod : AGPL ; mcef : LGPL) : hébergés dans la release « sao-fichiers »
 // (SAOUI fait 280 Mo : trop gros pour les fichiers du dépôt, limités à 100 Mo)
-const LIBRES = [/^SAOUI-/, /^saoblessing/, /^saojob/, /^trueinvisibility/, /^meg-client-mod/, /^mcef-/];
+const LIBRES = [/^SAOUI-/, /^saoblessing/, /^saojob/, /^trueinvisibility/, /^meg-client-mod/];
 const URL_RELEASE = 'https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/';
 // remplacements publics (même mod, version publiée sur Modrinth) et ajouts demandés
 const AJOUTS = [
@@ -37,7 +40,7 @@ const AJOUTS = [
     ['shaderpacks', 'pastel-shaders', null],
 ];
 // configs qui ne servent qu'aux mods retirés
-const CONFIGS_RETIRES = [/^zsociete/, /^zsorts/];
+const CONFIGS_RETIRES = [/^zsociete/, /^zsorts/, /^mcef/];
 
 const sha1 = b => crypto.createHash('sha1').update(b).digest('hex');
 const protege = f => PROTEGES.some(r => r.test(f));

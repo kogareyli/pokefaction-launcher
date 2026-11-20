@@ -186,12 +186,6 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/lithium.properties"
  },
  {
-  "path": "config/mcef/mcef.properties",
-  "size": 158,
-  "hash": "e3e9dd4c12b936b853d609d3c573dcef49ccc12f",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/config/mcef/mcef.properties"
- },
- {
   "path": "config/midnightlib.json",
   "size": 37,
   "hash": "ef717d24a45baf1406cd1c5600b176cb8b3cb2db",
@@ -594,12 +588,6 @@
   "url": "https://cdn.modrinth.com/data/qJDfP7WN/versions/eUN0SbET/main-menu-credits-1.2.0.jar"
  },
  {
-  "path": "mods/mcef-fabric-2.1.6-1.21.4.jar",
-  "size": 225365,
-  "hash": "9d9b9061c3981e601b67685841b5ebfb1ceb51ee",
-  "url": "https://github.com/kogareyli/pokefaction-launcher/releases/download/sao-fichiers/mcef-fabric-2.1.6-1.21.4.jar"
- },
- {
   "path": "mods/meg-client-mod-fabric-1.0-77c13bb.jar",
   "size": 21183,
   "hash": "129df023e704ace04d654eaf4f37b6661202e8bd",
@@ -660,10 +648,10 @@
   "url": "https://cdn.modrinth.com/data/pJogNFap/versions/9c0Bw8AD/paginatedadvancements-2.6.1%2B1.21.4.jar"
  },
  {
-  "path": "mods/pokefaction-sao-0.1.2.jar",
-  "size": 42899,
-  "hash": "a725bcd80815994ec23f13d8217c1c8bf6a17686",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.1.2.jar"
+  "path": "mods/pokefaction-sao-0.1.3.jar",
+  "size": 48197,
+  "hash": "35f1ee448ce71868f56e4bee1b3f381cef39e9af",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-sao/mods/pokefaction-sao-0.1.3.jar"
  },
  {
   "path": "mods/polytone-1.21.4-3.3.24-fabric.jar",
