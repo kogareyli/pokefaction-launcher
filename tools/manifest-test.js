@@ -61,7 +61,8 @@ function lister(dossier, base) {
         if (EXCLUS.has(rel) || DOSSIERS_EXCLUS.some(d => rel.startsWith(d))) continue;
         let data = fs.readFileSync(path.join(CLIENT, rel));
         // le jeu de test est en anglais sur le PC : la copie publiée est en français
-        if (rel === 'options.txt') data = Buffer.from(data.toString('utf8').replace(/^lang:.*$/m, 'lang:fr_fr'), 'utf8');
+        if (rel === 'options.txt') data = Buffer.from(data.toString('utf8').replace(/^lang:.*$/m, 'lang:fr_fr')
+            .replace(/^guiScale:.*$/m, 'guiScale:3'), 'utf8'); // 21/11 : « Auto » = interface énorme sur grand écran (taille du vrai jeu d'Eddy)
         const hash = crypto.createHash('sha1').update(data).digest('hex');
         let url = parHash.get(hash);
         if (url) memes++;
