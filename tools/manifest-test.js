@@ -52,6 +52,9 @@ function lister(dossier, base) {
     const rels = [];
     for (const d of DOSSIERS) rels.push(...lister(path.join(CLIENT, d), d));
     rels.push('options.txt');
+    // petits réglages hors des dossiers habituels (Eddy : « mets tout le dossier de test »)
+    for (const r of lister(path.join(CLIENT, 'cobblenav', 'settings'), 'cobblenav/settings')) rels.push(r);
+    if (fs.existsSync(path.join(CLIENT, 'data', 'fabricDefaultResourcePacks.dat'))) rels.push('data/fabricDefaultResourcePacks.dat');
     const sortie = [], gardes = new Set();
     let memes = 0, cf = 0, mr = 0, heberges = 0, octets = 0, sautes = [];
     for (const rel of rels) {

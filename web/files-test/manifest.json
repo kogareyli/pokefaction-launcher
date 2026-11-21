@@ -673,8 +673,8 @@
  },
  {
   "path": "mods/pokefaction-core-6.13.0-test.jar",
-  "size": 23583320,
-  "hash": "d34905383d4234051b0ca6fe4decd3d5d1beac1f",
+  "size": 23583638,
+  "hash": "9293f8e49d5f56d596b910733e297945293829da",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/mods/pokefaction-core-6.13.0-test.jar"
  },
  {
@@ -2320,5 +2320,23 @@
   "size": 9709,
   "hash": "c33519f9e67aa6491c8f63edb1957bfb97c099cc",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/options.txt"
+ },
+ {
+  "path": "cobblenav/settings/pokefinder.json",
+  "size": 0,
+  "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/more_cobblemon_tweaks.json"
+ },
+ {
+  "path": "cobblenav/settings/pokenav.json",
+  "size": 0,
+  "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/more_cobblemon_tweaks.json"
+ },
+ {
+  "path": "data/fabricDefaultResourcePacks.dat",
+  "size": 1848,
+  "hash": "75181f6bf1e5e8b10088fb3d5b12f607889a690b",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/data/fabricDefaultResourcePacks.dat"
  }
 ]
