@@ -858,19 +858,3 @@ body[data-panel="settings"] .reseaux { display: none; }
 .accueil.avec-diapo .diapo-vignette:hover { opacity: 1; }
 /* le bouton Jouer se lit sur l'image : cadre un peu plus opaque */
 .accueil.avec-diapo .play-cadre { background: rgba(14, 14, 15, .82) !important; backdrop-filter: blur(6px); }
-
-/* ------------------------------------------------------------------ 21/11 : serveur PokéFaction Test sur la 2e case du rail */
-.rail-test {
-    width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center;
-    background: rgba(255, 255, 255, .035); border: 1px solid rgba(255, 255, 255, .08); cursor: pointer; padding: 0;
-    transition: border-color .15s, background .15s;
-}
-.rail-test svg { width: 20px; height: 20px; fill: rgba(242, 242, 240, .6); transition: fill .15s; }
-.rail-test:hover { border-color: rgba(245, 181, 12, .55); }
-.rail-test:hover svg, .rail-test.rail-actif svg { fill: #f5b50c; }
-.rail-test.rail-actif { background: rgba(245, 181, 12, .12); border: 1.5px solid #f5b50c; }
-body.instance-test .rail-serveur { background: rgba(255, 255, 255, .035); border: 1px solid rgba(255, 255, 255, .08); }
-.accueil-instance { min-height: 18px; margin: 6px 0 2px; font: 600 12px/18px 'JetBrains Mono', monospace; letter-spacing: .08em; color: #f5b50c; text-transform: uppercase; text-align: center; }
-/* le choix d'instance se fait par le rail : plus de petite flèche à côté de JOUER */
-.instance-select { display: none !important; }
-.rail-test[hidden], .rail-verrou[hidden] { display: none !important; }
