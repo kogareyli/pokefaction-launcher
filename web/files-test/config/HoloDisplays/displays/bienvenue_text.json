@@ -1,0 +1,13 @@
+{
+    "lines": [
+        "<gr #ff55ff #8b5cf6><bold>PokéFaction</bold></gr>",
+        "<white>Bienvenue, <light_purple>%player:name%</light_purple> !",
+        "<gray>PvP Faction Pokémon"
+    ],
+    "scale": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "type": "text"
+}
