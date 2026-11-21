@@ -407,16 +407,21 @@
         "whitelist": [],
         "status": {
             "nameServer": "PokéFaction Test",
-            "ip": "",
-            "port": 0
+            "ip": "dedication-legends.tun.ply.gg",
+            "port": 51933
         },
         "jvm_args": [
             "-XX:+UseG1GC",
             "-XX:+ParallelRefProcEnabled",
             "-XX:MaxGCPauseMillis=200"
         ],
-        "game_args": [],
-        "serveurs_pokefaction": [],
+        "game_args": [
+            "--quickPlayMultiplayer",
+            "dedication-legends.tun.ply.gg:51933"
+        ],
+        "serveurs_pokefaction": [
+            "dedication-legends.tun.ply.gg"
+        ],
         "sous_titre": "PokéFaction Test",
         "case_visible": [
             "Starless_Kirito",
