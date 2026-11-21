@@ -1314,6 +1314,12 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/entity_texture_features.json"
  },
  {
+  "path": "config/etf_warnings.json",
+  "size": 28,
+  "hash": "1573fc320a363b30a1a5e4cae1d4596ec177085d",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/config/etf_warnings.json"
+ },
+ {
   "path": "config/euphoria_patcher/.data.json",
   "size": 163,
   "hash": "7806a0f4466d013756b96295165afa6f9c43b2f4",
@@ -1788,6 +1794,18 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/pingwheel.server.json"
  },
  {
+  "path": "config/pokefaction/config.json",
+  "size": 586,
+  "hash": "3cfc071b3a48a80ce79d41acfdf78ce24deb0c11",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/config/pokefaction/config.json"
+ },
+ {
+  "path": "config/pokefaction/LISEZMOI.txt",
+  "size": 1851,
+  "hash": "f95a72f52ec63db149bd76ef44772dc6ff5d7d2d",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/config/pokefaction/LISEZMOI.txt"
+ },
+ {
   "path": "config/pokefaction-style.json",
   "size": 104,
   "hash": "dad042f35dbf327a7c8743340dcd5ba313e43788",
@@ -1828,6 +1846,18 @@
   "size": 5612,
   "hash": "b56001f087f7cd2b6aa2c9640e4bd813b07e1a1a",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/roughlyenoughitems/config.json5"
+ },
+ {
+  "path": "config/roughlyenoughitems/favorites.json5",
+  "size": 61,
+  "hash": "413c0d78b009c2e235966e3a9437bd89258724f9",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/config/roughlyenoughitems/favorites.json5"
+ },
+ {
+  "path": "config/roughlyenoughitems/hints.json",
+  "size": 63,
+  "hash": "69359fa3d294e86ac2ff53cc61fe9dc680ed5398",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/config/roughlyenoughitems/hints.json"
  },
  {
   "path": "config/roughlyenoughitems/pinyin.properties",
@@ -2284,5 +2314,11 @@
   "size": 546928,
   "hash": "af656a33be2cbd217ea08986ad2cdd76f6bbfe1c",
   "url": "https://edge.forgecdn.net/files/8123/288/ComplementaryUnbound_r5.8.1.zip"
+ },
+ {
+  "path": "options.txt",
+  "size": 9709,
+  "hash": "c33519f9e67aa6491c8f63edb1957bfb97c099cc",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/options.txt"
  }
 ]

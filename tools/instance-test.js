@@ -10,7 +10,11 @@ j['PokeFaction-Test'] = {
   url: 'https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/manifest.json',
   loader: { ...pf.loader },
   verify: true,
-  ignored: [...pf.ignored],
+  // 21/11 (Eddy : « mets tous les settings, copie le fichier total ») : réglages, options, packs et shaders remis à chaque lancement
+  // (copie exacte du jeu de test) ; seules les données du joueur restent (mondes, captures, carte, ticket…)
+  ignored: [...pf.ignored.filter(p => !['options.txt', 'config', 'resourcepacks', 'shaderpacks'].includes(p) && !p.startsWith('config/')),
+    'config/sodium-fingerprint.json', 'config/fancymenu/user_variables.db', 'resourcepacks/COBBLEVERSE Soundtrack.zip',
+    'shaderpacks/COBBLEVERSE - Shaders', 'shaderpacks/COBBLEVERSE - Shaders (High Quality)'], // pas publiables (licence), gardés s'ils sont là
   // jamais choisie toute seule au démarrage : seulement par la 2e case du rail
   whitelistActive: true,
   whitelist: [],
