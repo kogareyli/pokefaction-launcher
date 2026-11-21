@@ -14,7 +14,8 @@ j['PokeFaction-Test'] = {
   // (copie exacte du jeu de test) ; seules les données du joueur restent (mondes, captures, carte, ticket…)
   ignored: [...pf.ignored.filter(p => !['options.txt', 'config', 'resourcepacks', 'shaderpacks'].includes(p) && !p.startsWith('config/')),
     'config/sodium-fingerprint.json', 'config/fancymenu/user_variables.db', 'resourcepacks/COBBLEVERSE Soundtrack.zip',
-    'shaderpacks/COBBLEVERSE - Shaders', 'shaderpacks/COBBLEVERSE - Shaders (High Quality)'], // pas publiables (licence), gardés s'ils sont là
+    'shaderpacks/COBBLEVERSE - Shaders', 'shaderpacks/COBBLEVERSE - Shaders (High Quality)', // pas publiables (licence), gardés s'ils sont là
+    'shaderpacks/ComplementaryUnbound_r5.8.1 + EuphoriaPatches_1.9.3', 'shaderpacks/ComplementaryUnbound_r5.8.1 + EuphoriaPatches_1.9.3.txt'], // fabriqués par Euphoria Patcher
   // jamais choisie toute seule au démarrage : seulement par la 2e case du rail
   whitelistActive: true,
   whitelist: [],
