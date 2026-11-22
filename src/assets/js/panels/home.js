@@ -11,6 +11,7 @@ import { analyserJeu } from '../utils/anti-triche.js'
 import { accelererVerification } from '../utils/empreintes-cache.js'
 import { fabricSansAttente, journalLancement } from '../utils/fabric-cache.js'
 import { diaporama } from '../utils/diaporama.js'
+import { initRailTest } from '../utils/serveur-test.js'
 const { shell, ipcRenderer } = require('electron')
 const fs = require('fs')
 
@@ -112,6 +113,7 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
+        initRailTest(this.db) // 21/11 : serveur PokéFaction Test sur la 2e case du rail (Eddy et xkeijiro seulement)
         this.boutonMaj()
     }
 
@@ -336,7 +338,7 @@ class Home {
 
     afficherVersion(instance) {
         let version = document.querySelector('.hero-version')
-        if (version && instance?.loader) version.textContent = `${instance.loader.minecraft_version} · Cobbleverse`
+        if (version && instance?.loader) version.textContent = `${instance.loader.minecraft_version} · ${instance.sous_titre || 'Cobbleverse'}`
     }
 
     // Mise à jour du launcher lancée depuis JOUER : progression dans la barre, puis redémarrage automatique

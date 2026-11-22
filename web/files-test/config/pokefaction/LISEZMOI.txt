@@ -1,0 +1,24 @@
+PokéFaction Core — réglages (config/pokefaction/config.json)
+Après une modif : /pfreload en jeu (ou redémarrage).
+
+Ce mod ne fait QUE ce que les autres mods du serveur ne savent pas faire.
+Les ops (niveau 2+) ne sont pas bloqués si opsBypass = true.
+
+tpaWarmupSeconds           Délai avant d'être téléporté après un /tpaccept (SimpleTPA). Le joueur ne doit pas bouger ni prendre de coup.
+backWarmupSeconds          Pareil pour /back (SimpleTPA).
+lobbyWarmupSeconds         Délai pour /spawn, /lobby, /hub (ils envoient au point de spawn du monde = le lobby).
+lobbyCooldownSeconds       Temps entre deux /lobby.
+combatTagSeconds           Après un coup entre joueurs, pas de téléportation pendant ce temps.
+maxHomes                   Nombre max de /sethome par joueur (SimpleHomes).
+lobbyProtectionRadius      Rayon autour du spawn du monde où /sethome est interdit.
+factionCreateCooldownMinutes  Délai entre deux créations de faction (gardé même après déco / redémarrage / dissolution).
+protectWaystones           Les joueurs ne peuvent pas casser les waystones.
+multiworldWandOpOnly       La hache en bois ne sert de baguette Multiworld qu'aux ops.
+regenMode                  VANILLA (normal), SLOW (lente) ou OFF (aucune régén naturelle). Commande : /pfregen SLOW
+regenIntervalSeconds / regenAmount   En mode SLOW : regenAmount PV (1 = un demi-cœur) toutes les X secondes.
+regenPauseAfterDamageSeconds         Pas de régén pendant X secondes après un coup.
+welcomeEnabled             Message + titre d'accueil, guide des premières étapes (/guide).
+discord                    Lien Discord affiché dans le guide (laisser vide pour le cacher).
+
+Commandes : /spawn /lobby /hub /guide   —   ops : /pfregen <mode>, /pfreload
+Le lobby = le point de spawn du monde. Pour le déplacer : /setworldspawn à l'endroit voulu.
