@@ -13,7 +13,8 @@ const CLIENT = 'C:/Users/koga/Desktop/PokeFaction-Test/client';
 const SORTIE = path.join(RACINE, 'web', 'files-test');
 const BRUT = 'https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/';
 const DOSSIERS = ['mods', 'config', 'datapacks', 'resourcepacks', 'shaderpacks'];
-const EXCLUS = new Set(['config/sodium-fingerprint.json', 'config/fancymenu/user_variables.db', 'resourcepacks/COBBLEVERSE Soundtrack.zip']);
+const EXCLUS = new Set(['config/sodium-fingerprint.json', 'config/fancymenu/user_variables.db', 'resourcepacks/COBBLEVERSE Soundtrack.zip',
+    'config/roughlyenoughitems/favorites.json5']); // 22/11 : les favoris REI sont ceux du joueur, jamais publiés
 // licence de Complementary et d'Euphoria Patches : pas de téléchargement direct (seulement CurseForge / Modrinth)
 const DOSSIERS_EXCLUS = ['shaderpacks/COBBLEVERSE - Shaders/', 'shaderpacks/COBBLEVERSE - Shaders (High Quality)/'];
 const MAX = 95e6;

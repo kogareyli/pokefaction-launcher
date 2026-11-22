@@ -673,8 +673,8 @@
  },
  {
   "path": "mods/pokefaction-core-6.13.0-test.jar",
-  "size": 23583638,
-  "hash": "9293f8e49d5f56d596b910733e297945293829da",
+  "size": 24046827,
+  "hash": "b5af28637ea5e76b513355394302b22705708c4d",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/mods/pokefaction-core-6.13.0-test.jar"
  },
  {
@@ -1848,12 +1848,6 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/config/roughlyenoughitems/config.json5"
  },
  {
-  "path": "config/roughlyenoughitems/favorites.json5",
-  "size": 61,
-  "hash": "413c0d78b009c2e235966e3a9437bd89258724f9",
-  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/config/roughlyenoughitems/favorites.json5"
- },
- {
   "path": "config/roughlyenoughitems/hints.json",
   "size": 63,
   "hash": "69359fa3d294e86ac2ff53cc61fe9dc680ed5398",
@@ -2288,7 +2282,7 @@
  {
   "path": "resourcepacks/PokeFaction Interface.zip",
   "size": 317205,
-  "hash": "d8b3c35f958e03c2bbc21c18ffba87c389510b32",
+  "hash": "634c9257d1e208532c4b63bd8615b5eb41d65451",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/resourcepacks/PokeFaction%20Interface.zip"
  },
  {
