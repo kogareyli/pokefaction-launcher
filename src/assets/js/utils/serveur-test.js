@@ -9,6 +9,7 @@
  */
 import popup from './popup.js'
 import { config as configLauncher, setStatus } from '../utils.js'
+import { appliquerFermeture } from './fermeture.js'
 
 const INSTANCE = 'PokeFaction-Test', INSTANCE_PF = 'PokeFaction';
 const PAR_DEFAUT = ['Starless_Kirito', 'xkeijiro', 'kxjiro']; // si la liste en ligne n'est pas encore à jour (cache de GitHub)
@@ -35,6 +36,7 @@ async function choisir(db, nom) {
     } catch (e) { console.error('[Test] statut', e); }
     const etiquette = document.querySelector('.accueil-instance');
     if (etiquette) etiquette.textContent = test ? 'PokéFaction Test' : '';
+    await appliquerFermeture(nom); // 22/11 : fin de la bêta (seulement PokéFaction, le test reste ouvert)
 }
 
 async function caseVisible(db) {

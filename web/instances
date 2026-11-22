@@ -210,7 +210,11 @@
             "pokefaction.com",
             "play.pokefaction.com",
             "impairment-session.tun.ply.gg"
-        ]
+        ],
+        "ferme": {
+            "titre": "Fin de la bêta",
+            "message": "La bêta de PokéFaction est terminée : merci à tous d’avoir joué ! Le serveur est fermé pour le moment. Suis les nouvelles sur Discord pour la sortie."
+        }
     },
     "PokeFaction-Test": {
         "name": "PokeFaction-Test",

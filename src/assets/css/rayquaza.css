@@ -874,3 +874,10 @@ body.instance-test .rail-serveur { background: rgba(255, 255, 255, .035); border
 /* le choix d'instance se fait par le rail : plus de petite flèche à côté de JOUER */
 .instance-select { display: none !important; }
 .rail-test[hidden], .rail-verrou[hidden] { display: none !important; }
+
+/* 22/11 : serveur fermé depuis web/instances (« ferme ») : fin de la bêta. Le bouton reste visible mais éteint. */
+body.instance-fermee .play-btn { filter: grayscale(.85); opacity: .7; cursor: not-allowed; }
+body.instance-fermee .play-btn svg { width: 20px; height: 20px; }
+body.instance-fermee .maj-btn { display: none; }
+.accueil-fermee { max-width: 360px; margin: 12px 0 0 4px; padding: 0; text-align: left; font: 500 13px/1.5 'Inter', sans-serif; color: #e8dcb8; text-shadow: 0 1px 6px rgba(0,0,0,.85); }
+.accueil-fermee[hidden] { display: none; }

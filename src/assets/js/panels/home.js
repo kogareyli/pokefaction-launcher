@@ -12,6 +12,7 @@ import { accelererVerification } from '../utils/empreintes-cache.js'
 import { fabricSansAttente, journalLancement } from '../utils/fabric-cache.js'
 import { diaporama } from '../utils/diaporama.js'
 import { initRailTest } from '../utils/serveur-test.js'
+import { fermeture, appliquerFermeture } from '../utils/fermeture.js'
 const { shell, ipcRenderer } = require('electron')
 const fs = require('fs')
 
@@ -398,6 +399,16 @@ class Home {
 
     /** Prépare et lance le jeu. true = le jeu est lancé (la fin du lancement est gérée par close / error). */
     async demarrerJeu(sansMaj) {
+        // 22/11 : serveur fermé (fin de la bêta) ? Rien n'est lancé, même si l'accueil n'a pas encore été mis à jour.
+        try {
+            const cc = await this.db.readData('configClient')
+            const f = fermeture((await config.getInstanceList()).find(i => i.name == cc?.instance_select))
+            if (f) {
+                appliquerFermeture(cc.instance_select).catch(() => { })
+                new popup().openPopup({ title: f.titre, content: f.message, color: 'var(--or)', options: true })
+                return false
+            }
+        } catch (e) { console.error('[Fermeture]', e) }
         // Maintenance en cours ? (activée par le PokéFaction Panel pendant les mises à jour du serveur)
         try {
             let conf = await config.GetConfig()
