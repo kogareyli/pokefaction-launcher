@@ -673,8 +673,8 @@
  },
  {
   "path": "mods/pokefaction-core-6.13.0-test.jar",
-  "size": 24073043,
-  "hash": "7b9de15672d386e90f9245bb454e45ed09fe7b4a",
+  "size": 24078044,
+  "hash": "b19ee38b43b7041cbdcf11f2bedb266c16bcf456",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/mods/pokefaction-core-6.13.0-test.jar"
  },
  {
@@ -2312,7 +2312,7 @@
  {
   "path": "options.txt",
   "size": 9709,
-  "hash": "a063c8dcbfb6868470c6999d046ee3f6a9715659",
+  "hash": "2f4ca559a8ef0ba6f26801474a54d22c3dd3cf01",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/options.txt"
  },
  {
