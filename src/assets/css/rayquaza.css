@@ -16,7 +16,7 @@ body {
 .fond {
     background:
         radial-gradient(90% 65% at 78% -12%, #1b1a17 0%, rgba(27, 26, 23, 0) 70%),
-        radial-gradient(70% 55% at 0% 112%, rgba(245, 181, 12, .05) 0%, rgba(245, 181, 12, 0) 70%),
+        radial-gradient(70% 55% at 0% 112%, rgba(216, 192, 112, .05) 0%, rgba(216, 192, 112, 0) 70%),
         #0a0a0b !important;
 }
 
@@ -112,8 +112,8 @@ body[data-panel="login"] .rail { display: none; }
 }
 
 .rail-serveur {
-    background: rgba(245, 181, 12, .12);
-    border: 1.5px solid #f5b50c;
+    background: rgba(216, 192, 112, .12);
+    border: 1.5px solid #d8c070;
     cursor: pointer;
     padding: 0;
 }
@@ -152,7 +152,7 @@ body[data-panel="login"] .rail { display: none; }
 }
 
 .rail-reglages svg { width: 20px; height: 20px; fill: rgba(242, 242, 240, .55); transition: fill .15s; }
-.rail-reglages:hover svg, .rail-reglages.rail-actif svg { fill: #f5b50c; }
+.rail-reglages:hover svg, .rail-reglages.rail-actif svg { fill: #d8c070; }
 .rail-reglages.rail-actif::before { display: none !important; }
 
 /* ------------------------------------------------------------------ en haut à droite */
@@ -329,7 +329,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     padding: 0 38px;
     border-radius: 12px;
     border: none;
-    background: #f2b112;
+    background: #b8944a;
     color: #fff;
     font-size: 17px;
     font-weight: 800;
@@ -479,7 +479,7 @@ body[data-panel="settings"] .reseaux { display: none; }
 }
 
 .article-corps { padding: 18px 24px 22px; }
-.article-date { font-size: 11px; color: #f5b50c; font-weight: 700; }
+.article-date { font-size: 11px; color: #d8c070; font-weight: 700; }
 .article-titre { margin: 6px 0 10px; font-size: 22px; }
 .article-texte p { margin: .35em 0; line-height: 1.55; color: rgba(242, 242, 240, .82); font-size: 13.5px; }
 .article-auteur { margin-top: 12px; font-size: 12px; color: rgba(242, 242, 240, .5); }
@@ -581,7 +581,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     padding: 0 20px;
     border-radius: 11px;
     border: none;
-    background: #f2b112;
+    background: #b8944a;
     color: #fff;
     font-size: 13.5px;
     font-weight: 800;
@@ -614,7 +614,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     cursor: pointer;
 }
 
-.connexion-rester input { accent-color: #f5b50c; width: 15px; height: 15px; }
+.connexion-rester input { accent-color: #d8c070; width: 15px; height: 15px; }
 
 .connexion-discord {
     display: flex;
@@ -662,9 +662,9 @@ body[data-panel="settings"] .reseaux { display: none; }
     transition: opacity .25s, transform .3s var(--doux), visibility 0s;
 }
 
-.connexion .pf-onglet-actif { background: rgba(245, 181, 12, .16); color: #f2f2f0; }
-.connexion .pf-champ:focus { border-color: #f5b50c; }
-.connexion .login-pokefaction .connect { background: #f2b112; }
+.connexion .pf-onglet-actif { background: rgba(216, 192, 112, .16); color: #f2f2f0; }
+.connexion .pf-champ:focus { border-color: #d8c070; }
+.connexion .login-pokefaction .connect { background: #b8944a; }
 
 @keyframes z-entree {
     from { opacity: 0; transform: translateY(12px); }
@@ -691,12 +691,12 @@ body[data-panel="settings"] .reseaux { display: none; }
 
 .rail-logo, .rail-btn, .rail-actif, .rail-actif:hover, .popup-tab, .popup-button, .popup-button:hover { box-shadow: none !important; }
 .rail-actif::before { display: none !important; }
-.rail-joueur .player-head, .rail-joueur:hover .player-head { box-shadow: 0 0 0 2px #0f0f10, 0 0 0 3px rgba(245, 181, 12, .55) !important; }
+.rail-joueur .player-head, .rail-joueur:hover .player-head { box-shadow: 0 0 0 2px #0f0f10, 0 0 0 3px rgba(216, 192, 112, .55) !important; }
 .rail-joueur::after { display: none !important; }
 .accueil .play-instance { background: none !important; box-shadow: none !important; border: none !important; }
 .accueil .play-btn { text-transform: none; }
 .statut-point { box-shadow: none !important; }
-.popup-button { background: #f2b112 !important; }
+.popup-button { background: #b8944a !important; }
 
 /* Connexion : la barre et la carte se placent sur toute la largeur */
 .connexion .login-pokefaction { width: auto; max-width: none; left: 0; top: 0; right: 0; bottom: 0; }
@@ -721,10 +721,10 @@ body[data-panel="settings"] .reseaux { display: none; }
     overflow-x: hidden;
     padding-top: 64px;
     scrollbar-width: thin;
-    scrollbar-color: rgba(245, 181, 12, .35) transparent;
+    scrollbar-color: rgba(216, 192, 112, .35) transparent;
 }
 .home .container.accueil::-webkit-scrollbar { width: 8px; }
-.home .container.accueil::-webkit-scrollbar-thumb { background: rgba(245, 181, 12, .35); border-radius: 8px; }
+.home .container.accueil::-webkit-scrollbar-thumb { background: rgba(216, 192, 112, .35); border-radius: 8px; }
 .accueil-haut { gap: 22px; margin-bottom: 26px; }
 .accueil .actus { flex: 0 0 auto; height: max(440px, 74vh); }
 
@@ -777,14 +777,14 @@ body[data-panel="settings"] .reseaux { display: none; }
     transition: border-color .15s, background .15s;
 }
 .maj-btn svg { width: 20px; height: 20px; fill: none; stroke: #f2f2f0; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.maj-btn:hover { border-color: rgba(245, 181, 12, .6); background: rgba(245, 181, 12, .08); }
-.maj-btn:hover svg { stroke: #f5b50c; }
-.maj-btn.tourne svg { animation: maj-tourne .8s linear infinite; stroke: #f5b50c; }
+.maj-btn:hover { border-color: rgba(216, 192, 112, .6); background: rgba(216, 192, 112, .08); }
+.maj-btn:hover svg { stroke: #d8c070; }
+.maj-btn.tourne svg { animation: maj-tourne .8s linear infinite; stroke: #d8c070; }
 @keyframes maj-tourne { to { transform: rotate(360deg); } }
 .maj-etat { min-height: 16px; margin: 6px 0 0 6px; font-size: 12px; color: #b4b4b8; opacity: 0; transition: opacity .2s; }
 .maj-etat.visible { opacity: 1; }
 .maj-etat.ok { color: #6fe3c0; }
-.maj-etat.nouvelle { color: #f5b50c; }
+.maj-etat.nouvelle { color: #d8c070; }
 .maj-etat.erreur { color: #e5677a; }
 .play-cadre:has(.play-instance[style*="none"]) + .maj-etat { display: none; }
 
@@ -819,7 +819,7 @@ body[data-panel="settings"] .reseaux { display: none; }
 .diapo-fleche.gauche { left: 14px; }
 .diapo-fleche.droite { right: 14px; }
 .diapo-scene:hover .diapo-fleche { opacity: 1; }
-.diapo-fleche:hover { background: #f2b112; border-color: #f2b112; color: #141210; }
+.diapo-fleche:hover { background: #b8944a; border-color: #b8944a; color: #141210; }
 .diapo-vignettes { flex: 0 0 78px; display: flex; gap: 10px; }
 .diapo-vignette {
     position: relative; flex: 1; min-width: 0; overflow: hidden; padding: 0; cursor: pointer;
@@ -828,7 +828,7 @@ body[data-panel="settings"] .reseaux { display: none; }
 }
 .diapo-vignette img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .diapo-vignette:hover { opacity: .9; transform: translateY(-2px); }
-.diapo-vignette.montree { opacity: 1; border-color: #f5b50c; }
+.diapo-vignette.montree { opacity: 1; border-color: #d8c070; }
 .home.active .diapo-vignette { animation: z-entree .5s calc(.3s + var(--i) * 60ms) var(--doux) backwards; }
 
 /* 3.4.8 (Eddy : « remets en haut à gauche, c'est moche ») : le logo et Jouer restent toujours en haut à gauche, avec ou sans images */
@@ -854,7 +854,7 @@ body[data-panel="settings"] .reseaux { display: none; }
     position: absolute; right: 126px; bottom: 26px; z-index: 4; display: flex; gap: 8px; flex: none;
 }
 .accueil.avec-diapo .diapo-vignette { flex: 0 0 auto; width: 92px; height: 52px; border-radius: 9px; opacity: .55; }
-.accueil.avec-diapo .diapo-vignette.montree { opacity: 1; border-color: #f5b50c; box-shadow: 0 0 0 1px #f5b50c; }
+.accueil.avec-diapo .diapo-vignette.montree { opacity: 1; border-color: #d8c070; box-shadow: 0 0 0 1px #d8c070; }
 .accueil.avec-diapo .diapo-vignette:hover { opacity: 1; }
 /* le bouton Jouer se lit sur l'image : cadre un peu plus opaque */
 .accueil.avec-diapo .play-cadre { background: rgba(14, 14, 15, .82) !important; backdrop-filter: blur(6px); }
@@ -866,11 +866,11 @@ body[data-panel="settings"] .reseaux { display: none; }
     transition: border-color .15s, background .15s;
 }
 .rail-test svg { width: 20px; height: 20px; fill: rgba(242, 242, 240, .6); transition: fill .15s; }
-.rail-test:hover { border-color: rgba(245, 181, 12, .55); }
-.rail-test:hover svg, .rail-test.rail-actif svg { fill: #f5b50c; }
-.rail-test.rail-actif { background: rgba(245, 181, 12, .12); border: 1.5px solid #f5b50c; }
+.rail-test:hover { border-color: rgba(216, 192, 112, .55); }
+.rail-test:hover svg, .rail-test.rail-actif svg { fill: #d8c070; }
+.rail-test.rail-actif { background: rgba(216, 192, 112, .12); border: 1.5px solid #d8c070; }
 body.instance-test .rail-serveur { background: rgba(255, 255, 255, .035); border: 1px solid rgba(255, 255, 255, .08); }
-.accueil-instance { min-height: 18px; margin: 6px 0 2px; font: 600 12px/18px 'JetBrains Mono', monospace; letter-spacing: .08em; color: #f5b50c; text-transform: uppercase; text-align: center; }
+.accueil-instance { min-height: 18px; margin: 6px 0 2px; font: 600 12px/18px 'JetBrains Mono', monospace; letter-spacing: .08em; color: #d8c070; text-transform: uppercase; text-align: center; }
 /* le choix d'instance se fait par le rail : plus de petite flèche à côté de JOUER */
 .instance-select { display: none !important; }
 .rail-test[hidden], .rail-verrou[hidden] { display: none !important; }

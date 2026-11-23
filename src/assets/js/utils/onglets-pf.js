@@ -140,7 +140,7 @@ export async function appliquerEcranChargement(dossierInstance) {
         logoBlend: false,
         backgroundImage: false,
         splashBackgroundColor: '#0A0A0B',
-        splashProgressBarColor: '#F2B112',
+        splashProgressBarColor: '#b8944a',
         splashProgressFrameColor: '#383838',
         splashProgressBackgroundColor: '#0A0A0B',
     });

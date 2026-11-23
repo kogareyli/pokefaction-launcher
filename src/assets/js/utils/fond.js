@@ -5,7 +5,7 @@
  */
 
 // Thème Rayquaza shiny : l'or de son anneau et le gris de son corps
-const COULEURS = ['245,181,12', '60,60,62', '100,100,104', '245,181,12', '72,72,76'];
+const COULEURS = ['216, 192, 112', '60,60,62', '100,100,104', '216, 192, 112', '72,72,76'];
 
 function hasard(min, max) {
     return min + Math.random() * (max - min);

@@ -82,7 +82,7 @@ input::-webkit-inner-spin-button {
     pointer-events: none;
     background:
         radial-gradient(1100px 620px at 72% -12%, rgba(156, 114, 8, .22), transparent 62%),
-        radial-gradient(900px 560px at -8% 108%, rgba(245, 181, 12, .16), transparent 60%),
+        radial-gradient(900px 560px at -8% 108%, rgba(216, 192, 112, .16), transparent 60%),
         linear-gradient(180deg, var(--fond-1), var(--fond-0));
 }
 
@@ -101,14 +101,14 @@ input::-webkit-inner-spin-button {
 .fond-lueur-1 {
     left: -8%;
     top: 4%;
-    background: radial-gradient(circle, #f5b50c 0%, transparent 70%);
+    background: radial-gradient(circle, #d8c070 0%, transparent 70%);
     animation: derive-1 26s ease-in-out infinite alternate;
 }
 
 .fond-lueur-2 {
     right: -10%;
     top: -14%;
-    background: radial-gradient(circle, #9c7208 0%, transparent 70%);
+    background: radial-gradient(circle, #785818 0%, transparent 70%);
     animation: derive-2 32s ease-in-out infinite alternate;
 }
 
@@ -376,7 +376,7 @@ body[data-panel="login"] .rail {
 .rail-actif:hover {
     color: #fff;
     background: var(--degrade-doux);
-    box-shadow: inset 0 0 0 1px rgba(245, 181, 12, .35), 0 6px 20px rgba(0, 0, 0, .28);
+    box-shadow: inset 0 0 0 1px rgba(216, 192, 112, .35), 0 6px 20px rgba(0, 0, 0, .28);
 }
 
 .light .rail-actif,
@@ -441,7 +441,7 @@ body[data-panel="login"] .rail {
     border-radius: 12px;
     background: url('../images/default/setve.png') center / cover no-repeat;
     image-rendering: pixelated;
-    box-shadow: 0 0 0 2px var(--fond-1), 0 0 0 4px rgba(245, 181, 12, .55);
+    box-shadow: 0 0 0 2px var(--fond-1), 0 0 0 4px rgba(216, 192, 112, .55);
     pointer-events: none;
     transition: box-shadow .3s;
 }
@@ -493,7 +493,7 @@ body[data-panel="login"] .rail {
     background: var(--surface-forte);
     border: 1px solid var(--bord-fort);
     border-radius: 20px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(245, 181, 12, .08), 0 0 60px rgba(0, 0, 0, 0);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(216, 192, 112, .08), 0 0 60px rgba(0, 0, 0, 0);
     backdrop-filter: blur(20px);
     animation: surgit .45s var(--ressort);
 }

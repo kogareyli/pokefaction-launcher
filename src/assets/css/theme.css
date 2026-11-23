@@ -2,18 +2,18 @@
 .global {
     /* Thème Rayquaza shiny : noir de son corps, or de son anneau (le seul accent), rose seulement dans le logo.
        Les anciens noms (rose, violet) gardent leur rôle d'accent. */
-    --rayquaza-or: #f5b50c;
-    --rayquaza-bouton: #f2b112;
+    --rayquaza-or: #d8c070;
+    --rayquaza-bouton: #b8944a;
     --rayquaza-rose: #f0186e; /* bouche du logo : à garder pour de très petits détails */
-    --rose: #f5b50c;
+    --rose: #d8c070;
     --magenta: #e6a50a;
-    --violet: #9c7208;
-    --bleu: #d99e0a;
+    --violet: #785818;
+    --bleu: #a8843a;
     --vert: #6fe3c0;
     --rouge: #ff5d6d;
-    --degrade: linear-gradient(#f2b112, #f2b112);
-    --degrade-doux: linear-gradient(rgba(245, 181, 12, .12), rgba(245, 181, 12, .12));
-    --element-color: #f5b50c;
+    --degrade: linear-gradient(#b8944a, #b8944a);
+    --degrade-doux: linear-gradient(rgba(216, 192, 112, .12), rgba(216, 192, 112, .12));
+    --element-color: #d8c070;
     --police: 'Inter', 'Segoe UI', system-ui, sans-serif;
     --mono: 'JetBrains Mono', 'Cascadia Mono', Consolas, monospace;
     --rayon: 16px;

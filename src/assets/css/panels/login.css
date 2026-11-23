@@ -100,7 +100,7 @@
     position: absolute;
     inset: -30%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(245, 181, 12, .5), rgba(156, 114, 8, .22) 42%, transparent 70%);
+    background: radial-gradient(circle, rgba(216, 192, 112, .5), rgba(156, 114, 8, .22) 42%, transparent 70%);
     filter: blur(18px);
 }
 
@@ -249,7 +249,7 @@
 .pf-champ:focus {
     border-color: var(--rose);
     background: var(--surface-2);
-    box-shadow: 0 0 0 4px rgba(245, 181, 12, .15);
+    box-shadow: 0 0 0 4px rgba(216, 192, 112, .15);
 }
 
 .pf-mdp2,
@@ -321,7 +321,7 @@
     cursor: pointer;
 }
 .pf-oubli:hover {
-    color: #f5b50c;
+    color: #d8c070;
 }
 .login-pokefaction.pf-mode-inscription .pf-oubli {
     display: none;
