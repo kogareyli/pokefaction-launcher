@@ -226,7 +226,7 @@
         },
         "verify": true,
         "ignored": [
-            "saves",
+            "options.txt", "optionsshaders.txt", "optionsof.txt", "config", "saves",
             "screenshots",
             "logs",
             "crash-reports",
