@@ -260,7 +260,8 @@
             "shaderpacks/COBBLEVERSE - Shaders",
             "shaderpacks/COBBLEVERSE - Shaders (High Quality)",
             "shaderpacks/ComplementaryUnbound_r5.8.1 + EuphoriaPatches_1.9.3",
-            "shaderpacks/ComplementaryUnbound_r5.8.1 + EuphoriaPatches_1.9.3.txt"
+            "shaderpacks/ComplementaryUnbound_r5.8.1 + EuphoriaPatches_1.9.3.txt",
+                "mods/DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar"
         ],
         "whitelistActive": true,
         "whitelist": [],
