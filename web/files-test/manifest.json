@@ -673,8 +673,8 @@
  },
  {
   "path": "mods/pokefaction-core-6.13.0-test.jar",
-  "size": 24728501,
-  "hash": "32e1b49ead1386be9cc47630cbf64f0871654404",
+  "size": 24728693,
+  "hash": "76f5c91fa1ee564fbe9fe6db6572a82ec006ce3f",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/mods/pokefaction-core-6.13.0-test.jar"
  },
  {
@@ -1657,8 +1657,8 @@
  },
  {
   "path": "config/modernfix-mixins.properties",
-  "size": 4144,
-  "hash": "ac93eaa0eae4db7f95ba8d40e04109bb6ffb9b92",
+  "size": 4263,
+  "hash": "75463a3c2677266553d26b09819def66df6c1098",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/config/modernfix-mixins.properties"
  },
  {
