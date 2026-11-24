@@ -68,7 +68,7 @@ function lister(dossier, base) {
         let url = parHash.get(hash);
         if (url) memes++;
         else if ((url = curse.get(`${path.basename(rel)}|${data.length}`))) cf++;
-        else if (rel.startsWith('mods/') && (url = await modrinth(hash))) mr++;
+        else if ((rel.startsWith('mods/') || rel.startsWith('resourcepacks/') || rel.startsWith('shaderpacks/')) && (url = await modrinth(hash))) mr++;
         else if (data.length > MAX) { sautes.push(rel); continue; }
         else {
             const dest = path.join(SORTIE, rel);
