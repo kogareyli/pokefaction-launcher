@@ -673,8 +673,8 @@
  },
  {
   "path": "mods/pokefaction-core-6.13.0-test.jar",
-  "size": 24823285,
-  "hash": "656724cf023c639c967f551ec36134e4e488934f",
+  "size": 24832232,
+  "hash": "50218c4c437e4ca9944cc09bdc9618276bdfdf0c",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/mods/pokefaction-core-6.13.0-test.jar"
  },
  {
@@ -2310,12 +2310,6 @@
   "url": "https://edge.forgecdn.net/files/7402/610/Icon%20Fresh%200.4.zip"
  },
  {
-  "path": "resourcepacks/Nature X 12.2.zip",
-  "size": 1802203,
-  "hash": "d26216e5cb9118bd036652b893daf3572d0782de",
-  "url": "https://cdn.modrinth.com/data/8d8M3Qoz/versions/L1fTfVef/Nature%20X%20-%2012.2%20%5B1.21.1%5D.zip"
- },
- {
   "path": "resourcepacks/PokeFaction Interface.zip",
   "size": 317205,
   "hash": "634c9257d1e208532c4b63bd8615b5eb41d65451",
@@ -2347,8 +2341,8 @@
  },
  {
   "path": "options.txt",
-  "size": 9900,
-  "hash": "8a590ea86e499bf0429c865c8346cb8cffa6f4aa",
+  "size": 9875,
+  "hash": "c498c1bfca086db1c3a04a42f896c52b4fc04a7c",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/options.txt"
  },
  {
