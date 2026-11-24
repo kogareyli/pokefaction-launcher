@@ -673,8 +673,8 @@
  },
  {
   "path": "mods/pokefaction-core-6.13.0-test.jar",
-  "size": 24814558,
-  "hash": "768495f8a50a30a3f6eb08df05328c53da1b4866",
+  "size": 24814712,
+  "hash": "bcd28d8efcf2809e76f6663667fafbd6f4bb2123",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/mods/pokefaction-core-6.13.0-test.jar"
  },
  {
@@ -2190,6 +2190,18 @@
   "url": "https://edge.forgecdn.net/files/6105/672/-1.21.2%20Fresh%20Moves%20v3.1%20%28With%20Animated%20Eyes%29.zip"
  },
  {
+  "path": "resourcepacks/3D Crops Revamped v3.zip",
+  "size": 483678,
+  "hash": "233e886a3aed43cb48d01f87b8d68f43eb66b970",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/resourcepacks/3D%20Crops%20Revamped%20v3.zip"
+ },
+ {
+  "path": "resourcepacks/Clean Connected Glass.zip",
+  "size": 343093,
+  "hash": "c9ba6b65d840057ddac7f3e8acb214ea5c318040",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/resourcepacks/Clean%20Connected%20Glass.zip"
+ },
+ {
   "path": "resourcepacks/Cobblemon 3D Poké Rods 1.0.zip",
   "size": 167546,
   "hash": "c5a92bf0d82abba72eb3a93f6e8bd40560d1c247",
@@ -2256,6 +2268,18 @@
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files/resourcepacks/CurseForge%20RP.zip"
  },
  {
+  "path": "resourcepacks/Drodis Blazes 1.4.1.zip",
+  "size": 212780,
+  "hash": "a14144fad533c00d413e307687320ec44441ee56",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/resourcepacks/Drodis%20Blazes%201.4.1.zip"
+ },
+ {
+  "path": "resourcepacks/Drodis Blazes FA 1.2.zip",
+  "size": 112664,
+  "hash": "86e10de08ff78ff07a4e108957a50b8915f3ea97",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/resourcepacks/Drodis%20Blazes%20FA%201.2.zip"
+ },
+ {
   "path": "resourcepacks/E19 Cobblemon Minimap Icons.zip",
   "size": 19398814,
   "hash": "1aefc7a313b3c6f719d2fa53916afff18cd0792f",
@@ -2274,10 +2298,22 @@
   "url": "https://edge.forgecdn.net/files/7550/982/Fully%20Hisuian%20Starters%201.1.1.zip"
  },
  {
+  "path": "resourcepacks/Glowing Trim Armors MG-5.0.zip",
+  "size": 13429945,
+  "hash": "5d3b2a9b4ca0f1aa5f98d1c2ac424bfad296657c",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/resourcepacks/Glowing%20Trim%20Armors%20MG-5.0.zip"
+ },
+ {
   "path": "resourcepacks/Icon Fresh 0.4.zip",
   "size": 852471,
   "hash": "b9ddfb4614220612c7492666db730393954435b8",
   "url": "https://edge.forgecdn.net/files/7402/610/Icon%20Fresh%200.4.zip"
+ },
+ {
+  "path": "resourcepacks/Nature X 12.2.zip",
+  "size": 1802203,
+  "hash": "d26216e5cb9118bd036652b893daf3572d0782de",
+  "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/resourcepacks/Nature%20X%2012.2.zip"
  },
  {
   "path": "resourcepacks/PokeFaction Interface.zip",
@@ -2311,8 +2347,8 @@
  },
  {
   "path": "options.txt",
-  "size": 9709,
-  "hash": "2f4ca559a8ef0ba6f26801474a54d22c3dd3cf01",
+  "size": 9900,
+  "hash": "8a590ea86e499bf0429c865c8346cb8cffa6f4aa",
   "url": "https://raw.githubusercontent.com/kogareyli/pokefaction-launcher/main/web/files-test/options.txt"
  },
  {
